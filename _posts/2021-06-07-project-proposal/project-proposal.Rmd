@@ -23,6 +23,7 @@ In the roughly twenty years that Tethys-based GAStech has been operating a natur
 In January, 2014, the leaders of GAStech are celebrating their new-found fortune as a result of the initial public offering of their very successful company. In the midst of this celebration, several employees of GAStech go missing. An organization known as the Protectors of Kronos (POK) is suspected in the disappearance, but things may not be what they seem.
 
 # 2. Objectives
+Both historical vehicle tracking data and transaction data from loyalty and credit card will be used to identify which GASTech employees made which purchases and identify suspicious patterns of behavior.
 
 # 3. Past Related Work
 
@@ -31,7 +32,7 @@ In January, 2014, the leaders of GAStech are celebrating their new-found fortune
 # 5. Application Design
 
 ## Data Visualisation
-* Heat maps to identify popular location prior to the dissapearance
+* Heat maps to identify popular location prior to the disappearance
 
 ## Application Interface 
 * Allow users to input the top n number of popular and suspicious location.
