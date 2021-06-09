@@ -31,7 +31,7 @@ In January, 2014, the leaders of GAStech are celebrating their new-found fortune
 # 5. Application Design
 
 ## Data Visualisation
-* Heat maps to identify popular location prior to the dissapearance
+* Heat maps to identify popular location prior to the disappearance
 
 ## Application Interface 
 * Allow users to input the top n number of popular and suspicious location.
