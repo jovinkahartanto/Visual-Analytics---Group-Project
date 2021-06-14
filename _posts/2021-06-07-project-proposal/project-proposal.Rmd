@@ -23,9 +23,16 @@ In the roughly twenty years that Tethys-based GAStech has been operating a natur
 In January, 2014, the leaders of GAStech are celebrating their new-found fortune as a result of the initial public offering of their very successful company. In the midst of this celebration, several employees of GAStech go missing. An organization known as the Protectors of Kronos (POK) is suspected in the disappearance, but things may not be what they seem.
 
 # 2. Objectives
-Both historical vehicle tracking data and transaction data from loyalty and credit card will be used to identify which GASTech employees made which purchases and identify suspicious patterns of behavior.
+Both historical vehicle tracking data and transaction data from loyalty and credit card will be used to observe the following issues:
+
+1. The most popular locations and when they are popular
+2. Infer the owner of each credit card and loyalty card
+3. Identify potential informal or unofficial relationships among GASTech personnel
+4. Analyze suspicious activity 
+
 
 # 3. Past Related Work
+
 
 # 4. Methodology and Analytical Approach
 
