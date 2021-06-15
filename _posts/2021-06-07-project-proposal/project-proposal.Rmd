@@ -36,18 +36,21 @@ Both historical vehicle tracking data and transaction data from loyalty and cred
 # 4. Data Sources
 
 # 5. Methodology and Analytical Approach
-The approaches of this study are as follow:
+Our group aims to provide users with an interactive to derive insights from the data source. R packages, such as dplyr, reshape2, and tidyr will be used to perform data manipulation and data transformation. In addition, GGplot2 and Shiny will be used to create visualisations for the app.
 
-1. Exploratory Data Analysis (EDA): EDA will be performed on GPS, car assignment, loyalty and credit card transaction data to understand the patterns and correlation between the data. EDA will also performed to detect any missing data, outliers, and  or anomalies that might exist in the dataset. 
+The analytical approach of this study are as follow:
 
-2. Exploratory Spatial Data Analysis (ESDA): 
+1. Exploratory Data Analysis (EDA): to understand the patterns and th relationship between the GPS, car assignment, and transaction data. EDA will also performed to detect any missing data, outliers, and  or anomalies that might exist in the dataset. 
+2. Exploratory Spatial Data Analysis (ESDA): to visualize and explore island map and GPS route and to determine the popularity for each location
+3. Geospatial and aspatial clustering: to determine unusual relationship between employees and suspicious activities occuring using GPS or transaction data
+4. R Markdown and R Shiny to prepare the report and user interface
 
 
 
 # 6. Application Design
 
 ## Data Visualisation
-* Heat maps to identify popular location prior to the disappearance
+* Cloropleth maps to identify popular location prior to the disappearance
 
 ## Application Interface 
 The Shiny App is envisioned to have these functionalities:
