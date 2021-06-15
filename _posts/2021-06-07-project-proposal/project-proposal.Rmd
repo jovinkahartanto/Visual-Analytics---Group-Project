@@ -28,18 +28,28 @@ Both historical vehicle tracking data and transaction data from loyalty and cred
 1. The most popular locations and when they are popular
 2. Infer the owner of each credit card and loyalty card
 3. Identify potential informal or unofficial relationships among GASTech personnel
-4. Analyze suspicious activity 
+4. Analyze suspicious activity of the missing personnel prior to the disappearance
 
 
 # 3. Past Related Work
 
+# 4. Data Sources
 
-# 4. Methodology and Analytical Approach
+# 5. Methodology and Analytical Approach
+The approaches of this study are as follow:
 
-# 5. Application Design
+1. Exploratory Data Analysis (EDA): EDA will be performed on GPS, car assignment, loyalty and credit card transaction data to understand the patterns and correlation between the data. EDA will also performed to detect any missing data, outliers, and  or anomalies that might exist in the dataset. 
+
+2. Exploratory Spatial Data Analysis (ESDA): 
+
+
+
+# 6. Application Design
 
 ## Data Visualisation
 * Heat maps to identify popular location prior to the disappearance
 
 ## Application Interface 
+The Shiny App is envisioned to have these functionalities:
+
 * Allow users to input the top n number of popular and suspicious location.
