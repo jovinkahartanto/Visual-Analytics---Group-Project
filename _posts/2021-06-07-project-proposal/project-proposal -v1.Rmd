@@ -1,0 +1,128 @@
+---
+title: "ISSS608 G1 Group 5 - Project Proposal"
+description: |
+  Vast Challenge 2021 Mini-Challenge 2 - with R
+author:
+  - name: Chen Yuxi, Jovinka Hartanto, Lim Yong Kai
+
+date: 06-07-2021
+output:
+  distill::distill_article:
+    self_contained: false
+    toc: true
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+# 1. Overview
+In the roughly twenty years that Tethys-based GAStech has been operating a natural gas production site in the island country of Kronos, it has produced remarkable profits and developed strong relationships with the government of Kronos. However, GAStech has not been as successful in demonstrating environmental stewardship.
+
+In January, 2014, the leaders of GAStech are celebrating their new-found fortune as a result of the initial public offering of their very successful company. In the midst of this celebration, several employees of GAStech go missing. An organization known as the Protectors of Kronos (POK) is suspected in the disappearance, but things may not be what they seem.
+
+# 2. Objectives
+Both historical vehicle tracking data and transaction data from loyalty and credit card will be used to observe the following issues:
+
+1. The most popular locations and when they are popular
+2. Infer the owner of each credit card and loyalty card
+3. Identify potential informal or unofficial relationships among GASTech personnel
+4. Analyze unusual and suspicious activities of the employees 
+5. Analyze daily routines of GasTech employees
+
+# 3. Previous Work and GIS Application
+Geographic information system (GIS) data has been used by different business and entities for many purposes. Police agencies are using Geographic Information Systems (GIS) for mapping crime, identifying crime "hot spots," assigning officers, and profiling offenders.
+
+According to a 2001 survey by the National Institute of Justice, 62 percent of police departments with over 100 officers use GIS systems. Collectively, the technology has been credited with reducing crime, decreasing residential burglaries, tracking parolees and serious habitual offenders, and identifying "hot spots" with high concentrations of crime. 
+
+[link]https://www.sciencedaily.com/releases/2014/09/140916102000.htm
+
+# 4. Data Sources
+The data source are available publicly on VAST Challenge 2021 website under the sub section [Mini-Challenge 2](https://vast-challenge.github.io/2021/MC2.html). The data used for the project are as follows:
+
+```{r echo=FALSE, message=FALSE}
+library("tidyverse")
+library("readxl")
+emp_records <- read_excel("datasets/EmployeeRecords.xlsx")
+car <- read.csv("datasets/car-assignments.csv")
+cc <- read.csv("datasets/cc_data.csv")
+gps <- read.csv("datasets/gps.csv")
+loyalty <- read.csv("datasets/loyalty_data.csv")
+```
+* Geospatial maps of  Abila and Kronos Island
+
+```{r mc2, fig.align = 'center', fig.cap = 'Map of Abila, Kronos', echo=FALSE}
+knitr::include_graphics("datasets/MC2-tourist.jpg")
+```
+
+* 54 employees details of GAStech
+
+```{r}
+knitr::kable(head(emp_records[,1:5]), "simple")
+```
+
+* 44 employees car assignments 
+
+```{r}
+knitr::kable(head(car[,1:5]), "simple")
+```
+
+* 1,490 credit card transactions for 55 unique credit card numbers
+
+```{r}
+knitr::kable(head(cc[,1:4]), "simple")
+```
+
+* 685,168 GPS log data from 6 Jan 2014 to 19 Jan 2014
+
+```{r}
+knitr::kable(head(gps[,1:4]), "simple")
+```
+
+* 1,392 loyalty card transactions for 54 unique loyalty card numbers
+
+```{r}
+knitr::kable(head(loyalty[,1:4]), "simple")
+```
+
+# 5. Methodology and Analytical Approach
+Our group aims to provide users with an interactive to derive insights from the data source. RStudio is the main software tool that will be used for analysing and developing the project artefact and output. R packages, such as dplyr, reshape2, tidyr, lubridate and tmap will be used to perform data manipulation, data transformation and geospatial plots of map. In addition, GGplot2 and Shiny will be used to create visualisations for the app.
+
+The analytical approach of this study are as follow:
+
+1. Exploratory Data Analysis (EDA): to understand the patterns and the relationship between the GPS, car assignment, and transaction data. EDA will also performed to detect any missing data, outliers, and  or anomalies that might exist in the dataset. 
+2. Exploratory Spatial Data Analysis (ESDA): to visualize and explore island map and GPS route and to determine the popularity for each location
+3. Geospatial and aspatial clustering: to determine unusual relationship between employees and suspicious activities occuring using GPS or transaction data
+4. R Markdown and R Shiny to prepare the report and user interface
+
+
+The time frame for this project is shown below.
+
+```{r mc3, fig.align = 'center', fig.cap = 'Project Gantt Chart', echo=FALSE}
+knitr::include_graphics("img/timeline.png")
+```
+
+# 6. Assumptions
+The main underlying assumption lies with the mapping of location details on the credit cards and loyalty cards data to the travel route of each vehicle. The data does not provide the GPS location in the credit and loyalty cards transaction data. Hence apart from assigning the various locations in the cards data with a GPS coordinate, a sorting of time stamps is also required to determine when the vehicles had become stationary. Where the vehicles stopped at is assumed to be where the employees have gone at that specific time period.
+
+# 7. Application Design
+
+## Data Visualisation
+* Cloropleth maps to identify popular location 
+* Geospatial maps to show the maps of Abila
+* Histogram to show frequency of visit to specific locations based off GPS data
+* Parallel plot to show potential informal or unofficial relationships among GASTech personnel
+* Boxplot for transaction data from credit card and loyalty card
+* Line graph to show speed of the vehicles of the respective employee
+* Visualize movement and temporal changes of the GPS tracking data by creating video animations
+
+## Application Interface 
+The Shiny App is envisioned to have these functionalities:
+
+* Allow users to input the top n number of popular and suspicious location
+* Multiple values (drop down) of employees to display moving line from GPS data on Abila map
+* Slide bar for time and date inputs for cloropleth maps
+
+
