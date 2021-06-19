@@ -1,21 +1,5 @@
 [
-  {
-    "path": "posts/welcome/",
-    "title": "Welcome to My Blog",
-    "description": "Welcome to our new blog, My Blog. We hope you enjoy \nreading what we have to say!",
-    "author": [
-      {
-        "name": "Nora Jones",
-        "url": "https://example.com/norajones"
-      }
-    ],
-    "date": "2021-06-07",
-    "categories": [],
-    "contents": "\r\n\r\n\r\n\r\n",
-    "preview": {},
-    "last_modified": "2021-06-07T20:59:05+08:00",
-    "input_file": {}
-  },
+  
   {
     "path": "posts/2021-06-07-project-proposal/",
     "title": "ISSS608 G1 Group 5 - Project Proposal",
