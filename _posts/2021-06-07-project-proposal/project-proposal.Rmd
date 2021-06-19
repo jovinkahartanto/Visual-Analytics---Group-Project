@@ -92,7 +92,7 @@ Our group aims to provide users with an interactive to derive insights from the 
 
 The analytical approach of this study are as follow:
 
-1. Exploratory Data Analysis (EDA): to understand the patterns and the relationship between the GPS, car assignment, and transaction data. EDA will also performed to detect any missing data, outliers, and  or anomalies that might exist in the dataset. 
+1. Exploratory Data Analysis (EDA): to understand the patterns and the relationship between the GPS, car assignment, and transaction data. EDA will also performed to detect any missing data, outliers, and  or anomalies that might exist in the dataset
 2. Exploratory Spatial Data Analysis (ESDA): to visualize and explore island map and GPS route and to determine the popularity for each location
 3. Geospatial and aspatial clustering: to determine unusual relationship between employees and suspicious activities occuring using GPS or transaction data
 4. R Markdown and R Shiny to prepare the report and user interface
