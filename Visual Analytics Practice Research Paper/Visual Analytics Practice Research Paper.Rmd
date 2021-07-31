@@ -1,12 +1,15 @@
 ---
 title: Short Paper
 author:
-  - name: Alice Anonymous
-    email: alice@example.com
-    affiliation: Some Institute of Technology
-  - name: Bob Security
-    email: bob@example.com
-    affiliation: Another University
+  - name: Chen Yuxi
+    email: yuxi.chen.2020@mitb.smu.edu.sg
+    affiliation: Singapore Management University
+  - name: Lim Yong Kai
+    email: yongkai.lim.2020@mitb.smu.edu.sg
+    affiliation: Singapore Management University
+  - name: Jovinka Hartanto
+    email: jovinkah.2020@mitb.smu.edu.sg
+    affiliation: Singapore Management University
 abstract: |
   This is the abstract.
 
