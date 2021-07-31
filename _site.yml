@@ -9,4 +9,6 @@ navbar:
       href: index.html
     - text: "About"
       href: about.html
+    - text: "Research Paper"
+      href: researchpaper.html
 output: distill::distill_article
