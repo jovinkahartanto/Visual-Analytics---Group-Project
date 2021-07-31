@@ -1,5 +1,5 @@
 ---
-title: "My Blog"
+title: "Group 5 Project"
 site: distill::distill_website
 listing: posts
 ---
