@@ -16,6 +16,8 @@ navbar:
       href: userguide.html
     - text: "Shiny App"
       href: shiny.html
+    - text: "Poster"
+      href: poster.html
 output_dir: "_site"
 output: 
   distill::distill_article:
