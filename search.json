@@ -1,0 +1,20 @@
+{
+  "articles": [
+    {
+      "path": "about.html",
+      "title": "About this blog",
+      "description": "Some additional details about the blog",
+      "author": [],
+      "contents": "\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-07-31T11:37:03+08:00"
+    },
+    {
+      "path": "index.html",
+      "title": "Group 5 Project",
+      "author": [],
+      "contents": "\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-07-31T11:37:28+08:00"
+    }
+  ],
+  "collections": ["posts/posts.json"]
+}

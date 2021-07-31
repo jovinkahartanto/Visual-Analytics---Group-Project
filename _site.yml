@@ -2,14 +2,22 @@ name: "Visual Analytics - Group Project"
 title: "Group 5 Group Project"
 description: |
   My Blog
-output_dir: "_site"
 navbar:
   right:
-    - text: "Home"
-      href: index.html
+  #  - text: "Home"
+  #    href: index.html
     - text: "About"
       href: about.html
+    - text: "Proposal"
+      href: proposal.html
     - text: "Research Paper"
       href: researchpaper.html
-output: distill::distill_article
- css: styles.css
+    - text: "User Guide"
+      href: userguide.html
+    - text: "Shiny App"
+      href: shiny.html
+output_dir: "."
+output: 
+  distill::distill_article:
+    css: styles.css
+    anchor_sections: FALSE
