@@ -6,14 +6,14 @@
       "description": "Some additional details about the blog",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-07-31T12:18:42+08:00"
+      "last_modified": "2021-07-31T12:22:02+08:00"
     },
     {
       "path": "index.html",
       "title": "Group 5 Project",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-07-31T12:18:42+08:00"
+      "last_modified": "2021-07-31T12:22:02+08:00"
     },
     {
       "path": "proposal.html",
@@ -35,6 +35,20 @@
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
       "last_modified": "2021-07-31T12:18:42+08:00"
+    },
+    {
+      "path": "shiny.html",
+      "title": "Shiny App",
+      "author": [],
+      "contents": "\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-07-31T12:21:42+08:00"
+    },
+    {
+      "path": "userguide.html",
+      "title": "User Guide",
+      "author": [],
+      "contents": "\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-07-31T12:22:02+08:00"
     }
   ],
   "collections": ["posts/posts.json"]
