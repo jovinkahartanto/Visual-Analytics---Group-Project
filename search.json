@@ -6,14 +6,35 @@
       "description": "Some additional details about the blog",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-07-31T11:37:03+08:00"
+      "last_modified": "2021-07-31T11:50:15+08:00"
     },
     {
       "path": "index.html",
       "title": "Group 5 Project",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-07-31T11:37:28+08:00"
+      "last_modified": "2021-07-31T11:45:58+08:00"
+    },
+    {
+      "path": "proposal.html",
+      "title": "ISSS608 G1 Group 5 - Project Proposal",
+      "description": "Vast Challenge 2021 Mini-Challenge 2 - with R\n",
+      "author": [
+        {
+          "name": "Chen Yuxi, Jovinka Hartanto, Lim Yong Kai",
+          "url": {}
+        }
+      ],
+      "date": "06-07-2021",
+      "contents": "\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-07-31T11:57:42+08:00"
+    },
+    {
+      "path": "researchpaper.html",
+      "title": "Research Paper",
+      "author": [],
+      "contents": "\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-07-31T11:53:29+08:00"
     }
   ],
   "collections": ["posts/posts.json"]
