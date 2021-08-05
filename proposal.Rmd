@@ -99,7 +99,7 @@ The analytical approach of this study are as follow:
 
 The time frame for this project is shown below.
 
-```{r mc3, fig.align = 'center', fig.cap = 'Project Gantt Chart', echo=FALSE}
+```{r, fig.align = 'center', fig.cap = 'Project Gantt Chart', echo=FALSE}
 knitr::include_graphics("img/timeline.png")
 ```
 
@@ -120,9 +120,22 @@ The main underlying assumption lies with the mapping of location details on the 
 ## Application Interface 
 The Shiny App is envisioned to have these functionalities:
 
-* Allow users to input the top n number of popular and suspicious location
 * Multiple values (drop down) of employees to display moving line from GPS data on Abila map
-* Slide bar for time and date inputs for cloropleth maps
+* Allow users to input the top n number of popular and suspicious location
+* Slide bar for time and date inputs for 
 
+```{r, fig.align = 'center', fig.cap = 'Dashboard Interface 1', echo=FALSE}
+knitr::include_graphics("img/dashboard1.gif")
+```
 
+```{r, fig.align = 'center', fig.cap = 'Dashboard Interface 2', echo=FALSE}
+knitr::include_graphics("img/dashboard2.gif")
+```
 
+```{r, fig.align = 'center', fig.cap = 'Dashboard Interface 3', echo=FALSE}
+knitr::include_graphics("img/dashboard3.gif")
+```
+
+```{r, fig.align = 'center', fig.cap = 'Dashboard Interface 4', echo=FALSE}
+knitr::include_graphics("img/dashboard4.gif")
+```
