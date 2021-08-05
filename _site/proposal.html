@@ -2777,20 +2777,15 @@ Figure 2: Project Gantt Chart
 <h1 id="application-design">7. Application Design</h1>
 <h2 id="data-visualisation">Data Visualisation</h2>
 <ul>
-<li>Cloropleth maps to identify popular location</li>
-<li>Geospatial maps to show the maps of Abila</li>
-<li>Histogram to show frequency of visit to specific locations based off GPS data</li>
-<li>Parallel plot to show potential informal or unofficial relationships among GASTech personnel</li>
+<li>Heat map to identify popular locations at various time periods</li>
+<li>Visualize movement and temporal changes of the GPS tracking data on Abila geospatial map</li>
 <li>Boxplot for transaction data from credit card and loyalty card</li>
-<li>Line graph to show speed of the vehicles of the respective employee</li>
-<li>Visualize movement and temporal changes of the GPS tracking data by creating video animations</li>
+<li>Network analysis to show potential informal or unofficial relationships among GASTech personnel and locations of visit</li>
 </ul>
 <h2 id="application-interface">Application Interface</h2>
 <p>The Shiny App is envisioned to have these functionalities:</p>
 <ul>
-<li>Allow users to input the top n number of popular and suspicious location</li>
-<li>Multiple values (drop down) of employees to display moving line from GPS data on Abila map</li>
-<li>Slide bar for time and date inputs for cloropleth maps</li>
+<li>Multiple values (drop down) of employees to display moving line from GPS data on Abila map, filtered by day and time period</li>
 </ul>
 <div class="layout-chunk" data-layout="l-body">
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-8"></span>
@@ -2800,28 +2795,38 @@ Figure 3: Dashboard Interface 1
 </p>
 </div>
 </div>
+<ul>
+<li>Heat map and box plot filtered by location, day and time period</li>
+<li>Interative charts with tooltips
 <div class="layout-chunk" data-layout="l-body">
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-9"></span>
 <img src="img/dashboard2.GIF" alt="Dashboard Interface 2"  />
 <p class="caption">
 Figure 4: Dashboard Interface 2
 </p>
+</div></li>
+</ul>
 </div>
-</div>
+<ul>
+<li>Mapping of credit card and loyalty card to employees
 <div class="layout-chunk" data-layout="l-body">
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-10"></span>
 <img src="img/dashboard3.GIF" alt="Dashboard Interface 3"  />
 <p class="caption">
 Figure 5: Dashboard Interface 3
-</p>
+</p></li>
+</ul>
 </div>
 </div>
+<ul>
+<li>Interactive network analysis filtered by employee, location and department
 <div class="layout-chunk" data-layout="l-body">
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-11"></span>
 <img src="img/dashboard4.GIF" alt="Dashboard Interface 4"  />
 <p class="caption">
 Figure 6: Dashboard Interface 4
-</p>
+</p></li>
+</ul>
 </div>
 </div>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
