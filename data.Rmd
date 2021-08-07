@@ -1,0 +1,211 @@
+---
+title: "Data"
+author: "Jovinka Hartanto"
+date: "8/5/2021"
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r install packages and load library, include=FALSE}
+packages = c('raster', 'sf', 'st',
+             'tmap','mapview', 'clock', 
+             'tidyverse','plotly','lubridate', 'ggiraph', 'plotly', 
+             'DT', 'patchwork', 'scales', 'kableExtra', 'fuzzyjoin',
+             'gifski','DT','reshape2',
+             'tidyverse','ggplot2','data.table','ggraph')
+for (p in packages){
+  if(!require(p, character.only = T)){
+    install.packages(p)
+  }
+  library(p,character.only = T)
+  
+}
+
+
+```
+
+
+## R Markdown
+
+```{r GPS Movement}
+gps <- read_csv("datasets/gps.csv")
+stop_fin <- read_csv("datasets/stop_fin.csv")
+
+stop_fin$lat = round(stop_fin$lat,5)
+stop_fin$long = round(stop_fin$long,5)
+
+gps <- gps %>% mutate(timestamp=mdy_hms(Timestamp),id=as_factor(id))
+gps_sf <- st_as_sf(gps, coords=c("long","lat"), crs=4326)
+gps_stop <- gps %>% group_by(id) %>% arrange(timestamp) %>%
+  mutate(start_diff= as.numeric(timestamp - lag(timestamp,default=first(timestamp)))/60,
+         stop_diff= as.numeric(lead(timestamp)-timestamp)/60,
+         date = as.Date(timestamp)) %>% 
+  filter(start_diff>5 | stop_diff >5) %>% 
+  mutate(start_vec=ifelse(start_diff>5,1,0), stop_vec=ifelse(stop_diff>5,1,0))
+
+gps_stop$lat = round(gps_stop$lat,5)
+gps_stop$long = round(gps_stop$long,5)
+
+stop_fin_sf <- st_as_sf(stop_fin, coords=c("long","lat"), crs=4326)%>%select(Possible_Location,geometry)
+
+gps_stop_new <- merge(gps_stop,stop_fin,by.x = c('lat','long'), by.y = c('lat','long'), all.x = TRUE)%>% select(timestamp,id.x,lat,long,start_vec,stop_vec,Possible_Location) %>% unique()
+
+```
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r Locations Transactions data & heatmap}
+cc <- read_csv("datasets/cc_data.csv")
+cc$timestamp <- date_time_parse(cc$timestamp, 
+                                zone = "", 
+                                format = "%m/%d/%Y  %H:%M")
+cc$date <- date(cc$timestamp)
+cc$last4ccnum <- as_factor(cc$last4ccnum)
+cc$hour <- get_hour(cc$timestamp)
+cc$hour <- as.numeric(format(cc$timestamp,"%H"))
+
+cc$weekday <- wday(cc$timestamp)
+cc$dayofmonth <- get_day(cc$timestamp)
+cc$timeperiod <- case_when(
+  cc$hour >= 21 ~ "Night",
+  cc$hour >= 18 ~ "Evening",
+  cc$hour >= 15 ~ "Late afternoon",
+  cc$hour >= 12 ~ "Early afternoon",
+  cc$hour >= 9 ~ "Late morning",
+  cc$hour >= 6 ~ "Early morning",
+  TRUE ~ "Late night"
+)
+
+cc$day = weekdays(cc$timestamp)
+
+cc[grep("Katerina", cc$location),2] <- "Katerina's Cafe"
+
+# Heatmap
+
+cc_cal <- cc %>% count(date, location)
+
+cc_cal_ggplot <- ggplot(complete(cc_cal, date, location), aes(x = date, y = location)) + 
+  geom_tile(aes(fill = n), color = "white") +
+  scale_fill_gradient(low = "pale green", high = "black", na.value = "light grey") +
+  scale_x_date(date_labels = "%a \n %d/%m", 
+               date_breaks = "2 day") +
+  scale_y_discrete(limits = rev) +
+  labs(title = "Location Visit Frequency By Date",
+       fill = "Visit \nCount") +
+  
+  theme_bw() +
+  theme(plot.title = element_text(size=15, face="bold",hjust=0.5),
+        axis.title.x = element_blank(),
+        axis.title.y = element_blank(),
+        panel.border = element_blank(), 
+        panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank()
+)
+
+cc_cal_ggplot
+
+
+```
+
+```{r Locations Transactions boxplot}
+boxplot <- ggplot(cc, aes(x=location, y=price, tooltip=last4ccnum)) +
+  geom_boxplot() + 
+  geom_point(alpha=0) + scale_y_log10() + coord_flip() +
+  scale_x_discrete(limits = rev) +
+  ggtitle("Credit Card Transaction Boxplot") +
+  theme(axis.title=element_blank(),
+        plot.title=element_text(size=15, face="bold", hjust=0.5)) 
+
+
+bpp <- ggplotly(boxplot)
+bpp <- bpp %>% layout(autosize = F, height = 500)
+bpp$x$data[[1]]$hoverinfo <- "none"
+bpp
+
+```
+
+```{r}
+
+## Data manipulation to add more factors
+final_trans_1 <- final_trans %>% ungroup() %>%
+  mutate(day = as.factor(wday(date)),
+         wkday = ifelse(day == "6" | day =="7", "weekend", "weekday"),
+         time_bin = case_when(
+              hour(datetime)>=0 & hour(datetime)<6 ~ "Midnight",
+              hour(datetime)>=6 & hour(datetime)<12 ~ "Morning",
+              hour(datetime)>=12 & hour(datetime) <18 ~ "Afternoon",
+              hour(datetime)>=18 ~ "Night"),
+          time_bin = factor(time_bin, 
+                      levels = c("Midnight", "Morning", "Afternoon", "Night"))
+        )
+
+## Data transformation to plot Bar graph for transaction frequency
+freq<- final_trans_1 %>% 
+  group_by(location, date, time_bin) %>% summarize(co=n())
+freq_location <- ggplot(freq, aes(x=date, y=co, fill=time_bin, 
+  tooltip= paste(co, " transactions at ",location, " on ", date, time_bin))) +
+  geom_col_interactive() + 
+  annotate(geom="rect", xmin=ymd(20140111)-.5, xmax=ymd(20140113)-.5, 
+           ymin=-Inf, ymax=Inf, fill='dark grey' , alpha=0.5) +
+  annotate(geom="rect", xmin=ymd(20140118)-.5, xmax=ymd(20140120)-.5, 
+           ymin=-Inf, ymax=Inf, fill='dark grey' , alpha=0.5) +
+  facet_wrap(~location) +
+  ggtitle("Number of transactions per day by location") +
+  xlab("Date") + ylab("Number of transactions") +
+  labs(fill="Time period") +
+  theme(plot.title=element_text(size=20,face="bold"),
+        axis.title=element_text(size=14,face="bold"),
+        strip.text = element_text(size = 6),
+        axis.text=element_text(size=6),
+        axis.text.x=element_text(angle=45, hjust=1),
+        legend.position="bottom") 
+
+# Find median price per location
+median_price_final <- final_trans_1 %>% 
+           group_by(location) %>% 
+           summarize(med=median(price))
+## Data transformation for boxplot plotting
+final_trans_1 <- final_trans_1 %>% 
+  left_join(median_price_final, by=c("location"))
+
+
+## Plot Interactive Bar chart and Boxplot
+girafe(ggobj=freq_location, width_svg = 7, height_svg = 7)
+
+
+```
+
+```{r credit card and loyalty card mapping}
+loyalty <- read_csv("datasets/loyalty_data.csv")
+loyalty$timestamp <- date_time_parse(loyalty$timestamp,
+                                     zone = "",
+                                     format = "%m/%d/%Y")
+loyalty$weekday <- wday(loyalty$timestamp)
+loyalty$dayofmonth <- get_day(loyalty$timestamp)
+loyalty[grep("Katerina", loyalty$location),2] <- "Katerina's Cafe" 
+
+
+
+cc_loyalty<- merge(cc,loyalty, by.x = c("date","price","location"), by.y = c("timestamp","price","location"), all.x = TRUE)%>% select(-c(weekday.x,dayofmonth.x)) 
+
+cc_loyalty_fin <- na.omit(cc_loyalty)%>%filter(n_distinct(loyaltynum)>1)
+
+
+```
+
+```{r}
+cc_loyalty%>% filter(is.na(loyaltynum))
+```
