@@ -1,0 +1,25 @@
+---
+title: Research Paper
+description: |
+  Research Paper for "TITLE"
+output:
+  distill::distill_article:
+    toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+The link to our full research paper can be found here: 
+
+
+```{r, echo=FALSE, message=FALSE, out.width="100%", out.height="100%", fig.align="center"}
+knitr::include_graphics("img/page1.PNG")
+knitr::include_graphics("img/page2.PNG")
+knitr::include_graphics("img/page3.PNG")
+knitr::include_graphics("img/page4.PNG")
+knitr::include_graphics("img/page5.PNG")
+knitr::include_graphics("img/page6.PNG")
+knitr::include_graphics("img/page7.PNG")
+```

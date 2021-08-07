@@ -126,16 +126,19 @@ knitr::include_graphics("img/dashboard1.gif")
 
 * Heat map and box plot filtered by location, day and time period
 * Interative charts with tooltips
+
 ```{r, fig.align = 'center', fig.cap = 'Dashboard Interface 2', echo=FALSE}
 knitr::include_graphics("img/dashboard2.gif")
 ```
 
 * Mapping of credit card and loyalty card to employees
-```{r, fig.align = 'center', fig.cap = 'Dashboard Interface 3', echo=FALSE}
+
+```{r, fig.align = 'center', out.width="100%", fig.cap = 'Dashboard Interface 3', echo=FALSE}
 knitr::include_graphics("img/dashboard3.gif")
 ```
 
 * Interactive network analysis filtered by employee, location and department
-```{r, fig.align = 'center', fig.cap = 'Dashboard Interface 4', echo=FALSE}
+
+```{r, fig.align = 'center', out.width="100%", fig.cap = 'Dashboard Interface 4', echo=FALSE}
 knitr::include_graphics("img/dashboard4.gif")
 ```
