@@ -109,33 +109,36 @@ The main underlying assumption lies with the mapping of location details on the 
 # 7. Application Design
 
 ## Data Visualisation
-* Cloropleth maps to identify popular location 
-* Geospatial maps to show the maps of Abila
-* Histogram to show frequency of visit to specific locations based off GPS data
-* Parallel plot to show potential informal or unofficial relationships among GASTech personnel
+* Heat map to identify popular locations at various time periods
+* Visualize movement and temporal changes of the GPS tracking data on Abila geospatial map
 * Boxplot for transaction data from credit card and loyalty card
-* Line graph to show speed of the vehicles of the respective employee
-* Visualize movement and temporal changes of the GPS tracking data by creating video animations
+* Network analysis to show potential informal or unofficial relationships among GASTech personnel and locations of visit
 
 ## Application Interface 
 The Shiny App is envisioned to have these functionalities:
 
-* Multiple values (drop down) of employees to display moving line from GPS data on Abila map
-* Allow users to input the top n number of popular and suspicious location
-* Slide bar for time and date inputs for 
+
+* Multiple values (drop down) of employees to display moving line from GPS data on Abila map, filtered by day and time period
 
 ```{r, fig.align = 'center', fig.cap = 'Dashboard Interface 1', echo=FALSE}
 knitr::include_graphics("img/dashboard1.gif")
 ```
 
+* Heat map and box plot filtered by location, day and time period
+* Interative charts with tooltips
+
 ```{r, fig.align = 'center', fig.cap = 'Dashboard Interface 2', echo=FALSE}
 knitr::include_graphics("img/dashboard2.gif")
 ```
 
-```{r, fig.align = 'center', fig.cap = 'Dashboard Interface 3', echo=FALSE}
+* Mapping of credit card and loyalty card to employees
+
+```{r, fig.align = 'center', out.width="100%", fig.cap = 'Dashboard Interface 3', echo=FALSE}
 knitr::include_graphics("img/dashboard3.gif")
 ```
 
-```{r, fig.align = 'center', fig.cap = 'Dashboard Interface 4', echo=FALSE}
+* Interactive network analysis filtered by employee, location and department
+
+```{r, fig.align = 'center', out.width="100%", fig.cap = 'Dashboard Interface 4', echo=FALSE}
 knitr::include_graphics("img/dashboard4.gif")
 ```
