@@ -1,28 +1,10 @@
-cardMappingUI <- function(id) {
-  tagList(
-    titlePanel("Credit Card and Loyalty Card Mapping"),
-    sidebarLayout(
-      sidebarPanel(width=2,
-                   selectInput(NS(id,"last4ccnum"),
-                               "Select CC number",
-                               choices=unique(parcoord$last4ccnum),
-                               multiple=TRUE,selected=4795)
-      ),
-      mainPanel(
-        DT::dataTableOutput(NS(id,"table")),
-        plotlyOutput(NS(id, "parcoord"))
-      )
-    )
-  )
-}
-
 cardMappingServer <- function(id) {
   moduleServer(id, function(input, output, session) {
-    parcoord<-read_csv("datasets/parcoord.csv") %>% select(-X1)
-    card_tag <- read_csv("datasets/card_tag.csv")%>% select(-X1)
-    final_tag<- read_csv("datasets/final_tagging.csv") %>% select(-X1)
+    parcoord<-read_csv("datasets/parcoord.csv") %>% dplyr::select(-X1)
+    card_tag <- read_csv("datasets/card_tag.csv")%>% dplyr::select(-X1)
+    final_tag<- read_csv("datasets/final_tagging.csv") %>% dplyr::select(-X1)
     tag <- left_join(card_tag, final_tag, by=c("last4ccnum")) %>% 
-      select(-id,-name)
+      dplyr::select(-id,-name)
     
     parcoord<-parcoord %>% 
       mutate(location.numeric=as.numeric(factor(location, levels=unique(c(location)))),
@@ -30,7 +12,7 @@ cardMappingServer <- function(id) {
              loyalty.date.numeric=as.numeric(factor(as.character(loyalty.date), levels=unique(c(as.character(parcoord$loyalty.date))))),
              diff=cc.price-loyalty.price
       )
-    output$table <- DT::renderDataTable({
+    output$table_DT <- DT::renderDataTable({
       data=tag %>% filter(last4ccnum %in% input$last4ccnum)
     })
     output$parcoord <- renderPlotly({
@@ -55,4 +37,30 @@ cardMappingServer <- function(id) {
     
     
   })
+}
+cardMappingUI <- function(id) {
+  parcoord<-read_csv("datasets/parcoord.csv") %>% dplyr::select(-X1)
+  
+  tagList(
+    titlePanel(
+      h1("Credit Card and Loyalty Card Mapping",
+         style='background-color:lightgrey',
+         align="center")
+    ),
+    sidebarLayout(
+      sidebarPanel(width=3,
+                   pickerInput(NS(id,"last4ccnum"),
+                               "Select CC number",
+                               choices=unique(parcoord$last4ccnum),
+                               multiple=TRUE,options = list(
+                                 `actions-box` = TRUE),
+                               selected=7108)
+                   ),
+      
+    mainPanel(
+        DT::dataTableOutput(NS(id,"table_DT")),
+        plotlyOutput(NS(id, "parcoord"))
+      )
+  )
+  )
 }

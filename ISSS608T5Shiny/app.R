@@ -1,12 +1,33 @@
-library(shiny)
-library(shinydashboard)
-library(shinythemes)
-library(tidyverse)
-library(visNetwork)
-library(fontawesome)
-library(plotly)
-library(rsconnect)
-library(igraph)
+# library(shiny)
+# library(shinydashboard)
+# library(shinythemes)
+# library(tidyverse)
+# library(visNetwork)
+# library(fontawesome)
+# library(plotly)
+# library(rsconnect)
+# library(igraph)
+# library(tmap)
+# library(sf)
+# library(raster)
+packages = c('tidyverse', 'lubridate', 'MASS','ggplot2', 'plotly', 'geosphere', 
+             'sf','rgeos','raster', 'tmap','visNetwork','igraph','shiny','shinydashboard',
+             'fontawesome','rsconnect','shinyWidgets')
+
+for(p in packages){
+    if(!require(p, character.only=T)){
+        install.packages(p)
+    }
+    library(p, character.only=T)
+}
+
+server <- function(input, output,session){
+    
+    visNetworkServer("vis")
+    cardMappingServer("parcoord")
+    mapServer("map")
+    location_transServer("heatmap")
+}
 
 ui <- dashboardPage(
     skin="blue",
@@ -14,7 +35,7 @@ ui <- dashboardPage(
     dashboardSidebar(
         sidebarMenu(
             menuItem("Overview" ,tabName = "overview", icon = icon("dashboard")),
-            menuItem("Abila Kronos Map" ,tabName = "overview", icon = icon("map-marked-alt")),
+            menuItem("Abila Kronos Map" ,tabName = "map", icon = icon("map-marked-alt")),
             menuItem("Locations Transactions" ,tabName = "LocationTrans", icon = icon("money-bill-wave")),
             menuItem("Card Mapping" ,tabName = "card_mapping", icon = icon("credit-card")),
             menuItem("Network Analysis" ,tabName = "network", icon = icon("network-wired"))
@@ -24,9 +45,21 @@ ui <- dashboardPage(
     dashboardBody(
         tabItems(
             tabItem(
+                tabName="overview",
+                fluidPage(
+                    overviewUI()
+                )
+            ),
+            tabItem(
+                tabName="map",
+                fluidPage(
+                    mapUI("map")
+                )
+            ),
+            tabItem(
                 tabName="LocationTrans",
                 fluidPage(
-                    location_transUI("a")
+                    location_transUI("heatmap")
                 )
             ),
             tabItem(
@@ -45,15 +78,4 @@ ui <- dashboardPage(
     )
 )
 
-
-# Define server logic required to draw a histogram
-server <- function(input, output,session){
-    
-    visNetworkServer("vis")
-    cardMappingServer("parcoord")
-    # location_transServer("a")
-}
-
-
-# Run the application 
 shinyApp(ui = ui, server = server)

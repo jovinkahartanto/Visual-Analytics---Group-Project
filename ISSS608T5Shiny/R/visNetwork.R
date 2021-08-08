@@ -1,7 +1,11 @@
 # Network UI
 visNetworkUI <- function(id) {
   tagList(
-    titlePanel("Network Analysis"),
+    titlePanel(
+      h1("Network Analysis by Location and Employee",
+         style='background-color:lightgrey',
+         align="center")
+      ),
     visNetworkOutput(NS(id, "vis"))
   )
 }
