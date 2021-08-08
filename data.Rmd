@@ -33,7 +33,7 @@ for (p in packages){
 
 ```{r GPS Movement}
 gps <- read_csv("datasets/gps.csv")
-stop_fin <- read_csv("datasets/stop_fin.csv")
+stop_fin <- read_csv("datasets/stop_fin.csv")%>%select(long,lat,Possible_Location)
 
 stop_fin$lat = round(stop_fin$lat,5)
 stop_fin$long = round(stop_fin$long,5)
@@ -50,23 +50,12 @@ gps_stop <- gps %>% group_by(id) %>% arrange(timestamp) %>%
 gps_stop$lat = round(gps_stop$lat,5)
 gps_stop$long = round(gps_stop$long,5)
 
-stop_fin_sf <- st_as_sf(stop_fin, coords=c("long","lat"), crs=4326)%>%select(Possible_Location,geometry)
+gps_stop_new <- merge(gps_stop,stop_fin,by.x = c('lat','long'), by.y = c('lat','long'), all.x = TRUE)%>% unique()
 
-gps_stop_new <- merge(gps_stop,stop_fin,by.x = c('lat','long'), by.y = c('lat','long'), all.x = TRUE)%>% select(timestamp,id.x,lat,long,start_vec,stop_vec,Possible_Location) %>% unique()
-
-```
-```{r}
+gps_stop_new_sf <- st_as_sf(gps_stop_new, coords=c("long","lat"), crs=4326)
+colnames(gps_stop_new_sf)[2] = 'id'
 
 ```
-
-```{r}
-
-```
-
-```{r}
-
-```
-
 ```{r Locations Transactions data & heatmap}
 cc <- read_csv("datasets/cc_data.csv")
 cc$timestamp <- date_time_parse(cc$timestamp, 
@@ -137,7 +126,251 @@ bpp
 
 ```
 
-```{r}
+```{r credit card and loyalty card mapping - card tag}
+
+cc$date <- date(cc$date)
+
+loyalty <- read_csv("datasets/loyalty_data.csv")
+loyalty$timestamp <- date_time_parse(loyalty$timestamp,
+                                     zone = "",
+                                     format = "%m/%d/%Y")
+loyalty$date <- date(loyalty$timestamp)
+loyalty$weekday <- wday(loyalty$timestamp)
+loyalty$dayofmonth <- get_day(loyalty$timestamp)
+loyalty[grep("Katerina", loyalty$location),2] <- "Katerina's Cafe" 
+
+cc_loyalty<- merge(cc,loyalty, by.x = c("date","price","location"), by.y = c("date","price","location"), all.x = TRUE)%>% select(-c(weekday.x,dayofmonth.x)) 
+
+card_tag <- cc_loyalty%>%na.omit() %>%
+  group_by(last4ccnum, loyaltynum )%>%
+  summarize(count_d = n()) %>%
+  filter(count_d > 1)%>%filter(!(last4ccnum == 1286 & loyaltynum =="L3288")) %>%
+  select(-(count_d))
+
+```
+
+```{r credit card and loyalty card mapping - final cc loyalty}
+
+cc$price <- as.double(cc$price)
+
+non_match_cc <- anti_join(cc, na.omit(cc_loyalty))%>% merge(card_tag, by = 'last4ccnum', all.x = TRUE)
+non_match_loyalty <- anti_join(loyalty, na.omit(cc_loyalty))
+
+non_match_trans <- left_join(non_match_cc, 
+                             non_match_loyalty, 
+                             by=c("location", "date", "loyaltynum" )) %>% 
+  na.omit() %>% 
+  mutate(diff=price.x-price.y) %>% 
+  filter(diff>=0)
+
+match_cc <- left_join((left_join(cc, card_tag)), 
+                      loyalty, by=c("location","date","price")) %>% 
+  na.omit() %>% 
+  group_by(last4ccnum, loyaltynum.y) %>% filter(n()>1) %>%
+  dplyr::select(-(timestamp.y)) %>%
+  rename(timestamp = timestamp.x, 
+         loyaltynum_owner = loyaltynum.x, 
+         loyaltynum_trans = loyaltynum.y) %>%
+  mutate(trans_match = 1)
+
+match_cc_dis <- anti_join(cc, match_cc, by=c("date","location","price")) %>% 
+  left_join((non_match_trans %>% filter(diff %in% c(20, 40, 60, 80))), 
+            by=c("location", "last4ccnum","date","price"="price.x"))%>% 
+  na.omit() %>% select(-timestamp.x, -timestamp.y,-day.y,-timeperiod.y,-weekday.y)%>%
+  rename(loyaltynum_trans = loyaltynum, 
+         price_loyalty = price.y) %>%
+  mutate(trans_match = 1)
+ 
+no_loyalty_trans <- anti_join(cc, match_cc, by=c("date","location","price")) %>%
+  anti_join(match_cc_dis, by=c("date","location","price")) %>%
+  mutate(trans_match = 0)
+
+## Tagging all information on transactions from cc and loyalty to final_trans
+final_trans <- bind_rows(match_cc, match_cc_dis, no_loyalty_trans)
+
+```
+```{r gps points}
+gps_stop <- st_as_sf(gps_stop, coords=c("long","lat"), crs=4326)
+
+first_gps <- gps_stop %>% 
+  group_by(id) %>% 
+  filter(row_number()==1) %>% 
+  ungroup(id)
+
+gps_pts <- gps_stop%>%ungroup(id)%>%
+  add_row(first_gps) %>% group_by(id)%>% arrange(timestamp) %>%
+  filter(!(start_vec==1 & stop_vec==1)) %>%
+  group_by(id) %>% arrange(timestamp) %>%
+  mutate( start.time = ifelse(start_vec== 0 & stop_vec==0, timestamp, NA),
+          start.time = ifelse(start_vec==1, timestamp,NA),
+          end.time=ifelse(stop_vec==1, timestamp, NA),
+          start.gps = ifelse(start_vec==0 & stop_vec==0, geometry,NA),
+          start.gps = ifelse(start_vec==1, geometry,NA),
+          end.gps=ifelse(stop_vec==1, geometry,NA),
+          end.time = ifelse(start_vec==1, lead(end.time), end.time),
+          end.gps = ifelse(start_vec==1, lead(end.gps), end.gps))%>%
+  filter(!is.na(start.time))%>%
+  mutate(end.gps = ifelse(end.gps=='NULL',start.gps,end.gps),
+         end.time = ifelse(is.na(end.time),start.time, end.time),
+         start.time= as_datetime(start.time),
+         end.time=as_datetime(end.time),
+         next.start.time=lead(start.time),
+         driving.time=round(difftime(end.time,start.time,units='mins'),2))%>%
+  dplyr::select(id, date, start.time, end.time, start.gps, end.gps, 
+                next.start.time, driving.time)%>%
+  mutate(start.gps=purrr::map(start.gps, st_point) %>% st_as_sfc(crs=4326))%>%
+  mutate(end.gps=purrr::map(end.gps, st_point) %>% st_as_sfc(crs=4326)) 
+
+```
+
+```{r final tagging DIFFERENT RESULTS}
+location_tag1 <- gps_stop_new_sf%>%select(Possible_Location,geometry)%>%na.omit()%>% unique()
+location_tag <- location_tag1 %>%
+  group_by(Possible_Location) %>%
+  summarize(do_union = FALSE ) %>%
+  st_cast("LINESTRING")
+
+final_trans_gps <-merge(final_trans, location_tag_ref, by.y=c("location"), by.x = "location") %>%
+  rename(loc.coord=geometry)
+
+gps_match <- final_trans_gps %>% 
+  left_join(gps_pts , by=c("date"))%>% 
+  group_by(last4ccnum) %>% arrange(timestamp)%>%
+  filter(timestamp > end.time & timestamp <= next.start.time + minutes(30)) %>%
+  mutate(diff.dist = st_distance(loc.coord, end.gps, by_element=TRUE),
+         diff.dist = as.numeric(diff.dist)) %>%
+  filter(diff.dist <500)
+```
+
+```{r tagging error}
+tagging <-gps_match %>%group_by(last4ccnum, id)%>%
+  summarize(tag=n()) %>% arrange(desc(tag))
+
+## Get total count of transactions minus the 4 locations per cc num
+trans_collapse <- cc %>% mutate(last4ccnum=as_factor(last4ccnum)) %>% 
+  filter(!(location %in% c("Bean There Done That",
+                           "Brewed Awakenings",
+                           "Coffee Shack",
+                           "Jack's Magical Beans"))) %>%
+  group_by(last4ccnum) %>% summarize(total=n())
+## Limit to top 3 match only by percentage
+tagging_cc_gps <- left_join(tagging, trans_collapse, by=c("last4ccnum")) %>%
+  mutate(percent=round(tag/total*100,2))
+
+```
+
+```{r cc nodes}
+final_tagging <- read_csv("datasets/final_tagging.csv")%>% select(-1)
+final_tagging$last4ccnum <- as.factor(final_tagging$last4ccnum)
+
+cc_data <- cc %>% mutate(day=lubridate::day(timestamp), hour=lubridate::hour(timestamp))
+sources <- cc_data %>% mutate(hour=lubridate::hour(timestamp)) %>% 
+  distinct(last4ccnum) %>% left_join(final_tagging, by=c("last4ccnum")) %>% 
+  mutate(name=paste(LastName,FirstName)) %>% 
+  rename(label = name) %>% drop_na(id) %>%
+  mutate(CurrentEmploymentType=ifelse(is.na(CurrentEmploymentType),"Driver",CurrentEmploymentType))
+destinations <- cc_data  %>% 
+  distinct(location) %>%
+  rename(label = location)
+cc_nodes <- full_join(sources, 
+                      destinations, 
+                      by = "label") %>% rename(car_id=id)
+cc_nodes <- cc_nodes %>% 
+  rowid_to_column("id") %>%
+  mutate(CurrentEmploymentType=ifelse(is.na(CurrentEmploymentType),
+                                      "Locations",CurrentEmploymentType),
+         title=label) %>% 
+  rename(group=CurrentEmploymentType)
+
+```
+```{r cc edges}
+edges <- cc_data %>% 
+  mutate(last4ccnum = as.character(last4ccnum)) %>%  
+  filter(last4ccnum %in% final_tagging$last4ccnum) %>% 
+  group_by(last4ccnum, location, day, hour) %>%
+  summarise(weight = n()) %>% 
+  ungroup()
+cc_edges <- edges %>% 
+  inner_join(cc_nodes,by = c("last4ccnum")) %>% 
+  rename(from = id)
+cc_edges <- cc_edges %>% 
+  inner_join(cc_nodes,by = c("location" = "label")) %>% 
+  rename(to = id) %>% 
+  dplyr::select(from, to,day, hour, weight) %>% 
+  mutate(time_bin = case_when(hour>=0&hour<6~"Late Night",
+                              hour>=6&hour<9~"Early Morning",
+                              hour>=9&hour<12~"Late Morning",
+                              hour>=12&hour<15~"Early Afternoon",
+                              hour>=15&hour<18~"Late Afternoon",
+                              hour>=18&hour<21~"Evening",
+                              hour>=21~"Night"),
+         weekday.weekend = ifelse(day %in% c(11,12,18,19),"Weekend","Weekday"),
+         day.week = case_when(day==6|day==13~"Monday",
+                              day==7|day==14~"Tuesday",
+                              day==8|day==15~"Wednesday",
+                              day==9|day==16~"Thursday",
+                              day==10|day==17~"Friday",
+                              day==11|day==18~"Saturday",
+                              day==12|day==19~"Sunday",))
+
+```
+
+```{r test 2}
+loyalty$date <- loyalty$timestamp
+
+k= left_join(cc, card_tag)
+k$price <-  as.double(k$price)
+
+cc$price <- as.double(cc$price)
+non_match_cc <- anti_join(cc, (trans %>% na.omit())) %>% left_join(card_tag)
+## Non matching loyalty card and cc transaction
+non_match_loy <- anti_join(loyalty, (trans%>%na.omit()))
+## All non matching transaction
+non_match_trans <- left_join(non_match_cc, 
+                             non_match_loy, 
+                             by=c("location", "date", "loyaltynum" )) %>% 
+  na.omit() %>% 
+  mutate(diff=price.x-price.y) %>% 
+  filter(diff>=0)
+
+match_cc <- left_join(k, 
+                      loyalty, by=c("location","date","price")) %>% 
+  na.omit() %>% 
+  group_by(last4ccnum, loyaltynum.y) %>% filter(n()>1) %>%
+  dplyr::select(-(timestamp.y)) %>%
+  rename(timestamp = timestamp.x, 
+         loyaltynum_owner = loyaltynum.x, 
+         loyaltynum_trans = loyaltynum.y) %>%
+  mutate(trans_match = 1)
+
+s = anti_join(cc, match_cc, by=c("date","location","price"))
+
+## Transactions match with difference in 20 dollars denomination
+match_cc_dis <- anti_join(cc, match_cc, by=c("date","location","price")) %>% 
+  left_join((non_match_trans %>% filter(diff %in% c(20, 40, 60, 80))), 
+            by=c("location", "last4ccnum","date","price"="price.x")) %>% 
+  na.omit() %>%
+  dplyr::select(-timestamp.x, -datetime.y, -timestamp.y) %>%
+  rename(datetime = datetime.x, 
+         loyaltynum_trans = loyaltynum, 
+         price_loy = price.y) %>%
+  mutate(trans_match = 1)
+
+## Transactions with cc transactions but not match to loyalty card
+no_loy_trans <- anti_join(cc, match_cc, by=c("date","location","price")) %>%
+  anti_join(match_cc_dis, by=c("date","location","price")) %>%
+  mutate(trans_match = 0)
+
+## Tagging all information on transactions from cc and loyalty to final_trans
+final_trans <- bind_rows(match_cc, match_cc_dis, no_loy_trans)
+
+## Determine median price per location
+median_price <- no_loy_trans %>% 
+           group_by(location) %>% 
+           summarize(med=median(price))
+## Data transformation for boxplot plotting
+no_loy_trans_1 <- no_loy_trans %>% 
+  left_join(median_price, by=c("location"))
 
 ## Data manipulation to add more factors
 final_trans_1 <- final_trans %>% ungroup() %>%
@@ -188,24 +421,142 @@ girafe(ggobj=freq_location, width_svg = 7, height_svg = 7)
 
 ```
 
-```{r credit card and loyalty card mapping}
-loyalty <- read_csv("datasets/loyalty_data.csv")
-loyalty$timestamp <- date_time_parse(loyalty$timestamp,
-                                     zone = "",
-                                     format = "%m/%d/%Y")
-loyalty$weekday <- wday(loyalty$timestamp)
-loyalty$dayofmonth <- get_day(loyalty$timestamp)
-loyalty[grep("Katerina", loyalty$location),2] <- "Katerina's Cafe" 
 
+```{r location_tag_ref}
+locations <- data.frame(location = cc$location) %>% 
+  group_by(location) %>% summarize(number_transactions=n())
+knitr::kable(locations %>% 
+      dplyr::filter(location == "Abila Zacharo" |
+                    location == "Brewed Awakenings" |
+                    location == "Daily Dealz" |
+                    location == "Hippokampos" |
+                    location == "Kalami Kafenion" |
+                    location == "Kronos Pipe and Irrigation" |
+                    location == "Octavio's Office Supplies" |
+                    location == "Shoppers' Delight" |
+                    location == "Stewart and Sons Fabrication") %>%
+      arrange(desc(number_transactions)), "simple",
+      caption="Table of location with no traceable coordinates") 
 
+location_tag_ref <- data.frame(location = c(locations$location,"GAStech"),
+ long =c(centroid(rbind(c(24.82590612, 36.05102229),c(24.82591819, 36.05092013),c(24.82598413, 36.05097547)))[1],
+         centroid(rbind(c(24.84592966, 36.07443715),c(24.84598782, 36.07434876),c(24.84595026, 36.07437836)))[1],
+         centroid(rbind(c(24.85097804, 36.06349268),c(24.85099445, 36.06342076),c(24.85103178, 36.06348173)))[1],
+         centroid(rbind(c(24.87617634, 36.07713037),c(24.87621582, 36.07713598),c(24.87619872, 36.07715385)))[1],
+         centroid(rbind(c(24.85626503, 36.07529323),c(24.85631411, 36.07523202),c(24.85634841, 36.07528136)))[1],
+         centroid(rbind(c(24.85089145, 36.08172086),c(24.85096025, 36.08176242),c(24.85087799, 36.08180554)))[1],
+         centroid(rbind(c(24.90119998, 36.05402165),c(24.90128202, 36.05408823),c(24.90116585, 36.05411015)))[1],
+         NA,
+         centroid(rbind(c(24.88089399, 36.05851786),c(24.88092086, 36.05858619),c(24.8808655, 36.05856303)))[1],
+         centroid(rbind(c(24.8951996, 36.07073983),c(24.89517891, 36.07062423),c(24.89526281, 36.07069274)))[1],                         
+         centroid(rbind(c(24.88983886, 36.05469486),c(24.88978433, 36.05463184),c(24.88977321, 36.05467589)))[1],
+         centroid(rbind(c(24.86416839, 36.07332041),c(24.86417651, 36.07336116),c(24.86419582, 36.07332868)))[1],
+         NA,
+         centroid(rbind(c(24.86068835, 36.08962196),c(24.86068191, 36.08954231),c(24.8607611, 36.08960361)))[1],
+         centroid(rbind(c(24.84132949, 36.07213193),c(24.84134818, 36.07212045),c(24.4134819, 36.07212044)))[1],
+         centroid(rbind(c(24.905573, 36.06044638),c(24.90561679, 36.06033304),c(24.90568587, 36.06040053)))[1],
+         centroid(rbind(c(24.85804364, 36.05970763),c(24.8580772, 36.05975308),c(24.8579808, 36.05976284)))[1],
+         centroid(rbind(c(24.85804364, 36.05970763),c(24.8580772, 36.05975308),c(24.8579808, 36.05976284)))[1],
+         centroid(rbind(c(24.90096913, 36.05842562),c(24.90107066, 36.05844726),c(24.90097455, 36.05850897)))[1],
+         centroid(rbind(c(24.88586605, 36.063639),c(24.88595361, 36.06364584),c(24.88586737, 36.06371539)))[1],
+         centroid(rbind(c(24.85756422, 36.07660977),c(24.85763811, 36.07664766),c(24.857573, 36.07669909)))[1],
+         centroid(rbind(c(24.87330651, 36.06751231),c(24.87335583, 36.06750587),c(24.87333867, 36.06755141)))[1],                    
+         centroid(rbind(c(24.85237319, 36.06582037),c(24.85241027, 36.06582475),c(24.85237372, 36.06584816)))[1],
+         centroid(rbind(c(24.89986767, 36.05442391),c(24.89996154, 36.05448329),c(24.89987365, 36.05453273)))[1],
+         centroid(rbind(c(24.84983351, 36.06587998),c(24.84983936, 36.06582196),c(24.8497762, 36.06583535)))[1],
+         NA,
+         centroid(rbind(c(24.88551872, 36.05840982),c(24.88542068, 36.0584603),  c(24.88553455, 36.05844325)))[1],
+         centroid(rbind(c(24.83307421, 36.0653098),c(24.83314028, 36.06523446),  c(24.84143955, 36.06403449),c(24.84141463, 36.06410072)))[1],
+         NA,
+         centroid(rbind(c(24.87077341, 36.05196196),c(24.87081903, 36.05192066),c(24.87083665, 36.05197804)))[1],
+         centroid(rbind(c(24.85227441, 36.06324941),c(24.85226894, 36.06330479),c(24.8523291, 36.0632684)))[1],
+         NA,NA,
+         centroid(rbind(c(24.87148791, 36.06774029),c(24.8714995, 36.06774623),c(24.87149104, 36.06776587)))[1],
+         centroid(rbind(c(24.87956897, 36.04802112),c(24.8795714, 36.04804908),  c(24.8795745, 36.0480309)))[1]),
+ lat = c(centroid(rbind(c(24.82590612, 36.05102229),c(24.82591819, 36.05092013),c(24.82598413, 36.05097547)))[2],
+         centroid(rbind(c(24.84592966, 36.07443715),c(24.84598782, 36.07434876),c(24.84595026, 36.07437836)))[2],
+         centroid(rbind(c(24.85097804, 36.06349268),c(24.85099445, 36.06342076),c(24.85103178, 36.06348173)))[2],
+         centroid(rbind(c(24.87617634, 36.07713037),c(24.87621582, 36.07713598),c(24.87619872, 36.07715385)))[2],
+         centroid(rbind(c(24.85626503, 36.07529323),c(24.85631411, 36.07523202),c(24.85634841, 36.07528136)))[2],
+         centroid(rbind(c(24.85089145, 36.08172086),c(24.85096025, 36.08176242),c(24.85087799, 36.08180554)))[2],
+         centroid(rbind(c(24.90119998, 36.05402165),c(24.90128202, 36.05408823),c(24.90116585, 36.05411015)))[2],
+         NA,
+         centroid(rbind(c(24.88089399, 36.05851786),c(24.88092086, 36.05858619),c(24.8808655, 36.05856303)))[2],
+         centroid(rbind(c(24.8951996, 36.07073983),c(24.89517891, 36.07062423),c(24.89526281, 36.07069274)))[2],
+         centroid(rbind(c(24.88983886, 36.05469486),c(24.88978433, 36.05463184),c(24.88977321, 36.05467589)))[2],
+         centroid(rbind(c(24.86416839, 36.07332041),c(24.86417651, 36.07336116),c(24.86419582, 36.07332868)))[2],
+         NA,
+         centroid(rbind(c(24.86068835, 36.08962196),c(24.86068191, 36.08954231),c(24.8607611, 36.08960361)))[2],
+         centroid(rbind(c(24.84132949, 36.07213193),c(24.84134818, 36.07212045),c(24.4134819, 36.07212044)))[2],
+         centroid(rbind(c(24.905573, 36.06044638),c(24.90561679, 36.06033304),c(24.90568587, 36.06040053)))[2],
+         centroid(rbind(c(24.85804364, 36.05970763),c(24.8580772, 36.05975308),c(24.8579808, 36.05976284)))[2],
+         centroid(rbind(c(24.85804364, 36.05970763),c(24.8580772, 36.05975308),c(24.8579808, 36.05976284)))[2],
+         centroid(rbind(c(24.90096913, 36.05842562),c(24.90107066, 36.05844726),c(24.90097455, 36.05850897)))[2],
+         centroid(rbind(c(24.88586605, 36.063639),c(24.88595361, 36.06364584),c(24.88586737, 36.06371539)))[2],
+         centroid(rbind(c(24.85756422, 36.07660977),c(24.85763811, 36.07664766),c(24.857573, 36.07669909)))[2],
+         centroid(rbind(c(24.87330651, 36.06751231),c(24.87335583, 36.06750587),c(24.87333867, 36.06755141)))[2],
+         centroid(rbind(c(24.85237319, 36.06582037),  c(24.85241027, 36.06582475),c(24.85237372, 36.06584816)))[2],
+         centroid(rbind(c(24.89986767, 36.05442391),c(24.89996154, 36.05448329),  c(24.89987365, 36.05453273)))[2],
+         centroid(rbind(c(24.84983351, 36.06587998),c(24.84983936, 36.06582196),c(24.8497762, 36.06583535)))[2],
+          NA,
+         centroid(rbind(c(24.83307421, 36.0653098),c(24.83314028, 36.06523446),  c(24.84143955, 36.06403449),c(24.84141463, 36.06410072)))[1],
+         centroid(rbind(c(24.88551872, 36.05840982),c(24.88542068, 36.0584603),  c(24.88553455, 36.05844325)))[2],
+          NA,
+         centroid(rbind(c(24.87077341, 36.05196196),c(24.87081903, 36.05192066),c(24.87083665, 36.05197804)))[2],
+         centroid(rbind(c(24.85227441, 36.06324941),c(24.85226894, 36.06330479),c(24.8523291, 36.0632684)))[2],
+         NA,NA,
+         centroid(rbind(c(24.87148791, 36.06774029),c(24.8714995, 36.06774623),c(24.87149104, 36.06776587)))[2],
+         centroid(rbind(c(24.87956897, 36.04802112),c(24.8795714, 36.04804908),  c(24.8795745, 36.0480309)))[2]))
 
-cc_loyalty<- merge(cc,loyalty, by.x = c("date","price","location"), by.y = c("timestamp","price","location"), all.x = TRUE)%>% select(-c(weekday.x,dayofmonth.x)) 
+location_tag_ref <- location_tag_ref %>% na.omit()
+location_tag_ref <- st_as_sf(location_tag_ref, coords=c("long","lat"), crs=4326)
 
-cc_loyalty_fin <- na.omit(cc_loyalty)%>%filter(n_distinct(loyaltynum)>1)
+final_trans_1 <- final_trans
 
+final_trans_gps <- inner_join(final_trans_1, location_tag_ref, by=c("location")) 
+
+## Join with car GPS and tag the location to car gps
+gps_match <- final_trans_gps %>% 
+  left_join(gps_pts , by=c("date"))%>% 
+  group_by(last4ccnum) %>% arrange(timestamp) %>%
+  filter(timestamp > end.time & timestamp <= next.start.time + minutes(30)) %>%
+  mutate(diff.dist = st_distance(loc.coord, end.gps, by_element=TRUE),
+         diff.dist = as.numeric(diff.dist)) %>%
+  filter(diff.dist <500)
+tagging <-gps_match %>%group_by(last4ccnum, id)%>%
+  summarize(tag=n()) %>% arrange(desc(tag))
 
 ```
-
 ```{r}
-cc_loyalty%>% filter(is.na(loyaltynum))
+colnames(gps_stop_new)[2] = 'id' 
+first_gps <- gps_stop%>% 
+  group_by(id) %>% 
+  filter(row_number()==1) %>% 
+  ungroup(id)
+
+gps_pts <- gps_stop_new %>% ungroup(id) %>%
+  add_row(first_gps) %>% group_by(id) %>% arrange(timestamp) %>%
+  filter(!(start_vec==1 & stop_vec==1)) %>%
+  group_by(id) %>% arrange(timestamp) %>%
+  mutate( start.time = ifelse(start_vec== 0 & stop_vec==0, timestamp, NA),
+          start.time = ifelse(start_vec==1, timestamp,NA),
+          end.time=ifelse(stop_vec==1, timestamp, NA),
+          start.gps = ifelse(start_vec==0 & stop_vec==0, geometry,NA),
+          start.gps = ifelse(start_vec==1, geometry,NA),
+          end.gps=ifelse(stop_vec==1, geometry,NA),
+          end.time = ifelse(start_vec==1, lead(end.time), end.time),
+          end.gps = ifelse(start_vec==1, lead(end.gps), end.gps)) %>%
+  filter(!is.na(start.time))%>%
+  mutate(end.gps = ifelse(end.gps=='NULL',start.gps,end.gps),
+         end.time = ifelse(is.na(end.time),start.time, end.time),
+         start.time= as_datetime(start.time),
+         end.time=as_datetime(end.time),
+         next.start.time=lead(start.time),
+         driving.time=round(difftime(end.time,start.time,units='mins'),2)) %>%
+  dplyr::select(id, date, start.time, end.time, start.gps, end.gps, 
+                next.start.time, driving.time) %>%
+  mutate(start.gps=purrr::map(start.gps, st_point) %>% st_as_sfc(crs=4326))%>%
+  mutate(end.gps=purrr::map(end.gps, st_point) %>% st_as_sfc(crs=4326)) 
+car$CarID <- as_factor(car$CarID)
+gps_pts <- left_join(gps_pts, car, by=c("id"="CarID"))
 ```
