@@ -29,12 +29,20 @@ The dataset was wrangled to develop a Shiny app that aims to provide users actio
 * Visualisation of employee movements over time and associated purchase transactions
 * Network analysis of employees based on their visited locations
 
-This paper details our efforts to design, create and implement a web-based analytics tool to assist users from the law enforcement to derive insights and accelerate the investigation process of the disappearance of GAStech employees. The paper consists of six sections. Section 1 presents a general introduction of the paper. Section 2  provides an overview of the motivation and objectives of our project. Section 3 provides a review of techniques used in Vast Challenge 2014 and similar spatiotemporal visualisations. This is followed by a detailed description of the design principles used and data visualisation elements built, and a demonstration of the user interface in section 4 and 5. Insights and uses of the system are documented in section 5. Finally, the paper finishes by highlighting how the system can be extended or refined in the future.
+This paper details our efforts to design, create and implement a web-based analytics tool to assist users from the law enforcement to derive insights and accelerate the investigation process of the disappearance of GAStech employees. The paper consists of six sections. Section 1 presents a general introduction of the paper. Section 2  provides an overview of the motivation and objectives of our project. Section 3 provides a review of techniques used in Vast Challenge 2014 and similar spatiotemporal visualisations. This is followed by a detailed description of the design principles used and data visualisation elements built, and a demonstration of the user interface in section 4 and 5. Insights and uses of the system are documented in section 5. Finally, the paper concludes by highlighting how the system can be extended or refined in the future.
 
 
 # Motivation and objectives 
 
+Our research and development effort were motivated by the general lack of effective and easy to use web-enabled data visualisation tool to conduct data analysis on the GAStech employees related dataset. The project aims to enable Kronos law enforcement the ability to easily analyse, drill down and identify key suspects and suspicious locations, and thereby speeding up the investigation process. 
 
+The use cases of the data visualisation tool include but are not limited to the following:
+
+* The most popular locations and when they are popular
+* Infer the owner of each credit card and loyalty card
+* Identify potential informal or unofficial relationships among GASTech personnel
+* Analyze unusual and suspicious activities of the employees 
+* Analyze daily routines of GasTech employees
 
 # Review and critic of past works 
 
