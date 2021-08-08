@@ -1,7 +1,7 @@
 ---
-title: "About this blog"
-description: |
-  Some additional details about the blog
+title: "Vast Challenge 2021 Mini-Challenge 2 - with R"
+author:
+  - name: Chen Yuxi, Jovinka Hartanto, Lim Yong Kai
 ---
 
 ```{r setup, include=FALSE}

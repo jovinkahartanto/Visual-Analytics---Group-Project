@@ -2,13 +2,13 @@
 title: Saptiotemporal Analysis of Gastech Employees' Movement Data
 author:
   - name: Chen Yuxi
-    email: yuxi.chen.2020@mitb.smu.edu.sg
+    email: 'yuxi.chen.2020@mitb.smu.edu.sg'
     affiliation: Singapore Management University
   - name: Lim Yong Kai
-    email: yongkai.lim.2020@mitb.smu.edu.sg
+    email: 'yongkai.lim.2020@mitb.smu.edu.sg'
     affiliation: Singapore Management University
   - name: Jovinka Hartanto
-    email: jovinkah.2020@mitb.smu.edu.sg
+    email: 'jovinkah.2020@mitb.smu.edu.sg'
     affiliation: Singapore Management University
 abstract: |
   The research paper should include an abstract of not more than 300 words. The actual research paper itself should not more than 6 pages excluding figures, tables, formula and references. The practice research paper must be edited by using R Markdown and the ACM: Association for Computing Machinery template of rticles should be used. 
@@ -23,13 +23,11 @@ output: rticles::acm_article
 # Introduction 
 The VAST 2021 Mini Challenge 2 outlines a hypothetical scenario in which several GAStech employees have gone missing and the organisation, Protectors of Kronos (POK), is suspected of being involved. The dataset includes two weeks of GPS tracking data for company cars assigned to employees, credit and loyalty card transactions of employees before the disappearance. ESRI shapefiles for the city of Abila & country Kronos are also provided. The challenge requires identification of suspicious activities hidden in data and determine any dubious people and locations that should be reported to the police.
 
-The dataset is wrangled to develop a Shiny app that aims to provide users actionable insights based on the following analyses:
-
+The dataset was wrangled to develop a Shiny app that aims to provide users actionable insights based on the following analyses:
 * Exploratory Data Analysis (EDA) of GPS tracking data and credit and loyalty card transaction patterns
 * Visualisation of employee movements over time and associated purchase transactions
 * Network analysis of employees based on their visited locations
-
-
+For reference: ***This paper reports on our research and development effort to design and implement a web-enabled client-based geovisual analytics tool for supporting the analysis and visualisation needs of urban and transport planning professional. It consists of six sections. Section 1 provides a general introduction of the paper. This is followed by an overview of the motivation and objectives of our research effort. Section 3 provides a review of analytical mapping techniques for visualising and analysing point data. The hexagon binning mapping technique used to design DIVID is also discussed in this section. The interface design and software selection of DIVID are discussed in section 4 and 5 respectively. In next section, the practical use of the DIVID is demonstrated using a set of taxi movement data. This includes the data preparation and cleaning process. Lastly, the paper concludes by highlighting the future direction of the research. ***
 
 
 # Motivation and objectives 
@@ -96,4 +94,5 @@ references:
     year: 2012
     month: 3
 ...
+
 
