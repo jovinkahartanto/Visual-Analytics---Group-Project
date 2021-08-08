@@ -10,11 +10,34 @@ location_transUI <- function(id) {
     ),
     sidebarLayout(
       sidebarPanel(width=3,
-        selectInput("location","Select by Location",choices = unique(cc$location)),
-        selectInput("employee","Select by Employee",choices = unique(final_tagging$name)),
-        dateRangeInput("date","Select by Date", start="2014-01-06",end="2014-01-19"),
-        selectInput("time_period","Select by Time Period:", choices=unique(cc$timeperiod),selected="Early morning"),
-        selectInput("deptartment","Selec by Department", choices=unique(final_tagging$CurrentEmploymentType))
+                   pickerInput(NS(id,"location"),
+                                "Select by Location",
+                                choices=unique(cc$location),
+                                multiple=TRUE,options = list(
+                                  `actions-box` = TRUE),
+                                selected=unique(cc$location)[1:34]),
+                   pickerInput(NS(id,"employee"),
+                               "Select by Employee",
+                               choices=unique(final_tagging$name),
+                               multiple=TRUE,options = list(
+                                 `actions-box` = TRUE),
+                               selected=unique(final_tagging$name)[1:34]),
+                   dateRangeInput(NS(id,"date"),"Select by Date", 
+                                  start="2014-01-06", end="2014-01-19",
+                                  min="2014-01-06", max="2014-01-19"),
+                   pickerInput(NS(id,"time_period"),
+                               "Select by Time Period",
+                               choices=unique(cc$timeperiod),
+                               multiple=TRUE,options = list(
+                                 `actions-box` = TRUE),
+                               selected=unique(cc$timeperiod)[1:7]),
+                   pickerInput(NS(id,"department"),
+                               "Select by Department",
+                               choices=unique(final_tagging$CurrentEmploymentType),
+                               multiple=TRUE,options = list(
+                                 `actions-box` = TRUE),
+                               selected=unique(final_tagging$CurrentEmploymentType)[1:5]),
+                   actionButton(NS(id,"submit"),"Submit")
       ),
       mainPanel(
         tabsetPanel(
@@ -27,17 +50,42 @@ location_transUI <- function(id) {
         )
       )
     )
-    #visNetworkOutput(NS(id, "vis"))
   )
 }
 
 location_transServer <- function(id) {
   moduleServer(id, function(input, output, session) {
     cc <- read_csv("datasets/cc.csv")
-
+    final_tagging<- read_csv("datasets/final_tagging.csv")
+    cc <- left_join(cc,final_tagging,by=c("last4ccnum"))
+    
+    location <- eventReactive(input$submit,{
+      input$location
+    }, ignoreNULL = FALSE)
+    employee <- eventReactive(input$submit,{
+      input$employee
+    }, ignoreNULL = FALSE)
+    min_date <- eventReactive(input$submit,{
+      input$date[1]
+    }, ignoreNULL = FALSE)
+    max_date <- eventReactive(input$submit,{
+      input$date[2]
+    }, ignoreNULL = FALSE)
+    time_period <- eventReactive(input$submit,{
+      input$time_period
+    }, ignoreNULL = FALSE)
+    department <- eventReactive(input$submit,{
+      input$department
+    }, ignoreNULL = FALSE)
+    
     output$heatmap <- renderPlotly({
       cc_cal <-  cc %>% 
-        # filter(timeperiod %in% input$time_period) %>% 
+        filter(location %in% location() &
+               name %in% employee()&
+               date >= min_date() & date<=max_date() &
+               timeperiod %in% time_period() &
+               CurrentEmploymentType %in% department()
+               ) %>% 
         count(date, location) %>% 
         complete(date,location) %>% 
         rename(visit_frequency = n)
@@ -65,7 +113,14 @@ location_transServer <- function(id) {
     cc<-cc %>% left_join(median, by=("location"))
     
     output$boxplot <- renderPlotly({
-      boxplot <- ggplot(cc, aes(x=location, y=price, text=paste("last4ccnum:",last4ccnum,"<br>median:",median))) +
+      cc_bpp<- cc %>% filter(location %in% location() &
+                       name %in% employee()&
+                       date >= min_date() & date<=max_date() &
+                       timeperiod %in% time_period() &
+                       CurrentEmploymentType %in% department()
+      )
+      
+      boxplot <- ggplot(cc_bpp, aes(x=location, y=price, text=paste("last4ccnum:",last4ccnum,"<br>median:",median))) +
         geom_boxplot(outlier.colour = "red", outlier.fill="red") + 
         geom_point(alpha=0) + scale_y_log10() + coord_flip() +
         scale_x_discrete(limits = rev) +
@@ -84,28 +139,32 @@ location_transServer <- function(id) {
     })
     
     output$barplot <- renderPlotly({
-      barplot<-cc %>% 
+      cc_bp <- cc %>% filter(location %in% location() &
+                               name %in% employee()&
+                               date >= min_date() & date<=max_date() &
+                               timeperiod %in% time_period() &
+                               CurrentEmploymentType %in% department()
+      )
+      
+      barplot<-cc_bp %>% 
         group_by(location, date, timeperiod) %>%
         summarize(count=n()) %>%  
         ggplot(aes(x=date, y=count, fill=timeperiod,
                    text = paste0(count, " transactions at ",location, " on ", date, timeperiod))) +
         geom_col() + 
-        annotate(geom="rect", xmin=ymd(20140111)-.5, xmax=ymd(20140113)-.5, 
-                 ymin=-Inf, ymax=Inf, fill='dark grey' , alpha=0.5) +
-        annotate(geom="rect", xmin=ymd(20140118)-.5, xmax=ymd(20140120)-.5, 
-                 ymin=-Inf, ymax=Inf, fill='dark grey' , alpha=0.5) +
-        facet_wrap(~location) +
+        facet_wrap(~location,ncol=6) +
         ggtitle("Number of transactions per day by location") +
         xlab("Date") + ylab("Number of transactions") +
         labs(fill="Time period") +
         theme(plot.title=element_text(size=20,face="bold"),
               axis.title=element_text(size=14,face="bold"),
-              strip.text = element_text(size = 6),
-              axis.text=element_text(size=6),
+              axis.ticks = element_blank(),
+              strip.text = element_text(size = 8, face="bold"),
               axis.text.x=element_text(angle=45, hjust=1),
-              legend.position="bottom") 
+              panel.spacing.x=unit(0.1, "lines"),
+              panel.spacing.y=unit(0.1, "lines")) 
       
-      ggplotly(barplot) %>% layout(autosize = F,height = 600, width=900)
+      ggplotly(barplot) %>% layout(autosize = F, height = 500, width=850)
     })
   })
 }

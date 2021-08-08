@@ -12,7 +12,7 @@
 # library(raster)
 packages = c('tidyverse', 'lubridate', 'MASS','ggplot2', 'plotly', 'geosphere', 
              'sf','rgeos','raster', 'tmap','visNetwork','igraph','shiny','shinydashboard',
-             'fontawesome','rsconnect','shinyWidgets')
+             'fontawesome','rsconnect','shinyWidgets','ggiraph')
 
 for(p in packages){
     if(!require(p, character.only=T)){
