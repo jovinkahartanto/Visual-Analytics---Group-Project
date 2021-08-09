@@ -234,7 +234,7 @@ kronos_mart_bind <- dplyr::select(kronos_mart_bind,cc_date,last4ccnum,location,c
 
 kronos_mart_bind <- rbind(kronos_mart_bind,kronos_mart_2)
 
-parcoord1 <- rbind(match_cc_bind,match_cc_dis_bind,kronos_mart_bind)
+parcoord <- rbind(match_cc_bind,match_cc_dis_bind,kronos_mart_bind)
 
 
 ```
