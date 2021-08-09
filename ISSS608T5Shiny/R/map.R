@@ -10,10 +10,27 @@ mapUI <- function(id) {
       ),
     sidebarLayout(
       sidebarPanel(width=3,
-                   selectInput("employee","Select by Employee",choices = unique(final_tagging$name)),
-                   dateRangeInput("date","Select by Date", start="2014-01-06",end="2014-01-19"),
-                   selectInput("time_period","Select by Time Period:", choices=unique(cc$timeperiod)),
-                   selectInput("location","Select by Location",choices = unique(cc$location))
+                   pickerInput(NS(id,"employee"),
+                               "Select by Employee",
+                               choices=unique(final_tagging$name),
+                               multiple=TRUE,options = list(
+                                 `actions-box` = TRUE),
+                               selected=unique(final_tagging$name)[1:34]),
+                   dateRangeInput(NS(id,"date"),"Select by Date", 
+                                  start="2014-01-06", end="2014-01-19",
+                                  min="2014-01-06", max="2014-01-19"),
+                   pickerInput(NS(id,"time_period"),
+                               "Select by Time Period",
+                               choices=unique(cc$timeperiod),
+                               multiple=TRUE,options = list(
+                                 `actions-box` = TRUE),
+                               selected=unique(cc$timeperiod)[1:7]),
+                   pickerInput(NS(id,"location"),
+                               "Select by Location",
+                               choices=unique(cc$location),
+                               multiple=TRUE,options = list(
+                                 `actions-box` = TRUE),
+                               selected=unique(cc$location)[1:34])
       ),
       mainPanel(
         tmapOutput(NS(id,"map"))
