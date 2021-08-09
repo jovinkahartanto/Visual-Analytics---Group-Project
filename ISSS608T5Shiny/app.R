@@ -22,7 +22,7 @@ for(p in packages){
 }
 
 server <- function(input, output,session){
-    
+    visNetwork2Server("vis2")
     visNetworkServer("vis")
     cardMappingServer("parcoord")
     mapServer("map")
@@ -71,7 +71,16 @@ ui <- dashboardPage(
             tabItem(
                 tabName = "network",
                 fluidPage(
-                    visNetworkUI("vis")
+                    tabsetPanel(
+                        tabPanel(
+                            "Transaction Network",
+                            visNetworkUI("vis")
+                        ),
+                        tabPanel(
+                            "GPS Network",
+                            visNetwork2UI("vis2")
+                        )
+                    )
                 )
             )
         )

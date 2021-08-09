@@ -175,6 +175,71 @@ cc_edges <- cc_edges %>%
 write_csv(cc_edges, "datasets/cc_edges.csv")
 
 ```
+
+```{r gps nodes vis}
+final_tagging <- read_csv("datasets/final_tagging.csv") %>% dplyr::select(-X1)
+final_tagging$last4ccnum <- as.factor(final_tagging$last4ccnum)
+
+stop_fin<-read_csv("datasets/stop_fin.csv")
+
+gps_data <- stop_fin %>% 
+  filter(id<100) %>% 
+  mutate(date=as_date(Date),
+         hour=hour(Timestamp)) %>% 
+  rename(car_id=id) %>% 
+  dplyr::select(car_id, Possible_Location,date,hour) 
+
+gps_source <- gps_data%>% 
+  distinct(car_id) %>% 
+  left_join(final_tagging, by=c("car_id"="id")) %>% 
+  rename(label=name)
+
+location <- gps_data %>% 
+  distinct(Possible_Location) %>% 
+  rename(label=Possible_Location)
+gps_nodes <-full_join(gps_source, location, by="label") %>% 
+  filter(is.na(label)==FALSE)
+gps_nodes <- gps_nodes %>% 
+  rowid_to_column("id") %>% 
+  mutate(CurrentEmploymentType=ifelse(is.na(CurrentEmploymentType),
+                                      "Locations",CurrentEmploymentType)) %>% 
+  rename(group=CurrentEmploymentType)
+write_csv(gps_nodes,"datasets/gps_nodes.csv")
+```
+
+```{r gps edges vis}
+edges <- gps_data %>% 
+  group_by(car_id, Possible_Location,date) %>%
+  summarise(weight = n()) %>% 
+  ungroup()
+gps_edges <- edges %>% 
+  inner_join(gps_nodes,by = c("car_id")) %>% 
+  rename(from = id)
+gps_edges <- gps_edges %>% 
+  inner_join(gps_nodes,by = c("Possible_Location" = "label")) %>% 
+  rename(to = id) %>% 
+  dplyr::select(from, to, weight, date) %>% 
+  mutate(hour=hour(date),
+    time_bin = case_when(
+      hour >= 21 ~ "Night",
+      hour >= 18 ~ "Evening",
+      hour >= 15 ~ "Late afternoon",
+      hour >= 12 ~ "Early afternoon",
+      hour >= 9 ~ "Late morning",
+      hour >= 6 ~ "Early morning",
+      TRUE ~ "Late night"
+  ))
+write_csv(gps_edges,"datasets/gps_edges.csv")
+```
+
+```{r}
+visNetwork(gps_nodes, gps_edges) %>% 
+      visIgraphLayout(layout = "layout_on_grid") %>% 
+      visInteraction(multiselect = TRUE) %>% 
+      visLegend() %>% 
+      visOptions(selectedBy="group",highlightNearest = TRUE, nodesIdSelection = TRUE) %>% 
+      visGroups(groupname="Engineering")
+```
 ```{r parcoord}
 cc$price <- as.double(cc$price)
 
