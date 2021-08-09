@@ -11,6 +11,11 @@ overviewUI <- function(id) {
       a("Github.",
         href="https://github.com/jovinkahartanto/Visual-Analytics---Group-Project")),
     p("ISSS608 G5"),
-    p("Authors: Chen Yuxi, Jovinka Hartanto, Lim Yong Kai")
+    p("Authors: Chen Yuxi, Jovinka Hartanto, Lim Yong Kai"),
+    HTML('<iframe width="1120" height="630" src="https://vast-challenge.github.io/2021/" 
+                          frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; 
+                          picture-in-picture" allowfullscreen></iframe>')
   )
 }
+
+
