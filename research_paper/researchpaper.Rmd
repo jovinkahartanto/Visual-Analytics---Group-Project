@@ -50,6 +50,9 @@ The project drew inspirations from previous works by Singapore Management Univer
 
 In the project, Dino Holmes Series, (https://wiki.smu.edu.sg/1617t1ISSS608g1/ISSS608_2016-17_T1_Assign3_Ong_Han_Ying), heatmap enabled readers to easily determine patterns and trends over a time. However, static heatmap are not reader friendly enough to determine what was the count at specific time slots. As each heatmap box represents a discrete count by using a gradient color fill, it was difficult to accurately determine the specific count. The analysis may benefit from making the heatmap plot interactive, allowing the details to be displayed at the tooltip when hover across. This would allow granularity data to be more well-presented in the report.
 
+Submission from Fraunhofer IAIS and City University London (Andrienko, Andrienko, and Fuchs 2014) and RBEI-Bangalore (Singhal et al. 2014) both used network cluster and analysis to investigate the relationships between GAStech employees. Fraunhofer IAIS university used an ego-centric graph whereas RBEI used a combination of fragmented and node-only layout to visual the relationship by connecting employees. Network analysis is an informative visualisation that provides an overview of potential relationships between employees or even connecting employees to different mediums such as the locations or emails.
+
+Although network analysis provides an overview of the relationships between nodes, usually the plot will be cluttered which make it difficult to drill down to specific or individual relationships. An alternative would be to make the plot interactive so that readers will be able to drill down on specific areas to investigate the relationships.
 
 # Design framework 
 A detail description of the design principles used and data visualisation elements built (Refer to Section IV: Interface of this paper. 
