@@ -34,7 +34,7 @@ This paper details our efforts to design, create and implement a web-based analy
 
 # Motivation and objectives 
 
-Our research and development effort were motivated by the general lack of effective and easy to use web-enabled data visualisation tool to conduct data analysis on the GAStech employees related dataset. The project aims to enable Kronos law enforcement the ability to easily analyse, drill down and identify key suspects and suspicious locations, and thereby speeding up the investigation process. 
+Our research and development effort were motivated by the general lack of effective and easy to use web-enabled data visualisation tool to conduct data analysis on the GAStech employees related dataset. The project aims to enable the Kronos law enforcement the ability to easily analyse, drill down and identify key suspects and suspicious locations, and thereby speeding up the investigation process. 
 
 The use cases of the data visualisation tool include but are not limited to the following:
 
@@ -46,11 +46,22 @@ The use cases of the data visualisation tool include but are not limited to the 
 
 # Review and critic of past works 
 
+The project drew inspirations from previous works by Singapore Management University (SMU) students and submissions of the 2014 Vast Challenge.
+
+In the project, Dino Holmes Series, (https://wiki.smu.edu.sg/1617t1ISSS608g1/ISSS608_2016-17_T1_Assign3_Ong_Han_Ying), heatmap enabled readers to easily determine patterns and trends over a time. However, static heatmap are not reader friendly enough to determine what was the count at specific time slots. As each heatmap box represents a discrete count by using a gradient color fill, it was difficult to accurately determine the specific count. The analysis may benefit from making the heatmap plot interactive, allowing the details to be displayed at the tooltip when hover across. This would allow granularity data to be more well-presented in the report.
 
 
 # Design framework 
-
 A detail description of the design principles used and data visualisation elements built (Refer to Section IV: Interface of this paper. 
+
+## Data Preparation
+
+All the data wrangling and cleaning were performed using R.
+
+## Exploratory Data Analysis
+
+
+
 
 
 
