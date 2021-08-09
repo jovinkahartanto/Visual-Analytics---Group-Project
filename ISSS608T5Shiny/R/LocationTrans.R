@@ -109,7 +109,7 @@ location_transServer <- function(id) {
       ggplotly(heatmap) %>% layout(autosize = F, height = 600, width=900)
     })
     
-    median<- cc %>% group_by(location) %>% summarize(median=median(price))
+    median<- cc %>% group_by(location) %>% summarise(median=median(price))
     cc<-cc %>% left_join(median, by=("location"))
     
     output$boxplot <- renderPlotly({
@@ -148,7 +148,7 @@ location_transServer <- function(id) {
       
       barplot<-cc_bp %>% 
         group_by(location, date, timeperiod) %>%
-        summarize(count=n()) %>%  
+        summarise(count=n()) %>%  
         ggplot(aes(x=date, y=count, fill=timeperiod,
                    text = paste0(count, " transactions at ",location, " on ", date, timeperiod))) +
         geom_col() + 
@@ -249,9 +249,9 @@ location_transServer <- function(id) {
 # 
 # ## Data transformation to plot Bar graph for transaction frequency
 # freq<- cc %>% 
-#   group_by(location, date, timeperiod) %>% summarize(count=n())
+#   group_by(location, date, timeperiod) %>% summarise(count=n())
 # cc %>% 
-#   group_by(location, date, timeperiod) %>% summarize(count=n()) %>%  ggplot(aes(x=date, y=count, fill=timeperiod, 
+#   group_by(location, date, timeperiod) %>% summarise(count=n()) %>%  ggplot(aes(x=date, y=count, fill=timeperiod, 
 #                                   tooltip= paste(count, " transactions at ",location, " on ", date, timeperiod))) +
 #   gm_col() + 
 #   annotate(geom="rect", xmin=ymd(20140111)-.5, xmax=ymd(20140113)-.5, 

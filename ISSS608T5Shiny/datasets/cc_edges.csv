@@ -1,1075 +1,1070 @@
-"","from","to","day","hour","weight","time_bin","weekday.weekend","day.week"
-"1",20,52,6,13,1,"Afternoon","Weekday","Monday"
-"2",20,52,9,13,1,"Afternoon","Weekday","Thursday"
-"3",20,52,13,13,1,"Afternoon","Weekday","Monday"
-"4",20,52,16,13,1,"Afternoon","Weekday","Thursday"
-"5",20,68,18,14,1,"Afternoon","Weekend","Saturday"
-"6",20,37,6,8,1,"Morning","Weekday","Monday"
-"7",20,37,7,7,1,"Morning","Weekday","Tuesday"
-"8",20,37,8,8,1,"Morning","Weekday","Wednesday"
-"9",20,37,9,8,1,"Morning","Weekday","Thursday"
-"10",20,37,10,8,1,"Morning","Weekday","Friday"
-"11",20,37,13,8,1,"Morning","Weekday","Monday"
-"12",20,37,14,8,1,"Morning","Weekday","Tuesday"
-"13",20,37,15,7,1,"Morning","Weekday","Wednesday"
-"14",20,37,16,7,1,"Morning","Weekday","Thursday"
-"15",20,37,17,8,1,"Morning","Weekday","Friday"
-"16",20,53,8,13,1,"Afternoon","Weekday","Wednesday"
-"17",20,53,12,13,1,"Afternoon","Weekend","Sunday"
-"18",20,53,12,19,1,"Night","Weekend","Sunday"
-"19",20,56,9,20,1,"Night","Weekday","Thursday"
-"20",20,56,13,20,1,"Night","Weekday","Monday"
-"21",20,56,14,13,1,"Afternoon","Weekday","Tuesday"
-"22",20,56,15,21,1,"Night","Weekday","Wednesday"
-"23",20,56,19,19,1,"Night","Weekend","Sunday"
-"24",20,51,17,13,1,"Afternoon","Weekday","Friday"
-"25",20,51,18,20,1,"Night","Weekend","Saturday"
-"26",20,54,7,13,1,"Afternoon","Weekday","Tuesday"
-"27",20,54,11,20,1,"Night","Weekend","Saturday"
-"28",20,50,15,13,1,"Afternoon","Weekday","Wednesday"
-"29",20,55,8,20,1,"Night","Weekday","Wednesday"
-"30",20,60,12,15,1,"Afternoon","Weekend","Sunday"
-"31",20,60,16,20,1,"Night","Weekday","Thursday"
-"32",20,60,17,20,1,"Night","Weekday","Friday"
-"33",34,52,10,13,1,"Afternoon","Weekday","Friday"
-"34",34,52,11,13,1,"Afternoon","Weekend","Saturday"
-"35",34,52,14,13,1,"Afternoon","Weekday","Tuesday"
-"36",34,58,6,21,1,"Night","Weekday","Monday"
-"37",34,53,7,13,1,"Afternoon","Weekday","Tuesday"
-"38",34,53,17,13,1,"Afternoon","Weekday","Friday"
-"39",34,56,6,13,1,"Afternoon","Weekday","Monday"
-"40",34,38,7,7,1,"Morning","Weekday","Tuesday"
-"41",34,38,8,7,1,"Morning","Weekday","Wednesday"
-"42",34,38,9,7,1,"Morning","Weekday","Thursday"
-"43",34,38,10,7,1,"Morning","Weekday","Friday"
-"44",34,38,13,7,1,"Morning","Weekday","Monday"
-"45",34,38,14,7,1,"Morning","Weekday","Tuesday"
-"46",34,38,15,8,1,"Morning","Weekday","Wednesday"
-"47",34,38,16,7,1,"Morning","Weekday","Thursday"
-"48",34,38,17,7,1,"Morning","Weekday","Friday"
-"49",34,51,9,13,1,"Afternoon","Weekday","Thursday"
-"50",34,51,16,13,1,"Afternoon","Weekday","Thursday"
-"51",34,50,7,21,1,"Night","Weekday","Tuesday"
-"52",34,50,8,13,1,"Afternoon","Weekday","Wednesday"
-"53",34,50,8,20,1,"Night","Weekday","Wednesday"
-"54",34,50,9,21,1,"Night","Weekday","Thursday"
-"55",34,50,11,19,1,"Night","Weekend","Saturday"
-"56",34,50,13,20,1,"Night","Weekday","Monday"
-"57",34,50,15,14,1,"Afternoon","Weekday","Wednesday"
-"58",34,50,15,20,1,"Night","Weekday","Wednesday"
-"59",34,50,17,20,1,"Night","Weekday","Friday"
-"60",34,50,18,19,1,"Night","Weekend","Saturday"
-"61",34,50,19,14,1,"Afternoon","Weekend","Sunday"
-"62",34,55,12,13,1,"Afternoon","Weekend","Sunday"
-"63",34,55,13,13,1,"Afternoon","Weekday","Monday"
-"64",34,67,11,16,1,"Afternoon","Weekend","Saturday"
-"65",34,60,12,15,1,"Afternoon","Weekend","Sunday"
-"66",28,52,13,13,1,"Afternoon","Weekday","Monday"
-"67",28,59,13,20,1,"Night","Weekday","Monday"
-"68",28,59,17,19,1,"Night","Weekday","Friday"
-"69",28,47,6,12,1,"Afternoon","Weekday","Monday"
-"70",28,47,7,12,1,"Afternoon","Weekday","Tuesday"
-"71",28,47,8,12,1,"Afternoon","Weekday","Wednesday"
-"72",28,47,9,12,1,"Afternoon","Weekday","Thursday"
-"73",28,47,10,12,1,"Afternoon","Weekday","Friday"
-"74",28,47,13,12,1,"Afternoon","Weekday","Monday"
-"75",28,47,14,12,1,"Afternoon","Weekday","Tuesday"
-"76",28,47,15,12,1,"Afternoon","Weekday","Wednesday"
-"77",28,47,16,12,1,"Afternoon","Weekday","Thursday"
-"78",28,47,17,12,1,"Afternoon","Weekday","Friday"
-"79",28,58,9,20,1,"Night","Weekday","Thursday"
-"80",28,56,10,13,1,"Afternoon","Weekday","Friday"
-"81",28,51,6,20,1,"Night","Weekday","Monday"
-"82",28,51,7,20,1,"Night","Weekday","Tuesday"
-"83",28,51,8,13,1,"Afternoon","Weekday","Wednesday"
-"84",28,51,9,13,1,"Afternoon","Weekday","Thursday"
-"85",28,51,12,19,1,"Night","Weekend","Sunday"
-"86",28,51,15,20,1,"Night","Weekday","Wednesday"
-"87",28,51,16,13,1,"Afternoon","Weekday","Thursday"
-"88",28,51,16,20,1,"Night","Weekday","Thursday"
-"89",28,51,18,19,1,"Night","Weekend","Saturday"
-"90",28,51,19,19,1,"Night","Weekend","Sunday"
-"91",28,54,6,13,1,"Afternoon","Weekday","Monday"
-"92",28,54,14,13,1,"Afternoon","Weekday","Tuesday"
-"93",28,54,18,13,1,"Afternoon","Weekend","Saturday"
-"94",28,50,11,13,1,"Afternoon","Weekend","Saturday"
-"95",28,50,17,13,1,"Afternoon","Weekday","Friday"
-"96",28,55,7,13,1,"Afternoon","Weekday","Tuesday"
-"97",28,55,15,13,1,"Afternoon","Weekday","Wednesday"
-"98",21,52,7,13,1,"Afternoon","Weekday","Tuesday"
-"99",21,52,8,13,1,"Afternoon","Weekday","Wednesday"
-"100",21,47,6,12,1,"Afternoon","Weekday","Monday"
-"101",21,47,7,12,1,"Afternoon","Weekday","Tuesday"
-"102",21,47,8,12,1,"Afternoon","Weekday","Wednesday"
-"103",21,47,9,12,1,"Afternoon","Weekday","Thursday"
-"104",21,47,10,12,1,"Afternoon","Weekday","Friday"
-"105",21,47,13,12,1,"Afternoon","Weekday","Monday"
-"106",21,47,14,12,1,"Afternoon","Weekday","Tuesday"
-"107",21,47,16,12,1,"Afternoon","Weekday","Thursday"
-"108",21,47,17,12,1,"Afternoon","Weekday","Friday"
-"109",21,53,10,13,1,"Afternoon","Weekday","Friday"
-"110",21,53,13,13,1,"Afternoon","Weekday","Monday"
-"111",21,56,6,13,1,"Afternoon","Weekday","Monday"
-"112",21,56,9,13,1,"Afternoon","Weekday","Thursday"
-"113",21,56,14,13,1,"Afternoon","Weekday","Tuesday"
-"114",21,56,15,13,1,"Afternoon","Weekday","Wednesday"
-"115",21,51,6,20,1,"Night","Weekday","Monday"
-"116",21,51,7,20,1,"Night","Weekday","Tuesday"
-"117",21,51,8,19,1,"Night","Weekday","Wednesday"
-"118",21,51,10,19,1,"Night","Weekday","Friday"
-"119",21,51,11,20,1,"Night","Weekend","Saturday"
-"120",21,51,12,19,1,"Night","Weekend","Sunday"
-"121",21,51,13,20,1,"Night","Weekday","Monday"
-"122",21,51,14,19,1,"Night","Weekday","Tuesday"
-"123",21,51,15,19,1,"Night","Weekday","Wednesday"
-"124",21,51,16,13,1,"Afternoon","Weekday","Thursday"
-"125",21,51,18,20,1,"Night","Weekend","Saturday"
-"126",21,51,19,20,1,"Night","Weekend","Sunday"
-"127",21,65,17,8,1,"Morning","Weekday","Friday"
-"128",21,55,17,13,1,"Afternoon","Weekday","Friday"
-"129",16,52,9,13,1,"Afternoon","Weekday","Thursday"
-"130",16,52,10,13,1,"Afternoon","Weekday","Friday"
-"131",16,47,13,12,1,"Afternoon","Weekday","Monday"
-"132",16,58,15,20,1,"Night","Weekday","Wednesday"
-"133",16,58,16,19,1,"Night","Weekday","Thursday"
-"134",16,58,18,15,1,"Afternoon","Weekend","Saturday"
-"135",16,53,7,13,1,"Afternoon","Weekday","Tuesday"
-"136",16,53,16,13,1,"Afternoon","Weekday","Thursday"
-"137",16,56,8,13,1,"Afternoon","Weekday","Wednesday"
-"138",16,56,14,13,1,"Afternoon","Weekday","Tuesday"
-"139",16,56,18,13,1,"Afternoon","Weekend","Saturday"
-"140",16,38,6,8,1,"Morning","Weekday","Monday"
-"141",16,38,7,7,1,"Morning","Weekday","Tuesday"
-"142",16,38,8,7,1,"Morning","Weekday","Wednesday"
-"143",16,38,10,7,1,"Morning","Weekday","Friday"
-"144",16,38,14,7,1,"Morning","Weekday","Tuesday"
-"145",16,38,16,7,1,"Morning","Weekday","Thursday"
-"146",16,38,17,7,1,"Morning","Weekday","Friday"
-"147",16,51,12,14,1,"Afternoon","Weekend","Sunday"
-"148",16,54,15,13,1,"Afternoon","Weekday","Wednesday"
-"149",16,54,17,13,1,"Afternoon","Weekday","Friday"
-"150",16,50,6,13,1,"Afternoon","Weekday","Monday"
-"151",16,50,6,20,1,"Night","Weekday","Monday"
-"152",16,50,7,20,1,"Night","Weekday","Tuesday"
-"153",16,50,8,21,1,"Night","Weekday","Wednesday"
-"154",16,50,11,20,1,"Night","Weekend","Saturday"
-"155",16,50,12,20,1,"Night","Weekend","Sunday"
-"156",16,50,13,13,1,"Afternoon","Weekday","Monday"
-"157",16,50,13,21,1,"Night","Weekday","Monday"
-"158",16,50,14,20,1,"Night","Weekday","Tuesday"
-"159",16,50,18,19,1,"Night","Weekend","Saturday"
-"160",16,50,19,20,1,"Night","Weekend","Sunday"
-"161",26,59,12,19,1,"Night","Weekend","Sunday"
-"162",26,47,6,12,1,"Afternoon","Weekday","Monday"
-"163",26,47,7,12,1,"Afternoon","Weekday","Tuesday"
-"164",26,47,8,12,1,"Afternoon","Weekday","Wednesday"
-"165",26,47,9,12,1,"Afternoon","Weekday","Thursday"
-"166",26,47,10,12,1,"Afternoon","Weekday","Friday"
-"167",26,47,13,12,1,"Afternoon","Weekday","Monday"
-"168",26,47,14,12,1,"Afternoon","Weekday","Tuesday"
-"169",26,47,15,12,1,"Afternoon","Weekday","Wednesday"
-"170",26,47,16,12,1,"Afternoon","Weekday","Thursday"
-"171",26,47,17,12,1,"Afternoon","Weekday","Friday"
-"172",26,58,18,15,1,"Afternoon","Weekend","Saturday"
-"173",26,53,14,13,1,"Afternoon","Weekday","Tuesday"
-"174",26,56,16,14,1,"Afternoon","Weekday","Thursday"
-"175",26,51,6,13,1,"Afternoon","Weekday","Monday"
-"176",26,51,6,20,1,"Night","Weekday","Monday"
-"177",26,51,7,20,1,"Night","Weekday","Tuesday"
-"178",26,51,9,20,1,"Night","Weekday","Thursday"
-"179",26,51,11,19,1,"Night","Weekend","Saturday"
-"180",26,51,15,13,1,"Afternoon","Weekday","Wednesday"
-"181",26,51,15,20,1,"Night","Weekday","Wednesday"
-"182",26,51,17,13,1,"Afternoon","Weekday","Friday"
-"183",26,51,18,13,1,"Afternoon","Weekend","Saturday"
-"184",26,51,18,20,1,"Night","Weekend","Saturday"
-"185",26,54,7,13,1,"Afternoon","Weekday","Tuesday"
-"186",26,50,8,13,1,"Afternoon","Weekday","Wednesday"
-"187",26,50,9,14,1,"Afternoon","Weekday","Thursday"
-"188",26,55,10,13,1,"Afternoon","Weekday","Friday"
-"189",26,55,13,14,1,"Afternoon","Weekday","Monday"
-"190",26,60,16,20,1,"Night","Weekday","Thursday"
-"191",12,52,17,13,1,"Afternoon","Weekday","Friday"
-"192",12,59,12,15,1,"Afternoon","Weekend","Sunday"
-"193",12,59,19,15,1,"Afternoon","Weekend","Sunday"
-"194",12,39,6,7,1,"Morning","Weekday","Monday"
-"195",12,39,7,8,1,"Morning","Weekday","Tuesday"
-"196",12,39,8,7,1,"Morning","Weekday","Wednesday"
-"197",12,39,9,8,1,"Morning","Weekday","Thursday"
-"198",12,39,10,8,1,"Morning","Weekday","Friday"
-"199",12,39,13,8,1,"Morning","Weekday","Monday"
-"200",12,39,14,7,1,"Morning","Weekday","Tuesday"
-"201",12,39,15,7,1,"Morning","Weekday","Wednesday"
-"202",12,58,6,21,1,"Night","Weekday","Monday"
-"203",12,53,14,13,1,"Afternoon","Weekday","Tuesday"
-"204",12,56,13,13,1,"Afternoon","Weekday","Monday"
-"205",12,56,15,13,1,"Afternoon","Weekday","Wednesday"
-"206",12,51,9,13,1,"Afternoon","Weekday","Thursday"
-"207",12,51,12,13,1,"Afternoon","Weekend","Sunday"
-"208",12,51,19,13,1,"Afternoon","Weekend","Sunday"
-"209",12,50,6,13,1,"Afternoon","Weekday","Monday"
-"210",12,50,7,20,1,"Night","Weekday","Tuesday"
-"211",12,50,8,13,1,"Afternoon","Weekday","Wednesday"
-"212",12,50,8,20,1,"Night","Weekday","Wednesday"
-"213",12,50,10,13,1,"Afternoon","Weekday","Friday"
-"214",12,50,11,14,1,"Afternoon","Weekend","Saturday"
-"215",12,50,11,19,1,"Night","Weekend","Saturday"
-"216",12,50,12,20,1,"Night","Weekend","Sunday"
-"217",12,50,13,20,1,"Night","Weekday","Monday"
-"218",12,50,15,20,1,"Night","Weekday","Wednesday"
-"219",12,50,16,20,1,"Night","Weekday","Thursday"
-"220",12,50,17,20,1,"Night","Weekday","Friday"
-"221",12,55,7,13,1,"Afternoon","Weekday","Tuesday"
-"222",12,55,16,13,1,"Afternoon","Weekday","Thursday"
-"223",12,60,19,19,1,"Night","Weekend","Sunday"
-"224",32,52,8,13,1,"Afternoon","Weekday","Wednesday"
-"225",32,52,9,13,1,"Afternoon","Weekday","Thursday"
-"226",32,69,12,13,1,"Afternoon","Weekend","Sunday"
-"227",32,69,19,15,1,"Afternoon","Weekend","Sunday"
-"228",32,58,18,15,1,"Afternoon","Weekend","Saturday"
-"229",32,53,7,13,1,"Afternoon","Weekday","Tuesday"
-"230",32,53,14,13,1,"Afternoon","Weekday","Tuesday"
-"231",32,53,15,13,1,"Afternoon","Weekday","Wednesday"
-"232",32,53,16,13,1,"Afternoon","Weekday","Thursday"
-"233",32,56,6,13,1,"Afternoon","Weekday","Monday"
-"234",32,56,13,13,1,"Afternoon","Weekday","Monday"
-"235",32,51,7,21,1,"Night","Weekday","Tuesday"
-"236",32,51,8,21,1,"Night","Weekday","Wednesday"
-"237",32,51,9,20,1,"Night","Weekday","Thursday"
-"238",32,51,10,13,1,"Afternoon","Weekday","Friday"
-"239",32,51,10,22,1,"Night","Weekday","Friday"
-"240",32,51,13,20,1,"Night","Weekday","Monday"
-"241",32,51,14,20,1,"Night","Weekday","Tuesday"
-"242",32,51,16,20,1,"Night","Weekday","Thursday"
-"243",32,51,17,21,1,"Night","Weekday","Friday"
-"244",32,51,18,19,1,"Night","Weekend","Saturday"
-"245",32,51,19,19,1,"Night","Weekend","Sunday"
-"246",32,49,6,12,1,"Afternoon","Weekday","Monday"
-"247",32,49,7,12,1,"Afternoon","Weekday","Tuesday"
-"248",32,49,8,12,1,"Afternoon","Weekday","Wednesday"
-"249",32,49,9,12,1,"Afternoon","Weekday","Thursday"
-"250",32,49,10,12,1,"Afternoon","Weekday","Friday"
-"251",32,49,13,12,1,"Afternoon","Weekday","Monday"
-"252",32,49,15,12,1,"Afternoon","Weekday","Wednesday"
-"253",32,49,16,12,1,"Afternoon","Weekday","Thursday"
-"254",32,54,17,13,1,"Afternoon","Weekday","Friday"
-"255",32,54,18,13,1,"Afternoon","Weekend","Saturday"
-"256",25,52,11,13,1,"Afternoon","Weekend","Saturday"
-"257",25,52,18,13,1,"Afternoon","Weekend","Saturday"
-"258",25,59,19,20,1,"Night","Weekend","Sunday"
-"259",25,48,6,12,1,"Afternoon","Weekday","Monday"
-"260",25,48,7,12,1,"Afternoon","Weekday","Tuesday"
-"261",25,48,8,12,1,"Afternoon","Weekday","Wednesday"
-"262",25,48,9,12,1,"Afternoon","Weekday","Thursday"
-"263",25,48,10,12,1,"Afternoon","Weekday","Friday"
-"264",25,48,13,12,1,"Afternoon","Weekday","Monday"
-"265",25,48,14,12,1,"Afternoon","Weekday","Tuesday"
-"266",25,48,15,12,1,"Afternoon","Weekday","Wednesday"
-"267",25,48,16,12,1,"Afternoon","Weekday","Thursday"
-"268",25,48,17,12,1,"Afternoon","Weekday","Friday"
-"269",25,63,8,12,1,"Afternoon","Weekday","Wednesday"
-"270",25,63,10,13,1,"Afternoon","Weekday","Friday"
-"271",25,63,14,13,1,"Afternoon","Weekday","Tuesday"
-"272",25,63,17,13,1,"Afternoon","Weekday","Friday"
-"273",25,58,15,19,1,"Night","Weekday","Wednesday"
-"274",25,53,9,13,1,"Afternoon","Weekday","Thursday"
-"275",25,56,13,13,1,"Afternoon","Weekday","Monday"
-"276",25,51,7,21,1,"Night","Weekday","Tuesday"
-"277",25,51,8,19,1,"Night","Weekday","Wednesday"
-"278",25,51,9,20,1,"Night","Weekday","Thursday"
-"279",25,51,12,20,1,"Night","Weekend","Sunday"
-"280",25,51,14,21,1,"Night","Weekday","Tuesday"
-"281",25,51,15,13,1,"Afternoon","Weekday","Wednesday"
-"282",25,51,16,13,1,"Afternoon","Weekday","Thursday"
-"283",25,51,17,20,1,"Night","Weekday","Friday"
-"284",25,54,12,13,1,"Afternoon","Weekend","Sunday"
-"285",25,50,11,19,1,"Night","Weekend","Saturday"
-"286",25,55,6,13,1,"Afternoon","Weekday","Monday"
-"287",14,52,9,13,1,"Afternoon","Weekday","Thursday"
-"288",14,59,14,20,1,"Night","Weekday","Tuesday"
-"289",14,37,6,7,1,"Morning","Weekday","Monday"
-"290",14,37,7,7,1,"Morning","Weekday","Tuesday"
-"291",14,37,8,7,1,"Morning","Weekday","Wednesday"
-"292",14,37,9,8,1,"Morning","Weekday","Thursday"
-"293",14,37,10,7,1,"Morning","Weekday","Friday"
-"294",14,37,13,7,1,"Morning","Weekday","Monday"
-"295",14,37,14,7,1,"Morning","Weekday","Tuesday"
-"296",14,37,15,7,1,"Morning","Weekday","Wednesday"
-"297",14,37,16,7,1,"Morning","Weekday","Thursday"
-"298",14,37,17,8,1,"Morning","Weekday","Friday"
-"299",14,58,9,19,1,"Night","Weekday","Thursday"
-"300",14,58,19,15,1,"Afternoon","Weekend","Sunday"
-"301",14,53,8,13,1,"Afternoon","Weekday","Wednesday"
-"302",14,56,6,20,1,"Night","Weekday","Monday"
-"303",14,56,7,19,1,"Night","Weekday","Tuesday"
-"304",14,56,8,20,1,"Night","Weekday","Wednesday"
-"305",14,56,15,19,1,"Night","Weekday","Wednesday"
-"306",14,56,16,19,1,"Night","Weekday","Thursday"
-"307",14,56,17,13,1,"Afternoon","Weekday","Friday"
-"308",14,56,17,20,1,"Night","Weekday","Friday"
-"309",14,56,18,19,1,"Night","Weekend","Saturday"
-"310",14,56,19,19,1,"Night","Weekend","Sunday"
-"311",14,54,6,13,1,"Afternoon","Weekday","Monday"
-"312",14,54,10,13,1,"Afternoon","Weekday","Friday"
-"313",14,50,7,13,1,"Afternoon","Weekday","Tuesday"
-"314",14,50,11,13,1,"Afternoon","Weekend","Saturday"
-"315",14,50,16,13,1,"Afternoon","Weekday","Thursday"
-"316",14,50,18,13,1,"Afternoon","Weekend","Saturday"
-"317",14,65,19,3,1,"Midnight","Weekend","Sunday"
-"318",14,55,14,13,1,"Afternoon","Weekday","Tuesday"
-"319",14,55,15,13,1,"Afternoon","Weekday","Wednesday"
-"320",14,55,19,13,1,"Afternoon","Weekend","Sunday"
-"321",14,57,6,17,1,"Afternoon","Weekday","Monday"
-"322",8,52,10,14,1,"Afternoon","Weekday","Friday"
-"323",8,52,15,14,1,"Afternoon","Weekday","Wednesday"
-"324",8,53,6,13,1,"Afternoon","Weekday","Monday"
-"325",8,53,17,13,1,"Afternoon","Weekday","Friday"
-"326",8,38,6,7,1,"Morning","Weekday","Monday"
-"327",8,38,7,7,1,"Morning","Weekday","Tuesday"
-"328",8,38,8,7,1,"Morning","Weekday","Wednesday"
-"329",8,38,9,8,1,"Morning","Weekday","Thursday"
-"330",8,38,10,7,1,"Morning","Weekday","Friday"
-"331",8,38,13,7,1,"Morning","Weekday","Monday"
-"332",8,38,14,8,1,"Morning","Weekday","Tuesday"
-"333",8,38,15,7,1,"Morning","Weekday","Wednesday"
-"334",8,38,16,7,1,"Morning","Weekday","Thursday"
-"335",8,38,17,8,1,"Morning","Weekday","Friday"
-"336",8,51,7,14,1,"Afternoon","Weekday","Tuesday"
-"337",8,54,8,13,1,"Afternoon","Weekday","Wednesday"
-"338",8,54,12,13,1,"Afternoon","Weekend","Sunday"
-"339",8,54,14,13,1,"Afternoon","Weekday","Tuesday"
-"340",8,54,16,13,1,"Afternoon","Weekday","Thursday"
-"341",8,50,6,20,1,"Night","Weekday","Monday"
-"342",8,50,7,20,1,"Night","Weekday","Tuesday"
-"343",8,50,9,20,1,"Night","Weekday","Thursday"
-"344",8,50,12,19,1,"Night","Weekend","Sunday"
-"345",8,50,13,13,1,"Afternoon","Weekday","Monday"
-"346",8,50,14,20,1,"Night","Weekday","Tuesday"
-"347",8,50,15,19,1,"Night","Weekday","Wednesday"
-"348",8,50,16,20,1,"Night","Weekday","Thursday"
-"349",8,50,17,19,1,"Night","Weekday","Friday"
-"350",8,50,19,14,1,"Afternoon","Weekend","Sunday"
-"351",35,52,15,13,1,"Afternoon","Weekday","Wednesday"
-"352",35,52,16,13,1,"Afternoon","Weekday","Thursday"
-"353",35,39,13,7,1,"Morning","Weekday","Monday"
-"354",35,39,14,7,1,"Morning","Weekday","Tuesday"
-"355",35,39,15,7,1,"Morning","Weekday","Wednesday"
-"356",35,39,16,7,1,"Morning","Weekday","Thursday"
-"357",35,39,17,7,1,"Morning","Weekday","Friday"
-"358",35,64,18,15,1,"Afternoon","Weekend","Saturday"
-"359",35,50,12,20,1,"Night","Weekend","Sunday"
-"360",35,50,13,13,1,"Afternoon","Weekday","Monday"
-"361",35,50,13,19,1,"Night","Weekday","Monday"
-"362",35,50,14,13,1,"Afternoon","Weekday","Tuesday"
-"363",35,50,14,20,1,"Night","Weekday","Tuesday"
-"364",35,50,15,21,1,"Night","Weekday","Wednesday"
-"365",35,50,16,19,1,"Night","Weekday","Thursday"
-"366",35,50,17,13,1,"Afternoon","Weekday","Friday"
-"367",35,50,18,19,1,"Night","Weekend","Saturday"
-"368",35,50,19,18,1,"Night","Weekend","Sunday"
-"369",35,55,18,13,1,"Afternoon","Weekend","Saturday"
-"370",35,60,12,16,1,"Afternoon","Weekend","Sunday"
-"371",17,52,13,13,1,"Afternoon","Weekday","Monday"
-"372",17,37,6,8,1,"Morning","Weekday","Monday"
-"373",17,37,8,7,1,"Morning","Weekday","Wednesday"
-"374",17,37,10,8,1,"Morning","Weekday","Friday"
-"375",17,37,14,7,1,"Morning","Weekday","Tuesday"
-"376",17,37,15,8,1,"Morning","Weekday","Wednesday"
-"377",17,37,16,8,1,"Morning","Weekday","Thursday"
-"378",17,37,17,8,1,"Morning","Weekday","Friday"
-"379",17,48,7,12,1,"Afternoon","Weekday","Tuesday"
-"380",17,62,8,12,1,"Afternoon","Weekday","Wednesday"
-"381",17,58,8,20,1,"Night","Weekday","Wednesday"
-"382",17,58,9,20,1,"Night","Weekday","Thursday"
-"383",17,53,11,13,1,"Afternoon","Weekend","Saturday"
-"384",17,53,15,13,1,"Afternoon","Weekday","Wednesday"
-"385",17,56,7,20,1,"Night","Weekday","Tuesday"
-"386",17,56,8,13,1,"Afternoon","Weekday","Wednesday"
-"387",17,56,10,20,1,"Night","Weekday","Friday"
-"388",17,56,12,19,1,"Night","Weekend","Sunday"
-"389",17,56,14,20,1,"Night","Weekday","Tuesday"
-"390",17,56,15,20,1,"Night","Weekday","Wednesday"
-"391",17,56,16,20,1,"Night","Weekday","Thursday"
-"392",17,56,17,13,1,"Afternoon","Weekday","Friday"
-"393",17,56,17,20,1,"Night","Weekday","Friday"
-"394",17,56,19,20,1,"Night","Weekend","Sunday"
-"395",17,51,7,13,1,"Afternoon","Weekday","Tuesday"
-"396",17,51,14,13,1,"Afternoon","Weekday","Tuesday"
-"397",17,49,9,12,1,"Afternoon","Weekday","Thursday"
-"398",17,50,6,13,1,"Afternoon","Weekday","Monday"
-"399",17,50,9,13,1,"Afternoon","Weekday","Thursday"
-"400",17,50,18,20,1,"Night","Weekend","Saturday"
-"401",17,55,10,13,1,"Afternoon","Weekday","Friday"
-"402",17,55,16,13,1,"Afternoon","Weekday","Thursday"
-"403",17,60,13,19,1,"Night","Weekday","Monday"
-"404",18,52,14,14,1,"Afternoon","Weekday","Tuesday"
-"405",18,59,6,21,1,"Night","Weekday","Monday"
-"406",18,59,11,16,1,"Afternoon","Weekend","Saturday"
-"407",18,37,6,8,1,"Morning","Weekday","Monday"
-"408",18,37,7,7,1,"Morning","Weekday","Tuesday"
-"409",18,37,8,8,1,"Morning","Weekday","Wednesday"
-"410",18,37,9,8,1,"Morning","Weekday","Thursday"
-"411",18,37,10,8,1,"Morning","Weekday","Friday"
-"412",18,37,13,8,1,"Morning","Weekday","Monday"
-"413",18,37,15,8,1,"Morning","Weekday","Wednesday"
-"414",18,37,16,8,1,"Morning","Weekday","Thursday"
-"415",18,39,17,8,1,"Morning","Weekday","Friday"
-"416",18,58,14,20,1,"Night","Weekday","Tuesday"
-"417",18,53,16,17,1,"Afternoon","Weekday","Thursday"
-"418",18,64,10,21,1,"Night","Weekday","Friday"
-"419",18,56,8,13,1,"Afternoon","Weekday","Wednesday"
-"420",18,56,8,19,1,"Night","Weekday","Wednesday"
-"421",18,56,9,21,1,"Night","Weekday","Thursday"
-"422",18,56,15,19,1,"Night","Weekday","Wednesday"
-"423",18,56,17,21,1,"Night","Weekday","Friday"
-"424",18,56,19,20,1,"Night","Weekend","Sunday"
-"425",18,51,9,13,1,"Afternoon","Weekday","Thursday"
-"426",18,51,11,13,1,"Afternoon","Weekend","Saturday"
-"427",18,51,13,12,1,"Afternoon","Weekday","Monday"
-"428",18,51,15,14,1,"Afternoon","Weekday","Wednesday"
-"429",18,54,6,13,1,"Afternoon","Weekday","Monday"
-"430",18,54,10,13,1,"Afternoon","Weekday","Friday"
-"431",18,50,7,14,1,"Afternoon","Weekday","Tuesday"
-"432",18,50,17,13,1,"Afternoon","Weekday","Friday"
-"433",18,50,18,19,1,"Night","Weekend","Saturday"
-"434",18,50,19,13,1,"Afternoon","Weekend","Sunday"
-"435",18,67,16,20,1,"Night","Weekday","Thursday"
-"436",1,52,16,13,1,"Afternoon","Weekday","Thursday"
-"437",1,52,18,19,1,"Night","Weekend","Saturday"
-"438",1,68,11,16,1,"Afternoon","Weekend","Saturday"
-"439",1,37,6,7,1,"Morning","Weekday","Monday"
-"440",1,37,7,7,1,"Morning","Weekday","Tuesday"
-"441",1,37,8,8,1,"Morning","Weekday","Wednesday"
-"442",1,37,9,7,1,"Morning","Weekday","Thursday"
-"443",1,37,10,7,1,"Morning","Weekday","Friday"
-"444",1,37,13,7,1,"Morning","Weekday","Monday"
-"445",1,37,14,7,1,"Morning","Weekday","Tuesday"
-"446",1,37,15,7,1,"Morning","Weekday","Wednesday"
-"447",1,37,16,7,1,"Morning","Weekday","Thursday"
-"448",1,37,17,7,1,"Morning","Weekday","Friday"
-"449",1,58,19,15,1,"Afternoon","Weekend","Sunday"
-"450",1,53,9,13,1,"Afternoon","Weekday","Thursday"
-"451",1,64,9,20,1,"Night","Weekday","Thursday"
-"452",1,56,7,20,1,"Night","Weekday","Tuesday"
-"453",1,56,10,19,1,"Night","Weekday","Friday"
-"454",1,56,13,20,1,"Night","Weekday","Monday"
-"455",1,56,14,20,1,"Night","Weekday","Tuesday"
-"456",1,56,16,19,1,"Night","Weekday","Thursday"
-"457",1,56,17,19,1,"Night","Weekday","Friday"
-"458",1,51,6,13,1,"Afternoon","Weekday","Monday"
-"459",1,51,8,13,1,"Afternoon","Weekday","Wednesday"
-"460",1,51,10,13,1,"Afternoon","Weekday","Friday"
-"461",1,51,11,19,1,"Night","Weekend","Saturday"
-"462",1,51,17,13,1,"Afternoon","Weekday","Friday"
-"463",1,54,7,13,1,"Afternoon","Weekday","Tuesday"
-"464",1,50,14,13,1,"Afternoon","Weekday","Tuesday"
-"465",1,50,19,13,1,"Afternoon","Weekend","Sunday"
-"466",1,66,10,14,1,"Afternoon","Weekday","Friday"
-"467",1,55,13,13,1,"Afternoon","Weekday","Monday"
-"468",36,52,17,13,1,"Afternoon","Weekday","Friday"
-"469",36,63,18,12,1,"Afternoon","Weekend","Saturday"
-"470",36,69,19,15,1,"Afternoon","Weekend","Sunday"
-"471",36,56,19,19,1,"Night","Weekend","Sunday"
-"472",36,38,17,7,1,"Morning","Weekday","Friday"
-"473",9,39,6,7,1,"Morning","Weekday","Monday"
-"474",9,39,7,7,1,"Morning","Weekday","Tuesday"
-"475",9,39,8,7,1,"Morning","Weekday","Wednesday"
-"476",9,39,9,7,1,"Morning","Weekday","Thursday"
-"477",9,39,10,7,1,"Morning","Weekday","Friday"
-"478",9,53,7,13,1,"Afternoon","Weekday","Tuesday"
-"479",9,56,9,14,1,"Afternoon","Weekday","Thursday"
-"480",9,54,8,13,1,"Afternoon","Weekday","Wednesday"
-"481",9,50,6,20,1,"Night","Weekday","Monday"
-"482",9,50,7,20,1,"Night","Weekday","Tuesday"
-"483",9,50,8,20,1,"Night","Weekday","Wednesday"
-"484",9,50,9,19,1,"Night","Weekday","Thursday"
-"485",9,50,10,19,1,"Night","Weekday","Friday"
-"486",9,55,6,13,1,"Afternoon","Weekday","Monday"
-"487",3,52,13,13,1,"Afternoon","Weekday","Monday"
-"488",3,52,14,13,1,"Afternoon","Weekday","Tuesday"
-"489",3,37,6,7,1,"Morning","Weekday","Monday"
-"490",3,37,7,7,1,"Morning","Weekday","Tuesday"
-"491",3,37,8,7,1,"Morning","Weekday","Wednesday"
-"492",3,37,10,7,1,"Morning","Weekday","Friday"
-"493",3,37,13,7,1,"Morning","Weekday","Monday"
-"494",3,37,14,7,1,"Morning","Weekday","Tuesday"
-"495",3,37,15,7,1,"Morning","Weekday","Wednesday"
-"496",3,37,16,7,1,"Morning","Weekday","Thursday"
-"497",3,39,17,7,1,"Morning","Weekday","Friday"
-"498",3,56,6,20,1,"Night","Weekday","Monday"
-"499",3,56,7,13,1,"Afternoon","Weekday","Tuesday"
-"500",3,56,9,19,1,"Night","Weekday","Thursday"
-"501",3,56,10,13,1,"Afternoon","Weekday","Friday"
-"502",3,56,10,19,1,"Night","Weekday","Friday"
-"503",3,56,11,19,1,"Night","Weekend","Saturday"
-"504",3,56,14,20,1,"Night","Weekday","Tuesday"
-"505",3,56,15,20,1,"Night","Weekday","Wednesday"
-"506",3,56,16,13,1,"Afternoon","Weekday","Thursday"
-"507",3,56,16,20,1,"Night","Weekday","Thursday"
-"508",3,56,17,19,1,"Night","Weekday","Friday"
-"509",3,56,18,19,1,"Night","Weekend","Saturday"
-"510",3,56,19,19,1,"Night","Weekend","Sunday"
-"511",3,51,17,13,1,"Afternoon","Weekday","Friday"
-"512",3,54,8,13,1,"Afternoon","Weekday","Wednesday"
-"513",3,65,13,8,1,"Morning","Weekday","Monday"
-"514",3,66,14,15,1,"Afternoon","Weekday","Tuesday"
-"515",3,55,6,13,1,"Afternoon","Weekday","Monday"
-"516",3,55,9,13,1,"Afternoon","Weekday","Thursday"
-"517",29,59,7,20,1,"Night","Weekday","Tuesday"
-"518",29,59,10,20,1,"Night","Weekday","Friday"
-"519",29,59,18,15,1,"Afternoon","Weekend","Saturday"
-"520",29,47,6,12,1,"Afternoon","Weekday","Monday"
-"521",29,47,7,12,1,"Afternoon","Weekday","Tuesday"
-"522",29,47,10,12,1,"Afternoon","Weekday","Friday"
-"523",29,47,13,12,1,"Afternoon","Weekday","Monday"
-"524",29,47,14,12,1,"Afternoon","Weekday","Tuesday"
-"525",29,47,15,12,1,"Afternoon","Weekday","Wednesday"
-"526",29,47,16,12,1,"Afternoon","Weekday","Thursday"
-"527",29,47,17,12,1,"Afternoon","Weekday","Friday"
-"528",29,53,19,13,1,"Afternoon","Weekend","Sunday"
-"529",29,64,19,15,1,"Afternoon","Weekend","Sunday"
-"530",29,51,6,20,1,"Night","Weekday","Monday"
-"531",29,51,8,20,1,"Night","Weekday","Wednesday"
-"532",29,51,9,21,1,"Night","Weekday","Thursday"
-"533",29,51,12,19,1,"Night","Weekend","Sunday"
-"534",29,51,14,21,1,"Night","Weekday","Tuesday"
-"535",29,51,15,21,1,"Night","Weekday","Wednesday"
-"536",29,51,16,20,1,"Night","Weekday","Thursday"
-"537",29,51,18,19,1,"Night","Weekend","Saturday"
-"538",29,51,19,19,1,"Night","Weekend","Sunday"
-"539",29,54,9,13,1,"Afternoon","Weekday","Thursday"
-"540",29,54,15,13,1,"Afternoon","Weekday","Wednesday"
-"541",29,50,8,13,1,"Afternoon","Weekday","Wednesday"
-"542",29,50,10,13,1,"Afternoon","Weekday","Friday"
-"543",29,50,11,13,1,"Afternoon","Weekend","Saturday"
-"544",29,50,14,13,1,"Afternoon","Weekday","Tuesday"
-"545",29,55,6,13,1,"Afternoon","Weekday","Monday"
-"546",29,55,7,13,1,"Afternoon","Weekday","Tuesday"
-"547",29,55,18,13,1,"Afternoon","Weekend","Saturday"
-"548",24,52,7,13,1,"Afternoon","Weekday","Tuesday"
-"549",24,52,10,13,1,"Afternoon","Weekday","Friday"
-"550",24,53,9,13,1,"Afternoon","Weekday","Thursday"
-"551",24,51,15,13,1,"Afternoon","Weekday","Wednesday"
-"552",24,51,16,13,1,"Afternoon","Weekday","Thursday"
-"553",24,49,6,12,1,"Afternoon","Weekday","Monday"
-"554",24,49,7,12,1,"Afternoon","Weekday","Tuesday"
-"555",24,49,8,12,1,"Afternoon","Weekday","Wednesday"
-"556",24,49,9,12,1,"Afternoon","Weekday","Thursday"
-"557",24,49,10,12,1,"Afternoon","Weekday","Friday"
-"558",24,49,13,12,1,"Afternoon","Weekday","Monday"
-"559",24,49,15,12,1,"Afternoon","Weekday","Wednesday"
-"560",24,49,16,12,1,"Afternoon","Weekday","Thursday"
-"561",24,49,17,12,1,"Afternoon","Weekday","Friday"
-"562",24,50,6,13,1,"Afternoon","Weekday","Monday"
-"563",24,50,8,13,1,"Afternoon","Weekday","Wednesday"
-"564",24,50,13,13,1,"Afternoon","Weekday","Monday"
-"565",24,65,14,8,1,"Morning","Weekday","Tuesday"
-"566",24,55,8,21,1,"Night","Weekday","Wednesday"
-"567",24,55,9,19,1,"Night","Weekday","Thursday"
-"568",24,55,10,18,1,"Night","Weekday","Friday"
-"569",24,55,11,19,1,"Night","Weekend","Saturday"
-"570",24,55,12,19,1,"Night","Weekend","Sunday"
-"571",24,55,14,13,1,"Afternoon","Weekday","Tuesday"
-"572",24,55,14,20,1,"Night","Weekday","Tuesday"
-"573",24,55,15,20,1,"Night","Weekday","Wednesday"
-"574",24,55,16,20,1,"Night","Weekday","Thursday"
-"575",24,55,17,19,1,"Night","Weekday","Friday"
-"576",24,55,18,19,1,"Night","Weekend","Saturday"
-"577",24,55,19,19,1,"Night","Weekend","Sunday"
-"578",19,52,8,13,1,"Afternoon","Weekday","Wednesday"
-"579",19,52,11,14,1,"Afternoon","Weekend","Saturday"
-"580",19,52,16,13,1,"Afternoon","Weekday","Thursday"
-"581",19,52,19,14,1,"Afternoon","Weekend","Sunday"
-"582",19,68,12,16,1,"Afternoon","Weekend","Sunday"
-"583",19,37,6,8,1,"Morning","Weekday","Monday"
-"584",19,37,7,8,1,"Morning","Weekday","Tuesday"
-"585",19,37,8,8,1,"Morning","Weekday","Wednesday"
-"586",19,37,9,7,1,"Morning","Weekday","Thursday"
-"587",19,37,10,8,1,"Morning","Weekday","Friday"
-"588",19,37,13,8,1,"Morning","Weekday","Monday"
-"589",19,37,14,8,1,"Morning","Weekday","Tuesday"
-"590",19,37,15,8,1,"Morning","Weekday","Wednesday"
-"591",19,37,16,8,1,"Morning","Weekday","Thursday"
-"592",19,37,17,8,1,"Morning","Weekday","Friday"
-"593",19,58,7,20,1,"Night","Weekday","Tuesday"
-"594",19,58,9,20,1,"Night","Weekday","Thursday"
-"595",19,58,11,20,1,"Night","Weekend","Saturday"
-"596",19,58,14,20,1,"Night","Weekday","Tuesday"
-"597",19,64,18,20,1,"Night","Weekend","Saturday"
-"598",19,56,6,20,1,"Night","Weekday","Monday"
-"599",19,56,8,20,1,"Night","Weekday","Wednesday"
-"600",19,56,9,13,1,"Afternoon","Weekday","Thursday"
-"601",19,56,10,20,1,"Night","Weekday","Friday"
-"602",19,56,12,13,1,"Afternoon","Weekend","Sunday"
-"603",19,56,13,14,1,"Afternoon","Weekday","Monday"
-"604",19,56,16,20,1,"Night","Weekday","Thursday"
-"605",19,56,17,13,1,"Afternoon","Weekday","Friday"
-"606",19,56,17,19,1,"Night","Weekday","Friday"
-"607",19,56,19,20,1,"Night","Weekend","Sunday"
-"608",19,51,10,13,1,"Afternoon","Weekday","Friday"
-"609",19,51,14,13,1,"Afternoon","Weekday","Tuesday"
-"610",19,54,15,14,1,"Afternoon","Weekday","Wednesday"
-"611",19,54,18,14,1,"Afternoon","Weekend","Saturday"
-"612",19,50,6,14,1,"Afternoon","Weekday","Monday"
-"613",19,55,7,14,1,"Afternoon","Weekday","Tuesday"
-"614",19,60,13,20,1,"Night","Weekday","Monday"
-"615",2,52,6,14,1,"Afternoon","Weekday","Monday"
-"616",2,52,16,13,1,"Afternoon","Weekday","Thursday"
-"617",2,64,8,21,1,"Night","Weekday","Wednesday"
-"618",2,64,17,20,1,"Night","Weekday","Friday"
-"619",2,56,6,20,1,"Night","Weekday","Monday"
-"620",2,56,10,20,1,"Night","Weekday","Friday"
-"621",2,56,12,19,1,"Night","Weekend","Sunday"
-"622",2,56,13,20,1,"Night","Weekday","Monday"
-"623",2,56,14,19,1,"Night","Weekday","Tuesday"
-"624",2,56,16,20,1,"Night","Weekday","Thursday"
-"625",2,56,19,20,1,"Night","Weekend","Sunday"
-"626",2,38,6,7,1,"Morning","Weekday","Monday"
-"627",2,38,7,7,1,"Morning","Weekday","Tuesday"
-"628",2,38,8,7,1,"Morning","Weekday","Wednesday"
-"629",2,38,9,7,1,"Morning","Weekday","Thursday"
-"630",2,38,10,7,1,"Morning","Weekday","Friday"
-"631",2,38,13,7,1,"Morning","Weekday","Monday"
-"632",2,38,14,7,1,"Morning","Weekday","Tuesday"
-"633",2,38,15,7,1,"Morning","Weekday","Wednesday"
-"634",2,38,16,7,1,"Morning","Weekday","Thursday"
-"635",2,54,7,13,1,"Afternoon","Weekday","Tuesday"
-"636",2,54,11,14,1,"Afternoon","Weekend","Saturday"
-"637",2,54,11,20,1,"Night","Weekend","Saturday"
-"638",2,54,17,13,1,"Afternoon","Weekday","Friday"
-"639",2,50,8,14,1,"Afternoon","Weekday","Wednesday"
-"640",2,50,10,14,1,"Afternoon","Weekday","Friday"
-"641",2,65,16,7,1,"Morning","Weekday","Thursday"
-"642",2,55,9,14,1,"Afternoon","Weekday","Thursday"
-"643",2,55,14,13,1,"Afternoon","Weekday","Tuesday"
-"644",2,55,15,13,1,"Afternoon","Weekday","Wednesday"
-"645",6,52,11,13,1,"Afternoon","Weekend","Saturday"
-"646",6,52,18,13,1,"Afternoon","Weekend","Saturday"
-"647",6,39,6,7,1,"Morning","Weekday","Monday"
-"648",6,39,7,7,1,"Morning","Weekday","Tuesday"
-"649",6,39,8,7,1,"Morning","Weekday","Wednesday"
-"650",6,39,9,7,1,"Morning","Weekday","Thursday"
-"651",6,39,10,7,1,"Morning","Weekday","Friday"
-"652",6,39,13,8,1,"Morning","Weekday","Monday"
-"653",6,39,14,7,1,"Morning","Weekday","Tuesday"
-"654",6,39,15,7,1,"Morning","Weekday","Wednesday"
-"655",6,39,17,7,1,"Morning","Weekday","Friday"
-"656",6,53,6,13,1,"Afternoon","Weekday","Monday"
-"657",6,53,7,13,1,"Afternoon","Weekday","Tuesday"
-"658",6,56,9,20,1,"Night","Weekday","Thursday"
-"659",6,56,10,13,1,"Afternoon","Weekday","Friday"
-"660",6,51,8,13,1,"Afternoon","Weekday","Wednesday"
-"661",6,51,13,13,1,"Afternoon","Weekday","Monday"
-"662",6,51,14,13,1,"Afternoon","Weekday","Tuesday"
-"663",6,51,16,13,1,"Afternoon","Weekday","Thursday"
-"664",6,54,17,13,1,"Afternoon","Weekday","Friday"
-"665",6,50,6,20,1,"Night","Weekday","Monday"
-"666",6,50,7,20,1,"Night","Weekday","Tuesday"
-"667",6,50,9,13,1,"Afternoon","Weekday","Thursday"
-"668",6,50,12,19,1,"Night","Weekend","Sunday"
-"669",6,50,13,20,1,"Night","Weekday","Monday"
-"670",6,50,15,21,1,"Night","Weekday","Wednesday"
-"671",6,50,17,20,1,"Night","Weekday","Friday"
-"672",6,66,10,16,1,"Afternoon","Weekday","Friday"
-"673",6,55,15,13,1,"Afternoon","Weekday","Wednesday"
-"674",6,67,18,15,1,"Afternoon","Weekend","Saturday"
-"675",33,52,6,13,1,"Afternoon","Weekday","Monday"
-"676",33,52,17,13,1,"Afternoon","Weekday","Friday"
-"677",33,37,8,7,1,"Morning","Weekday","Wednesday"
-"678",33,37,9,7,1,"Morning","Weekday","Thursday"
-"679",33,37,10,7,1,"Morning","Weekday","Friday"
-"680",33,37,13,7,1,"Morning","Weekday","Monday"
-"681",33,37,14,7,1,"Morning","Weekday","Tuesday"
-"682",33,37,15,7,1,"Morning","Weekday","Wednesday"
-"683",33,37,16,7,1,"Morning","Weekday","Thursday"
-"684",33,37,17,7,1,"Morning","Weekday","Friday"
-"685",33,58,17,20,1,"Night","Weekday","Friday"
-"686",33,56,7,13,1,"Afternoon","Weekday","Tuesday"
-"687",33,56,7,20,1,"Night","Weekday","Tuesday"
-"688",33,56,8,19,1,"Night","Weekday","Wednesday"
-"689",33,56,9,13,1,"Afternoon","Weekday","Thursday"
-"690",33,56,9,19,1,"Night","Weekday","Thursday"
-"691",33,56,11,20,1,"Night","Weekend","Saturday"
-"692",33,56,12,19,1,"Night","Weekend","Sunday"
-"693",33,56,13,20,1,"Night","Weekday","Monday"
-"694",33,56,14,21,1,"Night","Weekday","Tuesday"
-"695",33,56,15,13,1,"Afternoon","Weekday","Wednesday"
-"696",33,56,15,20,1,"Night","Weekday","Wednesday"
-"697",33,56,19,20,1,"Night","Weekend","Sunday"
-"698",33,51,13,13,1,"Afternoon","Weekday","Monday"
-"699",33,51,16,13,1,"Afternoon","Weekday","Thursday"
-"700",33,54,8,13,1,"Afternoon","Weekday","Wednesday"
-"701",33,50,10,13,1,"Afternoon","Weekday","Friday"
-"702",33,50,14,13,1,"Afternoon","Weekday","Tuesday"
-"703",33,50,18,20,1,"Night","Weekend","Saturday"
-"704",33,50,19,13,1,"Afternoon","Weekend","Sunday"
-"705",33,67,10,21,1,"Night","Weekday","Friday"
-"706",33,67,16,20,1,"Night","Weekday","Thursday"
-"707",33,60,6,20,1,"Night","Weekday","Monday"
-"708",5,52,15,13,1,"Afternoon","Weekday","Wednesday"
-"709",5,68,18,14,1,"Afternoon","Weekend","Saturday"
-"710",5,37,6,7,1,"Morning","Weekday","Monday"
-"711",5,37,7,7,1,"Morning","Weekday","Tuesday"
-"712",5,37,8,8,1,"Morning","Weekday","Wednesday"
-"713",5,37,9,7,1,"Morning","Weekday","Thursday"
-"714",5,37,10,7,1,"Morning","Weekday","Friday"
-"715",5,37,13,7,1,"Morning","Weekday","Monday"
-"716",5,37,14,7,1,"Morning","Weekday","Tuesday"
-"717",5,37,15,7,1,"Morning","Weekday","Wednesday"
-"718",5,37,16,7,1,"Morning","Weekday","Thursday"
-"719",5,37,17,7,1,"Morning","Weekday","Friday"
-"720",5,58,10,20,1,"Night","Weekday","Friday"
-"721",5,53,14,13,1,"Afternoon","Weekday","Tuesday"
-"722",5,56,6,13,1,"Afternoon","Weekday","Monday"
-"723",5,56,6,19,1,"Night","Weekday","Monday"
-"724",5,56,7,20,1,"Night","Weekday","Tuesday"
-"725",5,56,8,13,1,"Afternoon","Weekday","Wednesday"
-"726",5,56,8,20,1,"Night","Weekday","Wednesday"
-"727",5,56,9,20,1,"Night","Weekday","Thursday"
-"728",5,56,10,13,1,"Afternoon","Weekday","Friday"
-"729",5,56,11,20,1,"Night","Weekend","Saturday"
-"730",5,56,13,20,1,"Night","Weekday","Monday"
-"731",5,56,14,20,1,"Night","Weekday","Tuesday"
-"732",5,56,16,19,1,"Night","Weekday","Thursday"
-"733",5,56,18,13,1,"Afternoon","Weekend","Saturday"
-"734",5,56,19,19,1,"Night","Weekend","Sunday"
-"735",5,51,13,13,1,"Afternoon","Weekday","Monday"
-"736",5,54,9,13,1,"Afternoon","Weekday","Thursday"
-"737",5,54,16,13,1,"Afternoon","Weekday","Thursday"
-"738",5,55,19,14,1,"Afternoon","Weekend","Sunday"
-"739",5,60,12,19,1,"Night","Weekend","Sunday"
-"740",5,60,17,20,1,"Night","Weekday","Friday"
-"741",23,52,6,13,1,"Afternoon","Weekday","Monday"
-"742",23,52,7,13,1,"Afternoon","Weekday","Tuesday"
-"743",23,52,15,13,1,"Afternoon","Weekday","Wednesday"
-"744",23,59,13,20,1,"Night","Weekday","Monday"
-"745",23,48,6,12,1,"Afternoon","Weekday","Monday"
-"746",23,48,7,12,1,"Afternoon","Weekday","Tuesday"
-"747",23,48,8,12,1,"Afternoon","Weekday","Wednesday"
-"748",23,48,9,12,1,"Afternoon","Weekday","Thursday"
-"749",23,48,10,12,1,"Afternoon","Weekday","Friday"
-"750",23,48,13,12,1,"Afternoon","Weekday","Monday"
-"751",23,48,14,12,1,"Afternoon","Weekday","Tuesday"
-"752",23,48,16,12,1,"Afternoon","Weekday","Thursday"
-"753",23,48,17,12,1,"Afternoon","Weekday","Friday"
-"754",23,69,12,14,1,"Afternoon","Weekend","Sunday"
-"755",23,69,19,12,1,"Afternoon","Weekend","Sunday"
-"756",23,58,11,16,1,"Afternoon","Weekend","Saturday"
-"757",23,56,17,13,1,"Afternoon","Weekday","Friday"
-"758",23,51,6,20,1,"Night","Weekday","Monday"
-"759",23,51,7,21,1,"Night","Weekday","Tuesday"
-"760",23,51,8,20,1,"Night","Weekday","Wednesday"
-"761",23,51,10,20,1,"Night","Weekday","Friday"
-"762",23,51,11,13,1,"Afternoon","Weekend","Saturday"
-"763",23,51,11,19,1,"Night","Weekend","Saturday"
-"764",23,51,12,20,1,"Night","Weekend","Sunday"
-"765",23,51,14,13,1,"Afternoon","Weekday","Tuesday"
-"766",23,51,15,20,1,"Night","Weekday","Wednesday"
-"767",23,51,16,21,1,"Night","Weekday","Thursday"
-"768",23,51,17,20,1,"Night","Weekday","Friday"
-"769",23,50,10,13,1,"Afternoon","Weekday","Friday"
-"770",23,50,16,13,1,"Afternoon","Weekday","Thursday"
-"771",23,50,18,14,1,"Afternoon","Weekend","Saturday"
-"772",23,65,10,9,1,"Morning","Weekday","Friday"
-"773",23,55,9,13,1,"Afternoon","Weekday","Thursday"
-"774",23,67,18,19,1,"Night","Weekend","Saturday"
-"775",15,52,7,13,1,"Afternoon","Weekday","Tuesday"
-"776",15,52,9,14,1,"Afternoon","Weekday","Thursday"
-"777",15,52,10,14,1,"Afternoon","Weekday","Friday"
-"778",15,52,13,13,1,"Afternoon","Weekday","Monday"
-"779",15,59,16,20,1,"Night","Weekday","Thursday"
-"780",15,37,6,7,1,"Morning","Weekday","Monday"
-"781",15,37,7,8,1,"Morning","Weekday","Tuesday"
-"782",15,37,8,8,1,"Morning","Weekday","Wednesday"
-"783",15,37,9,8,1,"Morning","Weekday","Thursday"
-"784",15,37,10,8,1,"Morning","Weekday","Friday"
-"785",15,37,13,8,1,"Morning","Weekday","Monday"
-"786",15,37,14,7,1,"Morning","Weekday","Tuesday"
-"787",15,37,15,7,1,"Morning","Weekday","Wednesday"
-"788",15,37,16,8,1,"Morning","Weekday","Thursday"
-"789",15,37,17,8,1,"Morning","Weekday","Friday"
-"790",15,53,6,14,1,"Afternoon","Weekday","Monday"
-"791",15,53,8,13,1,"Afternoon","Weekday","Wednesday"
-"792",15,53,15,13,1,"Afternoon","Weekday","Wednesday"
-"793",15,53,17,13,1,"Afternoon","Weekday","Friday"
-"794",15,64,15,19,1,"Night","Weekday","Wednesday"
-"795",15,56,6,20,1,"Night","Weekday","Monday"
-"796",15,56,7,19,1,"Night","Weekday","Tuesday"
-"797",15,56,8,20,1,"Night","Weekday","Wednesday"
-"798",15,56,13,20,1,"Night","Weekday","Monday"
-"799",15,56,14,20,1,"Night","Weekday","Tuesday"
-"800",15,56,16,13,1,"Afternoon","Weekday","Thursday"
-"801",15,56,17,20,1,"Night","Weekday","Friday"
-"802",15,54,11,19,1,"Night","Weekend","Saturday"
-"803",15,50,14,13,1,"Afternoon","Weekday","Tuesday"
-"804",15,50,18,14,1,"Afternoon","Weekend","Saturday"
-"805",15,50,18,20,1,"Night","Weekend","Saturday"
-"806",15,55,12,13,1,"Afternoon","Weekend","Sunday"
-"807",15,60,10,20,1,"Night","Weekday","Friday"
-"808",15,60,12,15,1,"Afternoon","Weekend","Sunday"
-"809",11,52,15,13,1,"Afternoon","Weekday","Wednesday"
-"810",11,58,10,18,1,"Night","Weekday","Friday"
-"811",11,53,6,13,1,"Afternoon","Weekday","Monday"
-"812",11,53,8,13,1,"Afternoon","Weekday","Wednesday"
-"813",11,56,9,13,1,"Afternoon","Weekday","Thursday"
-"814",11,56,9,20,1,"Night","Weekday","Thursday"
-"815",11,56,16,13,1,"Afternoon","Weekday","Thursday"
-"816",11,38,6,7,1,"Morning","Weekday","Monday"
-"817",11,38,7,7,1,"Morning","Weekday","Tuesday"
-"818",11,38,8,7,1,"Morning","Weekday","Wednesday"
-"819",11,38,9,7,1,"Morning","Weekday","Thursday"
-"820",11,38,10,7,1,"Morning","Weekday","Friday"
-"821",11,38,13,7,1,"Morning","Weekday","Monday"
-"822",11,38,14,7,1,"Morning","Weekday","Tuesday"
-"823",11,38,15,7,1,"Morning","Weekday","Wednesday"
-"824",11,38,16,7,1,"Morning","Weekday","Thursday"
-"825",11,38,17,7,1,"Morning","Weekday","Friday"
-"826",11,51,12,13,1,"Afternoon","Weekend","Sunday"
-"827",11,51,14,13,1,"Afternoon","Weekday","Tuesday"
-"828",11,50,7,13,1,"Afternoon","Weekday","Tuesday"
-"829",11,50,7,20,1,"Night","Weekday","Tuesday"
-"830",11,50,8,20,1,"Night","Weekday","Wednesday"
-"831",11,50,11,19,1,"Night","Weekend","Saturday"
-"832",11,50,12,19,1,"Night","Weekend","Sunday"
-"833",11,50,13,20,1,"Night","Weekday","Monday"
-"834",11,50,14,20,1,"Night","Weekday","Tuesday"
-"835",11,50,16,19,1,"Night","Weekday","Thursday"
-"836",11,50,17,20,1,"Night","Weekday","Friday"
-"837",11,50,18,19,1,"Night","Weekend","Saturday"
-"838",11,50,19,19,1,"Night","Weekend","Sunday"
-"839",31,52,18,13,1,"Afternoon","Weekend","Saturday"
-"840",31,59,11,19,1,"Night","Weekend","Saturday"
-"841",31,59,18,18,1,"Night","Weekend","Saturday"
-"842",31,69,19,12,1,"Afternoon","Weekend","Sunday"
-"843",31,53,13,13,1,"Afternoon","Weekday","Monday"
-"844",31,53,17,13,1,"Afternoon","Weekday","Friday"
-"845",31,56,7,13,1,"Afternoon","Weekday","Tuesday"
-"846",31,56,10,13,1,"Afternoon","Weekday","Friday"
-"847",31,51,6,12,1,"Afternoon","Weekday","Monday"
-"848",31,51,6,21,1,"Night","Weekday","Monday"
-"849",31,51,7,20,1,"Night","Weekday","Tuesday"
-"850",31,51,9,21,1,"Night","Weekday","Thursday"
-"851",31,51,10,21,1,"Night","Weekday","Friday"
-"852",31,51,12,19,1,"Night","Weekend","Sunday"
-"853",31,51,13,21,1,"Night","Weekday","Monday"
-"854",31,51,15,21,1,"Night","Weekday","Wednesday"
-"855",31,51,16,13,1,"Afternoon","Weekday","Thursday"
-"856",31,49,6,12,1,"Afternoon","Weekday","Monday"
-"857",31,49,7,12,1,"Afternoon","Weekday","Tuesday"
-"858",31,49,8,12,1,"Afternoon","Weekday","Wednesday"
-"859",31,49,9,12,1,"Afternoon","Weekday","Thursday"
-"860",31,49,10,12,1,"Afternoon","Weekday","Friday"
-"861",31,49,13,12,1,"Afternoon","Weekday","Monday"
-"862",31,49,14,12,1,"Afternoon","Weekday","Tuesday"
-"863",31,49,15,12,1,"Afternoon","Weekday","Wednesday"
-"864",31,49,16,12,1,"Afternoon","Weekday","Thursday"
-"865",31,54,15,13,1,"Afternoon","Weekday","Wednesday"
-"866",31,50,9,13,1,"Afternoon","Weekday","Thursday"
-"867",31,50,11,13,1,"Afternoon","Weekend","Saturday"
-"868",31,50,14,13,1,"Afternoon","Weekday","Tuesday"
-"869",31,65,12,3,1,"Midnight","Weekend","Sunday"
-"870",31,55,8,13,1,"Afternoon","Weekday","Wednesday"
-"871",31,55,12,13,1,"Afternoon","Weekend","Sunday"
-"872",31,60,18,15,1,"Afternoon","Weekend","Saturday"
-"873",27,52,17,13,1,"Afternoon","Weekday","Friday"
-"874",27,59,9,21,1,"Night","Weekday","Thursday"
-"875",27,48,6,12,1,"Afternoon","Weekday","Monday"
-"876",27,48,7,12,1,"Afternoon","Weekday","Tuesday"
-"877",27,48,8,12,1,"Afternoon","Weekday","Wednesday"
-"878",27,48,9,12,1,"Afternoon","Weekday","Thursday"
-"879",27,48,10,12,1,"Afternoon","Weekday","Friday"
-"880",27,48,13,12,1,"Afternoon","Weekday","Monday"
-"881",27,48,14,12,1,"Afternoon","Weekday","Tuesday"
-"882",27,48,15,12,1,"Afternoon","Weekday","Wednesday"
-"883",27,48,16,12,1,"Afternoon","Weekday","Thursday"
-"884",27,48,17,12,1,"Afternoon","Weekday","Friday"
-"885",27,69,12,14,1,"Afternoon","Weekend","Sunday"
-"886",27,69,19,13,1,"Afternoon","Weekend","Sunday"
-"887",27,53,7,13,1,"Afternoon","Weekday","Tuesday"
-"888",27,53,13,13,1,"Afternoon","Weekday","Monday"
-"889",27,51,6,21,1,"Night","Weekday","Monday"
-"890",27,51,7,21,1,"Night","Weekday","Tuesday"
-"891",27,51,8,13,1,"Afternoon","Weekday","Wednesday"
-"892",27,51,8,20,1,"Night","Weekday","Wednesday"
-"893",27,51,10,20,1,"Night","Weekday","Friday"
-"894",27,51,11,19,1,"Night","Weekend","Saturday"
-"895",27,51,12,19,1,"Night","Weekend","Sunday"
-"896",27,51,13,21,1,"Night","Weekday","Monday"
-"897",27,51,14,20,1,"Night","Weekday","Tuesday"
-"898",27,51,15,13,1,"Afternoon","Weekday","Wednesday"
-"899",27,51,16,13,1,"Afternoon","Weekday","Thursday"
-"900",27,51,16,20,1,"Night","Weekday","Thursday"
-"901",27,51,18,19,1,"Night","Weekend","Saturday"
-"902",27,51,19,19,1,"Night","Weekend","Sunday"
-"903",27,54,14,13,1,"Afternoon","Weekday","Tuesday"
-"904",27,50,6,12,1,"Afternoon","Weekday","Monday"
-"905",27,65,19,3,1,"Midnight","Weekend","Sunday"
-"906",27,55,9,12,1,"Afternoon","Weekday","Thursday"
-"907",27,55,12,13,1,"Afternoon","Weekend","Sunday"
-"908",27,60,15,20,1,"Night","Weekday","Wednesday"
-"909",30,68,19,13,1,"Afternoon","Weekend","Sunday"
-"910",30,58,6,19,1,"Night","Weekday","Monday"
-"911",30,49,6,12,1,"Afternoon","Weekday","Monday"
-"912",30,49,7,12,1,"Afternoon","Weekday","Tuesday"
-"913",30,49,8,12,1,"Afternoon","Weekday","Wednesday"
-"914",30,49,9,12,1,"Afternoon","Weekday","Thursday"
-"915",30,49,10,12,1,"Afternoon","Weekday","Friday"
-"916",30,49,13,12,1,"Afternoon","Weekday","Monday"
-"917",30,49,14,12,1,"Afternoon","Weekday","Tuesday"
-"918",30,49,15,12,1,"Afternoon","Weekday","Wednesday"
-"919",30,49,16,12,1,"Afternoon","Weekday","Thursday"
-"920",30,49,17,12,1,"Afternoon","Weekday","Friday"
-"921",30,54,10,13,1,"Afternoon","Weekday","Friday"
-"922",30,55,7,20,1,"Night","Weekday","Tuesday"
-"923",30,55,9,19,1,"Night","Weekday","Thursday"
-"924",30,55,14,20,1,"Night","Weekday","Tuesday"
-"925",30,55,15,19,1,"Night","Weekday","Wednesday"
-"926",30,55,16,21,1,"Night","Weekday","Thursday"
-"927",30,55,17,20,1,"Night","Weekday","Friday"
-"928",10,52,6,13,1,"Afternoon","Weekday","Monday"
-"929",10,52,14,13,1,"Afternoon","Weekday","Tuesday"
-"930",10,37,6,7,1,"Morning","Weekday","Monday"
-"931",10,37,7,8,1,"Morning","Weekday","Tuesday"
-"932",10,37,8,7,1,"Morning","Weekday","Wednesday"
-"933",10,37,10,7,1,"Morning","Weekday","Friday"
-"934",10,37,14,7,1,"Morning","Weekday","Tuesday"
-"935",10,37,15,7,1,"Morning","Weekday","Wednesday"
-"936",10,37,17,8,1,"Morning","Weekday","Friday"
-"937",10,58,19,19,1,"Night","Weekend","Sunday"
-"938",10,53,7,13,1,"Afternoon","Weekday","Tuesday"
-"939",10,53,8,13,1,"Afternoon","Weekday","Wednesday"
-"940",10,53,9,13,1,"Afternoon","Weekday","Thursday"
-"941",10,53,16,13,1,"Afternoon","Weekday","Thursday"
-"942",10,38,9,7,1,"Morning","Weekday","Thursday"
-"943",10,38,13,7,1,"Morning","Weekday","Monday"
-"944",10,38,16,8,1,"Morning","Weekday","Thursday"
-"945",10,51,15,13,1,"Afternoon","Weekday","Wednesday"
-"946",10,54,17,13,1,"Afternoon","Weekday","Friday"
-"947",10,50,6,20,1,"Night","Weekday","Monday"
-"948",10,50,7,21,1,"Night","Weekday","Tuesday"
-"949",10,50,9,20,1,"Night","Weekday","Thursday"
-"950",10,50,10,20,1,"Night","Weekday","Friday"
-"951",10,50,11,20,1,"Night","Weekend","Saturday"
-"952",10,50,12,20,1,"Night","Weekend","Sunday"
-"953",10,50,13,13,1,"Afternoon","Weekday","Monday"
-"954",10,50,13,21,1,"Night","Weekday","Monday"
-"955",10,50,16,20,1,"Night","Weekday","Thursday"
-"956",10,50,17,21,1,"Night","Weekday","Friday"
-"957",10,50,18,20,1,"Night","Weekend","Saturday"
-"958",10,55,10,13,1,"Afternoon","Weekday","Friday"
-"959",10,67,14,21,1,"Night","Weekday","Tuesday"
-"960",13,52,9,13,1,"Afternoon","Weekday","Thursday"
-"961",13,52,18,13,1,"Afternoon","Weekend","Saturday"
-"962",13,59,6,20,1,"Night","Weekday","Monday"
-"963",13,70,13,6,1,"Morning","Weekday","Monday"
-"964",13,58,13,19,1,"Night","Weekday","Monday"
-"965",13,53,7,13,1,"Afternoon","Weekday","Tuesday"
-"966",13,56,16,13,1,"Afternoon","Weekday","Thursday"
-"967",13,38,6,7,1,"Morning","Weekday","Monday"
-"968",13,38,7,7,1,"Morning","Weekday","Tuesday"
-"969",13,38,8,7,1,"Morning","Weekday","Wednesday"
-"970",13,38,9,7,1,"Morning","Weekday","Thursday"
-"971",13,38,16,8,1,"Morning","Weekday","Thursday"
-"972",13,38,17,8,1,"Morning","Weekday","Friday"
-"973",13,51,6,13,1,"Afternoon","Weekday","Monday"
-"974",13,51,8,13,1,"Afternoon","Weekday","Wednesday"
-"975",13,51,11,13,1,"Afternoon","Weekend","Saturday"
-"976",13,51,12,14,1,"Afternoon","Weekend","Sunday"
-"977",13,51,13,13,1,"Afternoon","Weekday","Monday"
-"978",13,65,19,3,1,"Midnight","Weekend","Sunday"
-"979",13,55,8,21,1,"Night","Weekday","Wednesday"
-"980",13,55,10,13,1,"Afternoon","Weekday","Friday"
-"981",13,55,13,19,1,"Night","Weekday","Monday"
-"982",13,55,16,20,1,"Night","Weekday","Thursday"
-"983",13,55,17,20,1,"Night","Weekday","Friday"
-"984",13,55,18,19,1,"Night","Weekend","Saturday"
-"985",13,55,19,19,1,"Night","Weekend","Sunday"
-"986",13,60,11,19,1,"Night","Weekend","Saturday"
-"987",13,57,13,13,1,"Afternoon","Weekday","Monday"
-"988",4,52,8,13,1,"Afternoon","Weekday","Wednesday"
-"989",4,47,13,12,1,"Afternoon","Weekday","Monday"
-"990",4,53,11,13,1,"Afternoon","Weekend","Saturday"
-"991",4,56,7,14,1,"Afternoon","Weekday","Tuesday"
-"992",4,56,9,13,1,"Afternoon","Weekday","Thursday"
-"993",4,56,14,13,1,"Afternoon","Weekday","Tuesday"
-"994",4,56,15,14,1,"Afternoon","Weekday","Wednesday"
-"995",4,56,18,14,1,"Afternoon","Weekend","Saturday"
-"996",4,38,6,7,1,"Morning","Weekday","Monday"
-"997",4,38,7,8,1,"Morning","Weekday","Tuesday"
-"998",4,38,8,7,1,"Morning","Weekday","Wednesday"
-"999",4,38,9,7,1,"Morning","Weekday","Thursday"
-"1000",4,38,10,7,1,"Morning","Weekday","Friday"
-"1001",4,38,14,7,1,"Morning","Weekday","Tuesday"
-"1002",4,38,15,7,1,"Morning","Weekday","Wednesday"
-"1003",4,38,16,7,1,"Morning","Weekday","Thursday"
-"1004",4,38,17,7,1,"Morning","Weekday","Friday"
-"1005",4,51,13,14,1,"Afternoon","Weekday","Monday"
-"1006",4,51,16,13,1,"Afternoon","Weekday","Thursday"
-"1007",4,51,17,13,1,"Afternoon","Weekday","Friday"
-"1008",4,50,6,13,1,"Afternoon","Weekday","Monday"
-"1009",4,50,6,21,1,"Night","Weekday","Monday"
-"1010",4,50,7,20,1,"Night","Weekday","Tuesday"
-"1011",4,50,11,19,1,"Night","Weekend","Saturday"
-"1012",4,50,14,21,1,"Night","Weekday","Tuesday"
-"1013",4,50,15,20,1,"Night","Weekday","Wednesday"
-"1014",4,50,16,20,1,"Night","Weekday","Thursday"
-"1015",4,50,19,20,1,"Night","Weekend","Sunday"
-"1016",4,55,10,14,1,"Afternoon","Weekday","Friday"
-"1017",4,67,18,19,1,"Night","Weekend","Saturday"
-"1018",4,60,11,15,1,"Afternoon","Weekend","Saturday"
-"1019",22,52,13,13,1,"Afternoon","Weekday","Monday"
-"1020",22,52,15,13,1,"Afternoon","Weekday","Wednesday"
-"1021",22,59,8,20,1,"Night","Weekday","Wednesday"
-"1022",22,59,14,20,1,"Night","Weekday","Tuesday"
-"1023",22,47,6,12,1,"Afternoon","Weekday","Monday"
-"1024",22,47,8,12,1,"Afternoon","Weekday","Wednesday"
-"1025",22,47,10,12,1,"Afternoon","Weekday","Friday"
-"1026",22,47,13,12,1,"Afternoon","Weekday","Monday"
-"1027",22,47,14,12,1,"Afternoon","Weekday","Tuesday"
-"1028",22,47,15,12,1,"Afternoon","Weekday","Wednesday"
-"1029",22,47,16,12,1,"Afternoon","Weekday","Thursday"
-"1030",22,47,17,12,1,"Afternoon","Weekday","Friday"
-"1031",22,62,18,18,1,"Night","Weekend","Saturday"
-"1032",22,53,17,13,1,"Afternoon","Weekday","Friday"
-"1033",22,56,6,13,1,"Afternoon","Weekday","Monday"
-"1034",22,56,7,13,1,"Afternoon","Weekday","Tuesday"
-"1035",22,56,10,13,1,"Afternoon","Weekday","Friday"
-"1036",22,51,8,13,1,"Afternoon","Weekday","Wednesday"
-"1037",22,51,9,13,1,"Afternoon","Weekday","Thursday"
-"1038",22,51,9,21,1,"Night","Weekday","Thursday"
-"1039",22,51,11,19,1,"Night","Weekend","Saturday"
-"1040",22,51,12,20,1,"Night","Weekend","Sunday"
-"1041",22,51,15,20,1,"Night","Weekday","Wednesday"
-"1042",22,51,17,21,1,"Night","Weekday","Friday"
-"1043",22,51,19,19,1,"Night","Weekend","Sunday"
-"1044",22,54,14,13,1,"Afternoon","Weekday","Tuesday"
-"1045",22,54,16,13,1,"Afternoon","Weekday","Thursday"
-"1046",22,54,18,19,1,"Night","Weekend","Saturday"
-"1047",7,52,7,13,1,"Afternoon","Weekday","Tuesday"
-"1048",7,52,12,13,1,"Afternoon","Weekend","Sunday"
-"1049",7,52,13,13,1,"Afternoon","Weekday","Monday"
-"1050",7,68,11,17,1,"Afternoon","Weekend","Saturday"
-"1051",7,37,6,7,1,"Morning","Weekday","Monday"
-"1052",7,37,7,7,1,"Morning","Weekday","Tuesday"
-"1053",7,37,8,7,1,"Morning","Weekday","Wednesday"
-"1054",7,37,9,7,1,"Morning","Weekday","Thursday"
-"1055",7,37,10,7,1,"Morning","Weekday","Friday"
-"1056",7,37,13,7,1,"Morning","Weekday","Monday"
-"1057",7,37,14,7,1,"Morning","Weekday","Tuesday"
-"1058",7,37,15,7,1,"Morning","Weekday","Wednesday"
-"1059",7,37,16,7,1,"Morning","Weekday","Thursday"
-"1060",7,63,8,13,1,"Afternoon","Weekday","Wednesday"
-"1061",7,63,10,13,1,"Afternoon","Weekday","Friday"
-"1062",7,63,14,13,1,"Afternoon","Weekday","Tuesday"
-"1063",7,63,17,13,1,"Afternoon","Weekday","Friday"
-"1064",7,58,15,20,1,"Night","Weekday","Wednesday"
-"1065",7,56,7,20,1,"Night","Weekday","Tuesday"
-"1066",7,56,8,20,1,"Night","Weekday","Wednesday"
-"1067",7,56,13,20,1,"Night","Weekday","Monday"
-"1068",7,56,16,20,1,"Night","Weekday","Thursday"
-"1069",7,56,17,20,1,"Night","Weekday","Friday"
-"1070",7,56,19,20,1,"Night","Weekend","Sunday"
-"1071",7,51,9,13,1,"Afternoon","Weekday","Thursday"
-"1072",7,51,11,19,1,"Night","Weekend","Saturday"
-"1073",7,51,15,13,1,"Afternoon","Weekday","Wednesday"
-"1074",7,50,16,13,1,"Afternoon","Weekday","Thursday"
+from,to,day,hour,weight,date,time_bin,weekday.weekend,day.week
+20,51,6,13,1,2014-01-06,Early afternoon,Weekday,Monday
+20,51,9,13,1,2014-01-09,Early afternoon,Weekday,Thursday
+20,51,13,13,1,2014-01-13,Early afternoon,Weekday,Monday
+20,51,16,13,1,2014-01-16,Early afternoon,Weekday,Thursday
+20,67,18,14,1,2014-01-18,Early afternoon,Weekend,Saturday
+20,36,6,8,1,2014-01-06,Early morning,Weekday,Monday
+20,36,7,7,1,2014-01-07,Early morning,Weekday,Tuesday
+20,36,8,8,1,2014-01-08,Early morning,Weekday,Wednesday
+20,36,9,8,1,2014-01-09,Early morning,Weekday,Thursday
+20,36,10,8,1,2014-01-10,Early morning,Weekday,Friday
+20,36,13,8,1,2014-01-13,Early morning,Weekday,Monday
+20,36,14,8,1,2014-01-14,Early morning,Weekday,Tuesday
+20,36,15,7,1,2014-01-15,Early morning,Weekday,Wednesday
+20,36,16,7,1,2014-01-16,Early morning,Weekday,Thursday
+20,36,17,8,1,2014-01-17,Early morning,Weekday,Friday
+20,52,8,13,1,2014-01-08,Early afternoon,Weekday,Wednesday
+20,52,12,13,1,2014-01-12,Early afternoon,Weekend,Sunday
+20,52,12,19,1,2014-01-12,Evening,Weekend,Sunday
+20,55,9,20,1,2014-01-09,Evening,Weekday,Thursday
+20,55,13,20,1,2014-01-13,Evening,Weekday,Monday
+20,55,14,13,1,2014-01-14,Early afternoon,Weekday,Tuesday
+20,55,15,21,1,2014-01-15,Night,Weekday,Wednesday
+20,55,19,19,1,2014-01-19,Evening,Weekend,Sunday
+20,50,17,13,1,2014-01-17,Early afternoon,Weekday,Friday
+20,50,18,20,1,2014-01-18,Evening,Weekend,Saturday
+20,53,7,13,1,2014-01-07,Early afternoon,Weekday,Tuesday
+20,53,11,20,1,2014-01-11,Evening,Weekend,Saturday
+20,49,15,13,1,2014-01-15,Early afternoon,Weekday,Wednesday
+20,54,8,20,1,2014-01-08,Evening,Weekday,Wednesday
+20,59,12,15,1,2014-01-12,Late afternoon,Weekend,Sunday
+20,59,16,20,1,2014-01-16,Evening,Weekday,Thursday
+20,59,17,20,1,2014-01-17,Evening,Weekday,Friday
+34,51,10,13,1,2014-01-10,Early afternoon,Weekday,Friday
+34,51,11,13,1,2014-01-11,Early afternoon,Weekend,Saturday
+34,51,14,13,1,2014-01-14,Early afternoon,Weekday,Tuesday
+34,57,6,21,1,2014-01-06,Night,Weekday,Monday
+34,52,7,13,1,2014-01-07,Early afternoon,Weekday,Tuesday
+34,52,17,13,1,2014-01-17,Early afternoon,Weekday,Friday
+34,55,6,13,1,2014-01-06,Early afternoon,Weekday,Monday
+34,37,7,7,1,2014-01-07,Early morning,Weekday,Tuesday
+34,37,8,7,1,2014-01-08,Early morning,Weekday,Wednesday
+34,37,9,7,1,2014-01-09,Early morning,Weekday,Thursday
+34,37,10,7,1,2014-01-10,Early morning,Weekday,Friday
+34,37,13,7,1,2014-01-13,Early morning,Weekday,Monday
+34,37,14,7,1,2014-01-14,Early morning,Weekday,Tuesday
+34,37,15,8,1,2014-01-15,Early morning,Weekday,Wednesday
+34,37,16,7,1,2014-01-16,Early morning,Weekday,Thursday
+34,37,17,7,1,2014-01-17,Early morning,Weekday,Friday
+34,50,9,13,1,2014-01-09,Early afternoon,Weekday,Thursday
+34,50,16,13,1,2014-01-16,Early afternoon,Weekday,Thursday
+34,49,7,21,1,2014-01-07,Night,Weekday,Tuesday
+34,49,8,13,1,2014-01-08,Early afternoon,Weekday,Wednesday
+34,49,8,20,1,2014-01-08,Evening,Weekday,Wednesday
+34,49,9,21,1,2014-01-09,Night,Weekday,Thursday
+34,49,11,19,1,2014-01-11,Evening,Weekend,Saturday
+34,49,13,20,1,2014-01-13,Evening,Weekday,Monday
+34,49,15,14,1,2014-01-15,Early afternoon,Weekday,Wednesday
+34,49,15,20,1,2014-01-15,Evening,Weekday,Wednesday
+34,49,17,20,1,2014-01-17,Evening,Weekday,Friday
+34,49,18,19,1,2014-01-18,Evening,Weekend,Saturday
+34,49,19,14,1,2014-01-19,Early afternoon,Weekend,Sunday
+34,54,12,13,1,2014-01-12,Early afternoon,Weekend,Sunday
+34,54,13,13,1,2014-01-13,Early afternoon,Weekday,Monday
+34,66,11,16,1,2014-01-11,Late afternoon,Weekend,Saturday
+34,59,12,15,1,2014-01-12,Late afternoon,Weekend,Sunday
+28,51,13,13,1,2014-01-13,Early afternoon,Weekday,Monday
+28,58,13,20,1,2014-01-13,Evening,Weekday,Monday
+28,58,17,19,1,2014-01-17,Evening,Weekday,Friday
+28,46,6,12,1,2014-01-06,Early afternoon,Weekday,Monday
+28,46,7,12,1,2014-01-07,Early afternoon,Weekday,Tuesday
+28,46,8,12,1,2014-01-08,Early afternoon,Weekday,Wednesday
+28,46,9,12,1,2014-01-09,Early afternoon,Weekday,Thursday
+28,46,10,12,1,2014-01-10,Early afternoon,Weekday,Friday
+28,46,13,12,1,2014-01-13,Early afternoon,Weekday,Monday
+28,46,14,12,1,2014-01-14,Early afternoon,Weekday,Tuesday
+28,46,15,12,1,2014-01-15,Early afternoon,Weekday,Wednesday
+28,46,16,12,1,2014-01-16,Early afternoon,Weekday,Thursday
+28,46,17,12,1,2014-01-17,Early afternoon,Weekday,Friday
+28,57,9,20,1,2014-01-09,Evening,Weekday,Thursday
+28,55,10,13,1,2014-01-10,Early afternoon,Weekday,Friday
+28,50,6,20,1,2014-01-06,Evening,Weekday,Monday
+28,50,7,20,1,2014-01-07,Evening,Weekday,Tuesday
+28,50,8,13,1,2014-01-08,Early afternoon,Weekday,Wednesday
+28,50,9,13,1,2014-01-09,Early afternoon,Weekday,Thursday
+28,50,12,19,1,2014-01-12,Evening,Weekend,Sunday
+28,50,15,20,1,2014-01-15,Evening,Weekday,Wednesday
+28,50,16,13,1,2014-01-16,Early afternoon,Weekday,Thursday
+28,50,16,20,1,2014-01-16,Evening,Weekday,Thursday
+28,50,18,19,1,2014-01-18,Evening,Weekend,Saturday
+28,50,19,19,1,2014-01-19,Evening,Weekend,Sunday
+28,53,6,13,1,2014-01-06,Early afternoon,Weekday,Monday
+28,53,14,13,1,2014-01-14,Early afternoon,Weekday,Tuesday
+28,53,18,13,1,2014-01-18,Early afternoon,Weekend,Saturday
+28,49,11,13,1,2014-01-11,Early afternoon,Weekend,Saturday
+28,49,17,13,1,2014-01-17,Early afternoon,Weekday,Friday
+28,54,7,13,1,2014-01-07,Early afternoon,Weekday,Tuesday
+28,54,15,13,1,2014-01-15,Early afternoon,Weekday,Wednesday
+21,51,7,13,1,2014-01-07,Early afternoon,Weekday,Tuesday
+21,51,8,13,1,2014-01-08,Early afternoon,Weekday,Wednesday
+21,46,6,12,1,2014-01-06,Early afternoon,Weekday,Monday
+21,46,7,12,1,2014-01-07,Early afternoon,Weekday,Tuesday
+21,46,8,12,1,2014-01-08,Early afternoon,Weekday,Wednesday
+21,46,9,12,1,2014-01-09,Early afternoon,Weekday,Thursday
+21,46,10,12,1,2014-01-10,Early afternoon,Weekday,Friday
+21,46,13,12,1,2014-01-13,Early afternoon,Weekday,Monday
+21,46,14,12,1,2014-01-14,Early afternoon,Weekday,Tuesday
+21,46,16,12,1,2014-01-16,Early afternoon,Weekday,Thursday
+21,46,17,12,1,2014-01-17,Early afternoon,Weekday,Friday
+21,52,10,13,1,2014-01-10,Early afternoon,Weekday,Friday
+21,52,13,13,1,2014-01-13,Early afternoon,Weekday,Monday
+21,55,6,13,1,2014-01-06,Early afternoon,Weekday,Monday
+21,55,9,13,1,2014-01-09,Early afternoon,Weekday,Thursday
+21,55,14,13,1,2014-01-14,Early afternoon,Weekday,Tuesday
+21,55,15,13,1,2014-01-15,Early afternoon,Weekday,Wednesday
+21,50,6,20,1,2014-01-06,Evening,Weekday,Monday
+21,50,7,20,1,2014-01-07,Evening,Weekday,Tuesday
+21,50,8,19,1,2014-01-08,Evening,Weekday,Wednesday
+21,50,10,19,1,2014-01-10,Evening,Weekday,Friday
+21,50,11,20,1,2014-01-11,Evening,Weekend,Saturday
+21,50,12,19,1,2014-01-12,Evening,Weekend,Sunday
+21,50,13,20,1,2014-01-13,Evening,Weekday,Monday
+21,50,14,19,1,2014-01-14,Evening,Weekday,Tuesday
+21,50,15,19,1,2014-01-15,Evening,Weekday,Wednesday
+21,50,16,13,1,2014-01-16,Early afternoon,Weekday,Thursday
+21,50,18,20,1,2014-01-18,Evening,Weekend,Saturday
+21,50,19,20,1,2014-01-19,Evening,Weekend,Sunday
+21,64,17,8,1,2014-01-17,Early morning,Weekday,Friday
+21,54,17,13,1,2014-01-17,Early afternoon,Weekday,Friday
+16,51,9,13,1,2014-01-09,Early afternoon,Weekday,Thursday
+16,51,10,13,1,2014-01-10,Early afternoon,Weekday,Friday
+16,46,13,12,1,2014-01-13,Early afternoon,Weekday,Monday
+16,57,15,20,1,2014-01-15,Evening,Weekday,Wednesday
+16,57,16,19,1,2014-01-16,Evening,Weekday,Thursday
+16,57,18,15,1,2014-01-18,Late afternoon,Weekend,Saturday
+16,52,7,13,1,2014-01-07,Early afternoon,Weekday,Tuesday
+16,52,16,13,1,2014-01-16,Early afternoon,Weekday,Thursday
+16,55,8,13,1,2014-01-08,Early afternoon,Weekday,Wednesday
+16,55,14,13,1,2014-01-14,Early afternoon,Weekday,Tuesday
+16,55,18,13,1,2014-01-18,Early afternoon,Weekend,Saturday
+16,37,6,8,1,2014-01-06,Early morning,Weekday,Monday
+16,37,7,7,1,2014-01-07,Early morning,Weekday,Tuesday
+16,37,8,7,1,2014-01-08,Early morning,Weekday,Wednesday
+16,37,10,7,1,2014-01-10,Early morning,Weekday,Friday
+16,37,14,7,1,2014-01-14,Early morning,Weekday,Tuesday
+16,37,16,7,1,2014-01-16,Early morning,Weekday,Thursday
+16,37,17,7,1,2014-01-17,Early morning,Weekday,Friday
+16,50,12,14,1,2014-01-12,Early afternoon,Weekend,Sunday
+16,53,15,13,1,2014-01-15,Early afternoon,Weekday,Wednesday
+16,53,17,13,1,2014-01-17,Early afternoon,Weekday,Friday
+16,49,6,13,1,2014-01-06,Early afternoon,Weekday,Monday
+16,49,6,20,1,2014-01-06,Evening,Weekday,Monday
+16,49,7,20,1,2014-01-07,Evening,Weekday,Tuesday
+16,49,8,21,1,2014-01-08,Night,Weekday,Wednesday
+16,49,11,20,1,2014-01-11,Evening,Weekend,Saturday
+16,49,12,20,1,2014-01-12,Evening,Weekend,Sunday
+16,49,13,13,1,2014-01-13,Early afternoon,Weekday,Monday
+16,49,13,21,1,2014-01-13,Night,Weekday,Monday
+16,49,14,20,1,2014-01-14,Evening,Weekday,Tuesday
+16,49,18,19,1,2014-01-18,Evening,Weekend,Saturday
+16,49,19,20,1,2014-01-19,Evening,Weekend,Sunday
+26,58,12,19,1,2014-01-12,Evening,Weekend,Sunday
+26,46,6,12,1,2014-01-06,Early afternoon,Weekday,Monday
+26,46,7,12,1,2014-01-07,Early afternoon,Weekday,Tuesday
+26,46,8,12,1,2014-01-08,Early afternoon,Weekday,Wednesday
+26,46,9,12,1,2014-01-09,Early afternoon,Weekday,Thursday
+26,46,10,12,1,2014-01-10,Early afternoon,Weekday,Friday
+26,46,13,12,1,2014-01-13,Early afternoon,Weekday,Monday
+26,46,14,12,1,2014-01-14,Early afternoon,Weekday,Tuesday
+26,46,15,12,1,2014-01-15,Early afternoon,Weekday,Wednesday
+26,46,16,12,1,2014-01-16,Early afternoon,Weekday,Thursday
+26,46,17,12,1,2014-01-17,Early afternoon,Weekday,Friday
+26,57,18,15,1,2014-01-18,Late afternoon,Weekend,Saturday
+26,52,14,13,1,2014-01-14,Early afternoon,Weekday,Tuesday
+26,55,16,14,1,2014-01-16,Early afternoon,Weekday,Thursday
+26,50,6,13,1,2014-01-06,Early afternoon,Weekday,Monday
+26,50,6,20,1,2014-01-06,Evening,Weekday,Monday
+26,50,7,20,1,2014-01-07,Evening,Weekday,Tuesday
+26,50,9,20,1,2014-01-09,Evening,Weekday,Thursday
+26,50,11,19,1,2014-01-11,Evening,Weekend,Saturday
+26,50,15,13,1,2014-01-15,Early afternoon,Weekday,Wednesday
+26,50,15,20,1,2014-01-15,Evening,Weekday,Wednesday
+26,50,17,13,1,2014-01-17,Early afternoon,Weekday,Friday
+26,50,18,13,1,2014-01-18,Early afternoon,Weekend,Saturday
+26,50,18,20,1,2014-01-18,Evening,Weekend,Saturday
+26,53,7,13,1,2014-01-07,Early afternoon,Weekday,Tuesday
+26,49,8,13,1,2014-01-08,Early afternoon,Weekday,Wednesday
+26,49,9,14,1,2014-01-09,Early afternoon,Weekday,Thursday
+26,54,10,13,1,2014-01-10,Early afternoon,Weekday,Friday
+26,54,13,14,1,2014-01-13,Early afternoon,Weekday,Monday
+26,59,16,20,1,2014-01-16,Evening,Weekday,Thursday
+12,51,17,13,1,2014-01-17,Early afternoon,Weekday,Friday
+12,58,12,15,1,2014-01-12,Late afternoon,Weekend,Sunday
+12,58,19,15,1,2014-01-19,Late afternoon,Weekend,Sunday
+12,38,6,7,1,2014-01-06,Early morning,Weekday,Monday
+12,38,7,8,1,2014-01-07,Early morning,Weekday,Tuesday
+12,38,8,7,1,2014-01-08,Early morning,Weekday,Wednesday
+12,38,9,8,1,2014-01-09,Early morning,Weekday,Thursday
+12,38,10,8,1,2014-01-10,Early morning,Weekday,Friday
+12,38,13,8,1,2014-01-13,Early morning,Weekday,Monday
+12,38,14,7,1,2014-01-14,Early morning,Weekday,Tuesday
+12,38,15,7,1,2014-01-15,Early morning,Weekday,Wednesday
+12,57,6,21,1,2014-01-06,Night,Weekday,Monday
+12,52,14,13,1,2014-01-14,Early afternoon,Weekday,Tuesday
+12,55,13,13,1,2014-01-13,Early afternoon,Weekday,Monday
+12,55,15,13,1,2014-01-15,Early afternoon,Weekday,Wednesday
+12,50,9,13,1,2014-01-09,Early afternoon,Weekday,Thursday
+12,50,12,13,1,2014-01-12,Early afternoon,Weekend,Sunday
+12,50,19,13,1,2014-01-19,Early afternoon,Weekend,Sunday
+12,49,6,13,1,2014-01-06,Early afternoon,Weekday,Monday
+12,49,7,20,1,2014-01-07,Evening,Weekday,Tuesday
+12,49,8,13,1,2014-01-08,Early afternoon,Weekday,Wednesday
+12,49,8,20,1,2014-01-08,Evening,Weekday,Wednesday
+12,49,10,13,1,2014-01-10,Early afternoon,Weekday,Friday
+12,49,11,14,1,2014-01-11,Early afternoon,Weekend,Saturday
+12,49,11,19,1,2014-01-11,Evening,Weekend,Saturday
+12,49,12,20,1,2014-01-12,Evening,Weekend,Sunday
+12,49,13,20,1,2014-01-13,Evening,Weekday,Monday
+12,49,15,20,1,2014-01-15,Evening,Weekday,Wednesday
+12,49,16,20,1,2014-01-16,Evening,Weekday,Thursday
+12,49,17,20,1,2014-01-17,Evening,Weekday,Friday
+12,54,7,13,1,2014-01-07,Early afternoon,Weekday,Tuesday
+12,54,16,13,1,2014-01-16,Early afternoon,Weekday,Thursday
+12,59,19,19,1,2014-01-19,Evening,Weekend,Sunday
+32,51,8,13,1,2014-01-08,Early afternoon,Weekday,Wednesday
+32,51,9,13,1,2014-01-09,Early afternoon,Weekday,Thursday
+32,68,12,13,1,2014-01-12,Early afternoon,Weekend,Sunday
+32,68,19,15,1,2014-01-19,Late afternoon,Weekend,Sunday
+32,57,18,15,1,2014-01-18,Late afternoon,Weekend,Saturday
+32,52,7,13,1,2014-01-07,Early afternoon,Weekday,Tuesday
+32,52,14,13,1,2014-01-14,Early afternoon,Weekday,Tuesday
+32,52,15,13,1,2014-01-15,Early afternoon,Weekday,Wednesday
+32,52,16,13,1,2014-01-16,Early afternoon,Weekday,Thursday
+32,55,6,13,1,2014-01-06,Early afternoon,Weekday,Monday
+32,55,13,13,1,2014-01-13,Early afternoon,Weekday,Monday
+32,50,7,21,1,2014-01-07,Night,Weekday,Tuesday
+32,50,8,21,1,2014-01-08,Night,Weekday,Wednesday
+32,50,9,20,1,2014-01-09,Evening,Weekday,Thursday
+32,50,10,13,1,2014-01-10,Early afternoon,Weekday,Friday
+32,50,10,22,1,2014-01-10,Night,Weekday,Friday
+32,50,13,20,1,2014-01-13,Evening,Weekday,Monday
+32,50,14,20,1,2014-01-14,Evening,Weekday,Tuesday
+32,50,16,20,1,2014-01-16,Evening,Weekday,Thursday
+32,50,17,21,1,2014-01-17,Night,Weekday,Friday
+32,50,18,19,1,2014-01-18,Evening,Weekend,Saturday
+32,50,19,19,1,2014-01-19,Evening,Weekend,Sunday
+32,48,6,12,1,2014-01-06,Early afternoon,Weekday,Monday
+32,48,7,12,1,2014-01-07,Early afternoon,Weekday,Tuesday
+32,48,8,12,1,2014-01-08,Early afternoon,Weekday,Wednesday
+32,48,9,12,1,2014-01-09,Early afternoon,Weekday,Thursday
+32,48,10,12,1,2014-01-10,Early afternoon,Weekday,Friday
+32,48,13,12,1,2014-01-13,Early afternoon,Weekday,Monday
+32,48,15,12,1,2014-01-15,Early afternoon,Weekday,Wednesday
+32,48,16,12,1,2014-01-16,Early afternoon,Weekday,Thursday
+32,53,17,13,1,2014-01-17,Early afternoon,Weekday,Friday
+32,53,18,13,1,2014-01-18,Early afternoon,Weekend,Saturday
+25,51,11,13,1,2014-01-11,Early afternoon,Weekend,Saturday
+25,51,18,13,1,2014-01-18,Early afternoon,Weekend,Saturday
+25,58,19,20,1,2014-01-19,Evening,Weekend,Sunday
+25,47,6,12,1,2014-01-06,Early afternoon,Weekday,Monday
+25,47,7,12,1,2014-01-07,Early afternoon,Weekday,Tuesday
+25,47,8,12,1,2014-01-08,Early afternoon,Weekday,Wednesday
+25,47,9,12,1,2014-01-09,Early afternoon,Weekday,Thursday
+25,47,10,12,1,2014-01-10,Early afternoon,Weekday,Friday
+25,47,13,12,1,2014-01-13,Early afternoon,Weekday,Monday
+25,47,14,12,1,2014-01-14,Early afternoon,Weekday,Tuesday
+25,47,15,12,1,2014-01-15,Early afternoon,Weekday,Wednesday
+25,47,16,12,1,2014-01-16,Early afternoon,Weekday,Thursday
+25,47,17,12,1,2014-01-17,Early afternoon,Weekday,Friday
+25,62,8,12,1,2014-01-08,Early afternoon,Weekday,Wednesday
+25,62,10,13,1,2014-01-10,Early afternoon,Weekday,Friday
+25,62,14,13,1,2014-01-14,Early afternoon,Weekday,Tuesday
+25,62,17,13,1,2014-01-17,Early afternoon,Weekday,Friday
+25,57,15,19,1,2014-01-15,Evening,Weekday,Wednesday
+25,52,9,13,1,2014-01-09,Early afternoon,Weekday,Thursday
+25,55,13,13,1,2014-01-13,Early afternoon,Weekday,Monday
+25,50,7,21,1,2014-01-07,Night,Weekday,Tuesday
+25,50,8,19,1,2014-01-08,Evening,Weekday,Wednesday
+25,50,9,20,1,2014-01-09,Evening,Weekday,Thursday
+25,50,12,20,1,2014-01-12,Evening,Weekend,Sunday
+25,50,14,21,1,2014-01-14,Night,Weekday,Tuesday
+25,50,15,13,1,2014-01-15,Early afternoon,Weekday,Wednesday
+25,50,16,13,1,2014-01-16,Early afternoon,Weekday,Thursday
+25,50,17,20,1,2014-01-17,Evening,Weekday,Friday
+25,53,12,13,1,2014-01-12,Early afternoon,Weekend,Sunday
+25,49,11,19,1,2014-01-11,Evening,Weekend,Saturday
+25,54,6,13,1,2014-01-06,Early afternoon,Weekday,Monday
+14,51,9,13,1,2014-01-09,Early afternoon,Weekday,Thursday
+14,58,14,20,1,2014-01-14,Evening,Weekday,Tuesday
+14,36,6,7,1,2014-01-06,Early morning,Weekday,Monday
+14,36,7,7,1,2014-01-07,Early morning,Weekday,Tuesday
+14,36,8,7,1,2014-01-08,Early morning,Weekday,Wednesday
+14,36,9,8,1,2014-01-09,Early morning,Weekday,Thursday
+14,36,10,7,1,2014-01-10,Early morning,Weekday,Friday
+14,36,13,7,1,2014-01-13,Early morning,Weekday,Monday
+14,36,14,7,1,2014-01-14,Early morning,Weekday,Tuesday
+14,36,15,7,1,2014-01-15,Early morning,Weekday,Wednesday
+14,36,16,7,1,2014-01-16,Early morning,Weekday,Thursday
+14,36,17,8,1,2014-01-17,Early morning,Weekday,Friday
+14,57,9,19,1,2014-01-09,Evening,Weekday,Thursday
+14,57,19,15,1,2014-01-19,Late afternoon,Weekend,Sunday
+14,52,8,13,1,2014-01-08,Early afternoon,Weekday,Wednesday
+14,55,6,20,1,2014-01-06,Evening,Weekday,Monday
+14,55,7,19,1,2014-01-07,Evening,Weekday,Tuesday
+14,55,8,20,1,2014-01-08,Evening,Weekday,Wednesday
+14,55,15,19,1,2014-01-15,Evening,Weekday,Wednesday
+14,55,16,19,1,2014-01-16,Evening,Weekday,Thursday
+14,55,17,13,1,2014-01-17,Early afternoon,Weekday,Friday
+14,55,17,20,1,2014-01-17,Evening,Weekday,Friday
+14,55,18,19,1,2014-01-18,Evening,Weekend,Saturday
+14,55,19,19,1,2014-01-19,Evening,Weekend,Sunday
+14,53,6,13,1,2014-01-06,Early afternoon,Weekday,Monday
+14,53,10,13,1,2014-01-10,Early afternoon,Weekday,Friday
+14,49,7,13,1,2014-01-07,Early afternoon,Weekday,Tuesday
+14,49,11,13,1,2014-01-11,Early afternoon,Weekend,Saturday
+14,49,16,13,1,2014-01-16,Early afternoon,Weekday,Thursday
+14,49,18,13,1,2014-01-18,Early afternoon,Weekend,Saturday
+14,64,19,3,1,2014-01-19,Late night,Weekend,Sunday
+14,54,14,13,1,2014-01-14,Early afternoon,Weekday,Tuesday
+14,54,15,13,1,2014-01-15,Early afternoon,Weekday,Wednesday
+14,54,19,13,1,2014-01-19,Early afternoon,Weekend,Sunday
+14,56,6,17,1,2014-01-06,Late afternoon,Weekday,Monday
+8,51,10,14,1,2014-01-10,Early afternoon,Weekday,Friday
+8,51,15,14,1,2014-01-15,Early afternoon,Weekday,Wednesday
+8,52,6,13,1,2014-01-06,Early afternoon,Weekday,Monday
+8,52,17,13,1,2014-01-17,Early afternoon,Weekday,Friday
+8,37,6,7,1,2014-01-06,Early morning,Weekday,Monday
+8,37,7,7,1,2014-01-07,Early morning,Weekday,Tuesday
+8,37,8,7,1,2014-01-08,Early morning,Weekday,Wednesday
+8,37,9,8,1,2014-01-09,Early morning,Weekday,Thursday
+8,37,10,7,1,2014-01-10,Early morning,Weekday,Friday
+8,37,13,7,1,2014-01-13,Early morning,Weekday,Monday
+8,37,14,8,1,2014-01-14,Early morning,Weekday,Tuesday
+8,37,15,7,1,2014-01-15,Early morning,Weekday,Wednesday
+8,37,16,7,1,2014-01-16,Early morning,Weekday,Thursday
+8,37,17,8,1,2014-01-17,Early morning,Weekday,Friday
+8,50,7,14,1,2014-01-07,Early afternoon,Weekday,Tuesday
+8,53,8,13,1,2014-01-08,Early afternoon,Weekday,Wednesday
+8,53,12,13,1,2014-01-12,Early afternoon,Weekend,Sunday
+8,53,14,13,1,2014-01-14,Early afternoon,Weekday,Tuesday
+8,53,16,13,1,2014-01-16,Early afternoon,Weekday,Thursday
+8,49,6,20,1,2014-01-06,Evening,Weekday,Monday
+8,49,7,20,1,2014-01-07,Evening,Weekday,Tuesday
+8,49,9,20,1,2014-01-09,Evening,Weekday,Thursday
+8,49,12,19,1,2014-01-12,Evening,Weekend,Sunday
+8,49,13,13,1,2014-01-13,Early afternoon,Weekday,Monday
+8,49,14,20,1,2014-01-14,Evening,Weekday,Tuesday
+8,49,15,19,1,2014-01-15,Evening,Weekday,Wednesday
+8,49,16,20,1,2014-01-16,Evening,Weekday,Thursday
+8,49,17,19,1,2014-01-17,Evening,Weekday,Friday
+8,49,19,14,1,2014-01-19,Early afternoon,Weekend,Sunday
+35,51,15,13,1,2014-01-15,Early afternoon,Weekday,Wednesday
+35,51,16,13,1,2014-01-16,Early afternoon,Weekday,Thursday
+35,38,13,7,1,2014-01-13,Early morning,Weekday,Monday
+35,38,14,7,1,2014-01-14,Early morning,Weekday,Tuesday
+35,38,15,7,1,2014-01-15,Early morning,Weekday,Wednesday
+35,38,16,7,1,2014-01-16,Early morning,Weekday,Thursday
+35,38,17,7,1,2014-01-17,Early morning,Weekday,Friday
+35,63,18,15,1,2014-01-18,Late afternoon,Weekend,Saturday
+35,49,12,20,1,2014-01-12,Evening,Weekend,Sunday
+35,49,13,13,1,2014-01-13,Early afternoon,Weekday,Monday
+35,49,13,19,1,2014-01-13,Evening,Weekday,Monday
+35,49,14,13,1,2014-01-14,Early afternoon,Weekday,Tuesday
+35,49,14,20,1,2014-01-14,Evening,Weekday,Tuesday
+35,49,15,21,1,2014-01-15,Night,Weekday,Wednesday
+35,49,16,19,1,2014-01-16,Evening,Weekday,Thursday
+35,49,17,13,1,2014-01-17,Early afternoon,Weekday,Friday
+35,49,18,19,1,2014-01-18,Evening,Weekend,Saturday
+35,49,19,18,1,2014-01-19,Evening,Weekend,Sunday
+35,54,18,13,1,2014-01-18,Early afternoon,Weekend,Saturday
+35,59,12,16,1,2014-01-12,Late afternoon,Weekend,Sunday
+17,51,13,13,1,2014-01-13,Early afternoon,Weekday,Monday
+17,36,6,8,1,2014-01-06,Early morning,Weekday,Monday
+17,36,8,7,1,2014-01-08,Early morning,Weekday,Wednesday
+17,36,10,8,1,2014-01-10,Early morning,Weekday,Friday
+17,36,14,7,1,2014-01-14,Early morning,Weekday,Tuesday
+17,36,15,8,1,2014-01-15,Early morning,Weekday,Wednesday
+17,36,16,8,1,2014-01-16,Early morning,Weekday,Thursday
+17,36,17,8,1,2014-01-17,Early morning,Weekday,Friday
+17,47,7,12,1,2014-01-07,Early afternoon,Weekday,Tuesday
+17,61,8,12,1,2014-01-08,Early afternoon,Weekday,Wednesday
+17,57,8,20,1,2014-01-08,Evening,Weekday,Wednesday
+17,57,9,20,1,2014-01-09,Evening,Weekday,Thursday
+17,52,11,13,1,2014-01-11,Early afternoon,Weekend,Saturday
+17,52,15,13,1,2014-01-15,Early afternoon,Weekday,Wednesday
+17,55,7,20,1,2014-01-07,Evening,Weekday,Tuesday
+17,55,8,13,1,2014-01-08,Early afternoon,Weekday,Wednesday
+17,55,10,20,1,2014-01-10,Evening,Weekday,Friday
+17,55,12,19,1,2014-01-12,Evening,Weekend,Sunday
+17,55,14,20,1,2014-01-14,Evening,Weekday,Tuesday
+17,55,15,20,1,2014-01-15,Evening,Weekday,Wednesday
+17,55,16,20,1,2014-01-16,Evening,Weekday,Thursday
+17,55,17,13,1,2014-01-17,Early afternoon,Weekday,Friday
+17,55,17,20,1,2014-01-17,Evening,Weekday,Friday
+17,55,19,20,1,2014-01-19,Evening,Weekend,Sunday
+17,50,7,13,1,2014-01-07,Early afternoon,Weekday,Tuesday
+17,50,14,13,1,2014-01-14,Early afternoon,Weekday,Tuesday
+17,48,9,12,1,2014-01-09,Early afternoon,Weekday,Thursday
+17,49,6,13,1,2014-01-06,Early afternoon,Weekday,Monday
+17,49,9,13,1,2014-01-09,Early afternoon,Weekday,Thursday
+17,49,18,20,1,2014-01-18,Evening,Weekend,Saturday
+17,54,10,13,1,2014-01-10,Early afternoon,Weekday,Friday
+17,54,16,13,1,2014-01-16,Early afternoon,Weekday,Thursday
+17,59,13,19,1,2014-01-13,Evening,Weekday,Monday
+18,51,14,14,1,2014-01-14,Early afternoon,Weekday,Tuesday
+18,58,6,21,1,2014-01-06,Night,Weekday,Monday
+18,58,11,16,1,2014-01-11,Late afternoon,Weekend,Saturday
+18,36,6,8,1,2014-01-06,Early morning,Weekday,Monday
+18,36,7,7,1,2014-01-07,Early morning,Weekday,Tuesday
+18,36,8,8,1,2014-01-08,Early morning,Weekday,Wednesday
+18,36,9,8,1,2014-01-09,Early morning,Weekday,Thursday
+18,36,10,8,1,2014-01-10,Early morning,Weekday,Friday
+18,36,13,8,1,2014-01-13,Early morning,Weekday,Monday
+18,36,15,8,1,2014-01-15,Early morning,Weekday,Wednesday
+18,36,16,8,1,2014-01-16,Early morning,Weekday,Thursday
+18,38,17,8,1,2014-01-17,Early morning,Weekday,Friday
+18,57,14,20,1,2014-01-14,Evening,Weekday,Tuesday
+18,52,16,17,1,2014-01-16,Late afternoon,Weekday,Thursday
+18,63,10,21,1,2014-01-10,Night,Weekday,Friday
+18,55,8,13,1,2014-01-08,Early afternoon,Weekday,Wednesday
+18,55,8,19,1,2014-01-08,Evening,Weekday,Wednesday
+18,55,9,21,1,2014-01-09,Night,Weekday,Thursday
+18,55,15,19,1,2014-01-15,Evening,Weekday,Wednesday
+18,55,17,21,1,2014-01-17,Night,Weekday,Friday
+18,55,19,20,1,2014-01-19,Evening,Weekend,Sunday
+18,50,9,13,1,2014-01-09,Early afternoon,Weekday,Thursday
+18,50,11,13,1,2014-01-11,Early afternoon,Weekend,Saturday
+18,50,13,12,1,2014-01-13,Early afternoon,Weekday,Monday
+18,50,15,14,1,2014-01-15,Early afternoon,Weekday,Wednesday
+18,53,6,13,1,2014-01-06,Early afternoon,Weekday,Monday
+18,53,10,13,1,2014-01-10,Early afternoon,Weekday,Friday
+18,49,7,14,1,2014-01-07,Early afternoon,Weekday,Tuesday
+18,49,17,13,1,2014-01-17,Early afternoon,Weekday,Friday
+18,49,18,19,1,2014-01-18,Evening,Weekend,Saturday
+18,49,19,13,1,2014-01-19,Early afternoon,Weekend,Sunday
+18,66,16,20,1,2014-01-16,Evening,Weekday,Thursday
+1,51,16,13,1,2014-01-16,Early afternoon,Weekday,Thursday
+1,51,18,19,1,2014-01-18,Evening,Weekend,Saturday
+1,67,11,16,1,2014-01-11,Late afternoon,Weekend,Saturday
+1,36,6,7,1,2014-01-06,Early morning,Weekday,Monday
+1,36,7,7,1,2014-01-07,Early morning,Weekday,Tuesday
+1,36,8,8,1,2014-01-08,Early morning,Weekday,Wednesday
+1,36,9,7,1,2014-01-09,Early morning,Weekday,Thursday
+1,36,10,7,1,2014-01-10,Early morning,Weekday,Friday
+1,36,13,7,1,2014-01-13,Early morning,Weekday,Monday
+1,36,14,7,1,2014-01-14,Early morning,Weekday,Tuesday
+1,36,15,7,1,2014-01-15,Early morning,Weekday,Wednesday
+1,36,16,7,1,2014-01-16,Early morning,Weekday,Thursday
+1,36,17,7,1,2014-01-17,Early morning,Weekday,Friday
+1,57,19,15,1,2014-01-19,Late afternoon,Weekend,Sunday
+1,52,9,13,1,2014-01-09,Early afternoon,Weekday,Thursday
+1,63,9,20,1,2014-01-09,Evening,Weekday,Thursday
+1,55,7,20,1,2014-01-07,Evening,Weekday,Tuesday
+1,55,10,19,1,2014-01-10,Evening,Weekday,Friday
+1,55,13,20,1,2014-01-13,Evening,Weekday,Monday
+1,55,14,20,1,2014-01-14,Evening,Weekday,Tuesday
+1,55,16,19,1,2014-01-16,Evening,Weekday,Thursday
+1,55,17,19,1,2014-01-17,Evening,Weekday,Friday
+1,50,6,13,1,2014-01-06,Early afternoon,Weekday,Monday
+1,50,8,13,1,2014-01-08,Early afternoon,Weekday,Wednesday
+1,50,10,13,1,2014-01-10,Early afternoon,Weekday,Friday
+1,50,11,19,1,2014-01-11,Evening,Weekend,Saturday
+1,50,17,13,1,2014-01-17,Early afternoon,Weekday,Friday
+1,53,7,13,1,2014-01-07,Early afternoon,Weekday,Tuesday
+1,49,14,13,1,2014-01-14,Early afternoon,Weekday,Tuesday
+1,49,19,13,1,2014-01-19,Early afternoon,Weekend,Sunday
+1,65,10,14,1,2014-01-10,Early afternoon,Weekday,Friday
+1,54,13,13,1,2014-01-13,Early afternoon,Weekday,Monday
+9,38,6,7,1,2014-01-06,Early morning,Weekday,Monday
+9,38,7,7,1,2014-01-07,Early morning,Weekday,Tuesday
+9,38,8,7,1,2014-01-08,Early morning,Weekday,Wednesday
+9,38,9,7,1,2014-01-09,Early morning,Weekday,Thursday
+9,38,10,7,1,2014-01-10,Early morning,Weekday,Friday
+9,52,7,13,1,2014-01-07,Early afternoon,Weekday,Tuesday
+9,55,9,14,1,2014-01-09,Early afternoon,Weekday,Thursday
+9,53,8,13,1,2014-01-08,Early afternoon,Weekday,Wednesday
+9,49,6,20,1,2014-01-06,Evening,Weekday,Monday
+9,49,7,20,1,2014-01-07,Evening,Weekday,Tuesday
+9,49,8,20,1,2014-01-08,Evening,Weekday,Wednesday
+9,49,9,19,1,2014-01-09,Evening,Weekday,Thursday
+9,49,10,19,1,2014-01-10,Evening,Weekday,Friday
+9,54,6,13,1,2014-01-06,Early afternoon,Weekday,Monday
+3,51,13,13,1,2014-01-13,Early afternoon,Weekday,Monday
+3,51,14,13,1,2014-01-14,Early afternoon,Weekday,Tuesday
+3,36,6,7,1,2014-01-06,Early morning,Weekday,Monday
+3,36,7,7,1,2014-01-07,Early morning,Weekday,Tuesday
+3,36,8,7,1,2014-01-08,Early morning,Weekday,Wednesday
+3,36,10,7,1,2014-01-10,Early morning,Weekday,Friday
+3,36,13,7,1,2014-01-13,Early morning,Weekday,Monday
+3,36,14,7,1,2014-01-14,Early morning,Weekday,Tuesday
+3,36,15,7,1,2014-01-15,Early morning,Weekday,Wednesday
+3,36,16,7,1,2014-01-16,Early morning,Weekday,Thursday
+3,38,17,7,1,2014-01-17,Early morning,Weekday,Friday
+3,55,6,20,1,2014-01-06,Evening,Weekday,Monday
+3,55,7,13,1,2014-01-07,Early afternoon,Weekday,Tuesday
+3,55,9,19,1,2014-01-09,Evening,Weekday,Thursday
+3,55,10,13,1,2014-01-10,Early afternoon,Weekday,Friday
+3,55,10,19,1,2014-01-10,Evening,Weekday,Friday
+3,55,11,19,1,2014-01-11,Evening,Weekend,Saturday
+3,55,14,20,1,2014-01-14,Evening,Weekday,Tuesday
+3,55,15,20,1,2014-01-15,Evening,Weekday,Wednesday
+3,55,16,13,1,2014-01-16,Early afternoon,Weekday,Thursday
+3,55,16,20,1,2014-01-16,Evening,Weekday,Thursday
+3,55,17,19,1,2014-01-17,Evening,Weekday,Friday
+3,55,18,19,1,2014-01-18,Evening,Weekend,Saturday
+3,55,19,19,1,2014-01-19,Evening,Weekend,Sunday
+3,50,17,13,1,2014-01-17,Early afternoon,Weekday,Friday
+3,53,8,13,1,2014-01-08,Early afternoon,Weekday,Wednesday
+3,64,13,8,1,2014-01-13,Early morning,Weekday,Monday
+3,65,14,15,1,2014-01-14,Late afternoon,Weekday,Tuesday
+3,54,6,13,1,2014-01-06,Early afternoon,Weekday,Monday
+3,54,9,13,1,2014-01-09,Early afternoon,Weekday,Thursday
+29,58,7,20,1,2014-01-07,Evening,Weekday,Tuesday
+29,58,10,20,1,2014-01-10,Evening,Weekday,Friday
+29,58,18,15,1,2014-01-18,Late afternoon,Weekend,Saturday
+29,46,6,12,1,2014-01-06,Early afternoon,Weekday,Monday
+29,46,7,12,1,2014-01-07,Early afternoon,Weekday,Tuesday
+29,46,10,12,1,2014-01-10,Early afternoon,Weekday,Friday
+29,46,13,12,1,2014-01-13,Early afternoon,Weekday,Monday
+29,46,14,12,1,2014-01-14,Early afternoon,Weekday,Tuesday
+29,46,15,12,1,2014-01-15,Early afternoon,Weekday,Wednesday
+29,46,16,12,1,2014-01-16,Early afternoon,Weekday,Thursday
+29,46,17,12,1,2014-01-17,Early afternoon,Weekday,Friday
+29,52,19,13,1,2014-01-19,Early afternoon,Weekend,Sunday
+29,63,19,15,1,2014-01-19,Late afternoon,Weekend,Sunday
+29,50,6,20,1,2014-01-06,Evening,Weekday,Monday
+29,50,8,20,1,2014-01-08,Evening,Weekday,Wednesday
+29,50,9,21,1,2014-01-09,Night,Weekday,Thursday
+29,50,12,19,1,2014-01-12,Evening,Weekend,Sunday
+29,50,14,21,1,2014-01-14,Night,Weekday,Tuesday
+29,50,15,21,1,2014-01-15,Night,Weekday,Wednesday
+29,50,16,20,1,2014-01-16,Evening,Weekday,Thursday
+29,50,18,19,1,2014-01-18,Evening,Weekend,Saturday
+29,50,19,19,1,2014-01-19,Evening,Weekend,Sunday
+29,53,9,13,1,2014-01-09,Early afternoon,Weekday,Thursday
+29,53,15,13,1,2014-01-15,Early afternoon,Weekday,Wednesday
+29,49,8,13,1,2014-01-08,Early afternoon,Weekday,Wednesday
+29,49,10,13,1,2014-01-10,Early afternoon,Weekday,Friday
+29,49,11,13,1,2014-01-11,Early afternoon,Weekend,Saturday
+29,49,14,13,1,2014-01-14,Early afternoon,Weekday,Tuesday
+29,54,6,13,1,2014-01-06,Early afternoon,Weekday,Monday
+29,54,7,13,1,2014-01-07,Early afternoon,Weekday,Tuesday
+29,54,18,13,1,2014-01-18,Early afternoon,Weekend,Saturday
+24,51,7,13,1,2014-01-07,Early afternoon,Weekday,Tuesday
+24,51,10,13,1,2014-01-10,Early afternoon,Weekday,Friday
+24,52,9,13,1,2014-01-09,Early afternoon,Weekday,Thursday
+24,50,15,13,1,2014-01-15,Early afternoon,Weekday,Wednesday
+24,50,16,13,1,2014-01-16,Early afternoon,Weekday,Thursday
+24,48,6,12,1,2014-01-06,Early afternoon,Weekday,Monday
+24,48,7,12,1,2014-01-07,Early afternoon,Weekday,Tuesday
+24,48,8,12,1,2014-01-08,Early afternoon,Weekday,Wednesday
+24,48,9,12,1,2014-01-09,Early afternoon,Weekday,Thursday
+24,48,10,12,1,2014-01-10,Early afternoon,Weekday,Friday
+24,48,13,12,1,2014-01-13,Early afternoon,Weekday,Monday
+24,48,15,12,1,2014-01-15,Early afternoon,Weekday,Wednesday
+24,48,16,12,1,2014-01-16,Early afternoon,Weekday,Thursday
+24,48,17,12,1,2014-01-17,Early afternoon,Weekday,Friday
+24,49,6,13,1,2014-01-06,Early afternoon,Weekday,Monday
+24,49,8,13,1,2014-01-08,Early afternoon,Weekday,Wednesday
+24,49,13,13,1,2014-01-13,Early afternoon,Weekday,Monday
+24,64,14,8,1,2014-01-14,Early morning,Weekday,Tuesday
+24,54,8,21,1,2014-01-08,Night,Weekday,Wednesday
+24,54,9,19,1,2014-01-09,Evening,Weekday,Thursday
+24,54,10,18,1,2014-01-10,Evening,Weekday,Friday
+24,54,11,19,1,2014-01-11,Evening,Weekend,Saturday
+24,54,12,19,1,2014-01-12,Evening,Weekend,Sunday
+24,54,14,13,1,2014-01-14,Early afternoon,Weekday,Tuesday
+24,54,14,20,1,2014-01-14,Evening,Weekday,Tuesday
+24,54,15,20,1,2014-01-15,Evening,Weekday,Wednesday
+24,54,16,20,1,2014-01-16,Evening,Weekday,Thursday
+24,54,17,19,1,2014-01-17,Evening,Weekday,Friday
+24,54,18,19,1,2014-01-18,Evening,Weekend,Saturday
+24,54,19,19,1,2014-01-19,Evening,Weekend,Sunday
+19,51,8,13,1,2014-01-08,Early afternoon,Weekday,Wednesday
+19,51,11,14,1,2014-01-11,Early afternoon,Weekend,Saturday
+19,51,16,13,1,2014-01-16,Early afternoon,Weekday,Thursday
+19,51,19,14,1,2014-01-19,Early afternoon,Weekend,Sunday
+19,67,12,16,1,2014-01-12,Late afternoon,Weekend,Sunday
+19,36,6,8,1,2014-01-06,Early morning,Weekday,Monday
+19,36,7,8,1,2014-01-07,Early morning,Weekday,Tuesday
+19,36,8,8,1,2014-01-08,Early morning,Weekday,Wednesday
+19,36,9,7,1,2014-01-09,Early morning,Weekday,Thursday
+19,36,10,8,1,2014-01-10,Early morning,Weekday,Friday
+19,36,13,8,1,2014-01-13,Early morning,Weekday,Monday
+19,36,14,8,1,2014-01-14,Early morning,Weekday,Tuesday
+19,36,15,8,1,2014-01-15,Early morning,Weekday,Wednesday
+19,36,16,8,1,2014-01-16,Early morning,Weekday,Thursday
+19,36,17,8,1,2014-01-17,Early morning,Weekday,Friday
+19,57,7,20,1,2014-01-07,Evening,Weekday,Tuesday
+19,57,9,20,1,2014-01-09,Evening,Weekday,Thursday
+19,57,11,20,1,2014-01-11,Evening,Weekend,Saturday
+19,57,14,20,1,2014-01-14,Evening,Weekday,Tuesday
+19,63,18,20,1,2014-01-18,Evening,Weekend,Saturday
+19,55,6,20,1,2014-01-06,Evening,Weekday,Monday
+19,55,8,20,1,2014-01-08,Evening,Weekday,Wednesday
+19,55,9,13,1,2014-01-09,Early afternoon,Weekday,Thursday
+19,55,10,20,1,2014-01-10,Evening,Weekday,Friday
+19,55,12,13,1,2014-01-12,Early afternoon,Weekend,Sunday
+19,55,13,14,1,2014-01-13,Early afternoon,Weekday,Monday
+19,55,16,20,1,2014-01-16,Evening,Weekday,Thursday
+19,55,17,13,1,2014-01-17,Early afternoon,Weekday,Friday
+19,55,17,19,1,2014-01-17,Evening,Weekday,Friday
+19,55,19,20,1,2014-01-19,Evening,Weekend,Sunday
+19,50,10,13,1,2014-01-10,Early afternoon,Weekday,Friday
+19,50,14,13,1,2014-01-14,Early afternoon,Weekday,Tuesday
+19,53,15,14,1,2014-01-15,Early afternoon,Weekday,Wednesday
+19,53,18,14,1,2014-01-18,Early afternoon,Weekend,Saturday
+19,49,6,14,1,2014-01-06,Early afternoon,Weekday,Monday
+19,54,7,14,1,2014-01-07,Early afternoon,Weekday,Tuesday
+19,59,13,20,1,2014-01-13,Evening,Weekday,Monday
+2,51,6,14,1,2014-01-06,Early afternoon,Weekday,Monday
+2,51,16,13,1,2014-01-16,Early afternoon,Weekday,Thursday
+2,63,8,21,1,2014-01-08,Night,Weekday,Wednesday
+2,63,17,20,1,2014-01-17,Evening,Weekday,Friday
+2,55,6,20,1,2014-01-06,Evening,Weekday,Monday
+2,55,10,20,1,2014-01-10,Evening,Weekday,Friday
+2,55,12,19,1,2014-01-12,Evening,Weekend,Sunday
+2,55,13,20,1,2014-01-13,Evening,Weekday,Monday
+2,55,14,19,1,2014-01-14,Evening,Weekday,Tuesday
+2,55,16,20,1,2014-01-16,Evening,Weekday,Thursday
+2,55,19,20,1,2014-01-19,Evening,Weekend,Sunday
+2,37,6,7,1,2014-01-06,Early morning,Weekday,Monday
+2,37,7,7,1,2014-01-07,Early morning,Weekday,Tuesday
+2,37,8,7,1,2014-01-08,Early morning,Weekday,Wednesday
+2,37,9,7,1,2014-01-09,Early morning,Weekday,Thursday
+2,37,10,7,1,2014-01-10,Early morning,Weekday,Friday
+2,37,13,7,1,2014-01-13,Early morning,Weekday,Monday
+2,37,14,7,1,2014-01-14,Early morning,Weekday,Tuesday
+2,37,15,7,1,2014-01-15,Early morning,Weekday,Wednesday
+2,37,16,7,1,2014-01-16,Early morning,Weekday,Thursday
+2,53,7,13,1,2014-01-07,Early afternoon,Weekday,Tuesday
+2,53,11,14,1,2014-01-11,Early afternoon,Weekend,Saturday
+2,53,11,20,1,2014-01-11,Evening,Weekend,Saturday
+2,53,17,13,1,2014-01-17,Early afternoon,Weekday,Friday
+2,49,8,14,1,2014-01-08,Early afternoon,Weekday,Wednesday
+2,49,10,14,1,2014-01-10,Early afternoon,Weekday,Friday
+2,64,16,7,1,2014-01-16,Early morning,Weekday,Thursday
+2,54,9,14,1,2014-01-09,Early afternoon,Weekday,Thursday
+2,54,14,13,1,2014-01-14,Early afternoon,Weekday,Tuesday
+2,54,15,13,1,2014-01-15,Early afternoon,Weekday,Wednesday
+6,51,11,13,1,2014-01-11,Early afternoon,Weekend,Saturday
+6,51,18,13,1,2014-01-18,Early afternoon,Weekend,Saturday
+6,38,6,7,1,2014-01-06,Early morning,Weekday,Monday
+6,38,7,7,1,2014-01-07,Early morning,Weekday,Tuesday
+6,38,8,7,1,2014-01-08,Early morning,Weekday,Wednesday
+6,38,9,7,1,2014-01-09,Early morning,Weekday,Thursday
+6,38,10,7,1,2014-01-10,Early morning,Weekday,Friday
+6,38,13,8,1,2014-01-13,Early morning,Weekday,Monday
+6,38,14,7,1,2014-01-14,Early morning,Weekday,Tuesday
+6,38,15,7,1,2014-01-15,Early morning,Weekday,Wednesday
+6,38,17,7,1,2014-01-17,Early morning,Weekday,Friday
+6,52,6,13,1,2014-01-06,Early afternoon,Weekday,Monday
+6,52,7,13,1,2014-01-07,Early afternoon,Weekday,Tuesday
+6,55,9,20,1,2014-01-09,Evening,Weekday,Thursday
+6,55,10,13,1,2014-01-10,Early afternoon,Weekday,Friday
+6,50,8,13,1,2014-01-08,Early afternoon,Weekday,Wednesday
+6,50,13,13,1,2014-01-13,Early afternoon,Weekday,Monday
+6,50,14,13,1,2014-01-14,Early afternoon,Weekday,Tuesday
+6,50,16,13,1,2014-01-16,Early afternoon,Weekday,Thursday
+6,53,17,13,1,2014-01-17,Early afternoon,Weekday,Friday
+6,49,6,20,1,2014-01-06,Evening,Weekday,Monday
+6,49,7,20,1,2014-01-07,Evening,Weekday,Tuesday
+6,49,9,13,1,2014-01-09,Early afternoon,Weekday,Thursday
+6,49,12,19,1,2014-01-12,Evening,Weekend,Sunday
+6,49,13,20,1,2014-01-13,Evening,Weekday,Monday
+6,49,15,21,1,2014-01-15,Night,Weekday,Wednesday
+6,49,17,20,1,2014-01-17,Evening,Weekday,Friday
+6,65,10,16,1,2014-01-10,Late afternoon,Weekday,Friday
+6,54,15,13,1,2014-01-15,Early afternoon,Weekday,Wednesday
+6,66,18,15,1,2014-01-18,Late afternoon,Weekend,Saturday
+33,51,6,13,1,2014-01-06,Early afternoon,Weekday,Monday
+33,51,17,13,1,2014-01-17,Early afternoon,Weekday,Friday
+33,36,8,7,1,2014-01-08,Early morning,Weekday,Wednesday
+33,36,9,7,1,2014-01-09,Early morning,Weekday,Thursday
+33,36,10,7,1,2014-01-10,Early morning,Weekday,Friday
+33,36,13,7,1,2014-01-13,Early morning,Weekday,Monday
+33,36,14,7,1,2014-01-14,Early morning,Weekday,Tuesday
+33,36,15,7,1,2014-01-15,Early morning,Weekday,Wednesday
+33,36,16,7,1,2014-01-16,Early morning,Weekday,Thursday
+33,36,17,7,1,2014-01-17,Early morning,Weekday,Friday
+33,57,17,20,1,2014-01-17,Evening,Weekday,Friday
+33,55,7,13,1,2014-01-07,Early afternoon,Weekday,Tuesday
+33,55,7,20,1,2014-01-07,Evening,Weekday,Tuesday
+33,55,8,19,1,2014-01-08,Evening,Weekday,Wednesday
+33,55,9,13,1,2014-01-09,Early afternoon,Weekday,Thursday
+33,55,9,19,1,2014-01-09,Evening,Weekday,Thursday
+33,55,11,20,1,2014-01-11,Evening,Weekend,Saturday
+33,55,12,19,1,2014-01-12,Evening,Weekend,Sunday
+33,55,13,20,1,2014-01-13,Evening,Weekday,Monday
+33,55,14,21,1,2014-01-14,Night,Weekday,Tuesday
+33,55,15,13,1,2014-01-15,Early afternoon,Weekday,Wednesday
+33,55,15,20,1,2014-01-15,Evening,Weekday,Wednesday
+33,55,19,20,1,2014-01-19,Evening,Weekend,Sunday
+33,50,13,13,1,2014-01-13,Early afternoon,Weekday,Monday
+33,50,16,13,1,2014-01-16,Early afternoon,Weekday,Thursday
+33,53,8,13,1,2014-01-08,Early afternoon,Weekday,Wednesday
+33,49,10,13,1,2014-01-10,Early afternoon,Weekday,Friday
+33,49,14,13,1,2014-01-14,Early afternoon,Weekday,Tuesday
+33,49,18,20,1,2014-01-18,Evening,Weekend,Saturday
+33,49,19,13,1,2014-01-19,Early afternoon,Weekend,Sunday
+33,66,10,21,1,2014-01-10,Night,Weekday,Friday
+33,66,16,20,1,2014-01-16,Evening,Weekday,Thursday
+33,59,6,20,1,2014-01-06,Evening,Weekday,Monday
+5,51,15,13,1,2014-01-15,Early afternoon,Weekday,Wednesday
+5,67,18,14,1,2014-01-18,Early afternoon,Weekend,Saturday
+5,36,6,7,1,2014-01-06,Early morning,Weekday,Monday
+5,36,7,7,1,2014-01-07,Early morning,Weekday,Tuesday
+5,36,8,8,1,2014-01-08,Early morning,Weekday,Wednesday
+5,36,9,7,1,2014-01-09,Early morning,Weekday,Thursday
+5,36,10,7,1,2014-01-10,Early morning,Weekday,Friday
+5,36,13,7,1,2014-01-13,Early morning,Weekday,Monday
+5,36,14,7,1,2014-01-14,Early morning,Weekday,Tuesday
+5,36,15,7,1,2014-01-15,Early morning,Weekday,Wednesday
+5,36,16,7,1,2014-01-16,Early morning,Weekday,Thursday
+5,36,17,7,1,2014-01-17,Early morning,Weekday,Friday
+5,57,10,20,1,2014-01-10,Evening,Weekday,Friday
+5,52,14,13,1,2014-01-14,Early afternoon,Weekday,Tuesday
+5,55,6,13,1,2014-01-06,Early afternoon,Weekday,Monday
+5,55,6,19,1,2014-01-06,Evening,Weekday,Monday
+5,55,7,20,1,2014-01-07,Evening,Weekday,Tuesday
+5,55,8,13,1,2014-01-08,Early afternoon,Weekday,Wednesday
+5,55,8,20,1,2014-01-08,Evening,Weekday,Wednesday
+5,55,9,20,1,2014-01-09,Evening,Weekday,Thursday
+5,55,10,13,1,2014-01-10,Early afternoon,Weekday,Friday
+5,55,11,20,1,2014-01-11,Evening,Weekend,Saturday
+5,55,13,20,1,2014-01-13,Evening,Weekday,Monday
+5,55,14,20,1,2014-01-14,Evening,Weekday,Tuesday
+5,55,16,19,1,2014-01-16,Evening,Weekday,Thursday
+5,55,18,13,1,2014-01-18,Early afternoon,Weekend,Saturday
+5,55,19,19,1,2014-01-19,Evening,Weekend,Sunday
+5,50,13,13,1,2014-01-13,Early afternoon,Weekday,Monday
+5,53,9,13,1,2014-01-09,Early afternoon,Weekday,Thursday
+5,53,16,13,1,2014-01-16,Early afternoon,Weekday,Thursday
+5,54,19,14,1,2014-01-19,Early afternoon,Weekend,Sunday
+5,59,12,19,1,2014-01-12,Evening,Weekend,Sunday
+5,59,17,20,1,2014-01-17,Evening,Weekday,Friday
+23,51,6,13,1,2014-01-06,Early afternoon,Weekday,Monday
+23,51,7,13,1,2014-01-07,Early afternoon,Weekday,Tuesday
+23,51,15,13,1,2014-01-15,Early afternoon,Weekday,Wednesday
+23,58,13,20,1,2014-01-13,Evening,Weekday,Monday
+23,47,6,12,1,2014-01-06,Early afternoon,Weekday,Monday
+23,47,7,12,1,2014-01-07,Early afternoon,Weekday,Tuesday
+23,47,8,12,1,2014-01-08,Early afternoon,Weekday,Wednesday
+23,47,9,12,1,2014-01-09,Early afternoon,Weekday,Thursday
+23,47,10,12,1,2014-01-10,Early afternoon,Weekday,Friday
+23,47,13,12,1,2014-01-13,Early afternoon,Weekday,Monday
+23,47,14,12,1,2014-01-14,Early afternoon,Weekday,Tuesday
+23,47,16,12,1,2014-01-16,Early afternoon,Weekday,Thursday
+23,47,17,12,1,2014-01-17,Early afternoon,Weekday,Friday
+23,68,12,14,1,2014-01-12,Early afternoon,Weekend,Sunday
+23,68,19,12,1,2014-01-19,Early afternoon,Weekend,Sunday
+23,57,11,16,1,2014-01-11,Late afternoon,Weekend,Saturday
+23,55,17,13,1,2014-01-17,Early afternoon,Weekday,Friday
+23,50,6,20,1,2014-01-06,Evening,Weekday,Monday
+23,50,7,21,1,2014-01-07,Night,Weekday,Tuesday
+23,50,8,20,1,2014-01-08,Evening,Weekday,Wednesday
+23,50,10,20,1,2014-01-10,Evening,Weekday,Friday
+23,50,11,13,1,2014-01-11,Early afternoon,Weekend,Saturday
+23,50,11,19,1,2014-01-11,Evening,Weekend,Saturday
+23,50,12,20,1,2014-01-12,Evening,Weekend,Sunday
+23,50,14,13,1,2014-01-14,Early afternoon,Weekday,Tuesday
+23,50,15,20,1,2014-01-15,Evening,Weekday,Wednesday
+23,50,16,21,1,2014-01-16,Night,Weekday,Thursday
+23,50,17,20,1,2014-01-17,Evening,Weekday,Friday
+23,49,10,13,1,2014-01-10,Early afternoon,Weekday,Friday
+23,49,16,13,1,2014-01-16,Early afternoon,Weekday,Thursday
+23,49,18,14,1,2014-01-18,Early afternoon,Weekend,Saturday
+23,64,10,9,1,2014-01-10,Late morning,Weekday,Friday
+23,54,9,13,1,2014-01-09,Early afternoon,Weekday,Thursday
+23,66,18,19,1,2014-01-18,Evening,Weekend,Saturday
+15,51,7,13,1,2014-01-07,Early afternoon,Weekday,Tuesday
+15,51,9,14,1,2014-01-09,Early afternoon,Weekday,Thursday
+15,51,10,14,1,2014-01-10,Early afternoon,Weekday,Friday
+15,51,13,13,1,2014-01-13,Early afternoon,Weekday,Monday
+15,58,16,20,1,2014-01-16,Evening,Weekday,Thursday
+15,36,6,7,1,2014-01-06,Early morning,Weekday,Monday
+15,36,7,8,1,2014-01-07,Early morning,Weekday,Tuesday
+15,36,8,8,1,2014-01-08,Early morning,Weekday,Wednesday
+15,36,9,8,1,2014-01-09,Early morning,Weekday,Thursday
+15,36,10,8,1,2014-01-10,Early morning,Weekday,Friday
+15,36,13,8,1,2014-01-13,Early morning,Weekday,Monday
+15,36,14,7,1,2014-01-14,Early morning,Weekday,Tuesday
+15,36,15,7,1,2014-01-15,Early morning,Weekday,Wednesday
+15,36,16,8,1,2014-01-16,Early morning,Weekday,Thursday
+15,36,17,8,1,2014-01-17,Early morning,Weekday,Friday
+15,52,6,14,1,2014-01-06,Early afternoon,Weekday,Monday
+15,52,8,13,1,2014-01-08,Early afternoon,Weekday,Wednesday
+15,52,15,13,1,2014-01-15,Early afternoon,Weekday,Wednesday
+15,52,17,13,1,2014-01-17,Early afternoon,Weekday,Friday
+15,63,15,19,1,2014-01-15,Evening,Weekday,Wednesday
+15,55,6,20,1,2014-01-06,Evening,Weekday,Monday
+15,55,7,19,1,2014-01-07,Evening,Weekday,Tuesday
+15,55,8,20,1,2014-01-08,Evening,Weekday,Wednesday
+15,55,13,20,1,2014-01-13,Evening,Weekday,Monday
+15,55,14,20,1,2014-01-14,Evening,Weekday,Tuesday
+15,55,16,13,1,2014-01-16,Early afternoon,Weekday,Thursday
+15,55,17,20,1,2014-01-17,Evening,Weekday,Friday
+15,53,11,19,1,2014-01-11,Evening,Weekend,Saturday
+15,49,14,13,1,2014-01-14,Early afternoon,Weekday,Tuesday
+15,49,18,14,1,2014-01-18,Early afternoon,Weekend,Saturday
+15,49,18,20,1,2014-01-18,Evening,Weekend,Saturday
+15,54,12,13,1,2014-01-12,Early afternoon,Weekend,Sunday
+15,59,10,20,1,2014-01-10,Evening,Weekday,Friday
+15,59,12,15,1,2014-01-12,Late afternoon,Weekend,Sunday
+11,51,15,13,1,2014-01-15,Early afternoon,Weekday,Wednesday
+11,57,10,18,1,2014-01-10,Evening,Weekday,Friday
+11,52,6,13,1,2014-01-06,Early afternoon,Weekday,Monday
+11,52,8,13,1,2014-01-08,Early afternoon,Weekday,Wednesday
+11,55,9,13,1,2014-01-09,Early afternoon,Weekday,Thursday
+11,55,9,20,1,2014-01-09,Evening,Weekday,Thursday
+11,55,16,13,1,2014-01-16,Early afternoon,Weekday,Thursday
+11,37,6,7,1,2014-01-06,Early morning,Weekday,Monday
+11,37,7,7,1,2014-01-07,Early morning,Weekday,Tuesday
+11,37,8,7,1,2014-01-08,Early morning,Weekday,Wednesday
+11,37,9,7,1,2014-01-09,Early morning,Weekday,Thursday
+11,37,10,7,1,2014-01-10,Early morning,Weekday,Friday
+11,37,13,7,1,2014-01-13,Early morning,Weekday,Monday
+11,37,14,7,1,2014-01-14,Early morning,Weekday,Tuesday
+11,37,15,7,1,2014-01-15,Early morning,Weekday,Wednesday
+11,37,16,7,1,2014-01-16,Early morning,Weekday,Thursday
+11,37,17,7,1,2014-01-17,Early morning,Weekday,Friday
+11,50,12,13,1,2014-01-12,Early afternoon,Weekend,Sunday
+11,50,14,13,1,2014-01-14,Early afternoon,Weekday,Tuesday
+11,49,7,13,1,2014-01-07,Early afternoon,Weekday,Tuesday
+11,49,7,20,1,2014-01-07,Evening,Weekday,Tuesday
+11,49,8,20,1,2014-01-08,Evening,Weekday,Wednesday
+11,49,11,19,1,2014-01-11,Evening,Weekend,Saturday
+11,49,12,19,1,2014-01-12,Evening,Weekend,Sunday
+11,49,13,20,1,2014-01-13,Evening,Weekday,Monday
+11,49,14,20,1,2014-01-14,Evening,Weekday,Tuesday
+11,49,16,19,1,2014-01-16,Evening,Weekday,Thursday
+11,49,17,20,1,2014-01-17,Evening,Weekday,Friday
+11,49,18,19,1,2014-01-18,Evening,Weekend,Saturday
+11,49,19,19,1,2014-01-19,Evening,Weekend,Sunday
+31,51,18,13,1,2014-01-18,Early afternoon,Weekend,Saturday
+31,58,11,19,1,2014-01-11,Evening,Weekend,Saturday
+31,58,18,18,1,2014-01-18,Evening,Weekend,Saturday
+31,68,19,12,1,2014-01-19,Early afternoon,Weekend,Sunday
+31,52,13,13,1,2014-01-13,Early afternoon,Weekday,Monday
+31,52,17,13,1,2014-01-17,Early afternoon,Weekday,Friday
+31,55,7,13,1,2014-01-07,Early afternoon,Weekday,Tuesday
+31,55,10,13,1,2014-01-10,Early afternoon,Weekday,Friday
+31,50,6,12,1,2014-01-06,Early afternoon,Weekday,Monday
+31,50,6,21,1,2014-01-06,Night,Weekday,Monday
+31,50,7,20,1,2014-01-07,Evening,Weekday,Tuesday
+31,50,9,21,1,2014-01-09,Night,Weekday,Thursday
+31,50,10,21,1,2014-01-10,Night,Weekday,Friday
+31,50,12,19,1,2014-01-12,Evening,Weekend,Sunday
+31,50,13,21,1,2014-01-13,Night,Weekday,Monday
+31,50,15,21,1,2014-01-15,Night,Weekday,Wednesday
+31,50,16,13,1,2014-01-16,Early afternoon,Weekday,Thursday
+31,48,6,12,1,2014-01-06,Early afternoon,Weekday,Monday
+31,48,7,12,1,2014-01-07,Early afternoon,Weekday,Tuesday
+31,48,8,12,1,2014-01-08,Early afternoon,Weekday,Wednesday
+31,48,9,12,1,2014-01-09,Early afternoon,Weekday,Thursday
+31,48,10,12,1,2014-01-10,Early afternoon,Weekday,Friday
+31,48,13,12,1,2014-01-13,Early afternoon,Weekday,Monday
+31,48,14,12,1,2014-01-14,Early afternoon,Weekday,Tuesday
+31,48,15,12,1,2014-01-15,Early afternoon,Weekday,Wednesday
+31,48,16,12,1,2014-01-16,Early afternoon,Weekday,Thursday
+31,53,15,13,1,2014-01-15,Early afternoon,Weekday,Wednesday
+31,49,9,13,1,2014-01-09,Early afternoon,Weekday,Thursday
+31,49,11,13,1,2014-01-11,Early afternoon,Weekend,Saturday
+31,49,14,13,1,2014-01-14,Early afternoon,Weekday,Tuesday
+31,64,12,3,1,2014-01-12,Late night,Weekend,Sunday
+31,54,8,13,1,2014-01-08,Early afternoon,Weekday,Wednesday
+31,54,12,13,1,2014-01-12,Early afternoon,Weekend,Sunday
+31,59,18,15,1,2014-01-18,Late afternoon,Weekend,Saturday
+27,51,17,13,1,2014-01-17,Early afternoon,Weekday,Friday
+27,58,9,21,1,2014-01-09,Night,Weekday,Thursday
+27,47,6,12,1,2014-01-06,Early afternoon,Weekday,Monday
+27,47,7,12,1,2014-01-07,Early afternoon,Weekday,Tuesday
+27,47,8,12,1,2014-01-08,Early afternoon,Weekday,Wednesday
+27,47,9,12,1,2014-01-09,Early afternoon,Weekday,Thursday
+27,47,10,12,1,2014-01-10,Early afternoon,Weekday,Friday
+27,47,13,12,1,2014-01-13,Early afternoon,Weekday,Monday
+27,47,14,12,1,2014-01-14,Early afternoon,Weekday,Tuesday
+27,47,15,12,1,2014-01-15,Early afternoon,Weekday,Wednesday
+27,47,16,12,1,2014-01-16,Early afternoon,Weekday,Thursday
+27,47,17,12,1,2014-01-17,Early afternoon,Weekday,Friday
+27,68,12,14,1,2014-01-12,Early afternoon,Weekend,Sunday
+27,68,19,13,1,2014-01-19,Early afternoon,Weekend,Sunday
+27,52,7,13,1,2014-01-07,Early afternoon,Weekday,Tuesday
+27,52,13,13,1,2014-01-13,Early afternoon,Weekday,Monday
+27,50,6,21,1,2014-01-06,Night,Weekday,Monday
+27,50,7,21,1,2014-01-07,Night,Weekday,Tuesday
+27,50,8,13,1,2014-01-08,Early afternoon,Weekday,Wednesday
+27,50,8,20,1,2014-01-08,Evening,Weekday,Wednesday
+27,50,10,20,1,2014-01-10,Evening,Weekday,Friday
+27,50,11,19,1,2014-01-11,Evening,Weekend,Saturday
+27,50,12,19,1,2014-01-12,Evening,Weekend,Sunday
+27,50,13,21,1,2014-01-13,Night,Weekday,Monday
+27,50,14,20,1,2014-01-14,Evening,Weekday,Tuesday
+27,50,15,13,1,2014-01-15,Early afternoon,Weekday,Wednesday
+27,50,16,13,1,2014-01-16,Early afternoon,Weekday,Thursday
+27,50,16,20,1,2014-01-16,Evening,Weekday,Thursday
+27,50,18,19,1,2014-01-18,Evening,Weekend,Saturday
+27,50,19,19,1,2014-01-19,Evening,Weekend,Sunday
+27,53,14,13,1,2014-01-14,Early afternoon,Weekday,Tuesday
+27,49,6,12,1,2014-01-06,Early afternoon,Weekday,Monday
+27,64,19,3,1,2014-01-19,Late night,Weekend,Sunday
+27,54,9,12,1,2014-01-09,Early afternoon,Weekday,Thursday
+27,54,12,13,1,2014-01-12,Early afternoon,Weekend,Sunday
+27,59,15,20,1,2014-01-15,Evening,Weekday,Wednesday
+30,67,19,13,1,2014-01-19,Early afternoon,Weekend,Sunday
+30,57,6,19,1,2014-01-06,Evening,Weekday,Monday
+30,48,6,12,1,2014-01-06,Early afternoon,Weekday,Monday
+30,48,7,12,1,2014-01-07,Early afternoon,Weekday,Tuesday
+30,48,8,12,1,2014-01-08,Early afternoon,Weekday,Wednesday
+30,48,9,12,1,2014-01-09,Early afternoon,Weekday,Thursday
+30,48,10,12,1,2014-01-10,Early afternoon,Weekday,Friday
+30,48,13,12,1,2014-01-13,Early afternoon,Weekday,Monday
+30,48,14,12,1,2014-01-14,Early afternoon,Weekday,Tuesday
+30,48,15,12,1,2014-01-15,Early afternoon,Weekday,Wednesday
+30,48,16,12,1,2014-01-16,Early afternoon,Weekday,Thursday
+30,48,17,12,1,2014-01-17,Early afternoon,Weekday,Friday
+30,53,10,13,1,2014-01-10,Early afternoon,Weekday,Friday
+30,54,7,20,1,2014-01-07,Evening,Weekday,Tuesday
+30,54,9,19,1,2014-01-09,Evening,Weekday,Thursday
+30,54,14,20,1,2014-01-14,Evening,Weekday,Tuesday
+30,54,15,19,1,2014-01-15,Evening,Weekday,Wednesday
+30,54,16,21,1,2014-01-16,Night,Weekday,Thursday
+30,54,17,20,1,2014-01-17,Evening,Weekday,Friday
+10,51,6,13,1,2014-01-06,Early afternoon,Weekday,Monday
+10,51,14,13,1,2014-01-14,Early afternoon,Weekday,Tuesday
+10,36,6,7,1,2014-01-06,Early morning,Weekday,Monday
+10,36,7,8,1,2014-01-07,Early morning,Weekday,Tuesday
+10,36,8,7,1,2014-01-08,Early morning,Weekday,Wednesday
+10,36,10,7,1,2014-01-10,Early morning,Weekday,Friday
+10,36,14,7,1,2014-01-14,Early morning,Weekday,Tuesday
+10,36,15,7,1,2014-01-15,Early morning,Weekday,Wednesday
+10,36,17,8,1,2014-01-17,Early morning,Weekday,Friday
+10,57,19,19,1,2014-01-19,Evening,Weekend,Sunday
+10,52,7,13,1,2014-01-07,Early afternoon,Weekday,Tuesday
+10,52,8,13,1,2014-01-08,Early afternoon,Weekday,Wednesday
+10,52,9,13,1,2014-01-09,Early afternoon,Weekday,Thursday
+10,52,16,13,1,2014-01-16,Early afternoon,Weekday,Thursday
+10,37,9,7,1,2014-01-09,Early morning,Weekday,Thursday
+10,37,13,7,1,2014-01-13,Early morning,Weekday,Monday
+10,37,16,8,1,2014-01-16,Early morning,Weekday,Thursday
+10,50,15,13,1,2014-01-15,Early afternoon,Weekday,Wednesday
+10,53,17,13,1,2014-01-17,Early afternoon,Weekday,Friday
+10,49,6,20,1,2014-01-06,Evening,Weekday,Monday
+10,49,7,21,1,2014-01-07,Night,Weekday,Tuesday
+10,49,9,20,1,2014-01-09,Evening,Weekday,Thursday
+10,49,10,20,1,2014-01-10,Evening,Weekday,Friday
+10,49,11,20,1,2014-01-11,Evening,Weekend,Saturday
+10,49,12,20,1,2014-01-12,Evening,Weekend,Sunday
+10,49,13,13,1,2014-01-13,Early afternoon,Weekday,Monday
+10,49,13,21,1,2014-01-13,Night,Weekday,Monday
+10,49,16,20,1,2014-01-16,Evening,Weekday,Thursday
+10,49,17,21,1,2014-01-17,Night,Weekday,Friday
+10,49,18,20,1,2014-01-18,Evening,Weekend,Saturday
+10,54,10,13,1,2014-01-10,Early afternoon,Weekday,Friday
+10,66,14,21,1,2014-01-14,Night,Weekday,Tuesday
+13,51,9,13,1,2014-01-09,Early afternoon,Weekday,Thursday
+13,51,18,13,1,2014-01-18,Early afternoon,Weekend,Saturday
+13,58,6,20,1,2014-01-06,Evening,Weekday,Monday
+13,69,13,6,1,2014-01-13,Early morning,Weekday,Monday
+13,57,13,19,1,2014-01-13,Evening,Weekday,Monday
+13,52,7,13,1,2014-01-07,Early afternoon,Weekday,Tuesday
+13,55,16,13,1,2014-01-16,Early afternoon,Weekday,Thursday
+13,37,6,7,1,2014-01-06,Early morning,Weekday,Monday
+13,37,7,7,1,2014-01-07,Early morning,Weekday,Tuesday
+13,37,8,7,1,2014-01-08,Early morning,Weekday,Wednesday
+13,37,9,7,1,2014-01-09,Early morning,Weekday,Thursday
+13,37,16,8,1,2014-01-16,Early morning,Weekday,Thursday
+13,37,17,8,1,2014-01-17,Early morning,Weekday,Friday
+13,50,6,13,1,2014-01-06,Early afternoon,Weekday,Monday
+13,50,8,13,1,2014-01-08,Early afternoon,Weekday,Wednesday
+13,50,11,13,1,2014-01-11,Early afternoon,Weekend,Saturday
+13,50,12,14,1,2014-01-12,Early afternoon,Weekend,Sunday
+13,50,13,13,1,2014-01-13,Early afternoon,Weekday,Monday
+13,64,19,3,1,2014-01-19,Late night,Weekend,Sunday
+13,54,8,21,1,2014-01-08,Night,Weekday,Wednesday
+13,54,10,13,1,2014-01-10,Early afternoon,Weekday,Friday
+13,54,13,19,1,2014-01-13,Evening,Weekday,Monday
+13,54,16,20,1,2014-01-16,Evening,Weekday,Thursday
+13,54,17,20,1,2014-01-17,Evening,Weekday,Friday
+13,54,18,19,1,2014-01-18,Evening,Weekend,Saturday
+13,54,19,19,1,2014-01-19,Evening,Weekend,Sunday
+13,59,11,19,1,2014-01-11,Evening,Weekend,Saturday
+13,56,13,13,1,2014-01-13,Early afternoon,Weekday,Monday
+4,51,8,13,1,2014-01-08,Early afternoon,Weekday,Wednesday
+4,46,13,12,1,2014-01-13,Early afternoon,Weekday,Monday
+4,52,11,13,1,2014-01-11,Early afternoon,Weekend,Saturday
+4,55,7,14,1,2014-01-07,Early afternoon,Weekday,Tuesday
+4,55,9,13,1,2014-01-09,Early afternoon,Weekday,Thursday
+4,55,14,13,1,2014-01-14,Early afternoon,Weekday,Tuesday
+4,55,15,14,1,2014-01-15,Early afternoon,Weekday,Wednesday
+4,55,18,14,1,2014-01-18,Early afternoon,Weekend,Saturday
+4,37,6,7,1,2014-01-06,Early morning,Weekday,Monday
+4,37,7,8,1,2014-01-07,Early morning,Weekday,Tuesday
+4,37,8,7,1,2014-01-08,Early morning,Weekday,Wednesday
+4,37,9,7,1,2014-01-09,Early morning,Weekday,Thursday
+4,37,10,7,1,2014-01-10,Early morning,Weekday,Friday
+4,37,14,7,1,2014-01-14,Early morning,Weekday,Tuesday
+4,37,15,7,1,2014-01-15,Early morning,Weekday,Wednesday
+4,37,16,7,1,2014-01-16,Early morning,Weekday,Thursday
+4,37,17,7,1,2014-01-17,Early morning,Weekday,Friday
+4,50,13,14,1,2014-01-13,Early afternoon,Weekday,Monday
+4,50,16,13,1,2014-01-16,Early afternoon,Weekday,Thursday
+4,50,17,13,1,2014-01-17,Early afternoon,Weekday,Friday
+4,49,6,13,1,2014-01-06,Early afternoon,Weekday,Monday
+4,49,6,21,1,2014-01-06,Night,Weekday,Monday
+4,49,7,20,1,2014-01-07,Evening,Weekday,Tuesday
+4,49,11,19,1,2014-01-11,Evening,Weekend,Saturday
+4,49,14,21,1,2014-01-14,Night,Weekday,Tuesday
+4,49,15,20,1,2014-01-15,Evening,Weekday,Wednesday
+4,49,16,20,1,2014-01-16,Evening,Weekday,Thursday
+4,49,19,20,1,2014-01-19,Evening,Weekend,Sunday
+4,54,10,14,1,2014-01-10,Early afternoon,Weekday,Friday
+4,66,18,19,1,2014-01-18,Evening,Weekend,Saturday
+4,59,11,15,1,2014-01-11,Late afternoon,Weekend,Saturday
+22,51,13,13,1,2014-01-13,Early afternoon,Weekday,Monday
+22,51,15,13,1,2014-01-15,Early afternoon,Weekday,Wednesday
+22,58,8,20,1,2014-01-08,Evening,Weekday,Wednesday
+22,58,14,20,1,2014-01-14,Evening,Weekday,Tuesday
+22,46,6,12,1,2014-01-06,Early afternoon,Weekday,Monday
+22,46,8,12,1,2014-01-08,Early afternoon,Weekday,Wednesday
+22,46,10,12,1,2014-01-10,Early afternoon,Weekday,Friday
+22,46,13,12,1,2014-01-13,Early afternoon,Weekday,Monday
+22,46,14,12,1,2014-01-14,Early afternoon,Weekday,Tuesday
+22,46,15,12,1,2014-01-15,Early afternoon,Weekday,Wednesday
+22,46,16,12,1,2014-01-16,Early afternoon,Weekday,Thursday
+22,46,17,12,1,2014-01-17,Early afternoon,Weekday,Friday
+22,61,18,18,1,2014-01-18,Evening,Weekend,Saturday
+22,52,17,13,1,2014-01-17,Early afternoon,Weekday,Friday
+22,55,6,13,1,2014-01-06,Early afternoon,Weekday,Monday
+22,55,7,13,1,2014-01-07,Early afternoon,Weekday,Tuesday
+22,55,10,13,1,2014-01-10,Early afternoon,Weekday,Friday
+22,50,8,13,1,2014-01-08,Early afternoon,Weekday,Wednesday
+22,50,9,13,1,2014-01-09,Early afternoon,Weekday,Thursday
+22,50,9,21,1,2014-01-09,Night,Weekday,Thursday
+22,50,11,19,1,2014-01-11,Evening,Weekend,Saturday
+22,50,12,20,1,2014-01-12,Evening,Weekend,Sunday
+22,50,15,20,1,2014-01-15,Evening,Weekday,Wednesday
+22,50,17,21,1,2014-01-17,Night,Weekday,Friday
+22,50,19,19,1,2014-01-19,Evening,Weekend,Sunday
+22,53,14,13,1,2014-01-14,Early afternoon,Weekday,Tuesday
+22,53,16,13,1,2014-01-16,Early afternoon,Weekday,Thursday
+22,53,18,19,1,2014-01-18,Evening,Weekend,Saturday
+7,51,7,13,1,2014-01-07,Early afternoon,Weekday,Tuesday
+7,51,12,13,1,2014-01-12,Early afternoon,Weekend,Sunday
+7,51,13,13,1,2014-01-13,Early afternoon,Weekday,Monday
+7,67,11,17,1,2014-01-11,Late afternoon,Weekend,Saturday
+7,36,6,7,1,2014-01-06,Early morning,Weekday,Monday
+7,36,7,7,1,2014-01-07,Early morning,Weekday,Tuesday
+7,36,8,7,1,2014-01-08,Early morning,Weekday,Wednesday
+7,36,9,7,1,2014-01-09,Early morning,Weekday,Thursday
+7,36,10,7,1,2014-01-10,Early morning,Weekday,Friday
+7,36,13,7,1,2014-01-13,Early morning,Weekday,Monday
+7,36,14,7,1,2014-01-14,Early morning,Weekday,Tuesday
+7,36,15,7,1,2014-01-15,Early morning,Weekday,Wednesday
+7,36,16,7,1,2014-01-16,Early morning,Weekday,Thursday
+7,62,8,13,1,2014-01-08,Early afternoon,Weekday,Wednesday
+7,62,10,13,1,2014-01-10,Early afternoon,Weekday,Friday
+7,62,14,13,1,2014-01-14,Early afternoon,Weekday,Tuesday
+7,62,17,13,1,2014-01-17,Early afternoon,Weekday,Friday
+7,57,15,20,1,2014-01-15,Evening,Weekday,Wednesday
+7,55,7,20,1,2014-01-07,Evening,Weekday,Tuesday
+7,55,8,20,1,2014-01-08,Evening,Weekday,Wednesday
+7,55,13,20,1,2014-01-13,Evening,Weekday,Monday
+7,55,16,20,1,2014-01-16,Evening,Weekday,Thursday
+7,55,17,20,1,2014-01-17,Evening,Weekday,Friday
+7,55,19,20,1,2014-01-19,Evening,Weekend,Sunday
+7,50,9,13,1,2014-01-09,Early afternoon,Weekday,Thursday
+7,50,11,19,1,2014-01-11,Evening,Weekend,Saturday
+7,50,15,13,1,2014-01-15,Early afternoon,Weekday,Wednesday
+7,49,16,13,1,2014-01-16,Early afternoon,Weekday,Thursday

@@ -36,7 +36,6 @@ mapUI <- function(id) {
         tmapOutput(NS(id,"map"))
       )
     )
-    #visNetworkOutput(NS(id, "vis"))
   )
 }
 
@@ -49,10 +48,11 @@ mapServer <- function(id) {
     
     stop_fin1<-st_as_sf(stop_fin, coords=c("long","lat"),crs=4326)
     ## Transform the structure of GPS data for Map
-    gps <- gps %>% mutate(timestamp=mdy_hms(Timestamp),id=as_factor(id))
+    gps <- gps %>% mutate(timestamp=mdy_hms(Timestamp),id=as.character(id))
     gps_sf <- st_as_sf(gps, coords=c("long","lat"), crs=4326) %>% 
       group_by(id) %>% 
-      summarize(m = mean(timestamp), do_union=FALSE) %>% st_cast("LINESTRING")
+      summarise(m=mean(timestamp), do_union=FALSE) %>% 
+      st_cast("LINESTRING")
     
     ## Plot interactive map
     tmap_mode("view")

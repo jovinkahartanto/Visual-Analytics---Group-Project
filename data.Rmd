@@ -88,7 +88,7 @@ cc$concat <- paste(cc$date, cc$weekday, cc$dayofmonth, cc$location, cc$price)
 
 ```
 ```{r cc cal}
-cc_cal <- cc %>% dplyr::select(date,location)%>%group_by(date,location)%>%summarize(freq = n())
+cc_cal <- cc %>% dplyr::select(date,location)%>%group_by(date,location)%>%summarise(freq = n())
 
 ```
 
@@ -109,14 +109,14 @@ cc_loyalty<- merge(cc,loyalty, by.x = c("date","price","location"), by.y = c("da
 
 card_tag <- cc_loyalty%>%na.omit() %>%
   group_by(last4ccnum, loyaltynum )%>%
-  summarize(count_d = n()) %>%
+  summarise(count_d = n()) %>%
   filter(count_d > 1)%>%filter(!(last4ccnum == 1286 & loyaltynum =="L3288")) %>%
   dplyr::select(-(count_d))
 
 ```
 
 ```{r cc nodes}
-final_tagging <- read_csv("datasets/final_tagging.csv")%>% select(-1)
+final_tagging <- read_csv("datasets/final_tagging.csv")
 final_tagging$last4ccnum <- as.factor(final_tagging$last4ccnum)
 
 cc_data <- cc %>% mutate(day=lubridate::day(timestamp), hour=lubridate::hour(timestamp))
@@ -135,15 +135,16 @@ cc_nodes <- cc_nodes %>%
   rowid_to_column("id") %>%
   mutate(CurrentEmploymentType=ifelse(is.na(CurrentEmploymentType),
                                       "Locations",CurrentEmploymentType),
-         title=label) %>% 
+         title=label,
+         locations = ifelse(CurrentEmploymentType=="Locations",1,0)) %>% 
   rename(group=CurrentEmploymentType)
-
+write_csv(cc_nodes,"datasets/cc_nodes.csv")
 ```
 ```{r cc edges}
 edges <- cc_data %>% 
   mutate(last4ccnum = as.character(last4ccnum)) %>%  
   filter(last4ccnum %in% final_tagging$last4ccnum) %>% 
-  group_by(last4ccnum, location, day, hour) %>%
+  group_by(last4ccnum, location,date, day, hour) %>%
   summarise(weight = n()) %>% 
   ungroup()
 cc_edges <- edges %>% 
@@ -152,14 +153,17 @@ cc_edges <- edges %>%
 cc_edges <- cc_edges %>% 
   inner_join(cc_nodes,by = c("location" = "label")) %>% 
   rename(to = id) %>% 
-  dplyr::select(from, to,day, hour, weight) %>% 
-  mutate(time_bin = case_when(hour>=0&hour<6~"Late Night",
-                              hour>=6&hour<9~"Early Morning",
-                              hour>=9&hour<12~"Late Morning",
-                              hour>=12&hour<15~"Early Afternoon",
-                              hour>=15&hour<18~"Late Afternoon",
-                              hour>=18&hour<21~"Evening",
-                              hour>=21~"Night"),
+  dplyr::select(from, to,day, hour, weight, date) %>% 
+  mutate(time_bin = case_when(
+      hour >= 21 ~ "Night",
+      hour >= 18 ~ "Evening",
+      hour >= 15 ~ "Late afternoon",
+      hour >= 12 ~ "Early afternoon",
+      hour >= 9 ~ "Late morning",
+      hour >= 6 ~ "Early morning",
+      TRUE ~ "Late night"
+  ),
+         
          weekday.weekend = ifelse(day %in% c(11,12,18,19),"Weekend","Weekday"),
          day.week = case_when(day==6|day==13~"Monday",
                               day==7|day==14~"Tuesday",
@@ -168,6 +172,7 @@ cc_edges <- cc_edges %>%
                               day==10|day==17~"Friday",
                               day==11|day==18~"Saturday",
                               day==12|day==19~"Sunday",))
+write_csv(cc_edges, "datasets/cc_edges.csv")
 
 ```
 ```{r parcoord}
