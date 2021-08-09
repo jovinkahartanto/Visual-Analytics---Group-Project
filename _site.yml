@@ -1,7 +1,7 @@
 name: "Visual Analytics - Group Project"
 title: "Group 5 Group Project"
 description: |
-  My Blog
+Saptiotemporal Analysis of Gastech Employees' Movement Data
 navbar:
   right:
   #  - text: "Home"
@@ -12,12 +12,13 @@ navbar:
       href: proposal.html
     - text: "Research Paper"
       href: researchpaper.html
+    - text: "Poster"
+      href: poster.html
     - text: "User Guide"
       href: userguide.html
     - text: "Shiny App"
       href: shiny.html
-    - text: "Poster"
-      href: poster.html
+
 output_dir: "_site"
 output: 
   distill::distill_article:

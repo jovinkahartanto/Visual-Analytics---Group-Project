@@ -33,7 +33,8 @@ for (p in packages){
 
 ```{r GPS Movement}
 gps <- read_csv("datasets/gps.csv")
-stop_fin <- read_csv("datasets/stop_fin.csv")%>%select(long,lat,Possible_Location)
+stop_fin <- read_csv("datasets/stop_fin.csv") %>% dplyr::select(long, lat, Possible_Location)
+
 
 stop_fin$lat = round(stop_fin$lat,5)
 stop_fin$long = round(stop_fin$long,5)
@@ -56,7 +57,7 @@ gps_stop_new_sf <- st_as_sf(gps_stop_new, coords=c("long","lat"), crs=4326)
 colnames(gps_stop_new_sf)[2] = 'id'
 
 ```
-```{r Locations Transactions data & heatmap}
+```{r cc.csv}
 cc <- read_csv("datasets/cc_data.csv")
 cc$timestamp <- date_time_parse(cc$timestamp, 
                                 zone = "", 
@@ -82,47 +83,12 @@ cc$day = weekdays(cc$timestamp)
 
 cc[grep("Katerina", cc$location),2] <- "Katerina's Cafe"
 
-# Heatmap
-
-cc_cal <- cc %>% count(date, location)
-
-cc_cal_ggplot <- ggplot(complete(cc_cal, date, location), aes(x = date, y = location)) + 
-  geom_tile(aes(fill = n), color = "white") +
-  scale_fill_gradient(low = "pale green", high = "black", na.value = "light grey") +
-  scale_x_date(date_labels = "%a \n %d/%m", 
-               date_breaks = "2 day") +
-  scale_y_discrete(limits = rev) +
-  labs(title = "Location Visit Frequency By Date",
-       fill = "Visit \nCount") +
-  
-  theme_bw() +
-  theme(plot.title = element_text(size=15, face="bold",hjust=0.5),
-        axis.title.x = element_blank(),
-        axis.title.y = element_blank(),
-        panel.border = element_blank(), 
-        panel.grid.major = element_blank(), 
-        panel.grid.minor = element_blank()
-)
-
-cc_cal_ggplot
-
+cc <- tibble::rowid_to_column(cc, "NO")
+cc$concat <- paste(cc$date, cc$weekday, cc$dayofmonth, cc$location, cc$price)
 
 ```
-
-```{r Locations Transactions boxplot}
-boxplot <- ggplot(cc, aes(x=location, y=price, tooltip=last4ccnum)) +
-  geom_boxplot() + 
-  geom_point(alpha=0) + scale_y_log10() + coord_flip() +
-  scale_x_discrete(limits = rev) +
-  ggtitle("Credit Card Transaction Boxplot") +
-  theme(axis.title=element_blank(),
-        plot.title=element_text(size=15, face="bold", hjust=0.5)) 
-
-
-bpp <- ggplotly(boxplot)
-bpp <- bpp %>% layout(autosize = F, height = 500)
-bpp$x$data[[1]]$hoverinfo <- "none"
-bpp
+```{r cc cal}
+cc_cal <- cc %>% dplyr::select(date,location)%>%group_by(date,location)%>%summarize(freq = n())
 
 ```
 
@@ -139,123 +105,13 @@ loyalty$weekday <- wday(loyalty$timestamp)
 loyalty$dayofmonth <- get_day(loyalty$timestamp)
 loyalty[grep("Katerina", loyalty$location),2] <- "Katerina's Cafe" 
 
-cc_loyalty<- merge(cc,loyalty, by.x = c("date","price","location"), by.y = c("date","price","location"), all.x = TRUE)%>% select(-c(weekday.x,dayofmonth.x)) 
+cc_loyalty<- merge(cc,loyalty, by.x = c("date","price","location"), by.y = c("date","price","location"), all.x = TRUE)%>% dplyr::select(-c(weekday.x,dayofmonth.x)) 
 
 card_tag <- cc_loyalty%>%na.omit() %>%
   group_by(last4ccnum, loyaltynum )%>%
   summarize(count_d = n()) %>%
   filter(count_d > 1)%>%filter(!(last4ccnum == 1286 & loyaltynum =="L3288")) %>%
-  select(-(count_d))
-
-```
-
-```{r credit card and loyalty card mapping - final cc loyalty}
-
-cc$price <- as.double(cc$price)
-
-non_match_cc <- anti_join(cc, na.omit(cc_loyalty))%>% merge(card_tag, by = 'last4ccnum', all.x = TRUE)
-non_match_loyalty <- anti_join(loyalty, na.omit(cc_loyalty))
-
-non_match_trans <- left_join(non_match_cc, 
-                             non_match_loyalty, 
-                             by=c("location", "date", "loyaltynum" )) %>% 
-  na.omit() %>% 
-  mutate(diff=price.x-price.y) %>% 
-  filter(diff>=0)
-
-match_cc <- left_join((left_join(cc, card_tag)), 
-                      loyalty, by=c("location","date","price")) %>% 
-  na.omit() %>% 
-  group_by(last4ccnum, loyaltynum.y) %>% filter(n()>1) %>%
-  dplyr::select(-(timestamp.y)) %>%
-  rename(timestamp = timestamp.x, 
-         loyaltynum_owner = loyaltynum.x, 
-         loyaltynum_trans = loyaltynum.y) %>%
-  mutate(trans_match = 1)
-
-match_cc_dis <- anti_join(cc, match_cc, by=c("date","location","price")) %>% 
-  left_join((non_match_trans %>% filter(diff %in% c(20, 40, 60, 80))), 
-            by=c("location", "last4ccnum","date","price"="price.x"))%>% 
-  na.omit() %>% select(-timestamp.x, -timestamp.y,-day.y,-timeperiod.y,-weekday.y)%>%
-  rename(loyaltynum_trans = loyaltynum, 
-         price_loyalty = price.y) %>%
-  mutate(trans_match = 1)
- 
-no_loyalty_trans <- anti_join(cc, match_cc, by=c("date","location","price")) %>%
-  anti_join(match_cc_dis, by=c("date","location","price")) %>%
-  mutate(trans_match = 0)
-
-## Tagging all information on transactions from cc and loyalty to final_trans
-final_trans <- bind_rows(match_cc, match_cc_dis, no_loyalty_trans)
-
-```
-```{r gps points}
-gps_stop <- st_as_sf(gps_stop, coords=c("long","lat"), crs=4326)
-
-first_gps <- gps_stop %>% 
-  group_by(id) %>% 
-  filter(row_number()==1) %>% 
-  ungroup(id)
-
-gps_pts <- gps_stop%>%ungroup(id)%>%
-  add_row(first_gps) %>% group_by(id)%>% arrange(timestamp) %>%
-  filter(!(start_vec==1 & stop_vec==1)) %>%
-  group_by(id) %>% arrange(timestamp) %>%
-  mutate( start.time = ifelse(start_vec== 0 & stop_vec==0, timestamp, NA),
-          start.time = ifelse(start_vec==1, timestamp,NA),
-          end.time=ifelse(stop_vec==1, timestamp, NA),
-          start.gps = ifelse(start_vec==0 & stop_vec==0, geometry,NA),
-          start.gps = ifelse(start_vec==1, geometry,NA),
-          end.gps=ifelse(stop_vec==1, geometry,NA),
-          end.time = ifelse(start_vec==1, lead(end.time), end.time),
-          end.gps = ifelse(start_vec==1, lead(end.gps), end.gps))%>%
-  filter(!is.na(start.time))%>%
-  mutate(end.gps = ifelse(end.gps=='NULL',start.gps,end.gps),
-         end.time = ifelse(is.na(end.time),start.time, end.time),
-         start.time= as_datetime(start.time),
-         end.time=as_datetime(end.time),
-         next.start.time=lead(start.time),
-         driving.time=round(difftime(end.time,start.time,units='mins'),2))%>%
-  dplyr::select(id, date, start.time, end.time, start.gps, end.gps, 
-                next.start.time, driving.time)%>%
-  mutate(start.gps=purrr::map(start.gps, st_point) %>% st_as_sfc(crs=4326))%>%
-  mutate(end.gps=purrr::map(end.gps, st_point) %>% st_as_sfc(crs=4326)) 
-
-```
-
-```{r final tagging DIFFERENT RESULTS}
-location_tag1 <- gps_stop_new_sf%>%select(Possible_Location,geometry)%>%na.omit()%>% unique()
-location_tag <- location_tag1 %>%
-  group_by(Possible_Location) %>%
-  summarize(do_union = FALSE ) %>%
-  st_cast("LINESTRING")
-
-final_trans_gps <-merge(final_trans, location_tag_ref, by.y=c("location"), by.x = "location") %>%
-  rename(loc.coord=geometry)
-
-gps_match <- final_trans_gps %>% 
-  left_join(gps_pts , by=c("date"))%>% 
-  group_by(last4ccnum) %>% arrange(timestamp)%>%
-  filter(timestamp > end.time & timestamp <= next.start.time + minutes(30)) %>%
-  mutate(diff.dist = st_distance(loc.coord, end.gps, by_element=TRUE),
-         diff.dist = as.numeric(diff.dist)) %>%
-  filter(diff.dist <500)
-```
-
-```{r tagging error}
-tagging <-gps_match %>%group_by(last4ccnum, id)%>%
-  summarize(tag=n()) %>% arrange(desc(tag))
-
-## Get total count of transactions minus the 4 locations per cc num
-trans_collapse <- cc %>% mutate(last4ccnum=as_factor(last4ccnum)) %>% 
-  filter(!(location %in% c("Bean There Done That",
-                           "Brewed Awakenings",
-                           "Coffee Shack",
-                           "Jack's Magical Beans"))) %>%
-  group_by(last4ccnum) %>% summarize(total=n())
-## Limit to top 3 match only by percentage
-tagging_cc_gps <- left_join(tagging, trans_collapse, by=c("last4ccnum")) %>%
-  mutate(percent=round(tag/total*100,2))
+  dplyr::select(-(count_d))
 
 ```
 
@@ -314,8 +170,190 @@ cc_edges <- cc_edges %>%
                               day==12|day==19~"Sunday",))
 
 ```
+```{r parcoord}
+cc$price <- as.double(cc$price)
 
-```{r test 2}
+non_match_cc <- anti_join(cc, na.omit(cc_loyalty))%>% merge(card_tag, by = 'last4ccnum', all.x = TRUE)
+non_match_loyalty <- anti_join(loyalty, na.omit(cc_loyalty))
+
+non_match_trans <- left_join(non_match_cc, 
+                             non_match_loyalty, 
+                             by=c("location", "date", "loyaltynum" )) %>% 
+  na.omit() %>% 
+  mutate(diff=price.x-price.y) %>% 
+  filter(diff>=0)
+
+match_cc <- left_join((left_join(cc, card_tag)), 
+                      loyalty, by=c("location","date","price")) %>% 
+  na.omit() %>% 
+  group_by(last4ccnum, loyaltynum.y) %>% filter(n()>1) %>%
+  dplyr::select(-(timestamp.y)) %>%
+  rename(timestamp = timestamp.x, 
+         loyaltynum_owner = loyaltynum.x, 
+         loyaltynum_trans = loyaltynum.y) %>%
+  mutate(trans_match = 1)
+
+match_cc_dis <- anti_join(cc, match_cc, by=c("date","location","price")) %>% 
+  left_join((non_match_trans %>% filter(diff %in% c(20, 40, 60, 80))), 
+            by=c("location", "last4ccnum","date","price"="price.x"))%>% 
+  na.omit() %>% dplyr::select(-timestamp.x, -timestamp.y,-day.y,-timeperiod.y,-weekday.y)%>%
+  rename(loyaltynum_trans = loyaltynum, 
+         price_loyalty = price.y) %>%
+  mutate(trans_match = 1)
+ 
+no_loyalty_trans <- anti_join(cc, match_cc, by=c("date","location","price")) %>%
+  anti_join(match_cc_dis, by=c("date","location","price")) %>%
+  mutate(trans_match = 0)
+
+## Tagging all information on transactions from cc and loyalty to final_trans
+final_trans <- bind_rows(match_cc, match_cc_dis, no_loyalty_trans)
+
+non_match_trans_fin <- non_match_trans %>% dplyr::select(location,price.x,last4ccnum,date,loyaltynum,price.y,timestamp.y)
+
+match_cc_bind <- ungroup(match_cc)%>% filter(!(last4ccnum == 1286 & loyaltynum_trans =="L3288")) %>% dplyr::select(date,last4ccnum,location,price,loyaltynum_owner)
+match_cc_bind <- cbind(match_cc_bind,match_cc_bind$price,match_cc_bind$date)
+match_cc_dis_bind <- match_cc_dis%>% dplyr::select(date,last4ccnum,location,price,loyaltynum_trans,price_loyalty)
+match_cc_dis_bind<- cbind(match_cc_dis_bind,match_cc_dis_bind$date)
+
+colnames(match_cc_bind) <- c('cc_date','last4ccnum','location','cc_price','loyaltynum','loyalty_price','loyalty_date')
+
+colnames(match_cc_dis_bind) <- c('cc_date','last4ccnum','location','cc_price','loyaltynum','loyalty_price','loyalty_date')
+
+kronos_mart_1 <- merge(cc,loyalty, by.x = c("price","location"), by.y = c("price","location"), all.x = TRUE)%>%filter(location == 'Kronos Mart')%>%na.omit()%>%dplyr::select(date.x,last4ccnum,location,price,loyaltynum,timestamp.y)
+
+kronos_mart_2 <- merge(cc,loyalty, by.x = c("price","location"), by.y = c("price","location"), all.x = TRUE)%>%filter(location == 'Kronos Mart')%>%filter(is.na(loyaltynum))%>%dplyr::select(date.x,last4ccnum,location,price,loyaltynum,timestamp.y)%>%left_join(card_tag,by = 'last4ccnum')%>%merge(loyalty,by.x = c("loyaltynum.y","location"), by.y =c("loyaltynum","location"),all.x = TRUE)%>%dplyr::select(-loyaltynum.x,-timestamp.y)%>%na.omit()%>%dplyr::select(date.x,last4ccnum,location,price.x,loyaltynum.y,price.y,timestamp)
+
+colnames(kronos_mart_2) <- c('cc_date','last4ccnum','location','cc_price','loyaltynum','loyalty_price','loyalty_date')
+
+kronos_mart_bind <- cbind(kronos_mart_1,kronos_mart_1$price)
+colnames(kronos_mart_bind) <- c('cc_date','last4ccnum','location','cc_price','loyaltynum','loyalty_date','loyalty_price')
+
+kronos_mart_bind_2 <- bind_rows(kronos_mart_bind,kronos_mart_2)
+
+kronos_mart_bind <- dplyr::select(kronos_mart_bind,cc_date,last4ccnum,location,cc_price,loyaltynum,loyalty_price,loyalty_date)
+
+kronos_mart_bind <- rbind(kronos_mart_bind,kronos_mart_2)
+
+parcoord <- rbind(match_cc_bind,match_cc_dis_bind,kronos_mart_bind)
+
+
+```
+```{r}
+write.csv(match_cc_bind,'match_cc.csv')
+```
+
+```{r final tagging 1}
+
+cc$price <- as.double(cc$price)
+
+non_match_cc <- anti_join(cc, na.omit(cc_loyalty))%>% merge(card_tag, by = 'last4ccnum', all.x = TRUE)
+non_match_loyalty <- anti_join(loyalty, na.omit(cc_loyalty))
+
+non_match_trans <- left_join(non_match_cc, 
+                             non_match_loyalty, 
+                             by=c("location", "date", "loyaltynum" )) %>% 
+  na.omit() %>% 
+  mutate(diff=price.x-price.y) %>% 
+  filter(diff>=0)
+
+match_cc <- left_join((left_join(cc, card_tag)), 
+                      loyalty, by=c("location","date","price")) %>% 
+  na.omit() %>% 
+  group_by(last4ccnum, loyaltynum.y) %>% filter(n()>1) %>%
+  dplyr::select(-(timestamp.y)) %>%
+  rename(timestamp = timestamp.x, 
+         loyaltynum_owner = loyaltynum.x, 
+         loyaltynum_trans = loyaltynum.y) %>%
+  mutate(trans_match = 1)
+
+match_cc_dis <- anti_join(cc, match_cc, by=c("date","location","price")) %>% 
+  left_join((non_match_trans %>% filter(diff %in% c(20, 40, 60, 80))), 
+            by=c("location", "last4ccnum","date","price"="price.x"))%>% 
+  na.omit() %>% select(-timestamp.x, -timestamp.y,-day.y,-timeperiod.y,-weekday.y)%>%
+  rename(loyaltynum_trans = loyaltynum, 
+         price_loyalty = price.y) %>%
+  mutate(trans_match = 1)
+ 
+no_loyalty_trans <- anti_join(cc, match_cc, by=c("date","location","price")) %>%
+  anti_join(match_cc_dis, by=c("date","location","price")) %>%
+  mutate(trans_match = 0)
+
+## Tagging all information on transactions from cc and loyalty to final_trans
+final_trans <- bind_rows(match_cc, match_cc_dis, no_loyalty_trans)
+
+```
+
+```{r final tagging 2 - gps points}
+gps_stop <- st_as_sf(gps_stop, coords=c("long","lat"), crs=4326)
+
+first_gps <- gps_stop %>% 
+  group_by(id) %>% 
+  filter(row_number()==1) %>% 
+  ungroup(id)
+
+gps_pts <- gps_stop%>%ungroup(id)%>%
+  add_row(first_gps) %>% group_by(id)%>% arrange(timestamp) %>%
+  filter(!(start_vec==1 & stop_vec==1)) %>%
+  group_by(id) %>% arrange(timestamp) %>%
+  mutate( start.time = ifelse(start_vec== 0 & stop_vec==0, timestamp, NA),
+          start.time = ifelse(start_vec==1, timestamp,NA),
+          end.time=ifelse(stop_vec==1, timestamp, NA),
+          start.gps = ifelse(start_vec==0 & stop_vec==0, geometry,NA),
+          start.gps = ifelse(start_vec==1, geometry,NA),
+          end.gps=ifelse(stop_vec==1, geometry,NA),
+          end.time = ifelse(start_vec==1, lead(end.time), end.time),
+          end.gps = ifelse(start_vec==1, lead(end.gps), end.gps))%>%
+  filter(!is.na(start.time))%>%
+  mutate(end.gps = ifelse(end.gps=='NULL',start.gps,end.gps),
+         end.time = ifelse(is.na(end.time),start.time, end.time),
+         start.time= as_datetime(start.time),
+         end.time=as_datetime(end.time),
+         next.start.time=lead(start.time),
+         driving.time=round(difftime(end.time,start.time,units='mins'),2))%>%
+  dplyr::select(id, date, start.time, end.time, start.gps, end.gps, 
+                next.start.time, driving.time)%>%
+  mutate(start.gps=purrr::map(start.gps, st_point) %>% st_as_sfc(crs=4326))%>%
+  mutate(end.gps=purrr::map(end.gps, st_point) %>% st_as_sfc(crs=4326)) 
+
+```
+
+```{r final tagging 3 DIFFERENT RESULTS}
+location_tag1 <- gps_stop_new_sf%>%select(Possible_Location,geometry)%>%na.omit()%>% unique()
+location_tag <- location_tag1 %>%
+  group_by(Possible_Location) %>%
+  summarize(do_union = FALSE ) %>%
+  st_cast("LINESTRING")
+
+final_trans_gps <-merge(final_trans, location_tag_ref, by.y=c("location"), by.x = "location") %>%
+  rename(loc.coord=geometry)
+
+gps_match <- final_trans_gps %>% 
+  left_join(gps_pts , by=c("date"))%>% 
+  group_by(last4ccnum) %>% arrange(timestamp)%>%
+  filter(timestamp > end.time & timestamp <= next.start.time + minutes(30)) %>%
+  mutate(diff.dist = st_distance(loc.coord, end.gps, by_element=TRUE),
+         diff.dist = as.numeric(diff.dist)) %>%
+  filter(diff.dist <500)
+```
+
+```{r final tagging 4 DIFFERENT RESULTS}
+tagging <-gps_match %>%group_by(last4ccnum, id)%>%
+  summarize(tag=n()) %>% arrange(desc(tag))
+
+## Get total count of transactions minus the 4 locations per cc num
+trans_collapse <- cc %>% mutate(last4ccnum=as_factor(last4ccnum)) %>% 
+  filter(!(location %in% c("Bean There Done That",
+                           "Brewed Awakenings",
+                           "Coffee Shack",
+                           "Jack's Magical Beans"))) %>%
+  group_by(last4ccnum) %>% summarize(total=n())
+## Limit to top 3 match only by percentage
+tagging_cc_gps <- left_join(tagging, trans_collapse, by=c("last4ccnum")) %>%
+  mutate(percent=round(tag/total*100,2))
+
+```
+
+```{r final tagging copied}
 loyalty$date <- loyalty$timestamp
 
 k= left_join(cc, card_tag)
@@ -421,8 +459,42 @@ girafe(ggobj=freq_location, width_svg = 7, height_svg = 7)
 
 ```
 
+```{r final tagging copied 2}
+colnames(gps_stop_new)[2] = 'id' 
+first_gps <- gps_stop%>% 
+  group_by(id) %>% 
+  filter(row_number()==1) %>% 
+  ungroup(id)
 
-```{r location_tag_ref}
+gps_pts <- gps_stop_new %>% ungroup(id) %>%
+  add_row(first_gps) %>% group_by(id) %>% arrange(timestamp) %>%
+  filter(!(start_vec==1 & stop_vec==1)) %>%
+  group_by(id) %>% arrange(timestamp) %>%
+  mutate( start.time = ifelse(start_vec== 0 & stop_vec==0, timestamp, NA),
+          start.time = ifelse(start_vec==1, timestamp,NA),
+          end.time=ifelse(stop_vec==1, timestamp, NA),
+          start.gps = ifelse(start_vec==0 & stop_vec==0, geometry,NA),
+          start.gps = ifelse(start_vec==1, geometry,NA),
+          end.gps=ifelse(stop_vec==1, geometry,NA),
+          end.time = ifelse(start_vec==1, lead(end.time), end.time),
+          end.gps = ifelse(start_vec==1, lead(end.gps), end.gps)) %>%
+  filter(!is.na(start.time))%>%
+  mutate(end.gps = ifelse(end.gps=='NULL',start.gps,end.gps),
+         end.time = ifelse(is.na(end.time),start.time, end.time),
+         start.time= as_datetime(start.time),
+         end.time=as_datetime(end.time),
+         next.start.time=lead(start.time),
+         driving.time=round(difftime(end.time,start.time,units='mins'),2)) %>%
+  dplyr::select(id, date, start.time, end.time, start.gps, end.gps, 
+                next.start.time, driving.time) %>%
+  mutate(start.gps=purrr::map(start.gps, st_point) %>% st_as_sfc(crs=4326))%>%
+  mutate(end.gps=purrr::map(end.gps, st_point) %>% st_as_sfc(crs=4326)) 
+car$CarID <- as_factor(car$CarID)
+gps_pts <- left_join(gps_pts, car, by=c("id"="CarID"))
+```
+
+
+```{r final tagging location_tag_ref}
 locations <- data.frame(location = cc$location) %>% 
   group_by(location) %>% summarize(number_transactions=n())
 knitr::kable(locations %>% 
@@ -527,36 +599,5 @@ tagging <-gps_match %>%group_by(last4ccnum, id)%>%
   summarize(tag=n()) %>% arrange(desc(tag))
 
 ```
-```{r}
-colnames(gps_stop_new)[2] = 'id' 
-first_gps <- gps_stop%>% 
-  group_by(id) %>% 
-  filter(row_number()==1) %>% 
-  ungroup(id)
 
-gps_pts <- gps_stop_new %>% ungroup(id) %>%
-  add_row(first_gps) %>% group_by(id) %>% arrange(timestamp) %>%
-  filter(!(start_vec==1 & stop_vec==1)) %>%
-  group_by(id) %>% arrange(timestamp) %>%
-  mutate( start.time = ifelse(start_vec== 0 & stop_vec==0, timestamp, NA),
-          start.time = ifelse(start_vec==1, timestamp,NA),
-          end.time=ifelse(stop_vec==1, timestamp, NA),
-          start.gps = ifelse(start_vec==0 & stop_vec==0, geometry,NA),
-          start.gps = ifelse(start_vec==1, geometry,NA),
-          end.gps=ifelse(stop_vec==1, geometry,NA),
-          end.time = ifelse(start_vec==1, lead(end.time), end.time),
-          end.gps = ifelse(start_vec==1, lead(end.gps), end.gps)) %>%
-  filter(!is.na(start.time))%>%
-  mutate(end.gps = ifelse(end.gps=='NULL',start.gps,end.gps),
-         end.time = ifelse(is.na(end.time),start.time, end.time),
-         start.time= as_datetime(start.time),
-         end.time=as_datetime(end.time),
-         next.start.time=lead(start.time),
-         driving.time=round(difftime(end.time,start.time,units='mins'),2)) %>%
-  dplyr::select(id, date, start.time, end.time, start.gps, end.gps, 
-                next.start.time, driving.time) %>%
-  mutate(start.gps=purrr::map(start.gps, st_point) %>% st_as_sfc(crs=4326))%>%
-  mutate(end.gps=purrr::map(end.gps, st_point) %>% st_as_sfc(crs=4326)) 
-car$CarID <- as_factor(car$CarID)
-gps_pts <- left_join(gps_pts, car, by=c("id"="CarID"))
-```
+
