@@ -1,25 +1,22 @@
-# library(shiny)
-# library(shinydashboard)
-# library(shinythemes)
-# library(tidyverse)
-# library(visNetwork)
-# library(fontawesome)
-# library(plotly)
-# library(rsconnect)
-# library(igraph)
-# library(tmap)
-# library(sf)
-# library(raster)
-packages = c('tidyverse', 'lubridate', 'MASS','ggplot2', 'plotly', 'geosphere', 
-             'sf','rgeos','raster', 'tmap','visNetwork','igraph','shiny','shinydashboard',
-             'fontawesome','rsconnect','shinyWidgets','ggiraph')
-
-for(p in packages){
-    if(!require(p, character.only=T)){
-        install.packages(p)
-    }
-    library(p, character.only=T)
-}
+library(shiny)
+library(shinydashboard)
+library(tidyverse)
+library(lubridate)
+library(MASS)
+library(geosphere)
+library(rgeos)
+library(tmap)
+library(visNetwork)
+library(fontawesome)
+library(plotly)
+library(rsconnect)
+library(igraph)
+library(tmap)
+library(sf)
+library(raster)
+library(shinyWidgets)
+library(ggiraph)
+library(rgdal)
 
 server <- function(input, output,session){
     visNetwork2Server("vis2")

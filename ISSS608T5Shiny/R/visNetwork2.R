@@ -2,7 +2,7 @@
 visNetwork2UI <- function(id) {
   stop_fin <- read_csv("datasets/stop_fin.csv")
   final_tagging<- read_csv("datasets/final_tagging.csv")
-  
+  cc <- read_csv("datasets/cc.csv")
   tagList(
     titlePanel(
       h1("Network Analysis by Location and Employee vis car GPS locations",
