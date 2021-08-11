@@ -1,7 +1,6 @@
 name: "Visual Analytics - Group Project"
 title: "Group 5 Group Project"
-description: |
-Saptiotemporal Analysis of Gastech Employees' Movement Data
+description: "Saptiotemporal Analysis of Gastech Employees' Movement Data"
 navbar:
   right:
   #  - text: "Home"
@@ -24,3 +23,4 @@ output:
   distill::distill_article:
     css: styles.css
     anchor_sections: FALSE
+runtime: shiny
