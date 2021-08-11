@@ -9,7 +9,7 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r, echo = FALSE}
+```{r,layout="1-screen",echo = FALSE}
 knitr::include_app("https://limyongkai.shinyapps.io/ISSS608T5Shiny/",
   height = "600px")
 ```
