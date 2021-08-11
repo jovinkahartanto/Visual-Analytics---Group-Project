@@ -10,16 +10,32 @@ mapUI <- function(id) {
       ),
     sidebarLayout(
       sidebarPanel(width=3,
-                   selectInput("employee","Select by Employee",choices = unique(final_tagging$name)),
-                   dateRangeInput("date","Select by Date", start="2014-01-06",end="2014-01-19"),
-                   selectInput("time_period","Select by Time Period:", choices=unique(cc$timeperiod)),
-                   selectInput("location","Select by Location",choices = unique(cc$location))
+                   pickerInput(NS(id,"employee"),
+                               "Select by Employee",
+                               choices=unique(final_tagging$name),
+                               multiple=TRUE,options = list(
+                                 `actions-box` = TRUE),
+                               selected=unique(final_tagging$name)[1:34]),
+                   dateRangeInput(NS(id,"date"),"Select by Date", 
+                                  start="2014-01-06", end="2014-01-19",
+                                  min="2014-01-06", max="2014-01-19"),
+                   pickerInput(NS(id,"time_period"),
+                               "Select by Time Period",
+                               choices=unique(cc$timeperiod),
+                               multiple=TRUE,options = list(
+                                 `actions-box` = TRUE),
+                               selected=unique(cc$timeperiod)[1:7]),
+                   pickerInput(NS(id,"location"),
+                               "Select by Location",
+                               choices=unique(cc$location),
+                               multiple=TRUE,options = list(
+                                 `actions-box` = TRUE),
+                               selected=unique(cc$location)[1:34])
       ),
       mainPanel(
         tmapOutput(NS(id,"map"))
       )
     )
-    #visNetworkOutput(NS(id, "vis"))
   )
 }
 
@@ -32,10 +48,11 @@ mapServer <- function(id) {
     
     stop_fin1<-st_as_sf(stop_fin, coords=c("long","lat"),crs=4326)
     ## Transform the structure of GPS data for Map
-    gps <- gps %>% mutate(timestamp=mdy_hms(Timestamp),id=as_factor(id))
+    gps <- gps %>% mutate(timestamp=mdy_hms(Timestamp),id=as.character(id))
     gps_sf <- st_as_sf(gps, coords=c("long","lat"), crs=4326) %>% 
       group_by(id) %>% 
-      summarize(m = mean(timestamp), do_union=FALSE) %>% st_cast("LINESTRING")
+      summarise(m=mean(timestamp), do_union=FALSE) %>% 
+      st_cast("LINESTRING")
     
     ## Plot interactive map
     tmap_mode("view")

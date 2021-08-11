@@ -1,0 +1,13 @@
+name: ISSS608T5Shiny
+title: ISSS608T5Shiny
+username:
+account: limyongkai
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 4476293
+bundleId: 4908067
+url: https://limyongkai.shinyapps.io/ISSS608T5Shiny/
+when: 1628609354.05563
+lastSyncTime: 1628609354.05563
+asMultiple: FALSE
+asStatic: FALSE

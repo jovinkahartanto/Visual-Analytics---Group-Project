@@ -1,11 +1,11 @@
 # Network UI
-visNetworkUI <- function(id) {
-  cc <- read_csv("datasets/cc.csv")
+visNetwork2UI <- function(id) {
+  stop_fin <- read_csv("datasets/stop_fin.csv")
   final_tagging<- read_csv("datasets/final_tagging.csv")
-  
+  cc <- read_csv("datasets/cc.csv")
   tagList(
     titlePanel(
-      h1("Network Analysis by Location and Employee via Credit Card Transactions",
+      h1("Network Analysis by Location and Employee vis car GPS locations",
          style='background-color:lightgrey',
          align="center")
       ),
@@ -19,10 +19,10 @@ visNetworkUI <- function(id) {
                                selected=unique(final_tagging$name)[1:34]),
                    pickerInput(NS(id,"location"),
                                "Select by Location",
-                               choices=unique(cc$location),
+                               choices=unique(stop_fin$Possible_Location),
                                multiple=TRUE,options = list(
                                  `actions-box` = TRUE),
-                               selected=unique(cc$location)[1:34]),
+                               selected=unique(stop_fin$Possible_Location)[1:67]),
                    pickerInput(NS(id,"department"),
                                "Select by Department",
                                choices=unique(final_tagging$CurrentEmploymentType),
@@ -43,17 +43,19 @@ visNetworkUI <- function(id) {
         
       ),
       mainPanel(
-        visNetworkOutput(NS(id, "vis"))
+        visNetworkOutput(NS(id, "vis2"))
       )
     )
   )
 }
 
-visNetworkServer <- function(id) {
+visNetwork2Server <- function(id) {
   moduleServer(id, function(input, output, session) {
     
-    cc_nodes <- read_csv("datasets/cc_nodes.csv")
-    cc_edges <- read_csv("datasets/cc_edges.csv")
+    gps_nodes <- read_csv("datasets/gps_nodes.csv")
+    gps_edges <- read_csv("datasets/gps_edges.csv")
+    
+    gps_nodes$locations <- if_else(gps_nodes$group=="Locations",1,0)
     
     location <- eventReactive(input$submit,{
       input$location
@@ -74,22 +76,23 @@ visNetworkServer <- function(id) {
       input$department
     }, ignoreNULL = FALSE)
     
-   output$vis <- renderVisNetwork({
-      cc_nodes_vis <- cc_nodes %>%
-        filter(label %in% location() | label %in% employee()) %>% 
-        filter(locations==1 | group %in% department())
-      
-      cc_edges_vis <- cc_edges %>% 
-        filter(from %in% cc_nodes_vis$id & to %in% cc_nodes_vis$id &
-                 date >= min_date() & date<=max_date() &
-                  time_bin %in% time_period())
-
-      visNetwork(cc_nodes_vis, cc_edges_vis) %>% 
+  output$vis2 <- renderVisNetwork({
+    gps_nodes_vis <- gps_nodes %>%
+      filter(label %in% location() | label %in% employee()) %>% 
+      filter(locations==1 | group %in% department())
+    
+    gps_edges_vis <- gps_edges %>% 
+      filter(from %in% gps_nodes_vis$id & to %in% gps_nodes_vis$id &
+               date >= min_date() & date<=max_date() &
+               time_bin %in% time_period())
+    
+    visNetwork(gps_nodes_vis, gps_edges_vis) %>% 
       visIgraphLayout(layout = "layout_on_grid") %>% 
       visInteraction(multiselect = TRUE) %>% 
       visLegend() %>% 
       visOptions(selectedBy="group",highlightNearest = TRUE, nodesIdSelection = TRUE) %>% 
-      visGroups(groupname="Engineering")
-   })
+      visGroups(groupname="Engineering") 
   })
+  
+})
 }

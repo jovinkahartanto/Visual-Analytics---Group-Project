@@ -1,71 +1,70 @@
-"","id","last4ccnum","car_id","LastName","FirstName","group","CurrentEmploymentTitle","label","title"
-"1",1,"4795","34","Vann","Edvard","Security","Perimeter Control","Vann Edvard","Vann Edvard"
-"2",2,"7108","12","Cocinaro","Hideki","Security","Site Control","Cocinaro Hideki","Cocinaro Hideki"
-"3",3,"6816","20","Fusil","Stenig","Security","Building Control","Fusil Stenig","Fusil Stenig"
-"4",4,"9617","18","Frente","Birgitta","Engineering","Geologist","Frente Birgitta","Frente Birgitta"
-"5",5,"7384","17","Flecha","Sven","Information Technology","IT Technician","Flecha Sven","Flecha Sven"
-"6",6,"7253","6","Bergen","Linnea","Information Technology","IT Group Manager","Bergen Linnea","Bergen Linnea"
-"7",7,"9683","33","Tempestad","Brand","Engineering","Drill Technician","Tempestad Brand","Tempestad Brand"
-"8",8,"3492","27","Orilla","Kare","Engineering","Drill Technician","Orilla Kare","Orilla Kare"
-"9",9,"5921","29","Ovan","Bertrand","Facilities","Facilities Group Manager","Ovan Bertrand","Ovan Bertrand"
-"10",10,"9405","21","Osvaldo","Hennie","Security","Perimeter Control","Osvaldo Hennie","Osvaldo Hennie"
-"11",11,"7889","8","Alcazar","Lucas","Information Technology","IT Technician","Alcazar Lucas","Alcazar Lucas"
-"12",12,"2142","25","Herrero","Kanon","Engineering","Geologist","Herrero Kanon","Herrero Kanon"
-"13",13,"9551","1","Calixto","Nils","Information Technology","IT Helpdesk","Calixto Nils","Calixto Nils"
-"14",14,"3484","23","Lagos","Varja","Security","Badging Office","Lagos Varja","Lagos Varja"
-"15",15,"7819","13","Ferro","Inga","Security","Site Control","Ferro Inga","Ferro Inga"
-"16",16,"1874","14","Dedos","Lidelse","Engineering","Engineering Group Manager","Dedos Lidelse","Dedos Lidelse"
-"17",17,"3853","15","Bodrogi","Loreto","Security","Site Control","Bodrogi Loreto","Bodrogi Loreto"
-"18",18,"4434","24","Mies","Minke","Security","Perimeter Control","Mies Minke","Mies Minke"
-"19",19,"6901","30","Resumir","Felix","Security","Security Group Manager","Resumir Felix","Resumir Felix"
-"20",20,"1286","22","Nubarron","Adra","Security","Badging Office","Nubarron Adra","Nubarron Adra"
-"21",21,"1415","2","Azada","Lars","Engineering","Engineer","Azada Lars","Azada Lars"
-"22",22,"9635","3","Balas","Felix","Engineering","Engineer","Balas Felix","Balas Felix"
-"23",23,"7688","4","Barranco","Ingrid","Executive","SVP/CFO","Barranco Ingrid","Barranco Ingrid"
-"24",24,"6899","5","Baza","Isak","Information Technology","IT Technician","Baza Isak","Baza Isak"
-"25",25,"2540","7","Orilla","Elsa","Engineering","Drill Technician","Orilla Elsa","Orilla Elsa"
-"26",26,"1877","9","Cazar","Gustav","Engineering","Drill Technician","Cazar Gustav","Cazar Gustav"
-"27",27,"8332","10","Campo-Corrente","Ada","Executive","SVP/CIO","Campo-Corrente Ada","Campo-Corrente Ada"
-"28",28,"1321","11","Calzas","Axel","Engineering","Hydraulic Technician","Calzas Axel","Calzas Axel"
-"29",29,"6895","19","Frente","Vira","Engineering","Hydraulic Technician","Frente Vira","Frente Vira"
-"30",30,"9241","28","Borrasca","Isande","Engineering","Drill Technician","Borrasca Isande","Borrasca Isande"
-"31",31,"8156","32","Strum","Orhan","Executive","SVP/COO","Strum Orhan","Strum Orhan"
-"32",32,"2463","35","Vasco-Pais","Willem","Executive","Environmental Safety Advisor","Vasco-Pais Willem","Vasco-Pais Willem"
-"33",33,"7354","16","Vann","Isia","Security","Perimeter Control","Vann Isia","Vann Isia"
-"34",34,"1310","26","Onda","Marin","Engineering","Drill Site Manager","Onda Marin","Onda Marin"
-"35",35,"3547","29","Ovan","Bertrand","Facilities","Facilities Group Manager","Ovan Bertrand","Ovan Bertrand"
-"36",36,"5010","31","Sanjorge Jr.","Sten","Executive","President/CEO","Sanjorge Jr. Sten","Sanjorge Jr. Sten"
-"37",37,NA,NA,NA,NA,"Locations",NA,"Brew've Been Served","Brew've Been Served"
-"38",38,NA,NA,NA,NA,"Locations",NA,"Hallowed Grounds","Hallowed Grounds"
-"39",39,NA,NA,NA,NA,"Locations",NA,"Coffee Cameleon","Coffee Cameleon"
-"40",40,NA,NA,NA,NA,"Locations",NA,"Abila Airport","Abila Airport"
-"41",41,NA,NA,NA,NA,"Locations",NA,"Kronos Pipe and Irrigation","Kronos Pipe and Irrigation"
-"42",42,NA,NA,NA,NA,"Locations",NA,"Nationwide Refinery","Nationwide Refinery"
-"43",43,NA,NA,NA,NA,"Locations",NA,"Maximum Iron and Steel","Maximum Iron and Steel"
-"44",44,NA,NA,NA,NA,"Locations",NA,"Stewart and Sons Fabrication","Stewart and Sons Fabrication"
-"45",45,NA,NA,NA,NA,"Locations",NA,"Carlyle Chemical Inc.","Carlyle Chemical Inc."
-"46",46,NA,NA,NA,NA,"Locations",NA,"Coffee Shack","Coffee Shack"
-"47",47,NA,NA,NA,NA,"Locations",NA,"Bean There Done That","Bean There Done That"
-"48",48,NA,NA,NA,NA,"Locations",NA,"Brewed Awakenings","Brewed Awakenings"
-"49",49,NA,NA,NA,NA,"Locations",NA,"Jack's Magical Beans","Jack's Magical Beans"
-"50",50,NA,NA,NA,NA,"Locations",NA,"Katerina’s Café","Katerina’s Café"
-"51",51,NA,NA,NA,NA,"Locations",NA,"Hippokampos","Hippokampos"
-"52",52,NA,NA,NA,NA,"Locations",NA,"Abila Zacharo","Abila Zacharo"
-"53",53,NA,NA,NA,NA,"Locations",NA,"Gelatogalore","Gelatogalore"
-"54",54,NA,NA,NA,NA,"Locations",NA,"Kalami Kafenion","Kalami Kafenion"
-"55",55,NA,NA,NA,NA,"Locations",NA,"Ouzeri Elian","Ouzeri Elian"
-"56",56,NA,NA,NA,NA,"Locations",NA,"Guy's Gyros","Guy's Gyros"
-"57",57,NA,NA,NA,NA,"Locations",NA,"U-Pump","U-Pump"
-"58",58,NA,NA,NA,NA,"Locations",NA,"Frydos Autosupply n' More","Frydos Autosupply n' More"
-"59",59,NA,NA,NA,NA,"Locations",NA,"Albert's Fine Clothing","Albert's Fine Clothing"
-"60",60,NA,NA,NA,NA,"Locations",NA,"Shoppers' Delight","Shoppers' Delight"
-"61",61,NA,NA,NA,NA,"Locations",NA,"Abila Scrapyard","Abila Scrapyard"
-"62",62,NA,NA,NA,NA,"Locations",NA,"Frank's Fuel","Frank's Fuel"
-"63",63,NA,NA,NA,NA,"Locations",NA,"Chostus Hotel","Chostus Hotel"
-"64",64,NA,NA,NA,NA,"Locations",NA,"General Grocer","General Grocer"
-"65",65,NA,NA,NA,NA,"Locations",NA,"Kronos Mart","Kronos Mart"
-"66",66,NA,NA,NA,NA,"Locations",NA,"Octavio's Office Supplies","Octavio's Office Supplies"
-"67",67,NA,NA,NA,NA,"Locations",NA,"Roberts and Sons","Roberts and Sons"
-"68",68,NA,NA,NA,NA,"Locations",NA,"Ahaggo Museum","Ahaggo Museum"
-"69",69,NA,NA,NA,NA,"Locations",NA,"Desafio Golf Course","Desafio Golf Course"
-"70",70,NA,NA,NA,NA,"Locations",NA,"Daily Dealz","Daily Dealz"
+id,last4ccnum,X1,car_id,LastName,FirstName,group,CurrentEmploymentTitle,label,title,locations
+1,4795,9,34,Vann,Edvard,Security,Perimeter Control,Vann Edvard,Vann Edvard,0
+2,7108,12,12,Cocinaro,Hideki,Security,Site Control,Cocinaro Hideki,Cocinaro Hideki,0
+3,6816,16,20,Fusil,Stenig,Security,Building Control,Fusil Stenig,Fusil Stenig,0
+4,9617,14,18,Frente,Birgitta,Engineering,Geologist,Frente Birgitta,Frente Birgitta,0
+5,7384,10,17,Flecha,Sven,Information Technology,IT Technician,Flecha Sven,Flecha Sven,0
+6,7253,17,6,Bergen,Linnea,Information Technology,IT Group Manager,Bergen Linnea,Bergen Linnea,0
+7,9683,19,33,Tempestad,Brand,Engineering,Drill Technician,Tempestad Brand,Tempestad Brand,0
+8,3492,11,27,Orilla,Kare,Engineering,Drill Technician,Orilla Kare,Orilla Kare,0
+9,5921,34,29,Ovan,Bertrand,Facilities,Facilities Group Manager,Ovan Bertrand,Ovan Bertrand,0
+10,9405,8,21,Osvaldo,Hennie,Security,Perimeter Control,Osvaldo Hennie,Osvaldo Hennie,0
+11,7889,13,8,Alcazar,Lucas,Information Technology,IT Technician,Alcazar Lucas,Alcazar Lucas,0
+12,2142,6,25,Herrero,Kanon,Engineering,Geologist,Herrero Kanon,Herrero Kanon,0
+13,9551,22,1,Calixto,Nils,Information Technology,IT Helpdesk,Calixto Nils,Calixto Nils,0
+14,3484,2,23,Lagos,Varja,Security,Badging Office,Lagos Varja,Lagos Varja,0
+15,7819,5,13,Ferro,Inga,Security,Site Control,Ferro Inga,Ferro Inga,0
+16,1874,15,14,Dedos,Lidelse,Engineering,Engineering Group Manager,Dedos Lidelse,Dedos Lidelse,0
+17,3853,18,15,Bodrogi,Loreto,Security,Site Control,Bodrogi Loreto,Bodrogi Loreto,0
+18,4434,7,24,Mies,Minke,Security,Perimeter Control,Mies Minke,Mies Minke,0
+19,6901,3,30,Resumir,Felix,Security,Security Group Manager,Resumir Felix,Resumir Felix,0
+20,1286,20,22,Nubarron,Adra,Security,Badging Office,Nubarron Adra,Nubarron Adra,0
+21,1415,28,2,Azada,Lars,Engineering,Engineer,Azada Lars,Azada Lars,0
+22,9635,31,3,Balas,Felix,Engineering,Engineer,Balas Felix,Balas Felix,0
+23,7688,25,4,Barranco,Ingrid,Executive,SVP/CFO,Barranco Ingrid,Barranco Ingrid,0
+24,6899,30,5,Baza,Isak,Information Technology,IT Technician,Baza Isak,Baza Isak,0
+25,2540,29,7,Orilla,Elsa,Engineering,Drill Technician,Orilla Elsa,Orilla Elsa,0
+26,1877,33,9,Cazar,Gustav,Engineering,Drill Technician,Cazar Gustav,Cazar Gustav,0
+27,8332,21,10,Campo-Corrente,Ada,Executive,SVP/CIO,Campo-Corrente Ada,Campo-Corrente Ada,0
+28,1321,27,11,Calzas,Axel,Engineering,Hydraulic Technician,Calzas Axel,Calzas Axel,0
+29,6895,24,19,Frente,Vira,Engineering,Hydraulic Technician,Frente Vira,Frente Vira,0
+30,9241,35,28,Borrasca,Isande,Engineering,Drill Technician,Borrasca Isande,Borrasca Isande,0
+31,8156,26,32,Strum,Orhan,Executive,SVP/COO,Strum Orhan,Strum Orhan,0
+32,2463,23,35,Vasco-Pais,Willem,Executive,Environmental Safety Advisor,Vasco-Pais Willem,Vasco-Pais Willem,0
+33,7354,4,16,Vann,Isia,Security,Perimeter Control,Vann Isia,Vann Isia,0
+34,1310,1,26,Onda,Marin,Engineering,Drill Site Manager,Onda Marin,Onda Marin,0
+35,3547,32,29,Ovan,Bertrand,Facilities,Facilities Group Manager,Ovan Bertrand,Ovan Bertrand,0
+36,NA,NA,NA,NA,NA,Locations,NA,Brew've Been Served,Brew've Been Served,1
+37,NA,NA,NA,NA,NA,Locations,NA,Hallowed Grounds,Hallowed Grounds,1
+38,NA,NA,NA,NA,NA,Locations,NA,Coffee Cameleon,Coffee Cameleon,1
+39,NA,NA,NA,NA,NA,Locations,NA,Abila Airport,Abila Airport,1
+40,NA,NA,NA,NA,NA,Locations,NA,Kronos Pipe and Irrigation,Kronos Pipe and Irrigation,1
+41,NA,NA,NA,NA,NA,Locations,NA,Nationwide Refinery,Nationwide Refinery,1
+42,NA,NA,NA,NA,NA,Locations,NA,Maximum Iron and Steel,Maximum Iron and Steel,1
+43,NA,NA,NA,NA,NA,Locations,NA,Stewart and Sons Fabrication,Stewart and Sons Fabrication,1
+44,NA,NA,NA,NA,NA,Locations,NA,Carlyle Chemical Inc.,Carlyle Chemical Inc.,1
+45,NA,NA,NA,NA,NA,Locations,NA,Coffee Shack,Coffee Shack,1
+46,NA,NA,NA,NA,NA,Locations,NA,Bean There Done That,Bean There Done That,1
+47,NA,NA,NA,NA,NA,Locations,NA,Brewed Awakenings,Brewed Awakenings,1
+48,NA,NA,NA,NA,NA,Locations,NA,Jack's Magical Beans,Jack's Magical Beans,1
+49,NA,NA,NA,NA,NA,Locations,NA,Katerina's Cafe,Katerina's Cafe,1
+50,NA,NA,NA,NA,NA,Locations,NA,Hippokampos,Hippokampos,1
+51,NA,NA,NA,NA,NA,Locations,NA,Abila Zacharo,Abila Zacharo,1
+52,NA,NA,NA,NA,NA,Locations,NA,Gelatogalore,Gelatogalore,1
+53,NA,NA,NA,NA,NA,Locations,NA,Kalami Kafenion,Kalami Kafenion,1
+54,NA,NA,NA,NA,NA,Locations,NA,Ouzeri Elian,Ouzeri Elian,1
+55,NA,NA,NA,NA,NA,Locations,NA,Guy's Gyros,Guy's Gyros,1
+56,NA,NA,NA,NA,NA,Locations,NA,U-Pump,U-Pump,1
+57,NA,NA,NA,NA,NA,Locations,NA,Frydos Autosupply n' More,Frydos Autosupply n' More,1
+58,NA,NA,NA,NA,NA,Locations,NA,Albert's Fine Clothing,Albert's Fine Clothing,1
+59,NA,NA,NA,NA,NA,Locations,NA,Shoppers' Delight,Shoppers' Delight,1
+60,NA,NA,NA,NA,NA,Locations,NA,Abila Scrapyard,Abila Scrapyard,1
+61,NA,NA,NA,NA,NA,Locations,NA,Frank's Fuel,Frank's Fuel,1
+62,NA,NA,NA,NA,NA,Locations,NA,Chostus Hotel,Chostus Hotel,1
+63,NA,NA,NA,NA,NA,Locations,NA,General Grocer,General Grocer,1
+64,NA,NA,NA,NA,NA,Locations,NA,Kronos Mart,Kronos Mart,1
+65,NA,NA,NA,NA,NA,Locations,NA,Octavio's Office Supplies,Octavio's Office Supplies,1
+66,NA,NA,NA,NA,NA,Locations,NA,Roberts and Sons,Roberts and Sons,1
+67,NA,NA,NA,NA,NA,Locations,NA,Ahaggo Museum,Ahaggo Museum,1
+68,NA,NA,NA,NA,NA,Locations,NA,Desafio Golf Course,Desafio Golf Course,1
+69,NA,NA,NA,NA,NA,Locations,NA,Daily Dealz,Daily Dealz,1
