@@ -116,3 +116,4 @@ User can filter and select the interactive network analysis visualisation simila
 ```{r gps-network, fig.align = 'center',layout="l-page", fig.cap = 'Network Analysis Tab: Network Analysis by Location and Employee via car GPS locationS', echo=FALSE}
 knitr::include_graphics("img/gps-network.gif")
 ```
+
