@@ -86,26 +86,29 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-  <title>Group 5 Group Project: User Guide</title>
+  <title>Group 5 Group Project: ISSS608 G1 Group 5 - Application User Guide</title>
 
+  <meta property="description" itemprop="description" content="Step-by-step guide on how the application features and functions"/>
 
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Group 5 Group Project: User Guide"/>
+  <meta property="og:title" content="Group 5 Group Project: ISSS608 G1 Group 5 - Application User Guide"/>
   <meta property="og:type" content="article"/>
+  <meta property="og:description" content="Step-by-step guide on how the application features and functions"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="Group 5 Group Project"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Group 5 Group Project: User Guide"/>
+  <meta property="twitter:title" content="Group 5 Group Project: ISSS608 G1 Group 5 - Application User Guide"/>
+  <meta property="twitter:description" content="Step-by-step guide on how the application features and functions"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","output"]}},"value":[{"type":"character","attributes":{},"value":["User Guide"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc"]}},"value":[{"type":"logical","attributes":{},"value":[true]}]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","output"]}},"value":[{"type":"character","attributes":{},"value":["ISSS608 G1 Group 5 - Application User Guide"]},{"type":"character","attributes":{},"value":["Step-by-step guide on how the application features and functions\n"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc"]}},"value":[{"type":"logical","attributes":{},"value":[true]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2030,7 +2033,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.8/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2378,7 +2381,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"User Guide","authors":[]}
+{"title":"ISSS608 G1 Group 5 - Application User Guide","description":"Step-by-step guide on how the application features and functions","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2393,6 +2396,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <a href="about.html">About</a>
 <a href="proposal.html">Proposal</a>
 <a href="researchpaper.html">Research Paper</a>
+<a href="poster.html">Poster</a>
 <a href="userguide.html">User Guide</a>
 <a href="shiny.html">Shiny App</a>
 <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
@@ -2404,14 +2408,140 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>User Guide</h1>
+<h1>ISSS608 G1 Group 5 - Application User Guide</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-
+<p><p>Step-by-step guide on how the application features and functions</p></p>
 </div>
 
 
 <div class="d-article">
+<div class="d-contents d-contents-float">
+<nav class="l-text toc figcaption" id="TOC">
+<h3>Contents</h3>
+<ul>
+<li><a href="#application">Application</a></li>
+<li><a href="#user-guide-for-shiny-application">User Guide for Shiny Application</a>
+<ul>
+<li><a href="#overview">1.0 Overview</a></li>
+<li><a href="#abila-kronos-map">2.0 Abila Kronos Map</a></li>
+<li><a href="#locations-transactions">3.0 Locations Transactions</a>
+<ul>
+<li><a href="#filter-selection-panel">3.1 Filter selection Panel</a></li>
+<li><a href="#main-visualisation-panel">3.2 Main Visualisation Panel</a></li>
+</ul></li>
+<li><a href="#card-mapping">4.0 Card Mapping</a></li>
+<li><a href="#network-analysis">5.0 Network Analysis</a>
+<ul>
+<li><a href="#network-analysis-by-credit-card-transaction">5.1 Network Analysis by Credit Card Transaction</a></li>
+<li><a href="#network-analysis-by-employee-car-gps-locations">5.2 Network Analysis by employee car GPS locations</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+</div>
+<h1 id="application">Application</h1>
+<ul>
+<li>The application designed using R Shiny is available on <a href="https://limyongkai.shinyapps.io/ISSS608T5Shiny/">shinyapps.io</a></li>
+<li>The source code for the R Shiny application is available on <a href="https://github.com/jovinkahartanto/Visual-Analytics---Group-Project/tree/master/ISSS608T5Shiny">Github</a></li>
+</ul>
+<h1 id="user-guide-for-shiny-application">User Guide for Shiny Application</h1>
+<h2 id="overview">1.0 Overview</h2>
+<p>Entering the application will bring the user to the overview page. The overview page summarise the background information of the mini challenge and the 5 questions that the Shiny application will answer using visual analytic tools.</p>
+<p>The papers, documents and source code are available via the link to the website and Github.</p>
+<div class="layout-chunk" data-layout="l-page">
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-1"></span>
+<img src="img/shiny_overview.PNG" alt="Overview Tab" width="2000" />
+<p class="caption">
+Figure 1: Overview Tab
+</p>
+</div>
+</div>
+<h2 id="abila-kronos-map">2.0 Abila Kronos Map</h2>
+<p>Text to be input thereafter</p>
+<h2 id="locations-transactions">3.0 Locations Transactions</h2>
+<h3 id="filter-selection-panel">3.1 Filter selection Panel</h3>
+<p>The tab analyse the credit card and loyalty card transactions to determine the most popular locations.</p>
+<p>On the left side panel, five filters are available for user to select multiple inputs to change all 3 interactive visualisations. <em>Location</em>, <em>Employee</em>, <em>Time Period</em> and <em>Department</em> are drop down filters with multiple selection available. <em>Date</em> is a range filter between 6 January 2014 to 19 January 2014.</p>
+<p>Figure <a href="#fig:location-gif">2</a> shows selection of all choices from the <em>Location</em> and <em>Employee</em> filters, <em>Date</em> range of 12 to 19 January during the evening to night <em>Time Period</em> for employee in the <em>Security</em> department only. Clicking on the <strong>Submit</strong> button will update the visualisation accordingly to the filter selections.</p>
+<div class="layout-chunk" data-layout="l-page">
+<div class="figure" style="text-align: center"><span id="fig:location-gif"></span>
+<img src="img/location_filter.gif" alt="Location Transaction Tab: Filter Selection"  />
+<p class="caption">
+Figure 2: Location Transaction Tab: Filter Selection
+</p>
+</div>
+</div>
+<h3 id="main-visualisation-panel">3.2 Main Visualisation Panel</h3>
+<h4 id="heatmap-of-location-visit-frequency">3.2.1 Heatmap of Location Visit Frequency</h4>
+<p>The interactive heatmap visualisation displays the frequency of location visit based on the credit card and loyalty card transactions history. The color intensity of the heatmap represents the visit count for each location.</p>
+<p>Figure <a href="#fig:heatmap-gif">3</a> demonstrates the interactivity of the heatmap. User is able to drill down on any particular period by drag and selecting the area. Hovering over each square will display micro information, including the exact visit frequency count.</p>
+<div class="layout-chunk" data-layout="l-page">
+<div class="figure" style="text-align: center"><span id="fig:heatmap-gif"></span>
+<img src="img/heatmap.gif" alt="Heatmap: Location Visit Frequency By Date"  />
+<p class="caption">
+Figure 3: Heatmap: Location Visit Frequency By Date
+</p>
+</div>
+</div>
+<h4 id="boxplot-of-credit-card-transactions">3.2.2 Boxplot of Credit Card Transactions</h4>
+<p>The interactive boxplot visualisation displays the credit card transaction value for each location and the outliers shaded in red.</p>
+<p>Figure <a href="#fig:boxplot-gif">4</a> demonstrates the interactivity of the boxplot. User can hover to display the individual transaction with the median spending shown for the location on the boxplot. User is able to drill down on any particular area by drag and selecting the area.</p>
+<div class="layout-chunk" data-layout="l-page">
+<div class="figure" style="text-align: center"><span id="fig:boxplot-gif"></span>
+<img src="img/boxplot.gif" alt="Boxplot: Credit Card Transaction Boxplot"  />
+<p class="caption">
+Figure 4: Boxplot: Credit Card Transaction Boxplot
+</p>
+</div>
+</div>
+<h4 id="barplot-of-number-of-transactions-per-day-per-location">3.2.3 Barplot of Number of Transactions per Day per Location</h4>
+<p>The interactive barplot visualisation displays the credit card transaction frequency per day for each location colored by time period.</p>
+<p>Figure <a href="#fig:barplot-gif">5</a> demonstrates the interactivity of the barplot. User can hover over the each bar section to display the micro data of each day within the time period.</p>
+<div class="layout-chunk" data-layout="l-page">
+<div class="figure" style="text-align: center"><span id="fig:barplot-gif"></span>
+<img src="img/barplot.gif" alt="Barplot: Number of Transactions per Day by Location"  />
+<p class="caption">
+Figure 5: Barplot: Number of Transactions per Day by Location
+</p>
+</div>
+</div>
+<h2 id="card-mapping">4.0 Card Mapping</h2>
+<p>The interactive parallel coordinate plot in figure <a href="#fig:parcoord-gif">6</a> displays the credit card and loyalty card transactions. The filter on the left panel allows user to select multiple Credit Card numbers for display in the right panel. The main panel on the right displays a DataTable of the credit card and loyalty card owners detail at the top and the parallel coordinate visualisation at the bottom.</p>
+<p>The parallel coordinate plots has 4 verticals: 1. <em>Credit Card Transaction Date</em> 2. <em>Loyalty Card Transaction Date</em> 3. <em>Location of transaction</em> 4. <em>Price difference between credit card and loyalty card transaction</em></p>
+<p>User can drag and select the verticals on the interactive Parallel Coordinate Visualisation to highlight only the transactions as per figure <a href="#fig:parcoord-gif">6</a>,</p>
+<div class="layout-chunk" data-layout="l-page">
+<div class="figure" style="text-align: center"><span id="fig:parcoord-gif"></span>
+<img src="img/parcoord.gif" alt="Parallel Coordinate Plot: Credit Card and Loyalty Card Mapping"  />
+<p class="caption">
+Figure 6: Parallel Coordinate Plot: Credit Card and Loyalty Card Mapping
+</p>
+</div>
+</div>
+<h2 id="network-analysis">5.0 Network Analysis</h2>
+<p>The tab displays two network analysis of Employee and the location based on their credit card transactions or car GPS movement.</p>
+<h3 id="network-analysis-by-credit-card-transaction">5.1 Network Analysis by Credit Card Transaction</h3>
+<p>On the left side panel, five filters are available for user to select multiple inputs to change the network graph. <em>Location</em>, <em>Employee</em>, <em>Time Period</em> and <em>Department</em> are drop down filters with multiple selection available. <em>Date</em> is a range filter between 6 January 2014 to 19 January 2014. Clicking on the <strong>Submit</strong> button will update the visualisation accordingly to the filter selections.</p>
+<p>On the right side panel, the interactive network analysis shows the interaction between employees and the location they patronise based on their credit card transaction data. Users can click the nodes to highlight all interaction edges linked to the node. For example, user can click on a locations nodes to display all interaction edges to employees nodes whom has made transaction at the location. Alternatively, user can change the node selection from the drop down bar labelled <em>Select by id</em> to select a particular employee or location. User can select different group of nodes categorised by their department or the location. Figure <a href="#fig:trans-network">7</a> shows the network analysis.</p>
+<div class="layout-chunk" data-layout="l-page">
+<div class="figure" style="text-align: center"><span id="fig:trans-network"></span>
+<img src="img/trans-network.gif" alt="Network Analysis Tab: Network Analysis by Location and Employee via Credit Card Transactions"  />
+<p class="caption">
+Figure 7: Network Analysis Tab: Network Analysis by Location and Employee via Credit Card Transactions
+</p>
+</div>
+</div>
+<h3 id="network-analysis-by-employee-car-gps-locations">5.2 Network Analysis by employee car GPS locations</h3>
+<p>On the left side panel, the five filters are identical to the network analysis by credit card transaction with the addition of few more option for location selection. The locations are based on the employees car GPS stop location and it includes their residential address and suspicious meeting point with no point of interest nearby.</p>
+<p>User can filter and select the interactive network analysis visualisation similar to the previous section. Figure <a href="#fig:gps-network">8</a> displays the interactive aspects of the network analysis visualisation.</p>
+<div class="layout-chunk" data-layout="l-page">
+<div class="figure" style="text-align: center"><span id="fig:gps-network"></span>
+<img src="img/gps-network.gif" alt="Network Analysis Tab: Network Analysis by Location and Employee via car GPS locationS"  />
+<p class="caption">
+Figure 8: Network Analysis Tab: Network Analysis by Location and Employee via car GPS locationS
+</p>
+</div>
+</div>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
