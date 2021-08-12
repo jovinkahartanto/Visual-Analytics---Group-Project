@@ -48,7 +48,7 @@ The use cases of the data visualisation tool include but are not limited to the 
 
 The project drew inspirations from previous works by Singapore Management University (SMU) students and submissions of the 2014 Vast Challenge.
 
-In the project, Dino Holmes Series, **dinoholmes**, heatmap enabled readers to easily determine patterns and trends over a time. However, static heatmap are not reader friendly enough to determine what was the count at specific time slots. As each heatmap box represents a discrete count by using a gradient color fill, it was difficult to accurately determine the specific count. The analysis may benefit from making the heatmap plot interactive, allowing the details to be displayed at the tooltip when hover across. This would allow granularity data to be more well-presented in the report.
+In the project, Dino Holmes Series, [dinoholmes], heatmap enabled readers to easily determine patterns and trends over a time. However, static heatmap is  not reader friendly enough to determine what was the count at specific time slots. As each heatmap box represents a discrete count by using a gradient color fill, it was difficult to accurately determine the specific count. The analysis may benefit from making the heatmap plot interactive, allowing the details to be displayed at the tooltip when hover across. This would allow granularity data to be more well-presented in the report.
 
 Submission from Fraunhofer IAIS and City University London (Andrienko, Andrienko, and Fuchs 2014) and RBEI-Bangalore (Singhal et al. 2014) both used network cluster and analysis to investigate the relationships between GAStech employees. Fraunhofer IAIS university used an ego-centric graph whereas RBEI used a combination of fragmented and node-only layout to visual the relationship by connecting employees. Network analysis is an informative visualisation that provides an overview of potential relationships between employees or even connecting employees to different mediums such as the locations or emails.
 
@@ -56,34 +56,33 @@ Although network analysis provides an overview of the relationships between node
 
 # Design framework 
 
-Exploratory data analysis (EDA) with histogram, heatmap and boxplot were performed to give users an overview of GAStech employees' credit card and loyalty card transactions over the two weeks. Heatmap is used for a quick summary of the most popular locations based on transaction frequency. This function is meant for high-level visualisation and not detailed analysis. Detailed histogram by location and time period is used to visualise distribution and popularity of locations at different time of the day. Any transactions at odd timing can be isolated and scrutinise in detail. Boxplot shows the median and 25th and 75th percentiles of transaction amounts at each location, and to visualise any anomalies. Bar charts and histograms were chosen since they are easy to grasp without significant statistical knowledge. Interactivity is a significant feature of the EDA charts. Given that this is an exploratory phase, all dataset parameters were included as much as possible to aid the user in discovering insights.
+Exploratory data analysis (EDA) with histogram, heatmap and boxplot were performed to give users an overview of GAStech employees' credit card and loyalty card transactions over the two weeks. Heatmap was used for a quick summary of the most popular locations based on transaction frequency. This function is meant for high-level visualisation and not detailed analysis. Detailed histogram by location and time period was used to visualise distribution and popularity of locations at different time of the day. Any transactions at odd timing could be isolated and scrutinise in detail. Boxplot shows the median and 25th and 75th percentiles of transaction amounts at each location, and to visualise any anomalies. Bar charts and histograms were chosen since they are easy to grasp without significant statistical knowledge. Interactivity is a significant feature of the EDA charts. Given that this is an exploratory phase, all dataset parameters were included as much as possible to aid the user in discovering insights.
 
-Exploratory spatial data analysis (ESDA) investigates the location component of the provided dataset. With the Abila map and GPS routes visualised, we are able to explore the island map and determine movements and location of employees' cars at specific time periods. This is complemented by dot plot of visits of employees by time and day at specific locations. This helps users to identify any overlaps in visit location and time of employees to determine any relationships among employees.
+Exploratory spatial data analysis (ESDA) investigates the location component of the provided dataset. With the Abila map and GPS routes visualised, we were able to explore the island map and determine movements and location of employees' cars at specific time periods. This was complemented by dot plot of visits of employees by time and day at specific locations. This helps users to identify any overlaps in visit location and time of employees to determine any relationships among employees.
 
 Parallel coordinate plot was used to map credit card and loyalty card to their respective owners since the card owners were not provided. Credit cards and loyalty cards transaction date, location and price (filtered by credit card numbers) were also mapped. 
 
-Network analysis is performed to allow users to depict relations among employees and locations to analyse the social structures that emerge from the recurrence of these relations.
+Network analysis was performed to allow users to depict relations among employees and locations to analyse the social structures that emerged from the recurrence of these relations.
 
-The Data visualization in these four components are synchronized through a set of common data filters that allows manipulation of data visual and coordination of interaction between the different views. The linked data presentation enables the user to maintain the filter selection integrity without having to reapply the settings each time when switching to another view. The mouse hover tooltip provides on-demand details without having too much information cluttered on the data visual. These allow users to follow the flow of “overview first, zoom and filter into details”, bouncing back and forth, here and there, with ease and without interrupting their train of thought. 
+The Data visualization in these four components were synchronized through a set of data filters that allowed manipulation of data visual and coordination of interaction between the different views. The linked data presentation enabled the user to maintain the filter selection integrity without having to reapply the settings each time when switching to another view. The mouse hover tooltip provided on-demand details without having too much information cluttered on the data visual. These allowed users to follow the flow of “overview first, zoom and filter into details”, bouncing back and forth, here and there, with ease and without interrupting their train of thought. 
 
 
 ## Data preparation
 
-
-All the data wrangling and cleaning were performed using R.
+The data set was extracted from the VAST Challenge 2021 website under the sub section Mini-Challenge 2. All the data wrangling and cleaning were performed using R. 
 
 (To be expanded) 
 
 ## Shiny Architecture
 
-The application was developed with Shiny, a R tool for generating interactive web apps. As Shiny can receive user input and return output to the user using R code, it allows for interactivity. The input values can be changed at any time, and the result will change as well. Shiny also uses the R packages available on R-cran, which expands on the core R functions and improves the app's usefulness.
+The application was developed with Shiny, an R tool for generating interactive web apps. The main advantage of Shiny is that users can easily change the variable inputs and almost instantly see the resulting charts and figures. Not only does it allow for interactivity, it provides an invaluable tool for users to derive insights. Shiny also uses the R packages available on R-cran, which expands on the core R functions and improves the app's functionality.
 
-The Shiny application is designed according to the flow of the Vast Challenge questions. 
+The Shiny application was designed according to the flow of the Vast Challenge questions. 
 
 i) **Overview - **A brief background of the case challenge and the 5 questions to be answered. The links to the papers, documents and source code are also appended here. 
-ii) **Abila Kronos Map - ** 
-iii) **Location Transactions - **
-iV) **Card Mapping -**
+ii) **Abila Kronos Map - **This provides a map view of employees' GPS movements filtered by time and employee.
+iii) **Location Transactions - **This provides 
+iv) **Card Mapping - **
 v) **Network Analysis - **
 
 
