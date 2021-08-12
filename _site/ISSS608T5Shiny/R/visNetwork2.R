@@ -5,7 +5,7 @@ visNetwork2UI <- function(id) {
   cc <- read_csv("datasets/cc.csv")
   tagList(
     titlePanel(
-      h1("Network Analysis by Location and Employee vis car GPS locations",
+      h1("Network Analysis by Location and Employee via car GPS locations",
          style='background-color:lightgrey',
          align="center")
       ),
@@ -19,7 +19,7 @@ visNetwork2UI <- function(id) {
                                selected=unique(final_tagging$name)[1:34]),
                    pickerInput(NS(id,"location"),
                                "Select by Location",
-                               choices=unique(stop_fin$Possible_Location),
+                               choices=unique(stop_fin$Possible_Location)[order(nchar(unique(stop_fin$Possible_Location)), unique(stop_fin$Possible_Location))],
                                multiple=TRUE,options = list(
                                  `actions-box` = TRUE),
                                selected=unique(stop_fin$Possible_Location)[1:67]),
