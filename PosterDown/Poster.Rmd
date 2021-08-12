@@ -21,7 +21,7 @@ affiliation:
     address: Singapore Management University
 
 main_findings:
-  - "**Saptiotemporal Analysis** of Gastech Employees’ Movement Data"
+  - "**STAGEM**: Saptiotemporal Analysis of Gastech Employees’ Movement Data"
 logoleft_name: img/blog_qrcode.png
 logoright_name: img/github_qrcode.png
 logocenter_name: img/shiny_qrcode.png
