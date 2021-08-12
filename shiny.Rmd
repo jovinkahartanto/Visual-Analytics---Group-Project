@@ -10,5 +10,6 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ```{r, echo=FALSE, layout="l-screen-inset shaded"}
-knitr::include_app("https://limyongkai.shinyapps.io/ISSS608T5Shiny/")
+knitr::include_app("https://limyongkai.shinyapps.io/ISSS608T5Shiny/",
+                   height = "1000px")
 ```
