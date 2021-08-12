@@ -43,7 +43,7 @@ visNetworkUI <- function(id) {
         
       ),
       mainPanel(
-        visNetworkOutput(NS(id, "vis"))
+        visNetworkOutput(NS(id, "vis"), height =600)
       )
     )
   )
@@ -89,7 +89,7 @@ visNetworkServer <- function(id) {
       visInteraction(multiselect = TRUE) %>% 
       visLegend() %>% 
       visOptions(selectedBy="group",highlightNearest = TRUE, nodesIdSelection = TRUE) %>% 
-      visGroups(groupname="Engineering")
+      visGroups(groupname="Engineering") 
    })
   })
 }

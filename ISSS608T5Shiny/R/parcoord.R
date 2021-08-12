@@ -1,8 +1,8 @@
 cardMappingServer <- function(id) {
   moduleServer(id, function(input, output, session) {
-    parcoord<-read_csv("datasets/parcoord.csv") %>% dplyr::select(-X1)
-    card_tag <- read_csv("datasets/card_tag.csv")%>% dplyr::select(-X1)
-    final_tag<- read_csv("datasets/final_tagging.csv") %>% dplyr::select(-X1)
+    parcoord<-read_csv("datasets/parcoord.csv") 
+    card_tag <- read_csv("datasets/card_tag.csv")
+    final_tag<- read_csv("datasets/final_tagging.csv") 
     tag <- left_join(card_tag, final_tag, by=c("last4ccnum")) %>% 
       dplyr::select(-id,-name)
     
@@ -39,8 +39,7 @@ cardMappingServer <- function(id) {
   })
 }
 cardMappingUI <- function(id) {
-  parcoord<-read_csv("datasets/parcoord.csv") %>% dplyr::select(-X1)
-  
+  parcoord<-read_csv("datasets/parcoord.csv") 
   tagList(
     titlePanel(
       h1("Credit Card and Loyalty Card Mapping",
