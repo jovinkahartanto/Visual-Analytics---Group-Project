@@ -81,9 +81,9 @@ The Shiny application was designed according to the flow of the Vast Challenge q
 
 i) **Overview - **A brief background of the case challenge and the 5 questions to be answered. The links to the papers, documents and source code are also appended here. 
 ii) **Abila Kronos Map - **This provides a map view of employees' GPS movements filtered by time and employee.
-iii) **Location Transactions - **This provides 
-iv) **Card Mapping - **
-v) **Network Analysis - **
+iii) **Location Transactions - **This provides detailed transaction frequencies at various locations at different time, as well as transaction amount, enabling users to answer some of the questions posed by the case challenge.
+iv) **Card Mapping - **This shows the cards ownership as well as transactions specific to individual cards.
+v) **Network Analysis - **This allows users to visualise the relationships among employees and locations.
 
 
 ## Analysis Techniques 
