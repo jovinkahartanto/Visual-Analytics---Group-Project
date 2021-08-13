@@ -1,8 +1,11 @@
 ---
-main_topsize: 0.2 #percent coverage of the poster
-main_bottomsize: 0.1
+main_topsize: 0.1 #percent coverage of the poster
+main_bottomsize: 0.08
 #ESSENTIALS
-title: '**ISSS608 G1 Group 5 VAST MC2**'
+title: '**ISSS608 G1 Group 5**'
+title_textsize: "65pt"
+poster_height: "84.1cm" # Change to A4 size
+poster_width: "59.4cm"
 author:
   - name: '**Chen Yuxi**'
     affil: 1
@@ -19,9 +22,11 @@ author:
 affiliation:
   - num: 1
     address: Singapore Management University
-
+author_textsize: "1.3em"
 main_findings:
   - "**STAGEM**: Saptiotemporal Analysis of Gastech Employees’ Movement Data"
+main_textsize: "100px"
+body_textsize: "25px"
 logoleft_name: img/blog_qrcode.png
 logoright_name: img/github_qrcode.png
 logocenter_name: img/shiny_qrcode.png
@@ -33,7 +38,6 @@ output:
 bibliography: packages.bib
 link-citations: true
 ---
-
 ```{r, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE,
                       warning = FALSE,
@@ -44,12 +48,14 @@ knitr::opts_chunk$set(echo = FALSE,
 options(knitr.table.format = "html") 
 ```
 
-# Introduction
+<style>
+#main-img-left, #main-img-center, #main-img-right {width:8%;}
+</style>
 
+# Introduction
 The VAST 2021 Mini Challenge 2 outlines a hypothetical scenario in which several GAStech employees have gone missing and the organisation, Protectors of Kronos (POK), is suspected of being involved. The challenge requires identification of suspicious activities hidden in data and determine any dubious people and locations that should be reported to the law enforcement using interactive visual analytical tools.
 
 # Movtivation and objectives
-
 Our research and development effort aims to enable Kronos law enforcement with the ability to easily analyse, drill down and identify key suspects and suspicious locations, and thereby speeding up the investigation process. 
 
 The use cases of the data visualisation tool include but are not limited to the following:
@@ -73,37 +79,39 @@ The application hat aims to provide users actionable insights based on the follo
 The Application was designed using R Shiny and hosted on shinyapps.io server. The application has 5 main section with various interactive visual analytics tools to allow users to investigate the data. The user guide to the application is available at [https://isss608g1group5.netlify.app/userguide.html](https://isss608g1group5.netlify.app/userguide.html).
 
 ## Abila Kronos Map
-
 Add desc and picture here later!!!
 
 ## Locations Transactions
+The tab allow users to investigate GASTech employee's credit card transactions at the various locations made in Abila and three interactive visualisations are available in this tab. All three interactive visualisation share five filters where users can select by location, employee, date, time period of transaction and department of each employee to dynamically update the visualisations.
 
+### Heatmap of Location Visit Frequency
+Figure \@ref(fig:heatmap) provides an overview of the frequency of transactions at each location by date. Hovering over each region will show the micro-data of frequency count for that location by date.
 ```{r heatmap, fig.cap='Heatmap'}
-knitr::include_graphics("img/heatmap-shiny.png")
+knitr::include_graphics("img/heatmap.png")
 ```
 
+### Boxplot of Credit Card Transactions
+Figure \@ref(fig:boxplot) displays each credit card transaction price at varying locations. Hovering over the boxplot will display the micro-data of the median price for the location and the corresponding credit card number and transaction price.
 ```{r boxplot, fig.cap='Boxplot'}
-knitr::include_graphics("img/boxplot-shiny.png")
+knitr::include_graphics("img/boxplot.png")
 ```
 
-```{r barplot, fig.cap='Barplot'}
-knitr::include_graphics("img/barplot-shiny.png")
+### Barplot of Number of Transactions per Day per Location
+Figure \@ref(fig:boxplot) displays the number of transactions for each location by date and colored by time period. Hovering over the columns displays the micro-data of the number of transactions performed at the location on the date during the time period. 
+```{r barplot, fig.cap='Stacked Barplot'}
+knitr::include_graphics("img/barplot.png")
 ```
 
 ## Card Mapping
-
+Figure \@ref(fig:parcoord) displays the credit card and loyalty card mapping to each GASTech employee with reference to their car GPS data. Users can select the different credit card number in the filter to dynamic change the plot to observe the respective transactions made at the different locations. The difference in price of each matching creidt card and loyalty card is also made available in the plot. Users can utilise the interactive plot to highlight different selections throughout the parallel coordinate plot.
 ```{r parcoord, fig.cap='Parallel Coordinate Plot'}
-knitr::include_graphics("img/parcoord-shiny.png")
+knitr::include_graphics("img/parcoord.png")
 ```
 
 ## Network Analysis
-
-```{r network1, fig.cap='Network Analysis based on Credit Card Transactions'}
-knitr::include_graphics("img/network-cc-shiny.png")
-```
-
-```{r network2, fig.cap='Network Analysis based on GPS data'}
-knitr::include_graphics("img/network-gps-shiny.png")
+Network analysis depicts the movement of GASTech employees to corresponding locations. There are two network analysis presented based on their credit card transaction history or on their car GPS movement and locations. Figure \@ref(fig:network1) displays the network analysis based on credit card transactions. Each node represents an employee or location and each edge represents the connection between each nodes. Each visit is represented by 1 edge line and repeated visit will depict a thicker edge line. Users can click the nodes on the interactive plots to highlight only the edge lines linked to the node. Users can also select department to highlight the nodes of employees from the department.
+```{r network1, fig.cap='Network Analysis based on Credit Card Transactions', out.width="80%"}
+knitr::include_graphics("img/network-cc.png")
 ```
 
 # Future Work
