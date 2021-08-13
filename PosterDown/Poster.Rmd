@@ -32,7 +32,7 @@ logoright_name: img/github_qrcode.png
 logocenter_name: img/shiny_qrcode.png
 output: 
   posterdown::posterdown_betterport:
-    self_contained: false
+    self_contained: true
     pandoc_args: --mathjax
     number_sections: false
 bibliography: packages.bib
@@ -133,6 +133,11 @@ Code for the documents and applications can be found at [https://github.com/jovi
 
 Application can be assessed at [https://limyongkai.shinyapps.io/ISSS608T5Shiny](https://limyongkai.shinyapps.io/ISSS608T5Shiny). Alternatively, scan the QR code on the bottom right to access our Shiny Application. 
 
+
+```{r eval=FALSE}
+library(pagedown)
+pagedown::chrome_print("Poster.html")
+```
 <!-- This is the `posterdown_betterport` template for the {posterdown} package! I was inspired by the twitter thread of [Mike Morrison](https://mobile.twitter.com/mikemorrison/status/1110191245035479041) and wanted to apply the `#betterposter` concept to the reproducible (yet simple to use) functionality of the {posterdown} package [@R-posterdown]. If you're not an R user don't sweat as you do **NOT** need to use it at all! Feel free to use only the Markdown functionality of this package :) -->
 
 <!-- ```{r, include=FALSE} -->
