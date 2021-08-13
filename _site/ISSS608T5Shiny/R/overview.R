@@ -1,8 +1,11 @@
 overviewUI <- function(id) {
   tagList(
-    # h1("Vast Challenge 2021, Mini Challenge 2",
-    #    style='background-color:lightgrey',
-    #    align="center"),
+    HTML(
+      paste(
+        h1("STAGEM",align="center",style='background-color:lightgrey'),  
+        h1("Saptiotemporal Analysis of Gastech Employees’ Movement Data",align="center")
+      )
+    ),
     HTML('<center><img src = "vastchallenge.jpg" style="width: 50%; height: 50%"></center>'),
     p(""),
     HTML('<center><img src = "gastechlogo.png" style="width: 15%; height: 15%"></center>'),
@@ -23,33 +26,27 @@ overviewUI <- function(id) {
       However, Kronos Kares does not collect personal information beyond purchases."),
     p(""),
     p("As a visual analytics expert assisting law enforcement, 
-      we develop visualisation to identify which GASTech employees made which purchases and identify suspicious patterns of behavior. 
-      The Shiny visualisation dashboard will answer the following questions"),
+      we developed visualisation to identify which GASTech employees made which purchases and identify suspicious patterns of behavior. 
+      The STAGEM application will answer the following questions:"),
     p(""),
-    p("1. Identifing the most popular locations and when they are popular using credit card and loyalty card transactions:"),
+    p("1. Identifing the most popular locations and when they are popular using credit card and loyalty card transactions"),
     p("2. Analysis of vehicle GPS data with credit and loyalty card data"),
     p("3. Inference of each credit card and loyalty card owners"),
     p("4. Identify potential informal or unoffical relationships between GASTech personnel"),
     p("5. Identify evidence of suspicious activity and locations"),
     p(""),
-    p(""),
+    p("The application guide is available ",
+      a("here.",
+        href="https://isss608g1group5.netlify.app/userguide.html")),
     p("Our papers and documents are available on our ",
       a("website ", 
         href = "https://isss608g1group5.netlify.app"),
       "and ",
       a("Github.",
         href="https://github.com/jovinkahartanto/Visual-Analytics---Group-Project")),
-    p("ISSS608 G5"),
+    p("ISSS608 G1 Group 5"),
     p("Authors: Chen Yuxi, Jovinka Hartanto, Lim Yong Kai"),
     )
 }
 
-cardMappingServer <- function(id) {
-  moduleServer(id, function(input, output, session) {
-    output$images <- renderUI({
-      tags$div(img(src = "image1.png", width = 70, height = 90), img(src = "image2.png", width = 70, height = 90), img(src = "image3.png", width = 70, height = 90))
-    })
-    
-  })
-}
 

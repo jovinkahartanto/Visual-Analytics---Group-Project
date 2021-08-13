@@ -164,7 +164,7 @@ location_transServer <- function(id) {
               panel.spacing.x=unit(0.1, "lines"),
               panel.spacing.y=unit(0.1, "lines")) 
       
-      ggplotly(barplot) %>% layout(autosize = F, height = 500, width=850)
+      ggplotly(barplot) %>% layout(autosize = F, height = 700, width=1000)
     })
   })
 }

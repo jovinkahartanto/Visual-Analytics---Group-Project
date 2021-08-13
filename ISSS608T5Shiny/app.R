@@ -28,7 +28,7 @@ server <- function(input, output,session){
 
 ui <- dashboardPage(
     skin="blue",
-    dashboardHeader(title = "Vast Mini Challenge 2: Group 5"),
+    dashboardHeader(title = "STAGEM"),
     dashboardSidebar(
         sidebarMenu(
             menuItem("Overview" ,tabName = "overview", icon = icon("dashboard")),

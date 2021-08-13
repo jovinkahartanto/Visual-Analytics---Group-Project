@@ -43,7 +43,7 @@ visNetwork2UI <- function(id) {
         
       ),
       mainPanel(
-        visNetworkOutput(NS(id, "vis2"))
+        visNetworkOutput(NS(id, "vis2"), height=600)
       )
     )
   )
