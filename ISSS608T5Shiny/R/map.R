@@ -187,9 +187,6 @@ mapServer <- function(id) {
       
       map1
       })
-    output$location_plot <- renderTmap({
-      map2
-    })
   })
 }
 
