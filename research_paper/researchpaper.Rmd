@@ -1,5 +1,5 @@
 ---
-title: STAGEMD - SaptioTemporal Analysis of Gastech Employees' Movement Data
+title: STAGEM - SaptioTemporal Analysis of Gastech Employees' Movement Data
 author:
   - name: Chen Yuxi
     email: yuxi.chen.2020@mitb.smu.edu.sg
@@ -23,7 +23,7 @@ output: rticles::acm_article
 # Introduction 
 The VAST 2021 Mini Challenge 2 outlines a hypothetical scenario in which several GAStech employees have gone missing and the organisation, Protectors of Kronos (POK), is suspected of being involved. The dataset includes two weeks of GPS tracking data for company cars assigned to employees, credit and loyalty card transactions of employees before the disappearance. ESRI shapefiles for the city of Abila & country Kronos are also provided. The challenge requires identification of suspicious activities hidden in data and determine any dubious people and locations that should be reported to the law enforcement.
 
-The dataset was wrangled to develop a Shiny app, STAGEMD, that aims to provide users actionable insights based on the following analyses:
+The dataset was wrangled to develop a Shiny app, STAGEM, that aims to provide users actionable insights based on the following analyses:
 
 * Exploratory Data Analysis (EDA) of GPS tracking data and credit and loyalty card transaction patterns
 * Visualisation of employee movements over time and associated purchase transactions
@@ -34,7 +34,7 @@ This paper details our efforts to design, create and implement a web-based analy
 
 # Motivation and objectives 
 
-Our research and development effort were motivated by the general lack of effective and easy to use web-enabled data visualisation tool to conduct data analysis on the GAStech employees related dataset. The project aims to enable the Kronos law enforcement the ability to easily analyse, drill down and identify key suspects and suspicious locations, and thereby speeding up the investigation process. 
+Our research and development effort was motivated by the general lack of effective and easy to use web-enabled data visualisation tool to conduct data analysis on the GAStech employees related dataset. The project aims to enable the Kronos law enforcement the ability to easily analyse, drill down and identify key suspects and suspicious locations, and thereby speeding up the investigation process. 
 
 The use cases of the data visualisation tool include but are not limited to the following:
 
@@ -48,14 +48,14 @@ The use cases of the data visualisation tool include but are not limited to the 
 
 The project drew inspirations from previous works by Singapore Management University (SMU) students and submissions of the 2014 Vast Challenge.
 
-In the project, Dino Holmes Series, [dinoholmes], heatmap enabled readers to easily determine patterns and trends over a time. However, static heatmap is  not reader friendly enough to determine what was the count at specific time slots. As each heatmap box represents a discrete count by using a gradient color fill, it was difficult to accurately determine the specific count. The analysis may benefit from making the heatmap plot interactive, allowing the details to be displayed at the tooltip when hover across. This would allow granularity data to be more well-presented in the report.
+In the project, Dino Holmes Series [1], heatmap enabled readers to easily determine patterns and trends over a time. However, static heatmap is  not reader friendly enough to determine what was the count at specific time slots. As each heatmap box represents a discrete count by using a gradient color fill, it was difficult to accurately determine the specific count. The analysis may benefit from making the heatmap plot interactive, allowing the details to be displayed at the tooltip when hover across. This would allow granularity data to be more well-presented in the report.
 
 Submission from Fraunhofer IAIS and City University London (Andrienko, Andrienko, and Fuchs 2014) and RBEI-Bangalore (Singhal et al. 2014) both used network cluster and analysis to investigate the relationships between GAStech employees. Fraunhofer IAIS university used an ego-centric graph whereas RBEI used a combination of fragmented and node-only layout to visual the relationship by connecting employees. Network analysis is an informative visualisation that provides an overview of potential relationships between employees or even connecting employees to different mediums such as the locations or emails.
 
 Although network analysis provides an overview of the relationships between nodes, usually the plot will be cluttered which make it difficult to drill down to specific or individual relationships. An alternative would be to make the plot interactive so that readers will be able to drill down on specific areas to investigate the relationships.
 
 # Design framework 
-The STAGEMD application was built with several functionalities. 
+The STAGEM application was built with several functionalities. 
 
 Exploratory data analysis (EDA) with histogram, heatmap and boxplot were performed to give users an overview of GAStech employees' credit card and loyalty card transactions over the two weeks. Heatmap was used for a quick summary of the most popular locations based on transaction frequency. This function is meant for high-level visualisation and not detailed analysis. Detailed barchart faceted by location and classified by time period was used to visualise distribution and popularity of locations at different time of the day. Any transactions at odd timing could be isolated and scrutinise in detail. Boxplot shows the median and 25th and 75th percentiles of transaction amounts at each location, and to visualise any anomalies. Bar chart was chosen since it is easy to grasp without significant statistical knowledge. Interactivity is a significant feature of the EDA charts. Given that this is an exploratory phase, all dataset parameters were included as much as possible to aid the user in discovering insights.
 
@@ -85,7 +85,7 @@ The data set was extracted from the VAST Challenge 2021 website under the sub se
 
 ## Shiny Architecture
 
-The STAGEMD application was developed with Shiny, an R tool for generating interactive web apps. The main advantage of Shiny is that users can easily change the variable inputs and almost instantly see the resulting charts and figures. Not only does it allow for interactivity, it provides an invaluable tool for users to derive insights. Shiny also uses the R packages available on R-cran, which expands on the core R functions and improves the app's functionality.
+The STAGEM application was developed with Shiny, an R tool for generating interactive web apps. The main advantage of Shiny is that users can easily change the variable inputs and almost instantly see the resulting charts and figures. Not only does it allow for interactivity, it provides an invaluable tool for users to derive insights. Shiny also uses the R packages available on R-cran, which expands on the core R functions and improves the app's functionality.
 
 The Shiny application was designed according to the flow of the Vast Challenge questions. 
 
@@ -97,6 +97,22 @@ v) **Network Analysis - **This allows users to visualise the relationships among
 
 
 ## Analysis Techniques 
+
+### Abila Map
+
+Thematic map was used to visualise the movement of cars using the GPS tracking data over time and was used for geospatial analysis.
+
+**tmap** was used to design the Abila map. It offers a flexible, layer-based approach to create thematic maps and is based on the grammar of graphics.
+
+![](img/map.png)
+
+### Scatter Plot
+
+A scatter plot shows points that represent values of two different numeric variables (i.e., date and time period). The plot was faceted by location. The points were classified by colours representing individual employees. The position of each plot on the x- and y-axes represent the relationship between both variables. Points close to one another on the plot indicate the selected employees were at the same place on the same day, same time. 
+
+**ggplot2** was used to create the scatter plot as it is flexible and allows for faceting by groups. The ggplot2 graph was then parsed into **plotly** which enables interactivity with tooltips.
+
+![](img/scatter-plot.png)
 
 ### Heatmap
 
@@ -118,15 +134,10 @@ Boxplot displays the distribution of the data based on minimum, first quartile, 
 
 A bar chart was used to visualise the frequency of visits at different days with varying length of bars. This chart was used to for comparing different number of visits over the period. The primary category used for the x-axis is the date variable. The chart was also faceted by location to show a more granular view. The parameters built in the application allowed the users to change the structure and make up of the bar chart. Users are able to select specific locations, filter by employees, change the date range, as well as indicate the time period of the chart.
 
-**ggplot2** was used to create the bar chart as it is flexible and allows for faceting by groups. The ggplot2 graph was then parsed into **plotly** which enables interactivity with tooltips. As more categories were added to the chart, this helps to remove text elements from the bar charts, which tend to clutter the plot. 
-
 ![](img/barchart.png)
 
-### Abila Map
 
-Thematic map was used to visualise the movement of cars using the GPS tracking data over time and was used for geospatial analysis.
-
-**tmap** was used to design the Abila map. It offers a flexible, layer-based approach to create thematic maps and is based on the grammar of graphics.
+**ggplot2** was used to create the bar chart as it is flexible and allows for faceting by groups. The ggplot2 graph was then parsed into **plotly** which enables interactivity with tooltips. As more categories were added to the chart, this helps to remove text elements from the bar charts, which tend to clutter the plot. 
 
 ### Parallel Coordinate Plot
 
@@ -138,8 +149,7 @@ The **MASS** library was used to build the parallel coordinate chart.
 
 ### Network Analysis
 
-Network is a graphical representation of the relationships (edges) between variables (nodes). It provides the capacity to estimate complex patterns of relationships and the network structure can be analysed to reveal core features of the network.
-(David Hevey (2018) Network analysis: a brief overview and tutorial, Health Psychology and Behavioral Medicine, 6:1, 301-328, DOI: 10.1080/21642850.2018.1521283)
+Network is a graphical representation of the relationships (edges) between variables (nodes). It provides the capacity to estimate complex patterns of relationships and the network structure can be analysed to reveal core features of the network. [2]
 
 **visNetwork** package was used to visualise the network, together with **igraph**'s layout on grid to present a more structured network presentation. 
 
@@ -147,8 +157,7 @@ Network is a graphical representation of the relationships (edges) between varia
 
 # Demonstration 
 
-The final interactive plots in the Shiny application can help to identify a wide range of insights, specifically in the area of suspicious people and locations.
-
+The final interactive plots in the Shiny application can help to identify a wide range of insights, specifically in the area of suspicious people and locations. Some observations that answer the VAST Challenge questions are listed below.
 
 
 ## Abila Kronos Map Interface
@@ -168,6 +177,12 @@ In the boxplot, there was an extreme outlier of a 10,000 dollars spent by credit
 
 ![](img/boxplot10000.png)
 There was also an outlier of 1,239 dollars at Albert's Fine Clothing. However, looking at the frequency of transactions at Albert’s Fine Clothing, it seems like a common place to buy clothing. Possible deduction was the person was buying lots of clothing for his family or friends, amounting to a much higher price than usual.
+
+## Card Mapping
+
+Credit card 9551 was mapped to loyalty card L5777 based on transaction details and to Nils Calixto, IT Helpdesk, based on his GPS locations. Noticed that the $10,000 transaction made at Frydos Autosupply n'More spent on this credit card was not mapped in the plot. This shows that the transaction was not accompanied with a loyalty card and may or may not be made by Nils Calixto. This prompts further investigation as it raises the suspicious level of the said transaction.
+
+![](img/9551.png)
 
 ## Network Analysis
 
@@ -189,9 +204,16 @@ Bean There Done That location had only transactions made by the engineering depa
 
 # Discussion 
 
+The following feedback was given by users of the application. While the individual interfaces in the application serve their own purpose, whereby
 
-*What has the audience learned from your work? What new insights or practices has your system enabled? A full blown user study is not expected, but informal observations of use that help evaluate your system are encouraged.* 
+* The geospatial analysis allows users to have a quick overview of the patterns of car movements across a selected number of employees and time period. 
+* The exploratory data analysis of transaction data further adds on to the overview to allow identification of popular areas at different days and time periods and outlier transactions based on boxplot. 
+* Further mapping of credit card to loyalty card and to the owner can be conducted as an extension based on parallel coordinate plot. 
+* Users can select specific employee or location on the network map to determine potential relationships. 
 
+There was a disconnect among the various charts to facilitate a smooth analysis of information.
+
+The user guide was useful especially for the non-technical users to help them navigate the application easily. The interactivity such as the drop-down box and date range selection also makes it more intuitive to use for users.
 
 
 # Future Work
@@ -200,11 +222,12 @@ The capabilities of the application to enable users to examine and analyze the t
 
 Mini-challenges 1 and 3 can also be attempted and incorporated into the application to provide a comprehensive integrated visual analytics system that helps to resolve the overarching case scenario. Additional analyses relating to mini-challenges 1 and 3 such as text analytics and sentiment analysis can help to complement findings from the existing application to provide a much more cohesive narrative to the storyline.
 
- 
+# Acknowledgement
+
+The authors wish to thank Professor Kam Tin Seong of Singapore Management University for his support and guidanec throughout this project.
 
 # References
 
----
 references:
 - id: dinoholmes
   title: Dino Holmes Series
@@ -215,6 +238,15 @@ references:
   type: article
   issued:
     year: 2017
+
+- id: network
+  title: DNetwork analysis: a brief overview and tutorial, Health Psychology and Behavioral Medicine
+  author:
+  - family: Hevey
+    given: David
+  type: article
+  issued:
+    year: 2018
 
 
 ...
