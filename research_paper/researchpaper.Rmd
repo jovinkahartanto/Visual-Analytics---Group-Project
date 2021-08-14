@@ -56,7 +56,7 @@ Although network analysis provides an overview of the relationships between node
 
 # Design framework 
 
-Exploratory data analysis (EDA) with histogram, heatmap and boxplot were performed to give users an overview of GAStech employees' credit card and loyalty card transactions over the two weeks. Heatmap was used for a quick summary of the most popular locations based on transaction frequency. This function is meant for high-level visualisation and not detailed analysis. Detailed histogram by location and time period was used to visualise distribution and popularity of locations at different time of the day. Any transactions at odd timing could be isolated and scrutinise in detail. Boxplot shows the median and 25th and 75th percentiles of transaction amounts at each location, and to visualise any anomalies. Bar charts and histograms were chosen since they are easy to grasp without significant statistical knowledge. Interactivity is a significant feature of the EDA charts. Given that this is an exploratory phase, all dataset parameters were included as much as possible to aid the user in discovering insights.
+Exploratory data analysis (EDA) with histogram, heatmap and boxplot were performed to give users an overview of GAStech employees' credit card and loyalty card transactions over the two weeks. Heatmap was used for a quick summary of the most popular locations based on transaction frequency. This function is meant for high-level visualisation and not detailed analysis. Detailed barchart faceted by location and classified by time period was used to visualise distribution and popularity of locations at different time of the day. Any transactions at odd timing could be isolated and scrutinise in detail. Boxplot shows the median and 25th and 75th percentiles of transaction amounts at each location, and to visualise any anomalies. Bar chart was chosen since it is easy to grasp without significant statistical knowledge. Interactivity is a significant feature of the EDA charts. Given that this is an exploratory phase, all dataset parameters were included as much as possible to aid the user in discovering insights.
 
 Exploratory spatial data analysis (ESDA) investigates the location component of the provided dataset. With the Abila map and GPS routes visualised, we were able to explore the island map and determine movements and location of employees' cars at specific time periods. This was complemented by dot plot of visits of employees by time and day at specific locations. This helps users to identify any overlaps in visit location and time of employees to determine any relationships among employees.
 
@@ -64,7 +64,7 @@ Parallel coordinate plot was used to map credit card and loyalty card to their r
 
 Network analysis was performed to allow users to depict relations among employees and locations to analyse the social structures that emerged from the recurrence of these relations.
 
-The Data visualization in these four components were synchronized through a set of data filters that allowed manipulation of data visual and coordination of interaction between the different views. The linked data presentation enabled the user to maintain the filter selection integrity without having to reapply the settings each time when switching to another view. The mouse hover tooltip provided on-demand details without having too much information cluttered on the data visual. These allowed users to follow the flow of “overview first, zoom and filter into details”, bouncing back and forth, here and there, with ease and without interrupting their train of thought. 
+The data visualization in these four components was synchronized using a set of data filters that allowed for data manipulation and interation coordination among multiple displays. The linked data presentation enabled the user to keep the filter selection when going between views without having to reapply the settings each time. The mouse hover tooltip provided on-demand details without having too much information cluttered on the data visual. These allowed users to follow the flow of “overview first, zoom and filter into details”, bouncing back and forth, here and there, with ease and without breaking their train of thought. 
 
 
 ## Data preparation
@@ -88,7 +88,43 @@ v) **Network Analysis - **This allows users to visualise the relationships among
 
 ## Analysis Techniques 
 
+### Heatmap
 
+Heatmap is a graphical representation of data that utilises colour-coded systems. A heatmap is able to better represent the volume of transactions/locations within a dataset and to guide users to the most important areas through the use of colours.
+
+**ggplot2** is used to create the heatmap of transaction frequency by location. The resultant ggplot2 graph is parsed into **plotly** which allows for interactivity with tooltips. 
+
+![](img/heatmap.png)
+
+### Boxplot
+
+Boxplot displays the distribution of the data based on minimum, first quartile, median, third quartile and maximum. It is a good representation of the standard dispersion of transaction amounts at each location and thereby highlighting the outlier transactions. The parameters built in the application allow the user to change the structure and make up of the bar chart. Users are able to select specific locations, filter by employees, change the date range, as well as indicate the time period of the chart.
+
+**gglot2** is used to create the boxplot of credit card transaction values at different locations. The outliers are highlighted in red. **plotly** is used to enhance the interactivity of the chart with tooltips.
+
+![](img/boxplot.png)
+
+### Bar Chart
+
+A bar chart is used to visualise the frequency of visits at different days with varying length of bars. This chart is used to for comparing different number of visits over the period. The primary category used for the x-axis is the date variable. The chart is also faceted by location to show a more granular view. The parameters built in the application allow the user to change the structure and make up of the bar chart. Users are able to select specific locations, filter by employees, change the date range, as well as indicate the time period of the chart.
+
+**ggplot2** is used to create the bar chart as it is flexible and allows for faceting by groups. The ggplot2 graph is then parsed into **plotly** which enables interactivity with tooltips. As more categories are added to the chart, this helps to remove text elements from the bar charts, which tend to clutter the plot. 
+
+![](img/barchart.png)
+
+### Thematic Map
+
+Thematic map is used to visualise the movement of cars using their GPS coordinates over time and is used for geospatial analysis.
+
+### Parallel Coordinate Plot
+
+
+
+![](img/parallel.png)
+
+### Network Analysis
+
+![](img/network.png)
 
 # Demonstration 
 
