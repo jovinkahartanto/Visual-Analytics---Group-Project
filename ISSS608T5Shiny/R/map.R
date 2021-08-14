@@ -54,7 +54,7 @@ mapServer <- function(id) {
     final_tagging<- read_csv("datasets/final_tagging.csv") %>% dplyr::select(id,name)%>%unique()
     
     bgmap <- raster("datasets/MC2-tourist.tif")
-    gps<-read_csv("datasets/gps.csv")
+    gps<-read_csv("datasets/gps_with_name.csv")
     Abila_st <- st_read(dsn = "datasets/Geospatial",
                         layer = "Abila")
     
