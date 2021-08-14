@@ -30,16 +30,44 @@ knitr::include_graphics("img/shiny_overview.PNG")
 
 ## 2.0 Abila Kronos Map
 
-Text to be input thereafter
+The tab plots the GPS movement data of each employee's car.
+
+### 2.1 Filter Selection Panel
+On the left side panel, four filters are available for user to select multiple inputs to change both interactive visualisations. *Employee*, *Time Period* and *Location* are drop down filters with multiple selection available. *Date* is a range filter between 6 January 2014 to 19 January 2014.
+
+Figure \@ref(fig:map-filter-gif) shows selection with choices from the *Employee*, *Time Period* and *Location* filters, *Date* range of 6 to 19 January. Clicking on the **Submit** button will update the visualisation accordingly to the filter selections.
+
+```{r map-filter-gif, fig.align = 'center',layout="l-page", fig.cap = 'Abila Kronos Map: Filter Selection', echo=FALSE}
+knitr::include_graphics("img/map_filter.gif")
+```
+
+### 2.2 Main Visualisation Panel
+
+#### 2.2.1 Map 
+The interactive map of Abila Kronos displays the GPS movement data of GASTech employee cars. The black lines depicts the travel path and the blue dots depicts the location where the car stop and become stationary for more than 5 minutes. User can adjust the *Employee*, *Date* and *Time Period* filters to focus on the GPS data plotted in the visualisation.
+
+Figure \@ref(fig:map-gif) shows selection of employee *Onda Marin* on 6 January 2014. The map on the right panel dynamically changed after the **Submit** button is clicked. User can hover around the stop locations represented by blue dots to display micro data of the car owner name, time when car is stationary and its possible location.
+
+```{r map-gif, fig.align = 'center',layout="l-page", fig.cap = 'Abila Kronos Map: Map of GASTech employee car GPS', echo=FALSE}
+knitr::include_graphics("img/map-gif.gif")
+```
+
+#### 2.2.2 Scatter Plot
+The interactive scatter plot displays employee's car stop location represented by a colored dot. User is able to filter the selection to drill down on specific parameters. Hovering over the dot reveal the time period and employee name of the car stop location. 
+
+Figure \@ref(fig:scatter-gif) shows the selection of location, House 2, 4, 10 and Meeting 1 to 5. User is able to drag and select a specific section to zoom in and hover over the dots to obtain micro-data.
+
+```{r scatter-gif, fig.align = 'center',layout="l-page", fig.cap = 'Abila Kronos Map: Scatter Plot of GASTech employee car stop location', echo=FALSE}
+knitr::include_graphics("img/scatter-gif.gif")
+```
 
 ## 3.0 Locations Transactions
+The tab analyse the credit card and loyalty card transactions details to determine the most popular locations and the spending pattern for each location.
 
 ### 3.1 Filter selection Panel
-The tab analyse the credit card and loyalty card transactions to determine the most popular locations.
-
 On the left side panel, five filters are available for user to select multiple inputs to change all 3 interactive visualisations. *Location*, *Employee*, *Time Period* and *Department* are drop down filters with multiple selection available. *Date* is a range filter between 6 January 2014 to 19 January 2014. 
 
-Figure \@ref(fig:location-gif) shows selection of all choices from the *Location* and *Employee* filters, *Date* range of 12 to 19 January during the evening to night *Time Period* for employee in the *Security* department only. Clicking on the **Submit** button will update the visualisation accordingly to the filter selections.
+Figure \@ref(fig:location-gif) shows selection of all choices from the *Location* and *Employee* filters. The filters *Date* range is set from 12 to 19 January during the evening to night *Time Period* for employee in the *Security* department only. Clicking on the **Submit** button will update the visualisation accordingly to the filter selections.
 
 ```{r location-gif, fig.align = 'center',layout="l-page", fig.cap = 'Location Transaction Tab: Filter Selection', echo=FALSE}
 knitr::include_graphics("img/location_filter.gif")
