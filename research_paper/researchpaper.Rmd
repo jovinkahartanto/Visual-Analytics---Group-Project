@@ -69,9 +69,18 @@ The data visualization in these four components was synchronized using a set of 
 
 ## Data preparation
 
-The data set was extracted from the VAST Challenge 2021 website under the sub section Mini-Challenge 2. All the data wrangling and cleaning were performed using R. 
+The data set was extracted from the VAST Challenge 2021 website under the sub section Mini-Challenge 2. All the data wrangling and cleaning were performed using R. The data wrangling and cleaning of transaction data and GPS data are as explained below:
 
-(To be expanded) 
+1. GPS data
+ * Convert the GPS data coordinates into simple feature (sf) format
+ * Adding other factors to the GPS dataset such as date, hour, and time period which were extracted from the GPS timestamp column
+ * ID in GPS data were matched with the car assignment data to get the employee name for each car ID
+ * Transformed the data to only keep the stationary GPS coordinate for each car by determining rows where the time lag between subsequent GPS log by each car id was more than 5 minutes. 5 minutes was selected because the waiting time at a traffic lights is around 3 to 5 minutes hence the upper bound was chosen to eliminate situations where the stationary GPS coordinates were due stoppage at traffic lights. This data will later be matched with the transaction data to determine which location do the employees stop at
+ 
+2. Transaction Data 
+* Adding other factors to the transaction data, such as hour, date, and time period
+* Tagged the owners of the credit card to the loyalty card number by joining the credit card and loyalty card data.
+* Created nodes and edges from credit card and location data to uncover some relationship among employees. Nodes were created by combining employee information, such as employee name, car id, last 4 credit card number, and employment details with unique location name.Edges was created by joining credit card owners data with the nodes data
 
 ## Shiny Architecture
 
