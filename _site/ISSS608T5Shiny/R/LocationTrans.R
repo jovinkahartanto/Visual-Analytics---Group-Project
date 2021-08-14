@@ -160,7 +160,7 @@ location_transServer <- function(id) {
               axis.title=element_text(size=14,face="bold"),
               axis.ticks = element_blank(),
               strip.text = element_text(size = 8, face="bold"),
-              axis.text.x=element_text(angle=45, hjust=1),
+              axis.text.x=element_text(angle=-45, hjust=1),
               panel.spacing.x=unit(0.1, "lines"),
               panel.spacing.y=unit(0.1, "lines")) 
       

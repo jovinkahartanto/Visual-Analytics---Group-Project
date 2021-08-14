@@ -2426,11 +2426,15 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li><a href="#user-guide-for-shiny-application">User Guide for Shiny Application</a>
 <ul>
 <li><a href="#overview">1.0 Overview</a></li>
-<li><a href="#abila-kronos-map">2.0 Abila Kronos Map</a></li>
+<li><a href="#abila-kronos-map">2.0 Abila Kronos Map</a>
+<ul>
+<li><a href="#filter-selection-panel">2.1 Filter Selection Panel</a></li>
+<li><a href="#main-visualisation-panel">2.2 Main Visualisation Panel</a></li>
+</ul></li>
 <li><a href="#locations-transactions">3.0 Locations Transactions</a>
 <ul>
-<li><a href="#filter-selection-panel">3.1 Filter selection Panel</a></li>
-<li><a href="#main-visualisation-panel">3.2 Main Visualisation Panel</a></li>
+<li><a href="#filter-selection-panel-1">3.1 Filter selection Panel</a></li>
+<li><a href="#main-visualisation-panel-1">3.2 Main Visualisation Panel</a></li>
 </ul></li>
 <li><a href="#card-mapping">4.0 Card Mapping</a></li>
 <li><a href="#network-analysis">5.0 Network Analysis</a>
@@ -2460,63 +2464,97 @@ Figure 1: Overview Tab
 </div>
 </div>
 <h2 id="abila-kronos-map">2.0 Abila Kronos Map</h2>
-<p>Text to be input thereafter</p>
+<p>The tab plots the GPS movement data of each employee’s car.</p>
+<h3 id="filter-selection-panel">2.1 Filter Selection Panel</h3>
+<p>On the left side panel, four filters are available for user to select multiple inputs to change both interactive visualisations. <em>Employee</em>, <em>Time Period</em> and <em>Location</em> are drop down filters with multiple selection available. <em>Date</em> is a range filter between 6 January 2014 to 19 January 2014.</p>
+<p>Figure <a href="#fig:map-filter-gif">2</a> shows selection with choices from the <em>Employee</em>, <em>Time Period</em> and <em>Location</em> filters, <em>Date</em> range of 6 to 19 January. Clicking on the <strong>Submit</strong> button will update the visualisation accordingly to the filter selections.</p>
+<div class="layout-chunk" data-layout="l-page">
+<div class="figure" style="text-align: center"><span id="fig:map-filter-gif"></span>
+<img src="img/map_filter.gif" alt="Abila Kronos Map: Filter Selection"  />
+<p class="caption">
+Figure 2: Abila Kronos Map: Filter Selection
+</p>
+</div>
+</div>
+<h3 id="main-visualisation-panel">2.2 Main Visualisation Panel</h3>
+<h4 id="map">2.2.1 Map</h4>
+<p>The interactive map of Abila Kronos displays the GPS movement data of GASTech employee cars. The black lines depicts the travel path and the blue dots depicts the location where the car stop and become stationary for more than 5 minutes. User can adjust the <em>Employee</em>, <em>Date</em> and <em>Time Period</em> filters to focus on the GPS data plotted in the visualisation.</p>
+<p>Figure <a href="#fig:map-gif">3</a> shows selection of employee <em>Onda Marin</em> on 6 January 2014. The map on the right panel dynamically changed after the <strong>Submit</strong> button is clicked. User can hover around the stop locations represented by blue dots to display micro data of the car owner name, time when car is stationary and its possible location.</p>
+<div class="layout-chunk" data-layout="l-page">
+<div class="figure" style="text-align: center"><span id="fig:map-gif"></span>
+<img src="img/map-gif.gif" alt="Abila Kronos Map: Map of GASTech employee car GPS"  />
+<p class="caption">
+Figure 3: Abila Kronos Map: Map of GASTech employee car GPS
+</p>
+</div>
+</div>
+<h4 id="scatter-plot">2.2.2 Scatter Plot</h4>
+<p>The interactive scatter plot displays employee’s car stop location represented by a colored dot. User is able to filter the selection to drill down on specific parameters. Hovering over the dot reveal the time period and employee name of the car stop location.</p>
+<p>Figure <a href="#fig:scatter-gif">4</a> shows the selection of location, House 2, 4, 10 and Meeting 1 to 5. User is able to drag and select a specific section to zoom in and hover over the dots to obtain micro-data.</p>
+<div class="layout-chunk" data-layout="l-page">
+<div class="figure" style="text-align: center"><span id="fig:scatter-gif"></span>
+<img src="img/scatter-gif.gif" alt="Abila Kronos Map: Scatter Plot of GASTech employee car stop location"  />
+<p class="caption">
+Figure 4: Abila Kronos Map: Scatter Plot of GASTech employee car stop location
+</p>
+</div>
+</div>
 <h2 id="locations-transactions">3.0 Locations Transactions</h2>
-<h3 id="filter-selection-panel">3.1 Filter selection Panel</h3>
-<p>The tab analyse the credit card and loyalty card transactions to determine the most popular locations.</p>
+<p>The tab analyse the credit card and loyalty card transactions details to determine the most popular locations and the spending pattern for each location.</p>
+<h3 id="filter-selection-panel-1">3.1 Filter selection Panel</h3>
 <p>On the left side panel, five filters are available for user to select multiple inputs to change all 3 interactive visualisations. <em>Location</em>, <em>Employee</em>, <em>Time Period</em> and <em>Department</em> are drop down filters with multiple selection available. <em>Date</em> is a range filter between 6 January 2014 to 19 January 2014.</p>
-<p>Figure <a href="#fig:location-gif">2</a> shows selection of all choices from the <em>Location</em> and <em>Employee</em> filters, <em>Date</em> range of 12 to 19 January during the evening to night <em>Time Period</em> for employee in the <em>Security</em> department only. Clicking on the <strong>Submit</strong> button will update the visualisation accordingly to the filter selections.</p>
+<p>Figure <a href="#fig:location-gif">5</a> shows selection of all choices from the <em>Location</em> and <em>Employee</em> filters. The filters <em>Date</em> range is set from 12 to 19 January during the evening to night <em>Time Period</em> for employee in the <em>Security</em> department only. Clicking on the <strong>Submit</strong> button will update the visualisation accordingly to the filter selections.</p>
 <div class="layout-chunk" data-layout="l-page">
 <div class="figure" style="text-align: center"><span id="fig:location-gif"></span>
 <img src="img/location_filter.gif" alt="Location Transaction Tab: Filter Selection"  />
 <p class="caption">
-Figure 2: Location Transaction Tab: Filter Selection
+Figure 5: Location Transaction Tab: Filter Selection
 </p>
 </div>
 </div>
-<h3 id="main-visualisation-panel">3.2 Main Visualisation Panel</h3>
+<h3 id="main-visualisation-panel-1">3.2 Main Visualisation Panel</h3>
 <h4 id="heatmap-of-location-visit-frequency">3.2.1 Heatmap of Location Visit Frequency</h4>
 <p>The interactive heatmap visualisation displays the frequency of location visit based on the credit card and loyalty card transactions history. The color intensity of the heatmap represents the visit count for each location.</p>
-<p>Figure <a href="#fig:heatmap-gif">3</a> demonstrates the interactivity of the heatmap. User is able to drill down on any particular period by drag and selecting the area. Hovering over each square will display micro information, including the exact visit frequency count.</p>
+<p>Figure <a href="#fig:heatmap-gif">6</a> demonstrates the interactivity of the heatmap. User is able to drill down on any particular period by drag and selecting the area. Hovering over each square will display micro information, including the exact visit frequency count.</p>
 <div class="layout-chunk" data-layout="l-page">
 <div class="figure" style="text-align: center"><span id="fig:heatmap-gif"></span>
 <img src="img/heatmap.gif" alt="Heatmap: Location Visit Frequency By Date"  />
 <p class="caption">
-Figure 3: Heatmap: Location Visit Frequency By Date
+Figure 6: Heatmap: Location Visit Frequency By Date
 </p>
 </div>
 </div>
 <h4 id="boxplot-of-credit-card-transactions">3.2.2 Boxplot of Credit Card Transactions</h4>
 <p>The interactive boxplot visualisation displays the credit card transaction value for each location and the outliers shaded in red.</p>
-<p>Figure <a href="#fig:boxplot-gif">4</a> demonstrates the interactivity of the boxplot. User can hover to display the individual transaction with the median spending shown for the location on the boxplot. User is able to drill down on any particular area by drag and selecting the area.</p>
+<p>Figure <a href="#fig:boxplot-gif">7</a> demonstrates the interactivity of the boxplot. User can hover to display the individual transaction with the median spending shown for the location on the boxplot. User is able to drill down on any particular area by drag and selecting the area.</p>
 <div class="layout-chunk" data-layout="l-page">
 <div class="figure" style="text-align: center"><span id="fig:boxplot-gif"></span>
 <img src="img/boxplot.gif" alt="Boxplot: Credit Card Transaction Boxplot"  />
 <p class="caption">
-Figure 4: Boxplot: Credit Card Transaction Boxplot
+Figure 7: Boxplot: Credit Card Transaction Boxplot
 </p>
 </div>
 </div>
 <h4 id="barplot-of-number-of-transactions-per-day-per-location">3.2.3 Barplot of Number of Transactions per Day per Location</h4>
 <p>The interactive barplot visualisation displays the credit card transaction frequency per day for each location colored by time period.</p>
-<p>Figure <a href="#fig:barplot-gif">5</a> demonstrates the interactivity of the barplot. User can hover over the each bar section to display the micro data of each day within the time period.</p>
+<p>Figure <a href="#fig:barplot-gif">8</a> demonstrates the interactivity of the barplot. User can hover over the each bar section to display the micro data of each day within the time period.</p>
 <div class="layout-chunk" data-layout="l-page">
 <div class="figure" style="text-align: center"><span id="fig:barplot-gif"></span>
 <img src="img/barplot.gif" alt="Barplot: Number of Transactions per Day by Location"  />
 <p class="caption">
-Figure 5: Barplot: Number of Transactions per Day by Location
+Figure 8: Barplot: Number of Transactions per Day by Location
 </p>
 </div>
 </div>
 <h2 id="card-mapping">4.0 Card Mapping</h2>
-<p>The interactive parallel coordinate plot in figure <a href="#fig:parcoord-gif">6</a> displays the credit card and loyalty card transactions. The filter on the left panel allows user to select multiple Credit Card numbers for display in the right panel. The main panel on the right displays a DataTable of the credit card and loyalty card owners detail at the top and the parallel coordinate visualisation at the bottom.</p>
+<p>The interactive parallel coordinate plot in figure <a href="#fig:parcoord-gif">9</a> displays the credit card and loyalty card transactions. The filter on the left panel allows user to select multiple Credit Card numbers for display in the right panel. The main panel on the right displays a DataTable of the credit card and loyalty card owners detail at the top and the parallel coordinate visualisation at the bottom.</p>
 <p>The parallel coordinate plots has 4 verticals: 1. <em>Credit Card Transaction Date</em> 2. <em>Loyalty Card Transaction Date</em> 3. <em>Location of transaction</em> 4. <em>Price difference between credit card and loyalty card transaction</em></p>
-<p>User can drag and select the verticals on the interactive Parallel Coordinate Visualisation to highlight only the transactions as per figure <a href="#fig:parcoord-gif">6</a>,</p>
+<p>User can drag and select the verticals on the interactive Parallel Coordinate Visualisation to highlight only the transactions as per figure <a href="#fig:parcoord-gif">9</a>,</p>
 <div class="layout-chunk" data-layout="l-page">
 <div class="figure" style="text-align: center"><span id="fig:parcoord-gif"></span>
 <img src="img/parcoord.gif" alt="Parallel Coordinate Plot: Credit Card and Loyalty Card Mapping"  />
 <p class="caption">
-Figure 6: Parallel Coordinate Plot: Credit Card and Loyalty Card Mapping
+Figure 9: Parallel Coordinate Plot: Credit Card and Loyalty Card Mapping
 </p>
 </div>
 </div>
@@ -2524,23 +2562,23 @@ Figure 6: Parallel Coordinate Plot: Credit Card and Loyalty Card Mapping
 <p>The tab displays two network analysis of Employee and the location based on their credit card transactions or car GPS movement.</p>
 <h3 id="network-analysis-by-credit-card-transaction">5.1 Network Analysis by Credit Card Transaction</h3>
 <p>On the left side panel, five filters are available for user to select multiple inputs to change the network graph. <em>Location</em>, <em>Employee</em>, <em>Time Period</em> and <em>Department</em> are drop down filters with multiple selection available. <em>Date</em> is a range filter between 6 January 2014 to 19 January 2014. Clicking on the <strong>Submit</strong> button will update the visualisation accordingly to the filter selections.</p>
-<p>On the right side panel, the interactive network analysis shows the interaction between employees and the location they patronise based on their credit card transaction data. Users can click the nodes to highlight all interaction edges linked to the node. For example, user can click on a locations nodes to display all interaction edges to employees nodes whom has made transaction at the location. Alternatively, user can change the node selection from the drop down bar labelled <em>Select by id</em> to select a particular employee or location. User can select different group of nodes categorised by their department or the location. Figure <a href="#fig:trans-network">7</a> shows the network analysis.</p>
+<p>On the right side panel, the interactive network analysis shows the interaction between employees and the location they patronise based on their credit card transaction data. Users can click the nodes to highlight all interaction edges linked to the node. For example, user can click on a locations nodes to display all interaction edges to employees nodes whom has made transaction at the location. Alternatively, user can change the node selection from the drop down bar labelled <em>Select by id</em> to select a particular employee or location. User can select different group of nodes categorised by their department or the location. Figure <a href="#fig:trans-network">10</a> shows the network analysis.</p>
 <div class="layout-chunk" data-layout="l-page">
 <div class="figure" style="text-align: center"><span id="fig:trans-network"></span>
 <img src="img/trans-network.gif" alt="Network Analysis Tab: Network Analysis by Location and Employee via Credit Card Transactions"  />
 <p class="caption">
-Figure 7: Network Analysis Tab: Network Analysis by Location and Employee via Credit Card Transactions
+Figure 10: Network Analysis Tab: Network Analysis by Location and Employee via Credit Card Transactions
 </p>
 </div>
 </div>
 <h3 id="network-analysis-by-employee-car-gps-locations">5.2 Network Analysis by employee car GPS locations</h3>
 <p>On the left side panel, the five filters are identical to the network analysis by credit card transaction with the addition of few more option for location selection. The locations are based on the employees car GPS stop location and it includes their residential address and suspicious meeting point with no point of interest nearby.</p>
-<p>User can filter and select the interactive network analysis visualisation similar to the previous section. Figure <a href="#fig:gps-network">8</a> displays the interactive aspects of the network analysis visualisation.</p>
+<p>User can filter and select the interactive network analysis visualisation similar to the previous section. Figure <a href="#fig:gps-network">11</a> displays the interactive aspects of the network analysis visualisation.</p>
 <div class="layout-chunk" data-layout="l-page">
 <div class="figure" style="text-align: center"><span id="fig:gps-network"></span>
 <img src="img/gps-network.gif" alt="Network Analysis Tab: Network Analysis by Location and Employee via car GPS locationS"  />
 <p class="caption">
-Figure 8: Network Analysis Tab: Network Analysis by Location and Employee via car GPS locationS
+Figure 11: Network Analysis Tab: Network Analysis by Location and Employee via car GPS locationS
 </p>
 </div>
 </div>

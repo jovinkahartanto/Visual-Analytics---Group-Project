@@ -28,7 +28,7 @@ mapUI <- function(id) {
                                selected=unique(cc$timeperiod)[1:7]),
                    pickerInput(NS(id,"location"),
                                "Select by Location",
-                               choices=unique(gps_stop$Possible_Location)%>% na.omit(),
+                               choices=unique(gps_stop$Possible_Location)[order(nchar(unique(gps_stop$Possible_Location)), unique(gps_stop$Possible_Location))],
                                multiple=TRUE,options = list(
                                  `actions-box` = TRUE),
                                selected=unique(gps_stop$Possible_Location)[1:10]),
@@ -36,7 +36,7 @@ mapUI <- function(id) {
       ),
       mainPanel(
         tabsetPanel(
-        tabPanel("Map",tmapOutput(NS(id,"map"))),
+        tabPanel("Map",tmapOutput(NS(id,"map"),height=750, width=1000)),
         tabPanel("Scatter Plot", 
                  plotlyOutput(NS(id, "dotplot")))
         )
@@ -49,7 +49,7 @@ mapServer <- function(id) {
   moduleServer(id, function(input, output, session) {
     
     stop_fin <- read_csv("datasets/stop_fin.csv")
-    gps_stop <- read_csv("datasets/gps_stop.csv")
+    gps_stop <- read_csv("datasets/gps_stop.csv") 
     location_tag <- read_csv("datasets/location_tag.csv")
     final_tagging<- read_csv("datasets/final_tagging.csv") %>% dplyr::select(id,name)%>%unique()
     
@@ -72,15 +72,10 @@ mapServer <- function(id) {
       gps_stop$hour >= 12 ~ "Early afternoon",
       gps_stop$hour >= 9 ~ "Late morning",
       gps_stop$hour >= 6 ~ "Early morning",
-      
       TRUE ~ "Late night")
     
-    gps_stop$date2 <- gps_stop$timestamp <- date_time_parse(gps_stop$Timestamp, 
-                                                       zone = "", 
-                                                       format = "%m/%d/%Y")
-    
+    gps_stop$date2 <- as_date(gps_stop$timestamp)
 
-    
     ## Transform the structure of GPS data for Map
     location_tag_sf <- st_as_sf(location_tag, coords=c("long","lat"), crs=4326)
     
@@ -135,7 +130,7 @@ mapServer <- function(id) {
       dotplot<-gps_stop_dp %>% 
         ggplot(aes(x=timeperiod, y=date2, fill=name)) +
         ggtitle("Location Visitor") +
-        geom_point() +
+        geom_jitter() +
         facet_wrap(~Possible_Location,ncol=4) +
         xlab("Timeperiod")+ylab("Date")+
         labs(fill="name") +
@@ -144,8 +139,8 @@ mapServer <- function(id) {
               axis.ticks = element_blank(),
               strip.text = element_text(size = 8, face="bold"),
               axis.text.x=element_text(angle=-45),
-              panel.spacing.x=unit(0.1, "lines"),
-              panel.spacing.y=unit(0.5, "lines")) 
+              panel.spacing.x=unit(0.5, "lines"),
+              panel.spacing.y=unit(0.5, "lines"))
       
       ggplotly(dotplot) %>% layout(autosize = F, height = 650, width=1000)
     })
