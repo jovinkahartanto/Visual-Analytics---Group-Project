@@ -58,7 +58,7 @@ Although network analysis provides an overview of the relationships between node
 
 Exploratory data analysis (EDA) with histogram, heatmap and boxplot were performed to give users an overview of GAStech employees' credit card and loyalty card transactions over the two weeks. Heatmap was used for a quick summary of the most popular locations based on transaction frequency. This function is meant for high-level visualisation and not detailed analysis. Detailed barchart faceted by location and classified by time period was used to visualise distribution and popularity of locations at different time of the day. Any transactions at odd timing could be isolated and scrutinise in detail. Boxplot shows the median and 25th and 75th percentiles of transaction amounts at each location, and to visualise any anomalies. Bar chart was chosen since it is easy to grasp without significant statistical knowledge. Interactivity is a significant feature of the EDA charts. Given that this is an exploratory phase, all dataset parameters were included as much as possible to aid the user in discovering insights.
 
-Exploratory spatial data analysis (ESDA) investigates the location component of the provided dataset. With the Abila map and GPS routes visualised, we were able to explore the island map and determine movements and location of employees' cars at specific time periods. This was complemented by dot plot of visits of employees by time and day at specific locations. This helps users to identify any overlaps in visit location and time of employees to determine any relationships among employees.
+Exploratory spatial data analysis (ESDA) investigates the location component of the provided dataset. With the Abila map and GPS routes visualised, we were able to explore the island map and determine movements and location of employees' cars at specific time periods. This was complemented by scatter plot of visits of employees by time and day at specific locations. This helps users to identify any overlaps in visit location and time of employees to determine any relationships among employees.
 
 Parallel coordinate plot was used to map credit card and loyalty card to their respective owners since the card owners were not provided. Credit cards and loyalty cards transaction date, location and price (filtered by credit card numbers) were also mapped. 
 
@@ -114,7 +114,7 @@ A bar chart is used to visualise the frequency of visits at different days with 
 
 ### Thematic Map
 
-Thematic map is used to visualise the movement of cars using their GPS coordinates over time and is used for geospatial analysis.
+Thematic map is used to visualise the movement of cars using the GPS tracking data over time and is used for geospatial analysis.
 
 ### Parallel Coordinate Plot
 
@@ -128,8 +128,24 @@ Thematic map is used to visualise the movement of cars using their GPS coordinat
 
 # Demonstration 
 
-The final interactive plots in the Shiny application can help to identify a wide range of insights. 
+The final interactive plots in the Shiny application can help to identify a wide range of insights, specifically in the area of suspicious people and locations.
 
+## Abila Kronos Map Interface
+
+Referring to the first map interface...
+
+
+## Locations Transactions Interface
+
+Based on the heatmap and barplot, we noticed that the most popular places during weekdays are Brew’ve Been Served, Katerina’s Cafe, Guy’s Gyros, Hippokampos and Hallowed Grounds. Many places that are not open during weekends. The most frequently visited places over the weekends are Katerina’s Cafe (more popular on Saturdays) and Hippokampos.
+
+Late night transactions are relatively more suspicious and hence are shown in isolation. Noticed 4 transactions made on different credit cards at Kronos Mart at late night on various days. 
+
+![](img/latenight.png)
+ 
+In the boxplot, there was an extreme outlier of a 10,000 dollars spent by credit card 9551 at Frydos Autosupply n'More while the median price was only 149 dollars. Further analysis on this credit card is done using the Card Mapping interface.  There was also an outlier of 1,239 dollars at Albert's Fine Clothing. However, looking at the frequency of transactions at Albert’s Fine Clothing, it seems like a common place to buy clothing. Possible deduction was the person was buying lots of clothing for his family or friends, amounting to a much higher price than usual.
+
+![](img/boxplot10000.png)
  
 # Discussion 
 

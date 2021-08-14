@@ -55,7 +55,7 @@ options(knitr.table.format = "html")
 # Introduction
 The VAST 2021 Mini Challenge 2 outlines a hypothetical scenario in which several GAStech employees have gone missing and the organisation, Protectors of Kronos (POK), is suspected of being involved. The challenge requires identification of suspicious activities hidden in data and determine any dubious people and locations that should be reported to the law enforcement using interactive visual analytical tools.
 
-# Movtivation and objectives
+# Motivation and Objectives
 Our research and development effort aims to enable Kronos law enforcement with the ability to easily analyse, drill down and identify key suspects and suspicious locations, and thereby speeding up the investigation process. 
 
 The use cases of the data visualisation tool include but are not limited to the following:
@@ -103,7 +103,7 @@ knitr::include_graphics("img/barplot.png")
 ```
 
 ## Card Mapping
-Figure \@ref(fig:parcoord) displays the credit card and loyalty card mapping to each GASTech employee with reference to their car GPS data. Users can select the different credit card number in the filter to dynamic change the plot to observe the respective transactions made at the different locations. The difference in price of each matching creidt card and loyalty card is also made available in the plot. Users can utilise the interactive plot to highlight different selections throughout the parallel coordinate plot.
+Figure \@ref(fig:parcoord) displays the credit card and loyalty card mapping to each GASTech employee with reference to their car GPS data. Users can select the different credit card number in the filter to dynamic change the plot to observe the respective transactions made at the different locations. The difference in price of each matching credit card and loyalty card is also made available in the plot. Users can utilise the interactive plot to highlight different selections throughout the parallel coordinate plot.
 ```{r parcoord, fig.cap='Parallel Coordinate Plot'}
 knitr::include_graphics("img/parcoord.png")
 ```
