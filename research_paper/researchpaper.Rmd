@@ -137,16 +137,35 @@ Referring to the first map interface...
 
 ## Locations Transactions Interface
 
-Based on the heatmap and barplot, we noticed that the most popular places during weekdays are Brew’ve Been Served, Katerina’s Cafe, Guy’s Gyros, Hippokampos and Hallowed Grounds. Many places that are not open during weekends. The most frequently visited places over the weekends are Katerina’s Cafe (more popular on Saturdays) and Hippokampos.
+The heatmap and barplot showed that the most popular places during weekdays are Brew’ve Been Served, Katerina’s Cafe, Guy’s Gyros, Hippokampos and Hallowed Grounds. Many places that are not open during weekends. The most frequently visited places over the weekends are Katerina’s Cafe (more popular on Saturdays) and Hippokampos.
 
-Late night transactions are relatively more suspicious and hence are shown in isolation. Noticed 4 transactions made on different credit cards at Kronos Mart at late night on various days. 
+Late night transactions are relatively more suspicious and hence are shown in isolation. Noticed 4 transactions were made on different credit cards at Kronos Mart at late night on various days. 
 
 ![](img/latenight.png)
  
-In the boxplot, there was an extreme outlier of a 10,000 dollars spent by credit card 9551 at Frydos Autosupply n'More while the median price was only 149 dollars. Further analysis on this credit card is done using the Card Mapping interface.  There was also an outlier of 1,239 dollars at Albert's Fine Clothing. However, looking at the frequency of transactions at Albert’s Fine Clothing, it seems like a common place to buy clothing. Possible deduction was the person was buying lots of clothing for his family or friends, amounting to a much higher price than usual.
+In the boxplot, there was an extreme outlier of a 10,000 dollars spent by credit card 9551 at Frydos Autosupply n'More while the median price was only 149 dollars. Further analysis on this credit card is done using the Card Mapping interface. 
 
 ![](img/boxplot10000.png)
+There was also an outlier of 1,239 dollars at Albert's Fine Clothing. However, looking at the frequency of transactions at Albert’s Fine Clothing, it seems like a common place to buy clothing. Possible deduction was the person was buying lots of clothing for his family or friends, amounting to a much higher price than usual.
+
+## Network Analysis
+
+From the network analysis throughout the two weeks of data, we can uncover some relationships among employees. 
+
+Desafio Golf Course was visited by GAStech Executives only as shown by the Network Analysis by Credit Card Transactions. They might be playing golf or a regular gathering at the location.
+
+![](img/golf.png)
+
+Chostus Hotel was visited by Orilla Elsa and Tempestad Brand. Delving deeper into the data, we can observe that both Orilla Elsa and Tempestad Brand made transactions on 4 same dates during lunch time. The transactions were relatively expensive for a lunch meal in comparison to other food and beverage location in Abila. Alternatively, they might have paid for a hotel room during their visit to the location. Furthermore, both of them are from the same department with the same title in GAStech and there might be some relationship between them.
  
+![](img/hotel.png) 
+
+Bean There Done That location had only transactions made by the engineering department (yellow nodes). Bean There Done That is the furthest location from GAStech but a certain group of customers still visits and purchase from them. Visualising the GPS stationary data for the 7 customers from the engineering team, we observe that 5 out of 7 of the customers resides in the area of Carnero Street and Parla Park whereas the remaining 2 customers, Frente Birgitta and Dedos Lidelse resides between Arkadiou Park and Sannan Park. The 2 customers residential location are at the same coordinates yet far away from Bean There Done That. However, they still patronise and purchase from there might signify some relationship between both of them.
+ 
+![](img/beantheredonethat.png) 
+
+
+
 # Discussion 
 
 
