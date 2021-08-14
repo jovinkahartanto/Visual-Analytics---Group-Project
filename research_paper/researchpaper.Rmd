@@ -1,15 +1,15 @@
 ---
-title: Saptiotemporal Analysis of Gastech Employees' Movement Data
+title: STAGEMD - SaptioTemporal Analysis of Gastech Employees' Movement Data
 author:
   - name: Chen Yuxi
-    email: 'yuxi.chen.2020@mitb.smu.edu.sg'
-    affiliation: Singapore Management University
+    email: yuxi.chen.2020@mitb.smu.edu.sg
+    affiliation: Singapore Management University, School of Computing and Information Systems
   - name: Lim Yong Kai
-    email: 'yongkai.lim.2020@mitb.smu.edu.sg'
-    affiliation: Singapore Management University
+    email: yongkai.lim.2020@mitb.smu.edu.sg
+    affiliation: Singapore Management University, School of Computing and Information Systems
   - name: Jovinka Hartanto
-    email: 'jovinkah.2020@mitb.smu.edu.sg'
-    affiliation: Singapore Management University
+    email: jovinkah.2020@mitb.smu.edu.sg
+    affiliation: Singapore Management University, School of Computing and Information Systems
 abstract: |
   The research paper should include an abstract of not more than 300 words. The actual research paper itself should not more than 6 pages excluding figures, tables, formula and references. The practice research paper must be edited by using R Markdown and the ACM: Association for Computing Machinery template of rticles should be used. 
 
@@ -23,7 +23,7 @@ output: rticles::acm_article
 # Introduction 
 The VAST 2021 Mini Challenge 2 outlines a hypothetical scenario in which several GAStech employees have gone missing and the organisation, Protectors of Kronos (POK), is suspected of being involved. The dataset includes two weeks of GPS tracking data for company cars assigned to employees, credit and loyalty card transactions of employees before the disappearance. ESRI shapefiles for the city of Abila & country Kronos are also provided. The challenge requires identification of suspicious activities hidden in data and determine any dubious people and locations that should be reported to the law enforcement.
 
-The dataset was wrangled to develop a Shiny app that aims to provide users actionable insights based on the following analyses:
+The dataset was wrangled to develop a Shiny app, STAGEMD, that aims to provide users actionable insights based on the following analyses:
 
 * Exploratory Data Analysis (EDA) of GPS tracking data and credit and loyalty card transaction patterns
 * Visualisation of employee movements over time and associated purchase transactions
@@ -55,6 +55,7 @@ Submission from Fraunhofer IAIS and City University London (Andrienko, Andrienko
 Although network analysis provides an overview of the relationships between nodes, usually the plot will be cluttered which make it difficult to drill down to specific or individual relationships. An alternative would be to make the plot interactive so that readers will be able to drill down on specific areas to investigate the relationships.
 
 # Design framework 
+The STAGEMD application was built with several functionalities. 
 
 Exploratory data analysis (EDA) with histogram, heatmap and boxplot were performed to give users an overview of GAStech employees' credit card and loyalty card transactions over the two weeks. Heatmap was used for a quick summary of the most popular locations based on transaction frequency. This function is meant for high-level visualisation and not detailed analysis. Detailed barchart faceted by location and classified by time period was used to visualise distribution and popularity of locations at different time of the day. Any transactions at odd timing could be isolated and scrutinise in detail. Boxplot shows the median and 25th and 75th percentiles of transaction amounts at each location, and to visualise any anomalies. Bar chart was chosen since it is easy to grasp without significant statistical knowledge. Interactivity is a significant feature of the EDA charts. Given that this is an exploratory phase, all dataset parameters were included as much as possible to aid the user in discovering insights.
 
@@ -75,7 +76,7 @@ The data set was extracted from the VAST Challenge 2021 website under the sub se
 
 ## Shiny Architecture
 
-The application was developed with Shiny, an R tool for generating interactive web apps. The main advantage of Shiny is that users can easily change the variable inputs and almost instantly see the resulting charts and figures. Not only does it allow for interactivity, it provides an invaluable tool for users to derive insights. Shiny also uses the R packages available on R-cran, which expands on the core R functions and improves the app's functionality.
+The STAGEMD application was developed with Shiny, an R tool for generating interactive web apps. The main advantage of Shiny is that users can easily change the variable inputs and almost instantly see the resulting charts and figures. Not only does it allow for interactivity, it provides an invaluable tool for users to derive insights. Shiny also uses the R packages available on R-cran, which expands on the core R functions and improves the app's functionality.
 
 The Shiny application was designed according to the flow of the Vast Challenge questions. 
 
@@ -92,7 +93,7 @@ v) **Network Analysis - **This allows users to visualise the relationships among
 
 Heatmap is a graphical representation of data that utilises colour-coded systems. A heatmap is able to better represent the volume of transactions/locations within a dataset and to guide users to the most important areas through the use of colours.
 
-**ggplot2** is used to create the heatmap of transaction frequency by location. The resultant ggplot2 graph is parsed into **plotly** which allows for interactivity with tooltips. 
+**ggplot2** was used to create the heatmap of transaction frequency by location. The resultant ggplot2 graph was parsed into **plotly** which allows for interactivity with tooltips. 
 
 ![](img/heatmap.png)
 
@@ -100,35 +101,46 @@ Heatmap is a graphical representation of data that utilises colour-coded systems
 
 Boxplot displays the distribution of the data based on minimum, first quartile, median, third quartile and maximum. It is a good representation of the standard dispersion of transaction amounts at each location and thereby highlighting the outlier transactions. The parameters built in the application allow the user to change the structure and make up of the bar chart. Users are able to select specific locations, filter by employees, change the date range, as well as indicate the time period of the chart.
 
-**gglot2** is used to create the boxplot of credit card transaction values at different locations. The outliers are highlighted in red. **plotly** is used to enhance the interactivity of the chart with tooltips.
+**gglot2** was used to create the boxplot of credit card transaction values at different locations. The outliers were highlighted in red. **plotly** was used to enhance the interactivity of the chart with tooltips.
 
 ![](img/boxplot.png)
 
 ### Bar Chart
 
-A bar chart is used to visualise the frequency of visits at different days with varying length of bars. This chart is used to for comparing different number of visits over the period. The primary category used for the x-axis is the date variable. The chart is also faceted by location to show a more granular view. The parameters built in the application allow the user to change the structure and make up of the bar chart. Users are able to select specific locations, filter by employees, change the date range, as well as indicate the time period of the chart.
+A bar chart was used to visualise the frequency of visits at different days with varying length of bars. This chart was used to for comparing different number of visits over the period. The primary category used for the x-axis is the date variable. The chart was also faceted by location to show a more granular view. The parameters built in the application allowed the users to change the structure and make up of the bar chart. Users are able to select specific locations, filter by employees, change the date range, as well as indicate the time period of the chart.
 
-**ggplot2** is used to create the bar chart as it is flexible and allows for faceting by groups. The ggplot2 graph is then parsed into **plotly** which enables interactivity with tooltips. As more categories are added to the chart, this helps to remove text elements from the bar charts, which tend to clutter the plot. 
+**ggplot2** was used to create the bar chart as it is flexible and allows for faceting by groups. The ggplot2 graph was then parsed into **plotly** which enables interactivity with tooltips. As more categories were added to the chart, this helps to remove text elements from the bar charts, which tend to clutter the plot. 
 
 ![](img/barchart.png)
 
-### Thematic Map
+### Abila Map
 
-Thematic map is used to visualise the movement of cars using the GPS tracking data over time and is used for geospatial analysis.
+Thematic map was used to visualise the movement of cars using the GPS tracking data over time and was used for geospatial analysis.
+
+**tmap** was used to design the Abila map. It offers a flexible, layer-based approach to create thematic maps and is based on the grammar of graphics.
 
 ### Parallel Coordinate Plot
 
+A parallel coordinate plot was used to analyse multivariate numerical data. It allows for comparison of many quantitative variables to find patterns, similarities, clusters and relationships within the multidimensional dataset. The chart maps the credit card transactions of selected card with the respective loyalty transactions, at the same time, showing the locations of transactions and price differences between the two type of cards. 
 
+The **MASS** library was used to build the parallel coordinate chart.
 
 ![](img/parallel.png)
 
 ### Network Analysis
+
+Network is a graphical representation of the relationships (edges) between variables (nodes). It provides the capacity to estimate complex patterns of relationships and the network structure can be analysed to reveal core features of the network.
+(David Hevey (2018) Network analysis: a brief overview and tutorial, Health Psychology and Behavioral Medicine, 6:1, 301-328, DOI: 10.1080/21642850.2018.1521283)
+
+**visNetwork** package was used to visualise the network, together with **igraph**'s layout on grid to present a more structured network presentation. 
 
 ![](img/network.png)
 
 # Demonstration 
 
 The final interactive plots in the Shiny application can help to identify a wide range of insights, specifically in the area of suspicious people and locations.
+
+
 
 ## Abila Kronos Map Interface
 
