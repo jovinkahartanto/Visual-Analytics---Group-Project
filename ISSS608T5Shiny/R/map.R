@@ -137,15 +137,15 @@ mapServer <- function(id) {
         ggtitle("Location Visitor") +
         geom_point() +
         facet_wrap(~Possible_Location,ncol=4) +
-        xlab("Timeperiod")+ylab("Date")
+        xlab("Timeperiod")+ylab("Date")+
         labs(fill="name") +
         theme(plot.title=element_text(size=20,face="bold"),
-              axis.title=element_text(size=14,face="bold"),
+              axis.title=element_text(size=14,face="bold",hjust=10),
               axis.ticks = element_blank(),
               strip.text = element_text(size = 8, face="bold"),
-              axis.text.x=element_text(angle=45, hjust=1),
+              axis.text.x=element_text(angle=-45),
               panel.spacing.x=unit(0.1, "lines"),
-              panel.spacing.y=unit(0.1, "lines")) 
+              panel.spacing.y=unit(0.5, "lines")) 
       
       ggplotly(dotplot) %>% layout(autosize = F, height = 650, width=1000)
     })
