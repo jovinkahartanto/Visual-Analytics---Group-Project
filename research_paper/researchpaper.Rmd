@@ -81,7 +81,7 @@ The data set was extracted from the VAST Challenge 2021 website under the sub se
 2. Transaction Data 
 * Adding other factors to the transaction data, such as hour, date, and time period
 * Tagged the owners of the credit card to the loyalty card number by joining the credit card and loyalty card data.
-* Created nodes and edges from credit card and location data to uncover some relationship among employees. Nodes were created by combining employee information, such as employee name, car id, last 4 credit card number, and employment details with unique location name.Edges was created by joining credit card owners data with the nodes data
+* Created nodes and edges from credit card and location data to uncover some relationship among employees. Nodes were created by combining employee information, such as employee name, car id, last 4 credit card number, and employment details with unique location name. Edges was created by joining credit card owners data with the nodes data
 
 ## Shiny Architecture
 
@@ -171,7 +171,7 @@ There was also an outlier of 1,239 dollars at Albert's Fine Clothing. However, l
 
 ## Network Analysis
 
-From the network analysis throughout the two weeks of data, we can uncover some relationships among employees. 
+The network formed from the credit card transaction locations as well as GPS tracking data locations was displayed using network analysis. From the network analysis throughout the two weeks of data, we uncovered some relationships among employees.
 
 Desafio Golf Course was visited by GAStech Executives only as shown by the Network Analysis by Credit Card Transactions. They might be playing golf or a regular gathering at the location.
 
@@ -196,7 +196,9 @@ Bean There Done That location had only transactions made by the engineering depa
 
 # Future Work
 
-*A description of how your system could be extended or refined. *
+The capabilities of the application to enable users to examine and analyze the transactions and GPS data collected is demonstrated in the above sections. Future work would have to be done to integrate the different visualisations developed as the current plots are loosely coupled. The existing application has slight disconnect between the map and transactions interfaces. While the users can independently filter both visualisations by employees and locations, it does not provide a coherent narrative and flow in the process of investigation of suspicious locations and people. One area of improvement would be to have popup charts upon clicking of data points on existing visualisations to showcase extended information that would be of relevance.
+
+Mini-challenges 1 and 3 can also be attempted and incorporated into the application to provide a comprehensive integrated visual analytics system that helps to resolve the overarching case scenario. Additional analyses relating to mini-challenges 1 and 3 such as text analytics and sentiment analysis can help to complement findings from the existing application to provide a much more cohesive narrative to the storyline.
 
  
 
