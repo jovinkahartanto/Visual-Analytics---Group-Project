@@ -16,9 +16,9 @@ mapUI <- function(id) {
                                choices=unique(final_tagging$name),
                                multiple=TRUE,options = list(
                                  `actions-box` = TRUE),
-                               selected=unique(final_tagging$name)[1:34]),
+                               selected="Onda Marin"),
                    dateRangeInput(NS(id,"date"),"Select by Date", 
-                                  start="2014-01-06", end="2014-01-19",
+                                  start="2014-01-06", end="2014-01-06",
                                   min="2014-01-06", max="2014-01-19"),
                    pickerInput(NS(id,"time_period"),
                                "Select by Time Period",
