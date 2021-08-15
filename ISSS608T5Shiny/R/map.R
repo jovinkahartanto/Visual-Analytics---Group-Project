@@ -26,18 +26,10 @@ mapUI <- function(id) {
                                multiple=TRUE,options = list(
                                  `actions-box` = TRUE),
                                selected=unique(cc$timeperiod)[1:7]),
-                   pickerInput(NS(id,"location"),
-                               "Select by Location",
-                               choices=unique(gps_stop$Possible_Location)[order(nchar(unique(gps_stop$Possible_Location)), unique(gps_stop$Possible_Location))],
-                               multiple=TRUE,options = list(
-                                 `actions-box` = TRUE),
-                               selected=unique(gps_stop$Possible_Location)[1:10]),
                    actionButton(NS(id,"submit"),"Submit")
       ),
       mainPanel(
-        tabsetPanel(
-        tabPanel("Map",tmapOutput(NS(id,"map"),height=750, width=1000))
-        )
+        tmapOutput(NS(id,"map"),height=750, width=1000)
       )
     )
   )

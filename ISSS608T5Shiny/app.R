@@ -19,7 +19,7 @@ library(ggiraph)
 library(rgdal)
 library(clock)
 library(patchwork)
-
+rsconnect::setAccountInfo(name='limyongkai', token='92B3BB68D47FBB0DAA7C721028B56F69', secret='8kVF8nAxMg0b25h715oEeH+m7WAuwTL8ngLYxrqY')
 server <- function(input, output,session){
     visNetwork2Server("vis2")
     visNetworkServer("vis")

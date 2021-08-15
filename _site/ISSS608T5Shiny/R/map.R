@@ -14,7 +14,7 @@ mapUI <- function(id) {
                    pickerInput(NS(id,"employee"),
                                "Select by Employee",
                                choices=unique(final_tagging$name),
-                               multiple=TRUE,options = list(
+                               multiple=FALSE,options = list(
                                  `actions-box` = TRUE),
                                selected="Onda Marin"),
                    dateRangeInput(NS(id,"date"),"Select by Date", 
@@ -26,20 +26,10 @@ mapUI <- function(id) {
                                multiple=TRUE,options = list(
                                  `actions-box` = TRUE),
                                selected=unique(cc$timeperiod)[1:7]),
-                   pickerInput(NS(id,"location"),
-                               "Select by Location",
-                               choices=unique(gps_stop$Possible_Location)[order(nchar(unique(gps_stop$Possible_Location)), unique(gps_stop$Possible_Location))],
-                               multiple=TRUE,options = list(
-                                 `actions-box` = TRUE),
-                               selected=unique(gps_stop$Possible_Location)[1:10]),
                    actionButton(NS(id,"submit"),"Submit")
       ),
       mainPanel(
-        tabsetPanel(
-        tabPanel("Map",tmapOutput(NS(id,"map"),height=750, width=1000)),
-        tabPanel("Scatter Plot", 
-                 plotlyOutput(NS(id, "dotplot")))
-        )
+        tmapOutput(NS(id,"map"),height=750, width=1000)
       )
     )
   )
@@ -115,35 +105,6 @@ mapServer <- function(id) {
     time_period <- eventReactive(input$submit,{
       input$time_period
     }, ignoreNULL = FALSE)
-    
-    ## Dot Plot
-  
-    
-    output$dotplot <- renderPlotly({
-      
-      gps_stop_dp <- gps_stop %>% filter(
-        Possible_Location %in% location()&
-          timeperiod %in% time_period()&
-          name %in% employee()&
-          date2 >= min_date() & date2 <=max_date())
-    
-      dotplot<-gps_stop_dp %>% 
-        ggplot(aes(x=timeperiod, y=date2, fill=name)) +
-        ggtitle("Location Visitor") +
-        geom_jitter() +
-        facet_wrap(~Possible_Location,ncol=4) +
-        xlab("Timeperiod")+ylab("Date")+
-        labs(fill="name") +
-        theme(plot.title=element_text(size=20,face="bold"),
-              axis.title=element_text(size=14,face="bold",hjust=10),
-              axis.ticks = element_blank(),
-              strip.text = element_text(size = 8, face="bold"),
-              axis.text.x=element_text(angle=-45),
-              panel.spacing.x=unit(0.5, "lines"),
-              panel.spacing.y=unit(0.5, "lines"))
-      
-      ggplotly(dotplot) %>% layout(autosize = F, height = 650, width=1000)
-    })
   
       
     ## Plot interactive map

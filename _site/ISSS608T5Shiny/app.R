@@ -25,6 +25,7 @@ server <- function(input, output,session){
     visNetworkServer("vis")
     cardMappingServer("parcoord")
     mapServer("map")
+    map2Server("dotplot")
     location_transServer("heatmap")
 }
 
@@ -52,7 +53,16 @@ ui <- dashboardPage(
             tabItem(
                 tabName="map",
                 fluidPage(
-                    mapUI("map")
+                    tabsetPanel(
+                        tabPanel(
+                            "Map",
+                            mapUI("map")
+                        ),
+                        tabPanel(
+                            "Scatter Plot",
+                            map2UI("dotplot")
+                        )
+                    )
                 )
             ),
             tabItem(

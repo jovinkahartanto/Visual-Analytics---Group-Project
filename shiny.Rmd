@@ -9,6 +9,9 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+The Shiny Application is available [here.](https://limyongkai.shinyapps.io/ISSS608T5Shiny/)
+Please be patient and allow for our application to load.
+
 ```{r, echo=FALSE, layout="l-screen-inset shaded"}
 knitr::include_app("https://limyongkai.shinyapps.io/ISSS608T5Shiny/",
                    height = "1000px")
