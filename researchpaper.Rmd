@@ -1,7 +1,7 @@
 ---
 title: Research Paper
 description: |
-  Research Paper for "TITLE"
+  Research Paper for **STAGEM - SaptioTemporal Analysis of Gastech Employees' Movement Data**
 output:
   distill::distill_article:
     toc: true
@@ -11,7 +11,7 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-The link to our full research paper can be found here: 
+The link to our full research paper can be found [here](./researchpaper.pdf).
 
 
 ```{r, echo=FALSE, message=FALSE, out.width="100%", out.height="100%", fig.align="center"}

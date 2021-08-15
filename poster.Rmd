@@ -9,7 +9,8 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-The link to our poster can be found here: 
+The link to our poster can be found [here](./poster.pdf)
 
-
-
+```{r, echo=FALSE, message=FALSE, out.width="100%", out.height="100%", fig.align="center"}
+knitr::include_graphics("PosterDown/Poster.PNG")
+```
