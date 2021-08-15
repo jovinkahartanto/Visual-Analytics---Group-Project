@@ -11,13 +11,13 @@ author:
     email: jovinkah.2020@mitb.smu.edu.sg
     affiliation: Singapore Management University, School of Computing and Information Systems
 abstract: |
-  The research paper should include an abstract of not more than 300 words. The actual research paper itself should not more than 6 pages excluding figures, tables, formula and references. The practice research paper must be edited by using R Markdown and the ACM: Association for Computing Machinery template of rticles should be used. 
+  STAGEM, a system for visual analysis of GPS tracking and card transaction data, is introduced. This system was developed in response to VAST Mini-Challenge 2. It includes various interfaces for analyzing saptio-temporal and card transactions, as well as presenting the implied relationships among people based on their transaction and GPS timing and location.
+  
 
 bibliography: sigproc.bib
 csl: acm-sig-proceedings.csl
 output: rticles::acm_article
 ---
-
 
 
 # Introduction 
@@ -29,12 +29,12 @@ The dataset was wrangled to develop a Shiny app, STAGEM, that aims to provide us
 * Visualisation of employee movements over time and associated purchase transactions
 * Network analysis of employees based on their visited locations
 
-This paper details our efforts to design, create and implement a web-based analytics tool to assist users from the law enforcement to derive insights and accelerate the investigation process of the disappearance of GAStech employees. The paper consists of six sections. Section 1 presents a general introduction of the paper. Section 2  provides an overview of the motivation and objectives of our project. Section 3 provides a review of techniques used in Vast Challenge 2014 and similar spatiotemporal visualisations. This is followed by a detailed description of the design principles used and data visualisation elements built, and a demonstration of the user interface in section 4 and 5. Insights and uses of the system are documented in section 5. Finally, the paper concludes by highlighting how the system can be extended or refined in the future.
+This paper details our efforts to design, create and implement a web-based analytics tool to assist users from the law enforcement to derive insights and accelerate the investigation process of the disappearance of GAStech employees. The paper consists of six sections. Section 1 presents a general introduction of the paper. Section 2  provides an overview of the motivation and objectives of our project. Section 3 provides a review of techniques used in Vast Challenge 2014 and similar spatio-temporal visualizations. This is followed by a detailed description of the design principles used and data visualization elements built, and a demonstration of the user interface in section 4 and 5. Insights and uses of the system are documented in section 5. Finally, the paper concludes by highlighting how the system can be extended or refined in the future.
 
 
 # Motivation and objectives 
 
-Our research and development effort was motivated by the general lack of effective and easy to use web-enabled data visualisation tool to conduct data analysis on the GAStech employees related dataset. The project aims to enable the Kronos law enforcement the ability to easily analyse, drill down and identify key suspects and suspicious locations, and thereby speeding up the investigation process. 
+Our research and development effort was motivated by the general lack of effective and easy to use web-enabled data visualization tool to conduct data analysis on the GAStech employees related dataset. The project aims to enable the Kronos law enforcement the ability to easily analyze, drill down and identify key suspects and suspicious locations, and thereby speeding up the investigation process. 
 
 The use cases of the data visualisation tool include but are not limited to the following:
 
@@ -50,7 +50,7 @@ The project drew inspirations from previous works by Singapore Management Univer
 
 In the project, Dino Holmes Series [1], heatmap enabled readers to easily determine patterns and trends over a time. However, static heatmap is  not reader friendly enough to determine what was the count at specific time slots. As each heatmap box represents a discrete count by using a gradient color fill, it was difficult to accurately determine the specific count. The analysis may benefit from making the heatmap plot interactive, allowing the details to be displayed at the tooltip when hover across. This would allow granularity data to be more well-presented in the report.
 
-Submission from Fraunhofer IAIS and City University London (Andrienko, Andrienko, and Fuchs 2014) and RBEI-Bangalore (Singhal et al. 2014) both used network cluster and analysis to investigate the relationships between GAStech employees. Fraunhofer IAIS university used an ego-centric graph whereas RBEI used a combination of fragmented and node-only layout to visual the relationship by connecting employees. Network analysis is an informative visualisation that provides an overview of potential relationships between employees or even connecting employees to different mediums such as the locations or emails.
+Submission from Fraunhofer IAIS and City University London [2] (Andrienko, Andrienko, and Fuchs 2014) and RBEI-Bangalore (Singhal et al. 2014) both used network cluster and analysis to investigate the relationships between GAStech employees. Fraunhofer IAIS university used an ego-centric graph whereas RBEI used a combination of fragmented and node-only layout to visual the relationship by connecting employees. Network analysis is an informative visualisation that provides an overview of potential relationships between employees or even connecting employees to different mediums such as the locations or emails.
 
 Although network analysis provides an overview of the relationships between nodes, usually the plot will be cluttered which make it difficult to drill down to specific or individual relationships. An alternative would be to make the plot interactive so that readers will be able to drill down on specific areas to investigate the relationships.
 
@@ -65,8 +65,7 @@ Parallel coordinate plot was used to map credit card and loyalty card to their r
 
 Network analysis was performed to allow users to depict relations among employees and locations to analyse the social structures that emerged from the recurrence of these relations.
 
-The data visualization in these four components was synchronized using a set of data filters that allowed for data manipulation and interation coordination among multiple displays. The linked data presentation enabled the user to keep the filter selection when going between views without having to reapply the settings each time. The mouse hover tooltip provided on-demand details without having too much information cluttered on the data visual. These allowed users to follow the flow of “overview first, zoom and filter into details”, bouncing back and forth, here and there, with ease and without breaking their train of thought. 
-
+The data visualization in these four components was synchronized using a set of data filters that allowed for data manipulation and interaction coordination among multiple displays. The linked data presentation enabled the user to keep the filter selection when going between views without having to reapply the settings each time. The mouse hover tooltip provided on-demand details without having too much information cluttered on the data visual. These allowed users to follow the flow of “overview first, zoom and filter into details”, bouncing back and forth, here and there, with ease and without breaking their train of thought. 
 
 ## Data preparation
 
@@ -104,7 +103,7 @@ Thematic map was used to visualise the movement of cars using the GPS tracking d
 
 **tmap** was used to design the Abila map. It offers a flexible, layer-based approach to create thematic maps and is based on the grammar of graphics.
 
-![](img/map.png)
+![Abila Kronos Map](img/map.png)
 
 ### Scatter Plot
 
@@ -112,7 +111,7 @@ A scatter plot shows points that represent values of two different numeric varia
 
 **ggplot2** was used to create the scatter plot as it is flexible and allows for faceting by groups. The ggplot2 graph was then parsed into **plotly** which enables interactivity with tooltips.
 
-![](img/scatter-plot.png)
+![Location Visitor Scatter Plot](img/scatter-plot.png)
 
 ### Heatmap
 
@@ -120,7 +119,7 @@ Heatmap is a graphical representation of data that utilises colour-coded systems
 
 **ggplot2** was used to create the heatmap of transaction frequency by location. The resultant ggplot2 graph was parsed into **plotly** which allows for interactivity with tooltips. 
 
-![](img/heatmap.png)
+![Location Visit Frequency Heatmap](img/heatmap.png)
 
 ### Boxplot
 
@@ -128,13 +127,13 @@ Boxplot displays the distribution of the data based on minimum, first quartile, 
 
 **gglot2** was used to create the boxplot of credit card transaction values at different locations. The outliers were highlighted in red. **plotly** was used to enhance the interactivity of the chart with tooltips.
 
-![](img/boxplot.png)
+![Boxplot of transaction prices per location](img/boxplot.png)
 
 ### Bar Chart
 
 A bar chart was used to visualise the frequency of visits at different days with varying length of bars. This chart was used to for comparing different number of visits over the period. The primary category used for the x-axis is the date variable. The chart was also faceted by location to show a more granular view. The parameters built in the application allowed the users to change the structure and make up of the bar chart. Users are able to select specific locations, filter by employees, change the date range, as well as indicate the time period of the chart.
 
-![](img/barchart.png)
+![Number of transactions per day by location](img/barchart.png)
 
 
 **ggplot2** was used to create the bar chart as it is flexible and allows for faceting by groups. The ggplot2 graph was then parsed into **plotly** which enables interactivity with tooltips. As more categories were added to the chart, this helps to remove text elements from the bar charts, which tend to clutter the plot. 
@@ -145,7 +144,7 @@ A parallel coordinate plot was used to analyse multivariate numerical data. It a
 
 The **MASS** library was used to build the parallel coordinate chart.
 
-![](img/parallel.png)
+![Parallel Coordinate Plot](img/parallel.png)
 
 ### Network Analysis
 
@@ -153,7 +152,7 @@ Network is a graphical representation of the relationships (edges) between varia
 
 **visNetwork** package was used to visualise the network, together with **igraph**'s layout on grid to present a more structured network presentation. 
 
-![](img/network.png)
+![Network Analysis](img/network.png)
 
 # Demonstration 
 
@@ -162,8 +161,12 @@ The final interactive plots in the Shiny application can help to identify a wide
 
 ## Abila Kronos Map Interface
 
-Referring to the first map interface...
+Referring to the scatter plot interface, there were a number of people travelling around the city at late night during the period.
 
+![Late Night Location Visit Scatter Plot](img/scatter-plot-latenight.png)
+Zooming into one employee, for instance Mies Minke, we can see from the map interface his stop points during late night such as at House 4 on 2014-01-14 03:31:36 for 255.42 minutes. All suspicious locations at late night could be scrutinised in further details should the users want to investigate further.
+
+![Mies Minke Late Night Stop Locations](img/miesminke-latenight.png)
 
 ## Locations Transactions Interface
 
@@ -182,7 +185,7 @@ There was also an outlier of 1,239 dollars at Albert's Fine Clothing. However, l
 
 Credit card 9551 was mapped to loyalty card L5777 based on transaction details and to Nils Calixto, IT Helpdesk, based on his GPS locations. Noticed that the $10,000 transaction made at Frydos Autosupply n'More spent on this credit card was not mapped in the plot. This shows that the transaction was not accompanied with a loyalty card and may or may not be made by Nils Calixto. This prompts further investigation as it raises the suspicious level of the said transaction.
 
-![](img/9551.png)
+![Credit card 9551 parallel coordinate plot](img/9551.png)
 
 ## Network Analysis
 
@@ -190,15 +193,17 @@ The network formed from the credit card transaction locations as well as GPS tra
 
 Desafio Golf Course was visited by GAStech Executives only as shown by the Network Analysis by Credit Card Transactions. They might be playing golf or a regular gathering at the location.
 
-![](img/golf.png)
+![Network analysis: Desafio Golf Course](img/golf.png)
 
-Chostus Hotel was visited by Orilla Elsa and Tempestad Brand. Delving deeper into the data, we can observe that both Orilla Elsa and Tempestad Brand made transactions on 4 same dates during lunch time. The transactions were relatively expensive for a lunch meal in comparison to other food and beverage location in Abila. Alternatively, they might have paid for a hotel room during their visit to the location. Furthermore, both of them are from the same department with the same title in GAStech and there might be some relationship between them.
+Chostus Hotel was visited by Orilla Elsa and Tempestad Brand. Cross referencing to the scatter plot under Abila Kronos Map, we can observe that both Orilla Elsa and Tempestad Brand made transactions on 4 same dates during lunch time. The transactions were relatively expensive for a lunch meal in comparison to other food and beverage location in Abila. Alternatively, they might have paid for a hotel room during their visit to the location. Furthermore, both of them are from the same department with the same title in GAStech and there might be some relationship between them.
  
-![](img/hotel.png) 
+![Network Analysis: Chostus Hotel](img/hotel.png) 
+
+![Scatter plot: Chostus Hotel](img/scatter-plot-hotel.png) 
 
 Bean There Done That location had only transactions made by the engineering department (yellow nodes). Bean There Done That is the furthest location from GAStech but a certain group of customers still visits and purchase from them. Visualising the GPS stationary data for the 7 customers from the engineering team, we observe that 5 out of 7 of the customers resides in the area of Carnero Street and Parla Park whereas the remaining 2 customers, Frente Birgitta and Dedos Lidelse resides between Arkadiou Park and Sannan Park. The 2 customers residential location are at the same coordinates yet far away from Bean There Done That. However, they still patronise and purchase from there might signify some relationship between both of them.
  
-![](img/beantheredonethat.png) 
+![Network Analysis: Bean There Done That](img/beantheredonethat.png) 
 
 
 
@@ -224,9 +229,11 @@ Mini-challenges 1 and 3 can also be attempted and incorporated into the applicat
 
 # Acknowledgement
 
-The authors wish to thank Professor Kam Tin Seong of Singapore Management University for his support and guidanec throughout this project.
+The authors wish to thank Professor Kam Tin Seong of Singapore Management University for his support and guidance throughout this project.
 
 # References
+
+---
 
 references:
 - id: dinoholmes
@@ -239,6 +246,20 @@ references:
   issued:
     year: 2017
 
+- id: fraunhofer
+  title: FIAIS-Andrienko-MC2: VAST Challenge 2014 Mini-Challenge 2
+  author:
+  - family: Andrienko
+    given: Natalia
+  - family: Andrienko
+    given: Gennady
+  - family: Fuchs
+    given: Georg
+  type: article
+  URL: https://www.cs.umd.edu/hcil/varepository/VAST%20Challenge%202014/challenges/MC2%20-%20Patterns%20of%20Life%20Analysis/entries/Fraunhofer%20IAIS%20and%20City%20University%20London/
+  issued:
+    year: 2014
+    
 - id: network
   title: DNetwork analysis: a brief overview and tutorial, Health Psychology and Behavioral Medicine
   author:
@@ -247,8 +268,7 @@ references:
   type: article
   issued:
     year: 2018
-
-
-...
+    
+---
 
 
