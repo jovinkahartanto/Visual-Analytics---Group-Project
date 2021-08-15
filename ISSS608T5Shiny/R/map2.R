@@ -1,4 +1,4 @@
-mapUI <- function(id) {
+map2UI <- function(id) {
   cc <- read_csv("datasets/cc.csv")
   final_tagging<- read_csv("datasets/final_tagging.csv")
   gps_stop <- read_csv("datasets/gps_stop.csv")
@@ -8,17 +8,17 @@ mapUI <- function(id) {
       h1("KRONOS – ABILA Map: GPS Movement Dashboard", 
          style='background-color:lightgrey',
          align="center")
-      ),
+    ),
     sidebarLayout(
       sidebarPanel(width=3,
                    pickerInput(NS(id,"employee"),
                                "Select by Employee",
                                choices=unique(final_tagging$name),
-                               multiple=FALSE,options = list(
+                               multiple=TRUE,options = list(
                                  `actions-box` = TRUE),
-                               selected="Onda Marin"),
+                               selected=unique(final_tagging$name)[1:35]),
                    dateRangeInput(NS(id,"date"),"Select by Date", 
-                                  start="2014-01-06", end="2014-01-06",
+                                  start="2014-01-06", end="2014-01-09",
                                   min="2014-01-06", max="2014-01-19"),
                    pickerInput(NS(id,"time_period"),
                                "Select by Time Period",
@@ -36,14 +36,15 @@ mapUI <- function(id) {
       ),
       mainPanel(
         tabsetPanel(
-        tabPanel("Map",tmapOutput(NS(id,"map"),height=750, width=1000))
+          tabPanel("Scatter Plot", 
+                   plotlyOutput(NS(id, "dotplot")))
         )
       )
     )
   )
 }
 
-mapServer <- function(id) {
+map2Server <- function(id) {
   moduleServer(id, function(input, output, session) {
     
     stop_fin <- read_csv("datasets/stop_fin.csv")
@@ -73,7 +74,7 @@ mapServer <- function(id) {
       TRUE ~ "Late night")
     
     gps_stop$date2 <- as_date(gps_stop$timestamp)
-
+    
     ## Transform the structure of GPS data for Map
     location_tag_sf <- st_as_sf(location_tag, coords=c("long","lat"), crs=4326)
     
@@ -96,7 +97,7 @@ mapServer <- function(id) {
       TRUE ~ "Late night")
     
     gps$id <- as_factor(gps$id)
-
+    
     
     location <- eventReactive(input$submit,{
       input$location
@@ -113,44 +114,35 @@ mapServer <- function(id) {
     time_period <- eventReactive(input$submit,{
       input$time_period
     }, ignoreNULL = FALSE)
-  
-      
-    ## Plot interactive map
-      
-    output$map <- renderTmap({
-      gps_filter <- gps %>% 
-        filter(name %in% employee()&
-               timeperiod %in% time_period()&
-               date >= min_date() & date<=max_date())
-      
-      gps_selected <- gps_filter%>% dplyr::select(id,timestamp,long, lat)
-      gps_sf <- st_as_sf(gps_selected, coords=c("long","lat"), crs=4326) %>% 
-        group_by(id) %>% 
-        summarise(m=mean(timestamp), do_union=FALSE) %>% 
-        st_cast("LINESTRING")
+    
+    ## Dot Plot
+    
+    
+    output$dotplot <- renderPlotly({
       
       gps_stop_dp <- gps_stop %>% filter(
-        date2 >= min_date() & date2 <=max_date()&
+        Possible_Location %in% location()&
           timeperiod %in% time_period()&
-          name %in% employee())
+          name %in% employee()&
+          date2 >= min_date() & date2 <=max_date())
       
-      gps_stop_sf_2 <- st_as_sf(gps_stop_dp, coords=c("long","lat"),crs=4326)
+      dotplot<-gps_stop_dp %>% 
+        ggplot(aes(x=timeperiod, y=date2, fill=name)) +
+        ggtitle("Location Visitor") +
+        geom_jitter() +
+        facet_wrap(~Possible_Location,ncol=4) +
+        xlab("Timeperiod")+ylab("Date")+
+        labs(fill="name") +
+        theme(plot.title=element_text(size=20,face="bold"),
+              axis.title=element_text(size=14,face="bold",hjust=10),
+              axis.ticks = element_blank(),
+              strip.text = element_text(size = 8, face="bold"),
+              axis.text.x=element_text(angle=-45),
+              panel.spacing.x=unit(0.5, "lines"),
+              panel.spacing.y=unit(0.5, "lines"))
       
-      
-      tmap_mode("view")
-      
-      map1<-tm_shape(bgmap) +
-        tm_rgb(bgmap, r=1, g=2, b=3, alpha=NA, saturation=1, 
-               interpolate=TRUE, max.value=255) +
-        tm_shape(Abila_st_2)+
-        tm_lines(col = "red", scale = 1)+
-        tm_shape(gps_sf)+
-        tm_lines()+
-        tm_shape(gps_stop_sf_2)+
-        tm_dots(col="blue", shape=30)
-      
-      map1
-      })
+      ggplotly(dotplot) %>% layout(autosize = F, height = 650, width=1000)
+    })
+    
   })
 }
-
