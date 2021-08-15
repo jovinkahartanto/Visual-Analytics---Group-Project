@@ -75,7 +75,7 @@ The application aims to provide users actionable insights based on the following
 
 # Application
 
-The Application was designed using R Shiny and hosted on shinyapps.io server. The application has 5 main section with various interactive visual analytics tools to allow users to investigate the data. The user guide to the application is available at [https://isss608g1group5.netlify.app/userguide.html](https://isss608g1group5.netlify.app/userguide.html).
+The STAGEM Application was designed using R Shiny and hosted on shinyapps.io server. The application has 5 main section with various interactive visual analytics tools to allow users to investigate the data. The user guide to the application is available at [https://isss608g1group5.netlify.app/userguide.html](https://isss608g1group5.netlify.app/userguide.html).
 
 ## Abila Kronos Map
 The tab shows the GPS movement data of each employee's car. Figure \@ref(fig:map) shows Abila map with each employee's car GPS movement data and stop locations. 
@@ -102,10 +102,11 @@ knitr::include_graphics("img/boxplot.png")
 ```
 
 ### Barplot of Number of Transactions per Day per Location
-Figure \@ref(fig:boxplot) displays the number of transactions for each location by date and colored by time period. Hovering over the columns displays the micro-data of the number of transactions performed at the location on the date during the time period. 
+Figure \@ref(fig:barplot) displays the number of transactions for each location by date and colored by time period. Hovering over the columns displays the micro-data of the number of transactions performed at the location on the date during the time period. 
 ```{r barplot, fig.cap='Stacked Barplot'}
 knitr::include_graphics("img/barplot.png")
 ```
+
 
 ## Card Mapping
 Figure \@ref(fig:parcoord) displays the credit card and loyalty card mapping to each GASTech employee with reference to their car GPS data. Users can select the different credit card number in the filter to dynamic change the plot to observe the respective transactions made at the different locations. The difference in price of each matching credit card and loyalty card is also made available in the plot. Users can utilise the interactive plot to highlight different selections throughout the parallel coordinate plot.
@@ -120,10 +121,13 @@ knitr::include_graphics("img/network-cc.png")
 ```
 
 # Future Work
+Future work would have to be done to integrate the different visualizations developed as the current plots are loosely coupled. One area of improvement would be to have pop-up charts upon clicking of data points on existing visualizations to showcase extended information that would be of relevance.
+
+The scope of STAGEM could be extended to cover Mini-challenges 1 and 3 to provide a comprehensive integrated visual analytics system that helps to resolve the overarching case scenario. Additional analyses relating to mini-challenges 1 and 3 such as text analytics and sentiment analysis can help to complement findings from the existing application to provide a much more cohesive narrative to the storyline.
 
 # Conclusion
 
-Through the utilisation of interactive visual analytical tools in the Shiny application, users can visualise patterns and anomaly activities of the employees. The user-friendly layout incorporated with drop down filters allow users to slice the data and utilise the interactivity of each visusalisation to investigate the data without knowledge of programming or data analytics. 
+Through the utilisation of interactive visual analytical tools in the Shiny application, users can visualise patterns and anomaly activities of the employees. The user-friendly layout incorporated with drop down filters allow users to slice the data and utilise the interactivity of each visualization to investigate the data without knowledge of programming or data analytics. 
 
 # Acknowledgement
 
