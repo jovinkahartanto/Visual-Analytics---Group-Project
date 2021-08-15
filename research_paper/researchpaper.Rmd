@@ -48,9 +48,9 @@ The use cases of the data visualisation tool include but are not limited to the 
 
 The project drew inspirations from previous works by Singapore Management University (SMU) students and submissions of the 2014 Vast Challenge.
 
-In the project, Dino Holmes Series [1], heatmap enabled readers to easily determine patterns and trends over a time. However, static heatmap is  not reader friendly enough to determine what was the count at specific time slots. As each heatmap box represents a discrete count by using a gradient color fill, it was difficult to accurately determine the specific count. The analysis may benefit from making the heatmap plot interactive, allowing the details to be displayed at the tooltip when hover across. This would allow granularity data to be more well-presented in the report.
+In the project, Dino Holmes Series [@dinoholmes], heatmap enabled readers to easily determine patterns and trends over a time. However, static heatmap is  not reader friendly enough to determine what was the count at specific time slots. As each heatmap box represents a discrete count by using a gradient color fill, it was difficult to accurately determine the specific count. The analysis may benefit from making the heatmap plot interactive, allowing the details to be displayed at the tooltip when hover across. This would allow granularity data to be more well-presented in the report.
 
-Submission from Fraunhofer IAIS and City University London [2] (Andrienko, Andrienko, and Fuchs 2014) and RBEI-Bangalore (Singhal et al. 2014) both used network cluster and analysis to investigate the relationships between GAStech employees. Fraunhofer IAIS university used an ego-centric graph whereas RBEI used a combination of fragmented and node-only layout to visual the relationship by connecting employees. Network analysis is an informative visualisation that provides an overview of potential relationships between employees or even connecting employees to different mediums such as the locations or emails.
+Submission from Fraunhofer IAIS and City University London [@fraunhofer] and RBEI-Bangalore [@rbei] both used network cluster and analysis to investigate the relationships between GAStech employees. Fraunhofer IAIS university used an ego-centric graph whereas RBEI used a combination of fragmented and node-only layout to visual the relationship by connecting employees. Network analysis is an informative visualisation that provides an overview of potential relationships between employees or even connecting employees to different mediums such as the locations or emails.
 
 Although network analysis provides an overview of the relationships between nodes, usually the plot will be cluttered which make it difficult to drill down to specific or individual relationships. An alternative would be to make the plot interactive so that readers will be able to drill down on specific areas to investigate the relationships.
 
@@ -148,7 +148,7 @@ The **MASS** library was used to build the parallel coordinate chart.
 
 ### Network Analysis
 
-Network is a graphical representation of the relationships (edges) between variables (nodes). It provides the capacity to estimate complex patterns of relationships and the network structure can be analysed to reveal core features of the network. [2]
+Network is a graphical representation of the relationships (edges) between variables (nodes). It provides the capacity to estimate complex patterns of relationships and the network structure can be analysed to reveal core features of the network. [@network]
 
 **visNetwork** package was used to visualise the network, together with **igraph**'s layout on grid to present a more structured network presentation. 
 
@@ -209,21 +209,14 @@ Bean There Done That location had only transactions made by the engineering depa
 
 # Discussion 
 
-The following feedback was given by users of the application. While the individual interfaces in the application serve their own purpose, whereby
-
-* The geospatial analysis allows users to have a quick overview of the patterns of car movements across a selected number of employees and time period. 
-* The exploratory data analysis of transaction data further adds on to the overview to allow identification of popular areas at different days and time periods and outlier transactions based on boxplot. 
-* Further mapping of credit card to loyalty card and to the owner can be conducted as an extension based on parallel coordinate plot. 
-* Users can select specific employee or location on the network map to determine potential relationships. 
-
-There was a disconnect among the various charts to facilitate a smooth analysis of information.
+The following feedback was given by users of the application. While the individual interfaces in the application serve their own purpose, there was a disconnect among the various charts to facilitate a smooth analysis of information.
 
 The user guide was useful especially for the non-technical users to help them navigate the application easily. The interactivity such as the drop-down box and date range selection also makes it more intuitive to use for users.
 
 
 # Future Work
 
-The capabilities of the application to enable users to examine and analyze the transactions and GPS data collected is demonstrated in the above sections. Future work would have to be done to integrate the different visualisations developed as the current plots are loosely coupled. The existing application has slight disconnect between the map and transactions interfaces. While the users can independently filter both visualisations by employees and locations, it does not provide a coherent narrative and flow in the process of investigation of suspicious locations and people. One area of improvement would be to have popup charts upon clicking of data points on existing visualisations to showcase extended information that would be of relevance.
+The capabilities of the application to enable users to examine and analyze the transactions and GPS data collected is demonstrated in the above sections. Future work would have to be done to integrate the different visualizations developed as the current plots are loosely coupled. The existing application has slight disconnect between the map and transactions interfaces. While the users can independently filter both visualisations by employees and locations, it does not provide a coherent narrative and flow in the process of investigation of suspicious locations and people. One area of improvement would be to have pop-up charts upon clicking of data points on existing visualizations to showcase extended information that would be of relevance.
 
 Mini-challenges 1 and 3 can also be attempted and incorporated into the application to provide a comprehensive integrated visual analytics system that helps to resolve the overarching case scenario. Additional analyses relating to mini-challenges 1 and 3 such as text analytics and sentiment analysis can help to complement findings from the existing application to provide a much more cohesive narrative to the storyline.
 
@@ -234,7 +227,6 @@ The authors wish to thank Professor Kam Tin Seong of Singapore Management Univer
 # References
 
 ---
-
 references:
 - id: dinoholmes
   title: Dino Holmes Series
@@ -242,10 +234,9 @@ references:
   - family: Ong
     given: Han Ying
   URL: 'https://wiki.smu.edu.sg/1617t1ISSS608g1/ISSS608_2016-17_T1_Assign3_Ong_Han_Ying'
-  type: article
+  type: article-journal
   issued:
     year: 2017
-
 - id: fraunhofer
   title: FIAIS-Andrienko-MC2: VAST Challenge 2014 Mini-Challenge 2
   author:
@@ -255,20 +246,33 @@ references:
     given: Gennady
   - family: Fuchs
     given: Georg
-  type: article
+  type: article-journal
   URL: https://www.cs.umd.edu/hcil/varepository/VAST%20Challenge%202014/challenges/MC2%20-%20Patterns%20of%20Life%20Analysis/entries/Fraunhofer%20IAIS%20and%20City%20University%20London/
   issued:
     year: 2014
-    
+- id: rbei
+  title: RBEI-IYER-MC2: VAST Challenge 2014 Mini-Challenge 2
+  author:
+  - family: Singhal
+    given: Manik
+  - family: Lekkala
+    given: Prakash
+  - family: Shankar M R
+    given: Shiva
+  - family: Iyer
+    given: Parameshwaran
+  type: article-journal
+  URL: https://www.cs.umd.edu/hcil/varepository/VAST%20Challenge%202014/challenges/MC2%20-%20Patterns%20of%20Life%20Analysis/entries/RBEI-Bangalore/
+  issued:
+    year: 2014
 - id: network
   title: DNetwork analysis: a brief overview and tutorial, Health Psychology and Behavioral Medicine
   author:
   - family: Hevey
     given: David
-  type: article
+  type: article-journal
   issued:
     year: 2018
-    
----
+...
 
 
