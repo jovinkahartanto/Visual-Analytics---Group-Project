@@ -13,4 +13,4 @@ Our [Practice Research Paper](https://isss608g1group5.netlify.app/researchpaper.
 
 The authors are Chen Yuxi, Jovinka Hartanto and Lim Yong Kai with special credits to Professor Kam Tin Seong for his mentorship and guidance in ISSS608 Visual Analytics and Applications course.
 
-The codees for the documents and application is available on our [Github.](https://github.com/jovinkahartanto/Visual-Analytics---Group-Project)
+The codes for the documents and application is available on our [Github.](https://github.com/jovinkahartanto/Visual-Analytics---Group-Project)

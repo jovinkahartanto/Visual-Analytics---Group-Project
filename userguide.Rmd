@@ -40,7 +40,7 @@ Three filters are available for user at the left panel to select individual *Emp
 Figure \@ref(fig:map-gif) shows selection of *Employee* **Onda Marin** from *Date* 6 to 13 January. Clicking on the **Submit** button will update the map on the right panel dynamically to reflect the selection. User can hover around the stop locations represented by blue dots and click to display micro data of the car owner name, time when car is stationary and its possible location.
 
 ```{r map-gif, fig.align = 'center',layout="l-page", fig.cap = 'Abila Kronos Map: Map of GASTech employee car GPS', echo=FALSE}
-knitr::include_graphics("img/map_filter.gif")
+knitr::include_graphics("img/map_gif.gif")
 ```
 
 ### 2.2 Scatter Plot
@@ -49,7 +49,7 @@ The interactive scatter plot tab displays employee's car stop location represent
 Figure \@ref(fig:scatter-gif) shows the selection of location, House 2, 4, 10 and Meeting 1 to 5. User is able to drag and select a specific section to zoom in and hover over the dots to obtain micro-data of employees car stop locations.
 
 ```{r scatter-gif, fig.align = 'center',layout="l-page", fig.cap = 'Abila Kronos Map: Scatter Plot for GASTech employee car GPS Locations for Visitors', echo=FALSE}
-knitr::include_graphics("img/scatter-gif.gif")
+knitr::include_graphics("img/scatter_gif.gif")
 ```
 
 ## 3.0 Locations Transactions
