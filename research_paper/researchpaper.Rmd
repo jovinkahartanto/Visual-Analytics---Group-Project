@@ -12,11 +12,12 @@ author:
     affiliation: Singapore Management University, School of Computing and Information Systems
 abstract: |
   STAGEM, a system for visual analysis of GPS tracking and card transaction data, is introduced. This system was developed in response to VAST Mini-Challenge 2. It includes various interfaces for analyzing saptio-temporal and card transactions, as well as presenting the implied relationships among people based on their transaction and GPS timing and location.
-  
+  test
 
 bibliography: sigproc.bib
 csl: acm-sig-proceedings.csl
 output: rticles::acm_article
+
 ---
 
 
@@ -71,13 +72,13 @@ The data visualization in these four components was synchronized using a set of 
 
 The data set was extracted from the VAST Challenge 2021 website under the sub section Mini-Challenge 2. All the data wrangling and cleaning were performed using R. The data wrangling and cleaning of transaction data and GPS data are as explained below:
 
-1. GPS data
+### GPS data
  * Convert the GPS data coordinates into simple feature (sf) format
  * Adding other factors to the GPS dataset such as date, hour, and time period which were extracted from the GPS timestamp column
  * ID in GPS data were matched with the car assignment data to get the employee name for each car ID
  * Transformed the data to only keep the stationary GPS coordinate for each car by determining rows where the time lag between subsequent GPS log by each car id was more than 5 minutes. 5 minutes was selected because the waiting time at a traffic lights is around 3 to 5 minutes hence the upper bound was chosen to eliminate situations where the stationary GPS coordinates were due stoppage at traffic lights. This data will later be matched with the transaction data to determine which location do the employees stop at
  
-2. Transaction Data 
+### Transaction Data 
 * Adding other factors to the transaction data, such as hour, date, and time period
 * Tagged the owners of the credit card to the loyalty card number by joining the credit card and loyalty card data.
 * Created nodes and edges from credit card and location data to uncover some relationship among employees. Nodes were created by combining employee information, such as employee name, car id, last 4 credit card number, and employment details with unique location name. Edges was created by joining credit card owners data with the nodes data
@@ -103,7 +104,7 @@ Thematic map was used to visualise the movement of cars using the GPS tracking d
 
 **tmap** was used to design the Abila map. It offers a flexible, layer-based approach to create thematic maps and is based on the grammar of graphics.
 
-![Abila Kronos Map](img/map.png)
+![](img/map.png)
 
 ### Scatter Plot
 
@@ -111,7 +112,7 @@ A scatter plot shows points that represent values of two different numeric varia
 
 **ggplot2** was used to create the scatter plot as it is flexible and allows for faceting by groups. The ggplot2 graph was then parsed into **plotly** which enables interactivity with tooltips.
 
-![Location Visitor Scatter Plot](img/scatter-plot.png)
+![](img/scatter-plot.png)
 
 ### Heatmap
 
@@ -119,7 +120,7 @@ Heatmap is a graphical representation of data that utilises colour-coded systems
 
 **ggplot2** was used to create the heatmap of transaction frequency by location. The resultant ggplot2 graph was parsed into **plotly** which allows for interactivity with tooltips. 
 
-![Location Visit Frequency Heatmap](img/heatmap.png)
+![](img/heatmap.png)
 
 ### Boxplot
 
@@ -127,13 +128,13 @@ Boxplot displays the distribution of the data based on minimum, first quartile, 
 
 **gglot2** was used to create the boxplot of credit card transaction values at different locations. The outliers were highlighted in red. **plotly** was used to enhance the interactivity of the chart with tooltips.
 
-![Boxplot of transaction prices per location](img/boxplot.png)
+![](img/boxplot.png)
 
 ### Bar Chart
 
 A bar chart was used to visualise the frequency of visits at different days with varying length of bars. This chart was used to for comparing different number of visits over the period. The primary category used for the x-axis is the date variable. The chart was also faceted by location to show a more granular view. The parameters built in the application allowed the users to change the structure and make up of the bar chart. Users are able to select specific locations, filter by employees, change the date range, as well as indicate the time period of the chart.
 
-![Number of transactions per day by location](img/barchart.png)
+![](img/barchart.png)
 
 
 **ggplot2** was used to create the bar chart as it is flexible and allows for faceting by groups. The ggplot2 graph was then parsed into **plotly** which enables interactivity with tooltips. As more categories were added to the chart, this helps to remove text elements from the bar charts, which tend to clutter the plot. 
@@ -144,7 +145,7 @@ A parallel coordinate plot was used to analyse multivariate numerical data. It a
 
 The **MASS** library was used to build the parallel coordinate chart.
 
-![Parallel Coordinate Plot](img/parallel.png)
+![](img/parallel.png)
 
 ### Network Analysis
 
@@ -152,7 +153,7 @@ Network is a graphical representation of the relationships (edges) between varia
 
 **visNetwork** package was used to visualise the network, together with **igraph**'s layout on grid to present a more structured network presentation. 
 
-![Network Analysis](img/network.png)
+![](img/network.png)
 
 # Demonstration 
 
@@ -163,10 +164,10 @@ The final interactive plots in the Shiny application can help to identify a wide
 
 Referring to the scatter plot interface, there were a number of people travelling around the city at late night during the period.
 
-![Late Night Location Visit Scatter Plot](img/scatter-plot-latenight.png)
+![](img/scatter-plot-latenight.png)
 Zooming into one employee, for instance Mies Minke, we can see from the map interface his stop points during late night such as at House 4 on 2014-01-14 03:31:36 for 255.42 minutes. All suspicious locations at late night could be scrutinised in further details should the users want to investigate further.
 
-![Mies Minke Late Night Stop Locations](img/miesminke-latenight.png)
+![](img/miesminke-latenight.png)
 
 ## Locations Transactions Interface
 
@@ -176,16 +177,17 @@ Late night transactions are relatively more suspicious and hence are shown in is
 
 ![](img/latenight.png)
  
-In the boxplot, there was an extreme outlier of a 10,000 dollars spent by credit card 9551 at Frydos Autosupply n'More while the median price was only 149 dollars. Further analysis on this credit card is done using the Card Mapping interface. 
+In the boxplot, there was an extreme outlier of a 10,000 dollars spent by credit card 9551 at Frydos Autosupply n'More while the median price was only 149 dollars. Further analysis on this credit card is done using the Card Mapping interface. There was also an outlier of 1,239 dollars at Albert's Fine Clothing. However, looking at the frequency of transactions at Albert’s Fine Clothing, it seems like a common place to buy clothing. Possible deduction was the person was buying lots of clothing for his family or friends, amounting to a much higher price than usual.
 
 ![](img/boxplot10000.png)
-There was also an outlier of 1,239 dollars at Albert's Fine Clothing. However, looking at the frequency of transactions at Albert’s Fine Clothing, it seems like a common place to buy clothing. Possible deduction was the person was buying lots of clothing for his family or friends, amounting to a much higher price than usual.
+
 
 ## Card Mapping
 
-Credit card 9551 was mapped to loyalty card L5777 based on transaction details and to Nils Calixto, IT Helpdesk, based on his GPS locations. Noticed that the $10,000 transaction made at Frydos Autosupply n'More spent on this credit card was not mapped in the plot. This shows that the transaction was not accompanied with a loyalty card and may or may not be made by Nils Calixto. This prompts further investigation as it raises the suspicious level of the said transaction.
+Credit card 9551 was mapped to loyalty card L5777 based on transaction details and to Nils Calixto, IT Helpdesk, based on his GPS locations. 
 
-![Credit card 9551 parallel coordinate plot](img/9551.png)
+![](img/9551.png)
+Noticed that the $10,000 transaction made at Frydos Autosupply n'More spent on this credit card was not mapped in the plot. This shows that the transaction was not accompanied with a loyalty card and may or may not be made by Nils Calixto. This prompts further investigation as it raises the suspicion level of the said transaction.'
 
 ## Network Analysis
 
@@ -193,23 +195,27 @@ The network formed from the credit card transaction locations as well as GPS tra
 
 Desafio Golf Course was visited by GAStech Executives only as shown by the Network Analysis by Credit Card Transactions. They might be playing golf or a regular gathering at the location.
 
-![Network analysis: Desafio Golf Course](img/golf.png)
+![](img/golf.png)
 
 Chostus Hotel was visited by Orilla Elsa and Tempestad Brand. Cross referencing to the scatter plot under Abila Kronos Map, we can observe that both Orilla Elsa and Tempestad Brand made transactions on 4 same dates during lunch time. The transactions were relatively expensive for a lunch meal in comparison to other food and beverage location in Abila. Alternatively, they might have paid for a hotel room during their visit to the location. Furthermore, both of them are from the same department with the same title in GAStech and there might be some relationship between them.
  
-![Network Analysis: Chostus Hotel](img/hotel.png) 
-
-![Scatter plot: Chostus Hotel](img/scatter-plot-hotel.png) 
+![](img/hotel.png) 
 
 Bean There Done That location had only transactions made by the engineering department (yellow nodes). Bean There Done That is the furthest location from GAStech but a certain group of customers still visits and purchase from them. Visualising the GPS stationary data for the 7 customers from the engineering team, we observe that 5 out of 7 of the customers resides in the area of Carnero Street and Parla Park whereas the remaining 2 customers, Frente Birgitta and Dedos Lidelse resides between Arkadiou Park and Sannan Park. The 2 customers residential location are at the same coordinates yet far away from Bean There Done That. However, they still patronise and purchase from there might signify some relationship between both of them.
  
-![Network Analysis: Bean There Done That](img/beantheredonethat.png) 
+![](img/beantheredonethat.png) 
 
 
 
 # Discussion 
 
-The following feedback was given by users of the application. While the individual interfaces in the application serve their own purpose, there was a disconnect among the various charts to facilitate a smooth analysis of information.
+The following feedback was given by users of the application. While the individual interfaces in the application serve their own purposes, there was a disconnect among the various charts to facilitate a smooth analysis of information. The usefulness of the application includes:
+
+* The geospatial analysis allows users to have a quick overview of the patterns of car movements across a selected number of employees and time period. 
+* The exploratory data analysis of transaction data further adds on to the overview to allow identification of popular areas at different days and time periods and outlier transactions based on boxplot. 
+* Further mapping of credit card to loyalty card and to the owner can be conducted as an extension based on parallel coordinate plot. 
+* Users can select specific employee or location on the network map to determine potential relationships.
+
 
 The user guide was useful especially for the non-technical users to help them navigate the application easily. The interactivity such as the drop-down box and date range selection also makes it more intuitive to use for users.
 
@@ -234,11 +240,11 @@ references:
   - family: Ong
     given: Han Ying
   URL: 'https://wiki.smu.edu.sg/1617t1ISSS608g1/ISSS608_2016-17_T1_Assign3_Ong_Han_Ying'
-  type: article-journal
+  type: article
   issued:
     year: 2017
 - id: fraunhofer
-  title: FIAIS-Andrienko-MC2: VAST Challenge 2014 Mini-Challenge 2
+  title: FIAIS-Andrienko-MC2 - VAST Challenge 2014 Mini-Challenge 2
   author:
   - family: Andrienko
     given: Natalia
@@ -246,12 +252,12 @@ references:
     given: Gennady
   - family: Fuchs
     given: Georg
-  type: article-journal
-  URL: https://www.cs.umd.edu/hcil/varepository/VAST%20Challenge%202014/challenges/MC2%20-%20Patterns%20of%20Life%20Analysis/entries/Fraunhofer%20IAIS%20and%20City%20University%20London/
+  type: article
+  URL: 'https://www.cs.umd.edu/hcil/varepository/VAST%20Challenge%202014/challenges/MC2%20-%20Patterns%20of%20Life%20Analysis/entries/Fraunhofer%20IAIS%20and%20City%20University%20London/'
   issued:
     year: 2014
 - id: rbei
-  title: RBEI-IYER-MC2: VAST Challenge 2014 Mini-Challenge 2
+  title: RBEI-IYER-MC2 - VAST Challenge 2014 Mini-Challenge 2
   author:
   - family: Singhal
     given: Manik
@@ -261,18 +267,17 @@ references:
     given: Shiva
   - family: Iyer
     given: Parameshwaran
-  type: article-journal
-  URL: https://www.cs.umd.edu/hcil/varepository/VAST%20Challenge%202014/challenges/MC2%20-%20Patterns%20of%20Life%20Analysis/entries/RBEI-Bangalore/
+  type: article
+  URL: 'https://www.cs.umd.edu/hcil/varepository/VAST%20Challenge%202014/challenges/MC2%20-%20Patterns%20of%20Life%20Analysis/entries/RBEI-Bangalore/'
   issued:
     year: 2014
 - id: network
-  title: DNetwork analysis: a brief overview and tutorial, Health Psychology and Behavioral Medicine
+  title: DNetwork analysis - a brief overview and tutorial, Health Psychology and Behavioral Medicine
   author:
   - family: Hevey
     given: David
   type: article-journal
   issued:
     year: 2018
+
 ...
-
-
