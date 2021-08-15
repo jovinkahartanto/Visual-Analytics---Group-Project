@@ -11,8 +11,8 @@ author:
     email: jovinkah.2020@mitb.smu.edu.sg
     affiliation: Singapore Management University, School of Computing and Information Systems
 abstract: |
-  STAGEM, a system for visual analysis of GPS tracking and card transaction data, is introduced. This system was developed in response to VAST Mini-Challenge 2. It includes various interfaces for analyzing saptio-temporal and card transactions, as well as presenting the implied relationships among people based on their transaction and GPS timing and location.
-  test
+  STAGEM, a system for visual analysis of GPS tracking and card transaction data, is introduced. This system was developed in response to VAST Mini-Challenge 2. It is a dashboard that includes various interfaces for analyzing saptio-temporal and card transactions, as well as presenting the implied relationships among people based on their transaction and GPS timing and location. We demonstrate the potential of STAGEM through the use of interactive map, scatterplot, boxplot, heatmap, parallel coordinate chart and network analysis to integrate, explore and analyze the data presented for card transactions and GPS movements.
+
 
 bibliography: sigproc.bib
 csl: acm-sig-proceedings.csl
@@ -22,7 +22,8 @@ output: rticles::acm_article
 
 
 # Introduction 
-The VAST 2021 Mini Challenge 2 outlines a hypothetical scenario in which several GAStech employees have gone missing and the organisation, Protectors of Kronos (POK), is suspected of being involved. The dataset includes two weeks of GPS tracking data for company cars assigned to employees, credit and loyalty card transactions of employees before the disappearance. ESRI shapefiles for the city of Abila & country Kronos are also provided. The challenge requires identification of suspicious activities hidden in data and determine any dubious people and locations that should be reported to the law enforcement.
+
+The VAST 2021 Mini Challenge 2 outlines a hypothetical scenario in which several GAStech employees have gone missing and the organisation, Protectors of Kronos (POK), is suspected of being involved. The dataset includes two weeks of GPS tracking data for company cars assigned to employees, credit and loyalty card transactions of employees before the disappearance. ESRI shapefiles for the city of Abila & country Kronos are also provided. The challenge requires identification of suspicious activities hidden in data and determine any dubious people and locations that should be reported to the law enforcement. [@vc2]
 
 The dataset was wrangled to develop a Shiny app, STAGEM, that aims to provide users actionable insights based on the following analyses:
 
@@ -102,13 +103,13 @@ v) **Network Analysis - **This allows users to visualise the relationships among
 
 Thematic map was used to visualise the movement of cars using the GPS tracking data over time and was used for geospatial analysis.
 
-**tmap** was used to design the Abila map. It offers a flexible, layer-based approach to create thematic maps and is based on the grammar of graphics.
+**tmap** was used to design the Abila map. It offers a flexible, layer-based approach to create thematic maps and is based on the grammar of graphics. [@tmap]
 
 ![](img/map.png)
 
 ### Scatter Plot
 
-A scatter plot shows points that represent values of two different numeric variables (i.e., date and time period). The plot was faceted by location. The points were classified by colours representing individual employees. The position of each plot on the x- and y-axes represent the relationship between both variables. Points close to one another on the plot indicate the selected employees were at the same place on the same day, same time. 
+A scatter plot shows points that represent values of two different numeric variables (i.e. date and time period). The plot was faceted by location. The points were classified by colours representing individual employees. The position of each plot on the x- and y-axes represent the relationship between both variables. Points close to one another on the plot indicate the selected employees were at the same place on the same day, same time. 
 
 **ggplot2** was used to create the scatter plot as it is flexible and allows for faceting by groups. The ggplot2 graph was then parsed into **plotly** which enables interactivity with tooltips.
 
@@ -224,7 +225,7 @@ The user guide was useful especially for the non-technical users to help them na
 
 The capabilities of the application to enable users to examine and analyze the transactions and GPS data collected is demonstrated in the above sections. Future work would have to be done to integrate the different visualizations developed as the current plots are loosely coupled. The existing application has slight disconnect between the map and transactions interfaces. While the users can independently filter both visualisations by employees and locations, it does not provide a coherent narrative and flow in the process of investigation of suspicious locations and people. One area of improvement would be to have pop-up charts upon clicking of data points on existing visualizations to showcase extended information that would be of relevance.
 
-Mini-challenges 1 and 3 can also be attempted and incorporated into the application to provide a comprehensive integrated visual analytics system that helps to resolve the overarching case scenario. Additional analyses relating to mini-challenges 1 and 3 such as text analytics and sentiment analysis can help to complement findings from the existing application to provide a much more cohesive narrative to the storyline.
+The scope of STAGEM could be extended to cover Mini-challenges 1 and 3 to provide a comprehensive integrated visual analytics system that helps to resolve the overarching case scenario. Additional analyses relating to mini-challenges 1 and 3 such as text analytics and sentiment analysis can help to complement findings from the existing application to provide a much more cohesive narrative to the storyline.
 
 # Acknowledgement
 
@@ -279,5 +280,30 @@ references:
   type: article-journal
   issued:
     year: 2018
-
+- id: vc2
+  title: VAST Mini-Challenge 2
+  type: website
+  URL: https://vast-challenge.github.io/2021/MC2.html
+  issued:
+    year: 2021
+- id: tmap
+  title: 'tmap: Thematic Maps'
+  type: website
+  URL: https://cran.r-project.org/web/packages/tmap/index.html
+  lastaccessed: 14 August 2021
+- id: kulchua
+  title: KUL-Chua-MC2 - VAST Challenge 2014 Mini-Challenge 2
+  author:
+  - family: Chua
+    given: Alvin
+  - family: Sakai
+    given: Ryo
+  - family: Aerts
+    given: Jan
+  - family: Vande Moere
+    given: Andrew
+  type: article
+  URL: 'http://visualdata.wustl.edu/varepository/VAST%20Challenge%202014/challenges/MC2%20-%20Patterns%20of%20Life%20Analysis/entries/KU%20Leuven/'
+  issued:
+    year: 2014
 ...
