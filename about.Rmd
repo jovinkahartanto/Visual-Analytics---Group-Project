@@ -1,8 +1,13 @@
 ---
 title: "Vast Challenge 2021 Mini-Challenge 2 - with R"
 author:
-  - name: Chen Yuxi, Jovinka Hartanto, Lim Yong Kai
-    affiliation: Singapore Management University, School of Computing and Information Systems
+  - name: "Chen Yuxi"
+    URL: https://www.linkedin.com/in/c-yuxi/
+    affiliation: Singapore Management University
+  - name: "Jovinka Hartanto"
+    affiliation: Singapore Management University
+  - name: "Lim Yong Kai"
+    affiliation: Singapore Management University
 ---
 
 ```{r setup, include=FALSE}

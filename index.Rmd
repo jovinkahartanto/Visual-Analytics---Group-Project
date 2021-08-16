@@ -2,8 +2,13 @@
 title: "ISSS608 G1 Group 5 Project"
 site: distill::distill_website
 author:
-  - name: Chen Yuxi, Jovinka Hartanto, Lim Yong Kai
-    affiliation: Singapore Management University, School of Computing and Information Systems
+  - name: "Chen Yuxi"
+    URL: https://www.linkedin.com/in/c-yuxi/
+    affiliation: Singapore Management University
+  - name: "Jovinka Hartanto"
+    affiliation: Singapore Management University
+  - name: "Lim Yong Kai"
+    affiliation: Singapore Management University
 ---
 
 The website documents our Group 5 project to answer [VAST Challenge 2021 Mini Challenge 2](https://vast-challenge.github.io/2021/MC2.html). We prepared an interactive visualisation [*STAGEM*](https://limyongkai.shinyapps.io/ISSS608T5Shiny) using Shiny application to help visualise pattern and identify anomalies and suspicious activities of GASTech employees from the datasets. The application framework is done using R and Shiny, with packages such as ggplot, plotly, tmap, sf, visNetwork and igraph from R.

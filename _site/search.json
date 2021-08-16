@@ -5,24 +5,40 @@
       "title": "Vast Challenge 2021 Mini-Challenge 2 - with R",
       "author": [
         {
-          "name": "Chen Yuxi, Jovinka Hartanto, Lim Yong Kai",
+          "name": "Chen Yuxi",
+          "url": {}
+        },
+        {
+          "name": "Jovinka Hartanto",
+          "url": {}
+        },
+        {
+          "name": "Lim Yong Kai",
           "url": {}
         }
       ],
       "contents": "\r\n\r\n\r\n\r\nThe 2021 IEEE VAST Challenge brings back a classic challenge to see how approaches and techniques have developed since its original release. This year’s challenge will be a variation on a previous year’s challenge, with modified data and new questions. The following information is extracted from the Vast Challenge site.\r\nOverview\r\nNote: This scenario and all the people, places, groups, technologies, contained therein are fictitious. Any resemblance to real people, places, groups, or technologies is purely coincidental.\r\nIn the roughly twenty years that Tethys-based GAStech has been operating a natural gas production site in the island country of Kronos, it has produced remarkable profits and developed strong relationships with the government of Kronos. However, GAStech has not been as successful in demonstrating environmental stewardship.\r\nIn January, 2014, the leaders of GAStech are celebrating their new-found fortune as a result of the initial public offering of their very successful company. In the midst of this celebration, several employees of GAStech go missing. An organization known as the Protectors of Kronos (POK) is suspected in the disappearance, but things may not be what they seem.\r\nAs an expert in visual analytics, our group, Group 5, is called in to help law enforcement from Kronos and Tethys.\r\nMini-Challenge 2\r\n\r\n\r\n\r\nMany of the Abila, Kronos-based employees of GAStech have company cars which are approved for both personal and business use. Those who do not have company cars have the ability to check out company trucks for business use, but these trucks cannot be used for personal business.\r\nEmployees with company cars are happy to have these vehicles, because the company cars are generally much higher quality than the cars they would be able to afford otherwise. However, GAStech does not trust their employees. Without the employees? knowledge, GAStech has installed geospatial tracking software in the company vehicles. The vehicles are tracked periodically as long as they are moving.\r\nThis vehicle tracking data has been made available to law enforcement to support their investigation. Unfortunately, data is not available for the day the GAStech employees went missing. Data is only available for the two weeks prior to the disappearance.\r\nTo promote local businesses, Kronos based companies provide a Kronos Kares benefit card to GASTech employees giving them discounts and rewards in exchange for collecting information about their credit card purchases and preferences as recorded on loyalty cards. This data has been made available to investigators in the hopes that it can help resolve the situation. However, Kronos Kares does not collect personal information beyond purchases.\r\nAs a visual analytics expert assisting law enforcement, your mission is to identify which GASTech employees made which purchases and identify suspicious patterns of behavior. You must cope with uncertainties that result from missing, conflicting, and imperfect data to make recommendations for further investigation.\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-08-16T16:04:58+08:00"
+      "last_modified": "2021-08-16T16:37:42+08:00"
     },
     {
       "path": "index.html",
       "title": "ISSS608 G1 Group 5 Project",
       "author": [
         {
-          "name": "Chen Yuxi, Jovinka Hartanto, Lim Yong Kai",
+          "name": "Chen Yuxi",
+          "url": {}
+        },
+        {
+          "name": "Jovinka Hartanto",
+          "url": {}
+        },
+        {
+          "name": "Lim Yong Kai",
           "url": {}
         }
       ],
       "contents": "\r\nThe website documents our Group 5 project to answer VAST Challenge 2021 Mini Challenge 2. We prepared an interactive visualisation STAGEM using Shiny application to help visualise pattern and identify anomalies and suspicious activities of GASTech employees from the datasets. The application framework is done using R and Shiny, with packages such as ggplot, plotly, tmap, sf, visNetwork and igraph from R.\r\nOur research and development efforts aims to enable users such as Kronos law enforcement with the ability to easily analyse, drill down and identify key suspects and suspicious locations, and thereby speeding up the investigation process. The background of the case documents the specifics of the challenge.\r\nOur Practice Research Paper outlines the motivation, review and critic of past works, design framework, data preparation, the Shiny architecture and analysis techniques used, concluding with our discussion and future works. A detailed User Guide is available to help users get started on our Application. The Project Poster provides a quick overview of our work.\r\nThe authors are Chen Yuxi, Jovinka Hartanto and Lim Yong Kai with special credits to Professor Kam Tin Seong for his mentorship and guidance in ISSS608 Visual Analytics and Applications course.\r\nThe codes for the documents and application is available on our Github.\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-08-16T16:04:15+08:00"
+      "last_modified": "2021-08-16T16:37:08+08:00"
     },
     {
       "path": "poster.html",
