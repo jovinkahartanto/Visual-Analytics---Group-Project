@@ -2,6 +2,7 @@
 title: "Vast Challenge 2021 Mini-Challenge 2 - with R"
 author:
   - name: Chen Yuxi, Jovinka Hartanto, Lim Yong Kai
+    affiliation: Singapore Management University, School of Computing and Information Systems
 ---
 
 ```{r setup, include=FALSE}

@@ -4,7 +4,7 @@ description: |
   Vast Challenge 2021 Mini-Challenge 2 - with R
 author:
   - name: Chen Yuxi, Jovinka Hartanto, Lim Yong Kai
-
+    affiliation: Singapore Management University, School of Computing and Information Systems
 date: 06-07-2021
 output:
   distill::distill_article:
