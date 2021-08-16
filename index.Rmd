@@ -3,7 +3,7 @@ title: "ISSS608 G1 Group 5 Project"
 site: distill::distill_website
 author:
   - name: "Chen Yuxi"
-    URL: https://www.linkedin.com/in/c-yuxi/
+    url: https://www.linkedin.com/in/c-yuxi
     affiliation: Singapore Management University
   - name: "Jovinka Hartanto"
     affiliation: Singapore Management University
